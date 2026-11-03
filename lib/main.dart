@@ -30,6 +30,8 @@ class RefugeApp extends StatelessWidget {
           locale: AppSettings.instance.locale,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
+          // Il testo segue l'impostazione del telefono, fino a 1,6 volte: oltre, i comandi non starebbero sullo schermo.
+          builder: (context, child) => MediaQuery.withClampedTextScaling(maxScaleFactor: 1.6, child: child!),
           home: AppSettings.instance.onboarded ? const HomeScreen() : const OnboardingScreen(),
         ),
       );

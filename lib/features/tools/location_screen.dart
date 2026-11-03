@@ -11,6 +11,7 @@ import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../maps/map_download.dart';
 import '../maps/map_regions.dart';
+import '../maps/nearby.dart';
 import '../maps/offline_map.dart';
 import '../maps/pins.dart';
 import 'coords.dart';
@@ -73,6 +74,75 @@ class _LocationScreenState extends State<LocationScreen> {
     if (pin == null) return;
     MapPins.instance.add(pin);
     setState(() => _focus = pin.point);
+  }
+
+  /// Ospedali più vicini, dalla mappa offline; toccandone uno diventa un punto sulla mappa.
+  void _showHospitals(AppLocalizations t) {
+    final here = _last == null ? null : LatLng(_last!.latitude, _last!.longitude);
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (c) => SafeArea(
+        child: SizedBox(
+          height: MediaQuery.of(c).size.height * 0.7,
+          child: here == null
+              ? Center(child: Padding(padding: const EdgeInsets.all(24), child: Text(t.hospitalsNeedGps)))
+              : FutureBuilder<List<NearbyPlace>?>(
+                  future: nearbyHospitals(here),
+                  builder: (c, snap) {
+                    if (snap.connectionState != ConnectionState.done) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    final list = snap.data;
+                    return ListView(padding: const EdgeInsets.symmetric(vertical: 12), children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
+                        child: Text(t.hospitalsTitle, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                        child: Text(t.hospitalsNote(AppSettings.instance.country.emergency),
+                            style: const TextStyle(color: Colors.white60)),
+                      ),
+                      if (list == null)
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                            Text(t.hospitalsNeedMap),
+                            const SizedBox(height: 8),
+                            FilledButton.icon(
+                              icon: const Icon(Icons.download),
+                              label: Text(t.manageMaps),
+                              onPressed: () {
+                                Navigator.pop(c);
+                                Navigator.push(context, MaterialPageRoute(builder: (_) => const MapDownloadScreen()));
+                              },
+                            ),
+                          ]),
+                        )
+                      else if (list.isEmpty)
+                        Padding(padding: const EdgeInsets.all(20), child: Text(t.hospitalsNone))
+                      else
+                        for (final h in list)
+                          ListTile(
+                            leading: const Icon(Icons.local_hospital, color: kDanger),
+                            title: Text(h.name.isEmpty ? t.hospitalUnnamed : h.name),
+                            subtitle: Text(t.distanceTo(formatDistance(h.meters),
+                                compassPoint(bearingDegrees(here, h.point), t.westLetter,
+                                    east: AppSettings.instance.language == 'de' ? 'O' : 'E'),
+                                bearingDegrees(here, h.point).round())),
+                            onTap: () {
+                              MapPins.instance.add(Pin(h.name.isEmpty ? t.hospitalUnnamed : h.name, h.point));
+                              setState(() => _focus = h.point);
+                              Navigator.pop(c);
+                            },
+                          ),
+                    ]);
+                  },
+                ),
+        ),
+      ),
+    );
   }
 
   void _showPins(AppLocalizations t) => showModalBottomSheet<void>(
@@ -183,6 +253,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     t: t,
                     onAdd: () => _addPin(t),
                     onList: () => _showPins(t),
+                    onHospitals: () => _showHospitals(t),
                     recording: m.recording,
                     canRecord: problem == null,
                     trackMeters: m.trackMeters,
@@ -261,6 +332,7 @@ class _Toolbar extends StatelessWidget {
     required this.t,
     required this.onAdd,
     required this.onList,
+    required this.onHospitals,
     required this.recording,
     required this.canRecord,
     required this.trackMeters,
@@ -268,7 +340,7 @@ class _Toolbar extends StatelessWidget {
   });
 
   final AppLocalizations t;
-  final VoidCallback onAdd, onList, onRecord;
+  final VoidCallback onAdd, onList, onRecord, onHospitals;
   final bool recording, canRecord;
   final double trackMeters;
 
@@ -281,6 +353,13 @@ class _Toolbar extends StatelessWidget {
           ),
           Expanded(
             child: TextButton.icon(icon: const Icon(Icons.list), label: Text(t.pointsAndTrack), onPressed: onList),
+          ),
+          Expanded(
+            child: TextButton.icon(
+              icon: const Icon(Icons.local_hospital),
+              label: Text(t.hospitalsButton),
+              onPressed: onHospitals,
+            ),
           ),
           Expanded(
             child: TextButton.icon(

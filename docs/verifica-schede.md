@@ -97,6 +97,64 @@ Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modifi
 - Non darle niente in bocca, né da bere né da mangiare: potrebbe soffocare.
   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("For unresponsive persons, do not give oral sugar due to the risk of aspiration")
 
+## Dolore al petto, infarto
+
+1. Dolore o forte pressione al petto, che può arrivare a collo, mandibola o braccio sinistro: può essere un infarto. Chiama subito il {emergency}.
+   - Fonte: ERC Guidelines 2025 on Resuscitation for Everyone – First Aid, pp. 53–59, Chest pain (pressure in the chest, radiating to the neck, lower jaw or left arm; call the local emergency number)
+2. Falla stare seduta o sdraiata nella posizione più comoda e rassicurala.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Chest pain ("Reassure the person and sit or lie them in a comfortable position")
+3. Se è adulta e non è allergica: aiutala a masticare un'aspirina (150–500 mg) il prima possibile.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Chest pain ("self-administering 150–500 mg of chewable aspirin as soon as possible … but not to adults with known aspirin allergy")
+4. Se sa di avere l'angina, aiutala a prendere il suo spray o le sue compresse di nitroglicerina.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Chest pain ("Assist a person with known angina to self-administer their nitro-glycerine spray or tablets")
+5. Resta con lei finché arrivano i soccorsi. Se perde coscienza e non respira normalmente: rianimazione.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Chest pain ("Stay with the person until professional help arrives"); Table 3, C (monitor for loss of responsiveness, possible cardiac arrest)
+
+**Non fare**
+
+- Niente aspirina ai bambini o a chi è allergico.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Chest pain (aspirin for adults, not with known aspirin allergy)
+
+## Ictus
+
+1. Viso: chiedile di sorridere. Un angolo della bocca resta giù?
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 367 (FAST: Face – ask the person to smile; check if one corner of the mouth droops)
+2. Braccia: chiedile di tenere le braccia tese in avanti, con i palmi in su. Un braccio scende?
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 367 (FAST: Arm – extend both arms in front, palms up; one arm sagging or drifting)
+3. Parola: parla in modo strano, non trova le parole o non capisce?
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 367 (FAST: Speech – abnormal speech, difficulty speaking or understanding)
+4. Anche uno solo di questi segni: chiama subito il {emergency} e annota l'ora in cui sono iniziati.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 368 ("If you suspect a stroke, access EMS immediately. Note the time it started")
+5. Aiutala a stare sdraiata o seduta, come sta meglio, e sostienila se rischia di cadere. Rassicurala e continua a parlarle.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 368 (best possible position, lying on the back or sitting; support if at risk of falling; reassure and keep talking)
+6. Se perde coscienza: controlla il respiro. Se respira, posizione laterale; se no, rianimazione.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 368 (if unresponsive: open the airway and check breathing)
+
+**Non fare**
+
+- Non aspettare che passi: anche se i segni spariscono dopo pochi minuti, va vista subito da un medico.
+  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Stroke, p. 366 (mild symptoms lasting a few minutes still need medical care as soon as possible); p. 368 (even if the person seems to have recovered)
+
+## Reazione allergica grave
+
+1. Dopo un cibo o una puntura d'insetto: fatica a respirare, fischio nel respiro, gonfiore, pelle arrossata o con bolle, pelle fredda e sudata, svenimento, mal di pancia o vomito. È una reazione allergica grave.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis (stridor, wheezing or breathing difficulties; flushing, hives, cold or clammy skin, feeling faint; abdominal pain, vomiting; recent food allergen or insect sting)
+2. Chiama il {emergency}.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis ("Call your emergency number (112)")
+3. Falla stare seduta o sdraiata.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis ("Ensure that the person remains in a seated or lying position")
+4. Se ha l'autoiniettore di adrenalina, usalo subito sulla parte esterna della coscia.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis ("Give intramuscular adrenaline as soon as possible via autoinjector into the outer thigh")
+5. Se dopo 5 minuti non migliora, fai una seconda dose.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis ("Give a second dose of adrenaline, if symptoms persist 5 min after administration")
+6. Se perde coscienza e non respira normalmente: rianimazione.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Cardiac arrest (start CPR)
+
+**Non fare**
+
+- Non farla alzare né camminare.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Anaphylaxis (the person remains in a seated or lying position)
+
 ## Ustione
 
 1. Allontana la persona dal calore. Se i vestiti di qualcuno bruciano, spegnili con un estintore.
@@ -120,6 +178,68 @@ Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modifi
   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Burns, p. 288 (blisters should not be deroofed); p. 289 (do not remove clothing stuck to the skin)
 - Bambini piccoli: mentre raffreddi l'ustione, controlla che non prendano troppo freddo.
   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Burns, p. 289 (young children being cooled should be monitored for excessive cooling)
+
+## Colpo alla testa
+
+1. Dopo un colpo alla testa, guarda se ha: mal di testa, vista strana, capogiri, nausea o vomito, fastidio per luce e rumori, confusione, fatica a ricordare, molto sonno o un comportamento diverso.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Concussion (difficulties thinking/remembering; headache, change in vision, dizziness, nausea or vomiting, seizures, sensitivity to light/noise; emotional or behaviour changes, sleepiness, confusion)
+2. Se ha uno di questi segni: deve smettere ogni attività e farsi visitare da un medico.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Concussion ("Remove the person from physical activities. Refer to a healthcare professional")
+3. Se è caduto dall'alto, è stato schiacciato o ha avuto un incidente: può avere una lesione al collo. Se è sveglio, chiedigli di tenere il collo fermo, nella posizione più comoda.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Cervical spinal motion restriction (suspect after a fall or dive from height, crush, road traffic or sports accident; if awake, encourage them to keep the neck in a comfortable stable position)
+4. Se non risponde: chiama il {emergency}, controlla il respiro e tieni ferma la testa con le mani ai lati, inginocchiato dietro di lui.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Cervical spinal motion restriction (unresponsive person on the back: kneel behind the head and hold head and neck still)
+5. Se non respira normalmente: rianimazione. Se peggiora o ha convulsioni: chiama il {emergency}.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Table 3 (unresponsive and not breathing normally: call and start CPR; monitor for deterioration)
+
+**Non fare**
+
+- Non forzarlo a muovere il collo o a cambiare posizione.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Cervical spinal motion restriction ("Never force an uncooperative person into any position")
+- Niente sport o sforzi finché non l'ha visto un medico.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Concussion (remove from physical activities; refer to a healthcare professional)
+
+## Calo di zuccheri (diabete)
+
+1. Chi ha il diabete, o mangia pochissimo, e all'improvviso è confuso, strano o poco reattivo: può avere uno zucchero troppo basso.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("Suspect hypoglycaemia in someone with diabetes or chronic malnutrition AND sudden impaired responsiveness or behavioural change")
+2. Se è sveglio e riesce a deglutire: dagli zucchero. Compresse di glucosio (15–20 g), oppure una manciata di caramelle o 50–100 ml di succo o bibita zuccherata.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia (glucose or dextrose tablets 15–20 g by mouth if awake and able to swallow; otherwise a handful of sugary sweets or 50–100 ml of fruit juice or sugary soda)
+3. Se dopo 15 minuti non va meglio, dagliene ancora.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("Repeat giving oral glucose if the symptoms are still present and not improving after 15 min")
+4. Quando si riprende, fagli mangiare uno spuntino leggero.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("Following recovery … encourage the person to eat a light snack")
+5. Chiama il {emergency} se non risponde o non migliora.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("Call your emergency number (112) if the person is/or becomes unresponsive or the condition does not improve")
+6. Bambino che non riesce o non vuole deglutire: mezzo cucchiaino di zucchero sotto la lingua.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("For children, consider administering half a teaspoon of table sugar (2.5 g) under the child's tongue")
+
+**Non fare**
+
+- Se non risponde, non dargli niente in bocca: potrebbe soffocare.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("For unresponsive persons, do not give oral sugar due to the risk of aspiration")
+
+## Persona sotto shock
+
+1. Prima guarda se è sicuro avvicinarti, e se ha ferite o bisogni urgenti: quelli vengono prima.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 18 (Look: check for safety, for urgent basic needs and serious distress reactions); p. 31 (serious injuries need emergency care first)
+2. Avvicinati con calma, presentati e chiedi di cosa ha bisogno. Cerca un posto tranquillo e stai vicino, senza invadere.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 18 (Listen: approach people, ask about their needs and concerns); p. 17 (find a quiet place, stay near at an appropriate distance)
+3. Ascolta senza fretta e lascia anche il silenzio. Non insistere perché racconti.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 17 (be patient and calm; allow for silence; don't pressure someone to tell their story)
+4. Parla con voce calma. Dille che sei lì per aiutarla e che è al sicuro, se è vero. Se è molto agitata: piedi ben appoggiati a terra e respiri lenti, insieme a te.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 23 (calm, soft voice; remind them you are there to help and that they are safe, if true; feet on the floor; breathe slowly)
+5. Dalle informazioni vere e semplici. Se non sai qualcosa, dillo.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 17 (provide factual information if you have it; be honest about what you don't know; keep it simple)
+6. Aiutala con le cose pratiche (acqua, una coperta, un posto dove stare) e a contattare i suoi cari.
+   - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 18 (Link: help address basic needs, give information, connect with loved ones and social support)
+
+**Non fare**
+
+- Non fare promesse che non puoi mantenere e non giudicare. Non dire «dovresti sentirti fortunato».
+  - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 17 (don't give false promises; don't judge; don't say "You should feel lucky you survived")
+- Se pensa di farsi del male: non lasciarla sola e chiama il {emergency}.
+  - Fonte: WHO – Psychological first aid: Guide for field workers (2011), p. 31 (people who may hurt themselves need more advanced support immediately); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Suicidal thoughts (concrete threats or plans: call 112)
 
 ## Allarme aereo, esplosioni
 
@@ -302,6 +422,24 @@ Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modifi
   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("Remember: cool first, transfer second"; continue cooling during transport)
 - Se non è lucida, non darle da bere: potrebbe soffocare.
   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia (no oral intake for unresponsive persons: risk of aspiration)
+
+## Morso di vipera
+
+1. Chiama il {emergency}.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Call your local emergency number (112)"; the European viper is the only highly venomous native snake in Europe)
+2. Tieni la persona calma e ferma, a riposo.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the person calm and at rest")
+3. Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the bitten body part still and immobilise the affected limb")
+4. Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Remove tight clothes, rings or watches from the affected limb")
+
+**Non fare**
+
+- Niente laccio, fasciatura stretta, ghiaccio o calore.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not apply a pressure dressing, ice, heat, or use tourniquets")
+- Non incidere la ferita e non succhiare il veleno.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not cut the wound and never try to suck out the venom")
 
 ## Acqua da bere
 

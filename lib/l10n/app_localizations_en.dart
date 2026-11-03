@@ -1441,4 +1441,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bagMissing => 'Missing';
+
+  @override
+  String get attributionsTitle => 'Licences and attributions';
+
+  @override
+  String get attributionsSubtitle =>
+      'Where the content comes from and under which licence';
+
+  @override
+  String get attributionsBody =>
+      'The cards are written in our own words from the official sources below; the original documents and guides remain their authors\'. Each card lists its sources, sentence by sentence, in the project\'s docs/verifica-schede.md file.';
+
+  @override
+  String get attributionsApp => 'App code and card texts';
+
+  @override
+  String get softwareLicenses => 'Software library licences';
+
+  @override
+  String get paperTitle => 'Paper copy';
+
+  @override
+  String get paperSubtitle =>
+      'Numbers, radio, family plan, backpack and cards, in a PDF to print';
+
+  @override
+  String get paperIntro =>
+      'Print it and keep it with your supplies and in the backpack: it helps when your phone is flat or broken. Update it when something changes.';
+
+  @override
+  String get paperNumbers => 'Numbers and alerts';
+
+  @override
+  String get paperBagKey => '[x] ready · [   ] missing';
+
+  @override
+  String get paperSources =>
+      'Sources: ERC 2025, IFRC 2025, EU guidelines, national civil protection agencies, WHO. Full list in the app: More › Licences and attributions. Not a substitute for a first aid course or instructions from the authorities.';
+
+  @override
+  String get paperFileName => 'paper-copy';
+
+  @override
+  String get bagCheckReminder =>
+      'Check the food, medicines and batteries in your backpack: some may have expired.';
+
+  @override
+  String get hospitalsButton => 'Hospitals';
+
+  @override
+  String get hospitalsTitle => 'Nearby hospitals';
+
+  @override
+  String hospitalsNote(String number) {
+    return 'From the offline map (OpenStreetMap), with straight-line distance. In an emergency always call $number: they will tell you where to go.';
+  }
+
+  @override
+  String get hospitalsNeedMap =>
+      'To search for hospitals you need the detailed map of your country: download it from Maps.';
+
+  @override
+  String get hospitalsNone => 'No hospital on the map within about 50 km.';
+
+  @override
+  String get hospitalUnnamed => 'Hospital';
+
+  @override
+  String get hospitalsNeedGps =>
+      'A GPS position is needed: wait for the phone to find it, then try again.';
 }

@@ -788,5 +788,32 @@
         "type": "String"
       }
     }
+  },
+  "attributionsTitle": "Licenze e attribuzioni",
+  "attributionsSubtitle": "Da dove vengono i contenuti e con quale licenza",
+  "attributionsBody": "Le schede sono scritte con parole nostre a partire dalle fonti ufficiali qui sotto; i documenti e le guide originali restano dei loro autori. Ogni scheda indica le sue fonti, frase per frase, nel file docs/verifica-schede.md del progetto.",
+  "attributionsApp": "Codice dell'app e testi delle schede",
+  "softwareLicenses": "Licenze delle librerie software",
+  "paperTitle": "Copia su carta",
+  "paperSubtitle": "Numeri, radio, piano della famiglia, zaino e schede, in un PDF da stampare",
+  "paperIntro": "Stampala e tienila con le scorte e nello zaino: serve quando il telefono è scarico o rotto. Aggiornala quando cambi qualcosa.",
+  "paperNumbers": "Numeri e allerte",
+  "paperBagKey": "[x] pronto · [   ] manca",
+  "paperSources": "Fonti: ERC 2025, IFRC 2025, linee guida UE, protezioni civili nazionali, OMS. Elenco completo nell'app: Altro › Licenze e attribuzioni. Non sostituisce un corso di primo soccorso né le indicazioni delle autorità.",
+  "paperFileName": "copia-su-carta",
+  "bagCheckReminder": "Controlla cibo, farmaci e batterie nello zaino: alcune cose potrebbero essere scadute.",
+  "hospitalsButton": "Ospedali",
+  "hospitalsTitle": "Ospedali vicini",
+  "hospitalsNote": "Dalla mappa offline (OpenStreetMap), con la distanza in linea d'aria. In emergenza chiama sempre il {number}: ti dicono dove andare.",
+  "hospitalsNeedMap": "Per cercare gli ospedali serve la mappa dettagliata del tuo paese: scaricala da Mappe.",
+  "hospitalsNone": "Nessun ospedale nella mappa entro circa 50 km.",
+  "hospitalUnnamed": "Ospedale",
+  "hospitalsNeedGps": "Serve la posizione GPS: aspetta che il telefono la trovi, poi riprova.",
+  "@hospitalsNote": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
   }
 }

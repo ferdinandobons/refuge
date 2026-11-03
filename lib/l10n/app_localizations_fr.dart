@@ -1452,4 +1452,75 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get bagMissing => 'Manque';
+
+  @override
+  String get attributionsTitle => 'Licences et attributions';
+
+  @override
+  String get attributionsSubtitle =>
+      'D\'où viennent les contenus et sous quelle licence';
+
+  @override
+  String get attributionsBody =>
+      'Les fiches sont rédigées avec nos mots à partir des sources officielles ci-dessous ; les documents et guides originaux restent à leurs auteurs. Chaque fiche indique ses sources, phrase par phrase, dans le fichier docs/verifica-schede.md du projet.';
+
+  @override
+  String get attributionsApp => 'Code de l\'app et textes des fiches';
+
+  @override
+  String get softwareLicenses => 'Licences des bibliothèques logicielles';
+
+  @override
+  String get paperTitle => 'Copie papier';
+
+  @override
+  String get paperSubtitle =>
+      'Numéros, radio, plan familial, sac et fiches, dans un PDF à imprimer';
+
+  @override
+  String get paperIntro =>
+      'Imprimez-la et gardez-la avec vos réserves et dans le sac : elle sert quand le téléphone est déchargé ou cassé. Mettez-la à jour quand quelque chose change.';
+
+  @override
+  String get paperNumbers => 'Numéros et alertes';
+
+  @override
+  String get paperBagKey => '[x] prêt · [   ] manque';
+
+  @override
+  String get paperSources =>
+      'Sources : ERC 2025, IFRC 2025, lignes directrices de l\'UE, protections civiles nationales, OMS. Liste complète dans l\'app : Plus › Licences et attributions. Ne remplace ni une formation aux premiers secours ni les consignes des autorités.';
+
+  @override
+  String get paperFileName => 'copie-papier';
+
+  @override
+  String get bagCheckReminder =>
+      'Vérifiez la nourriture, les médicaments et les piles du sac : certains ont peut-être expiré.';
+
+  @override
+  String get hospitalsButton => 'Hôpitaux';
+
+  @override
+  String get hospitalsTitle => 'Hôpitaux proches';
+
+  @override
+  String hospitalsNote(String number) {
+    return 'D\'après la carte hors ligne (OpenStreetMap), avec la distance à vol d\'oiseau. En cas d\'urgence, appelez toujours le $number : on vous dira où aller.';
+  }
+
+  @override
+  String get hospitalsNeedMap =>
+      'Pour chercher les hôpitaux, il faut la carte détaillée de votre pays : téléchargez-la depuis Cartes.';
+
+  @override
+  String get hospitalsNone =>
+      'Aucun hôpital sur la carte à moins de 50 km environ.';
+
+  @override
+  String get hospitalUnnamed => 'Hôpital';
+
+  @override
+  String get hospitalsNeedGps =>
+      'Il faut la position GPS : attendez que le téléphone la trouve, puis réessayez.';
 }

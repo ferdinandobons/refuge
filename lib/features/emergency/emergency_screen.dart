@@ -70,13 +70,25 @@ class EmergencyScreen extends StatelessWidget {
             if (snap.hasData)
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-                sliver: SliverGrid.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 1.35,
-                  children: [for (final c in snap.data!) _CardTile(c)],
-                ),
+                // Le schede crescono con il testo: con i caratteri grandi (accessibilità) una per riga.
+                sliver: SliverList.list(children: [
+                  for (final row in _rows(snap.data!, _columns(context)))
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: IntrinsicHeight(
+                        child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                          for (final (i, c) in row.indexed) ...[
+                            if (i > 0) const SizedBox(width: 10),
+                            Expanded(child: _CardTile(c)),
+                          ],
+                          if (row.length == 1 && _columns(context) == 2) ...[
+                            const SizedBox(width: 10),
+                            const Expanded(child: SizedBox()),
+                          ],
+                        ]),
+                      ),
+                    ),
+                ]),
               ),
           ]),
         ),
@@ -84,6 +96,12 @@ class EmergencyScreen extends StatelessWidget {
     );
   }
 }
+
+int _columns(BuildContext context) => MediaQuery.textScalerOf(context).scale(1) > 1.35 ? 1 : 2;
+
+List<List<EmergencyCard>> _rows(List<EmergencyCard> cards, int columns) => [
+      for (var i = 0; i < cards.length; i += columns) cards.sublist(i, (i + columns).clamp(0, cards.length)),
+    ];
 
 class _BigButton extends StatelessWidget {
   const _BigButton({required this.icon, required this.label, required this.color, required this.onTap});
@@ -124,14 +142,14 @@ class _CardTile extends StatelessWidget {
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => CardScreen(card: card))),
           child: Padding(
             padding: const EdgeInsets.all(14),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Icon(card.icon, color: card.color, size: 34),
-              const Spacer(),
-              Text(card.title,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.2)),
-            ]),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 96),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Icon(card.icon, color: card.color, size: 34),
+                const SizedBox(height: 10),
+                Text(card.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.2)),
+              ]),
+            ),
           ),
         ),
       );

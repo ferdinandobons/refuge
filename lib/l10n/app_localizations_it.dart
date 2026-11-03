@@ -1448,4 +1448,74 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get bagMissing => 'Manca';
+
+  @override
+  String get attributionsTitle => 'Licenze e attribuzioni';
+
+  @override
+  String get attributionsSubtitle =>
+      'Da dove vengono i contenuti e con quale licenza';
+
+  @override
+  String get attributionsBody =>
+      'Le schede sono scritte con parole nostre a partire dalle fonti ufficiali qui sotto; i documenti e le guide originali restano dei loro autori. Ogni scheda indica le sue fonti, frase per frase, nel file docs/verifica-schede.md del progetto.';
+
+  @override
+  String get attributionsApp => 'Codice dell\'app e testi delle schede';
+
+  @override
+  String get softwareLicenses => 'Licenze delle librerie software';
+
+  @override
+  String get paperTitle => 'Copia su carta';
+
+  @override
+  String get paperSubtitle =>
+      'Numeri, radio, piano della famiglia, zaino e schede, in un PDF da stampare';
+
+  @override
+  String get paperIntro =>
+      'Stampala e tienila con le scorte e nello zaino: serve quando il telefono è scarico o rotto. Aggiornala quando cambi qualcosa.';
+
+  @override
+  String get paperNumbers => 'Numeri e allerte';
+
+  @override
+  String get paperBagKey => '[x] pronto · [   ] manca';
+
+  @override
+  String get paperSources =>
+      'Fonti: ERC 2025, IFRC 2025, linee guida UE, protezioni civili nazionali, OMS. Elenco completo nell\'app: Altro › Licenze e attribuzioni. Non sostituisce un corso di primo soccorso né le indicazioni delle autorità.';
+
+  @override
+  String get paperFileName => 'copia-su-carta';
+
+  @override
+  String get bagCheckReminder =>
+      'Controlla cibo, farmaci e batterie nello zaino: alcune cose potrebbero essere scadute.';
+
+  @override
+  String get hospitalsButton => 'Ospedali';
+
+  @override
+  String get hospitalsTitle => 'Ospedali vicini';
+
+  @override
+  String hospitalsNote(String number) {
+    return 'Dalla mappa offline (OpenStreetMap), con la distanza in linea d\'aria. In emergenza chiama sempre il $number: ti dicono dove andare.';
+  }
+
+  @override
+  String get hospitalsNeedMap =>
+      'Per cercare gli ospedali serve la mappa dettagliata del tuo paese: scaricala da Mappe.';
+
+  @override
+  String get hospitalsNone => 'Nessun ospedale nella mappa entro circa 50 km.';
+
+  @override
+  String get hospitalUnnamed => 'Ospedale';
+
+  @override
+  String get hospitalsNeedGps =>
+      'Serve la posizione GPS: aspetta che il telefono la trovi, poi riprova.';
 }

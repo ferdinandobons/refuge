@@ -1,0 +1,158 @@
+[
+ {
+  "name": "Dipartimento della Protezione Civile – Presidenza del Consiglio dei Ministri (Italy)",
+  "license": "CC BY 4.0",
+  "url": "https://www.protezionecivile.gov.it/it/approfondimento/note-legali-0/",
+  "use": {
+   "it": "Guide «Io non rischio»: testi integrali in italiano e traduzioni non ufficiali, adattate per l'Europa, di 7 guide. Base delle schede su alluvione, terremoto, incendi e incidente industriale. Fonte: Dipartimento della Protezione Civile-Presidenza del Consiglio dei Ministri.",
+   "en": "“Io non rischio” guides: full Italian texts and unofficial translations, adapted for Europe, of 7 guides. Basis of the flood, earthquake, fire and industrial accident cards. Source: Dipartimento della Protezione Civile-Presidenza del Consiglio dei Ministri.",
+   "fr": "Guides « Io non rischio » : textes intégraux en italien et traductions non officielles, adaptées pour l'Europe, de 7 guides. Base des fiches inondation, séisme, incendie et accident industriel. Source : Dipartimento della Protezione Civile-Presidenza del Consiglio dei Ministri.",
+   "de": "Ratgeber „Io non rischio“: italienische Volltexte und inoffizielle, für Europa angepasste Übersetzungen von 7 Ratgebern. Grundlage der Karten zu Hochwasser, Erdbeben, Brand und Industrieunfall. Quelle: Dipartimento della Protezione Civile-Presidenza del Consiglio dei Ministri.",
+   "es": "Guías «Io non rischio»: textos íntegros en italiano y traducciones no oficiales, adaptadas para Europa, de 7 guías. Base de las fichas de inundación, terremoto, incendio y accidente industrial. Fuente: Dipartimento della Protezione Civile-Presidenza del Consiglio dei Ministri."
+  }
+ },
+ {
+  "name": "European Commission – DG ECHO",
+  "license": "CC BY 4.0 (Decision 2011/833/EU)",
+  "url": "https://commission.europa.eu/legal-notice_en",
+  "use": {
+   "it": "Linee guida UE sulla preparazione e sulle 72 ore (SWD(2026) 826 e 828): documento incluso e base di scorte, zaino e piano familiare.",
+   "en": "EU population preparedness and 72-hour guidelines (SWD(2026) 826 and 828): document included and basis for supplies, backpack and family plan.",
+   "fr": "Lignes directrices de l'UE sur la préparation et les 72 heures (SWD(2026) 826 et 828) : document inclus et base des réserves, du sac et du plan familial.",
+   "de": "EU-Leitlinien zur Vorsorge und zu 72 Stunden (SWD(2026) 826 und 828): enthaltenes Dokument und Grundlage für Vorräte, Notgepäck und Familienplan.",
+   "es": "Directrices de la UE sobre preparación y 72 horas (SWD(2026) 826 y 828): documento incluido y base de provisiones, mochila y plan familiar."
+  }
+ },
+ {
+  "name": "European Centre for Disease Prevention and Control (ECDC)",
+  "license": "CC BY 4.0",
+  "url": "https://www.ecdc.europa.eu/en/copyright",
+  "use": {
+   "it": "Consigli sanitari dopo le alluvioni (acqua e cibo).",
+   "en": "Health advice after floods (water and food).",
+   "fr": "Conseils sanitaires après les inondations (eau et nourriture).",
+   "de": "Gesundheitshinweise nach Hochwasser (Wasser und Lebensmittel).",
+   "es": "Consejos sanitarios tras inundaciones (agua y comida)."
+  }
+ },
+ {
+  "name": "European Resuscitation Council (ERC)",
+  "license": "© ERC 2025 – used as a reference",
+  "url": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english",
+  "use": {
+   "it": "Linee guida 2025 (primo soccorso e rianimazione): riferimento per le schede, riscritte con parole nostre. L'opuscolo per tutti si scarica dal sito ERC.",
+   "en": "2025 Guidelines (first aid and resuscitation): reference for the cards, rewritten in our own words. The brochure for everyone is downloaded from the ERC website.",
+   "fr": "Lignes directrices 2025 (premiers secours et réanimation) : référence des fiches, réécrites avec nos mots. La brochure pour tous se télécharge sur le site de l'ERC.",
+   "de": "Leitlinien 2025 (Erste Hilfe und Wiederbelebung): Grundlage der Karten, in eigenen Worten formuliert. Die Broschüre für alle wird von der ERC-Website geladen.",
+   "es": "Directrices 2025 (primeros auxilios y reanimación): referencia de las fichas, reescritas con nuestras palabras. El folleto para todos se descarga del sitio del ERC."
+  }
+ },
+ {
+  "name": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+  "license": "© IFRC 2025 – non-commercial copies with acknowledgement",
+  "url": "https://www.ifrc.org/document/international-first-aid-resuscitation-and-education-guidelines",
+  "use": {
+   "it": "Linee guida internazionali di primo soccorso 2025: documento incluso e riferimento per le schede.",
+   "en": "International first aid guidelines 2025: document included and reference for the cards.",
+   "fr": "Lignes directrices internationales de premiers secours 2025 : document inclus et référence des fiches.",
+   "de": "Internationale Erste-Hilfe-Leitlinien 2025: enthaltenes Dokument und Grundlage der Karten.",
+   "es": "Directrices internacionales de primeros auxilios 2025: documento incluido y referencia de las fichas."
+  }
+ },
+ {
+  "name": "World Health Organization (WHO)",
+  "license": "© WHO – reference; downloaded from the official website",
+  "url": "https://www.who.int/publications/i/item/9789241548205",
+  "use": {
+   "it": "Primo soccorso psicologico (2011) e bollitura dell'acqua (2015): riferimento per le schede; la guida si scarica dal sito OMS.",
+   "en": "Psychological first aid (2011) and boil water (2015): reference for the cards; the guide is downloaded from the WHO website.",
+   "fr": "Premiers secours psychologiques (2011) et ébullition de l'eau (2015) : référence des fiches ; le guide se télécharge sur le site de l'OMS.",
+   "de": "Psychische Erste Hilfe (2011) und Abkochen von Wasser (2015): Grundlage der Karten; der Leitfaden wird von der WHO-Website geladen.",
+   "es": "Primera ayuda psicológica (2011) y hervir el agua (2015): referencia de las fichas; la guía se descarga del sitio de la OMS."
+  }
+ },
+ {
+  "name": "UK Health Security Agency (gov.uk)",
+  "license": "Open Government Licence v3.0",
+  "url": "https://www.gov.uk/government/publications/radiation-emergencies-information-for-the-public/what-to-do-in-a-radiation-emergency",
+  "use": {
+   "it": "Cosa fare in un'emergenza radiologica: base della scheda nucleare.",
+   "en": "What to do in a radiation emergency: basis of the nuclear card.",
+   "fr": "Que faire en cas d'urgence radiologique : base de la fiche nucléaire.",
+   "de": "Verhalten im radiologischen Notfall: Grundlage der Nuklear-Karte.",
+   "es": "Qué hacer en una emergencia radiológica: base de la ficha nuclear."
+  }
+ },
+ {
+  "name": "Rijksoverheid – Denk vooruit (Netherlands)",
+  "license": "CC0 (text)",
+  "url": "https://english.denkvooruit.nl/service/copyright",
+  "use": {
+   "it": "Opuscolo sulla preparazione: base di blackout, acqua e scorte; si scarica dal sito ufficiale (immagini escluse dalla CC0).",
+   "en": "Preparedness booklet: basis for blackout, water and supplies; downloaded from the official website (images excluded from CC0).",
+   "fr": "Brochure de préparation : base de la panne de courant, de l'eau et des réserves ; téléchargée depuis le site officiel (images exclues de la CC0).",
+   "de": "Vorsorge-Broschüre: Grundlage für Stromausfall, Wasser und Vorräte; von der offiziellen Website geladen (Bilder nicht CC0).",
+   "es": "Folleto de preparación: base de apagón, agua y provisiones; se descarga del sitio oficial (imágenes excluidas de la CC0)."
+  }
+ },
+ {
+  "name": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK, Germany)",
+  "license": "© BBK – reference; downloaded from the official website",
+  "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html",
+  "use": {
+   "it": "Ratgeber e checklist: riferimento per incendio, esplosioni, blackout, scorte e zaino.",
+   "en": "Guide and checklist: reference for fire, explosions, blackout, supplies and backpack.",
+   "fr": "Guide et liste de contrôle : référence pour l'incendie, les explosions, la panne de courant, les réserves et le sac.",
+   "de": "Ratgeber und Checkliste: Grundlage für Brand, Explosionen, Stromausfall, Vorräte und Notgepäck.",
+   "es": "Guía y lista de control: referencia para incendio, explosiones, apagón, provisiones y mochila."
+  }
+ },
+ {
+  "name": "Myndigheten för civilt försvar (MCF, Sweden)",
+  "license": "© MCF – reference; downloaded from the official website",
+  "url": "https://www.mcf.se/en/advice-for-individuals/the-brochure-in-case-of-crisis-or-war/",
+  "use": {
+   "it": "«In caso di crisi o guerra»: riferimento per allarme aereo, acqua, calore e zaino.",
+   "en": "“In case of crisis or war”: reference for air raids, water, heat and the backpack.",
+   "fr": "« En cas de crise ou de guerre » : référence pour les alertes aériennes, l'eau, la chaleur et le sac.",
+   "de": "„Im Krisen- oder Kriegsfall“: Grundlage für Luftalarm, Wasser, Wärme und Notgepäck.",
+   "es": "«En caso de crisis o guerra»: referencia para alerta aérea, agua, calor y mochila."
+  }
+ },
+ {
+  "name": "OpenStreetMap contributors · Protomaps",
+  "license": "ODbL 1.0 (data) · BSD-3 (style)",
+  "url": "https://www.openstreetmap.org/copyright",
+  "use": {
+   "it": "Mappe offline: dati © OpenStreetMap, estratti da Protomaps.",
+   "en": "Offline maps: data © OpenStreetMap, extracted from Protomaps.",
+   "fr": "Cartes hors ligne : données © OpenStreetMap, extraites de Protomaps.",
+   "de": "Offline-Karten: Daten © OpenStreetMap, aus Protomaps.",
+   "es": "Mapas sin conexión: datos © OpenStreetMap, extraídos de Protomaps."
+  }
+ },
+ {
+  "name": "Wikipedia, WikiMed – Kiwix",
+  "license": "CC BY-SA 4.0",
+  "url": "https://library.kiwix.org",
+  "use": {
+   "it": "Enciclopedie offline facoltative, scaricate dal catalogo Kiwix.",
+   "en": "Optional offline encyclopedias, downloaded from the Kiwix catalogue.",
+   "fr": "Encyclopédies hors ligne facultatives, téléchargées depuis le catalogue Kiwix.",
+   "de": "Optionale Offline-Lexika aus dem Kiwix-Katalog.",
+   "es": "Enciclopedias sin conexión opcionales, descargadas del catálogo Kiwix."
+  }
+ },
+ {
+  "name": "Broadcasters and regulators: RTVE, RTP, RTÉ, Radio France, Arcom, RTBF, ILR, BAKOM, ORF, NPO, BBC, BBK",
+  "license": "Facts, with a source for each frequency",
+  "url": "https://www.arcom.fr",
+  "use": {
+   "it": "Guida radio: stazioni e frequenze di emergenza per paese.",
+   "en": "Radio guide: emergency stations and frequencies by country.",
+   "fr": "Guide radio : stations et fréquences d'urgence par pays.",
+   "de": "Radioführer: Notfallsender und Frequenzen pro Land.",
+   "es": "Guía de radio: emisoras y frecuencias de emergencia por país."
+  }
+ }
+]

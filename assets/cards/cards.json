@@ -367,6 +367,249 @@
     }
   },
   {
+    "id": "chestpain",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)",
+      "doc:erc-2025"
+    ],
+    "it": {
+      "title": "Dolore al petto, infarto",
+      "keywords": "dolore petto torace infarto cuore attacco cardiaco oppressione angina aspirina braccio sinistro mandibola",
+      "steps": [
+        "Dolore o forte pressione al petto, che può arrivare a collo, mandibola o braccio sinistro: può essere un infarto. Chiama subito il {emergency}.",
+        "Falla stare seduta o sdraiata nella posizione più comoda e rassicurala.",
+        "Se è adulta e non è allergica: aiutala a masticare un'aspirina (150–500 mg) il prima possibile.",
+        "Se sa di avere l'angina, aiutala a prendere il suo spray o le sue compresse di nitroglicerina.",
+        "Resta con lei finché arrivano i soccorsi. Se perde coscienza e non respira normalmente: rianimazione."
+      ],
+      "never": [
+        "Niente aspirina ai bambini o a chi è allergico."
+      ]
+    },
+    "en": {
+      "title": "Chest pain, heart attack",
+      "keywords": "chest pain heart attack cardiac pressure angina aspirin left arm jaw",
+      "steps": [
+        "Pain or heavy pressure in the chest, which may spread to the neck, jaw or left arm: it may be a heart attack. Call {emergency} at once.",
+        "Help them sit or lie in the most comfortable position and reassure them.",
+        "If it is an adult with no aspirin allergy: help them chew an aspirin (150–500 mg) as soon as possible.",
+        "If they know they have angina, help them take their nitroglycerin spray or tablets.",
+        "Stay with them until help arrives. If they become unresponsive and are not breathing normally: CPR."
+      ],
+      "never": [
+        "No aspirin for children or people who are allergic to it."
+      ]
+    },
+    "fr": {
+      "title": "Douleur thoracique, infarctus",
+      "keywords": "douleur thoracique poitrine infarctus cœur crise cardiaque oppression angine aspirine bras gauche mâchoire",
+      "steps": [
+        "Douleur ou forte pression dans la poitrine, pouvant aller vers le cou, la mâchoire ou le bras gauche : c'est peut-être un infarctus. Appelez tout de suite le {emergency}.",
+        "Aidez-la à s'asseoir ou à s'allonger dans la position la plus confortable et rassurez-la.",
+        "S'il s'agit d'un adulte non allergique : aidez-le à mâcher une aspirine (150 à 500 mg) le plus tôt possible.",
+        "Si elle a une angine de poitrine connue, aidez-la à prendre son spray ou ses comprimés de nitroglycérine.",
+        "Restez avec elle jusqu'à l'arrivée des secours. Si elle perd connaissance et ne respire pas normalement : réanimation."
+      ],
+      "never": [
+        "Pas d'aspirine aux enfants ni aux personnes allergiques."
+      ]
+    },
+    "de": {
+      "title": "Brustschmerz, Herzinfarkt",
+      "keywords": "brustschmerz herzinfarkt herz druck brust angina aspirin linker arm kiefer",
+      "steps": [
+        "Schmerz oder starker Druck in der Brust, der in Hals, Kiefer oder linken Arm ausstrahlen kann: das kann ein Herzinfarkt sein. Rufen Sie sofort {emergency} an.",
+        "Helfen Sie der Person, bequem zu sitzen oder zu liegen, und beruhigen Sie sie.",
+        "Bei Erwachsenen ohne Aspirin-Allergie: so früh wie möglich eine Aspirin (150–500 mg) zerkauen lassen.",
+        "Bei bekannter Angina pectoris: bei der Einnahme des eigenen Nitro-Sprays oder der Tabletten helfen.",
+        "Bei der Person bleiben, bis Hilfe kommt. Wird sie bewusstlos und atmet nicht normal: Wiederbelebung."
+      ],
+      "never": [
+        "Kein Aspirin für Kinder oder Menschen mit Aspirin-Allergie."
+      ]
+    },
+    "es": {
+      "title": "Dolor en el pecho, infarto",
+      "keywords": "dolor pecho infarto corazón ataque cardiaco opresión angina aspirina brazo izquierdo mandíbula",
+      "steps": [
+        "Dolor o fuerte presión en el pecho, que puede llegar al cuello, la mandíbula o el brazo izquierdo: puede ser un infarto. Llama enseguida al {emergency}.",
+        "Ayúdala a sentarse o tumbarse en la posición más cómoda y tranquilízala.",
+        "Si es un adulto y no es alérgico: ayúdale a masticar una aspirina (150–500 mg) lo antes posible.",
+        "Si sabe que tiene angina, ayúdale a tomar su espray o sus comprimidos de nitroglicerina.",
+        "Quédate con ella hasta que llegue la ayuda. Si pierde el conocimiento y no respira normalmente: reanimación."
+      ],
+      "never": [
+        "Nada de aspirina a niños ni a personas alérgicas."
+      ]
+    }
+  },
+  {
+    "id": "stroke",
+    "group": "body",
+    "refs": [
+      "doc:ifrc-first-aid-guidelines-2025.pdf#366",
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Ictus",
+      "keywords": "ictus colpo apoplettico paralisi bocca storta braccio debole parola confusa fast cervello",
+      "steps": [
+        "Viso: chiedile di sorridere. Un angolo della bocca resta giù?",
+        "Braccia: chiedile di tenere le braccia tese in avanti, con i palmi in su. Un braccio scende?",
+        "Parola: parla in modo strano, non trova le parole o non capisce?",
+        "Anche uno solo di questi segni: chiama subito il {emergency} e annota l'ora in cui sono iniziati.",
+        "Aiutala a stare sdraiata o seduta, come sta meglio, e sostienila se rischia di cadere. Rassicurala e continua a parlarle.",
+        "Se perde coscienza: controlla il respiro. Se respira, posizione laterale; se no, rianimazione."
+      ],
+      "never": [
+        "Non aspettare che passi: anche se i segni spariscono dopo pochi minuti, va vista subito da un medico."
+      ]
+    },
+    "en": {
+      "title": "Stroke",
+      "keywords": "stroke paralysis drooping face arm weakness slurred speech fast brain",
+      "steps": [
+        "Face: ask them to smile. Does one corner of the mouth droop?",
+        "Arms: ask them to hold both arms out in front, palms up. Does one arm drift down?",
+        "Speech: is their speech slurred, or do they struggle to find words or understand?",
+        "Even one of these signs: call {emergency} at once and note the time they started.",
+        "Help them lie down or sit, whichever is more comfortable, and support them if they might fall. Reassure them and keep talking.",
+        "If they become unresponsive: check breathing. If breathing, recovery position; if not, CPR."
+      ],
+      "never": [
+        "Do not wait for it to pass: even if the signs go away after a few minutes, they need a doctor straight away."
+      ]
+    },
+    "fr": {
+      "title": "AVC",
+      "keywords": "avc accident vasculaire cérébral paralysie bouche de travers bras faible parole fast cerveau",
+      "steps": [
+        "Visage : demandez-lui de sourire. Un coin de la bouche tombe-t-il ?",
+        "Bras : demandez-lui de tendre les deux bras devant elle, paumes vers le haut. Un bras retombe-t-il ?",
+        "Parole : parle-t-elle bizarrement, cherche-t-elle ses mots ou ne comprend-elle pas ?",
+        "Un seul de ces signes suffit : appelez tout de suite le {emergency} et notez l'heure du début.",
+        "Aidez-la à s'allonger ou à s'asseoir, comme elle est le mieux, et soutenez-la si elle risque de tomber. Rassurez-la et continuez à lui parler.",
+        "Si elle perd connaissance : vérifiez la respiration. Si elle respire, position latérale ; sinon, réanimation."
+      ],
+      "never": [
+        "N'attendez pas que ça passe : même si les signes disparaissent en quelques minutes, il faut voir un médecin tout de suite."
+      ]
+    },
+    "de": {
+      "title": "Schlaganfall",
+      "keywords": "schlaganfall lähmung hängender mundwinkel arm schwäche sprache fast gehirn",
+      "steps": [
+        "Gesicht: bitten Sie die Person zu lächeln. Hängt ein Mundwinkel herab?",
+        "Arme: bitten Sie, beide Arme mit den Handflächen nach oben nach vorne zu strecken. Sinkt ein Arm ab?",
+        "Sprache: spricht sie verwaschen, findet keine Worte oder versteht nichts?",
+        "Schon eines dieser Zeichen: sofort {emergency} anrufen und die Uhrzeit des Beginns notieren.",
+        "Helfen Sie ihr, bequem zu liegen oder zu sitzen, und stützen Sie sie, falls sie fallen könnte. Beruhigen Sie sie und sprechen Sie weiter mit ihr.",
+        "Wird sie bewusstlos: Atmung prüfen. Atmet sie, stabile Seitenlage; sonst Wiederbelebung."
+      ],
+      "never": [
+        "Nicht abwarten: auch wenn die Zeichen nach wenigen Minuten verschwinden, sofort ärztlich abklären lassen."
+      ]
+    },
+    "es": {
+      "title": "Ictus",
+      "keywords": "ictus derrame cerebral parálisis boca torcida brazo débil habla fast cerebro",
+      "steps": [
+        "Cara: pídele que sonría. ¿Se queda caída una comisura de la boca?",
+        "Brazos: pídele que estire los dos brazos hacia delante, con las palmas hacia arriba. ¿Baja un brazo?",
+        "Habla: ¿habla de forma rara, no encuentra las palabras o no entiende?",
+        "Basta uno de estos signos: llama enseguida al {emergency} y anota la hora en que empezaron.",
+        "Ayúdala a tumbarse o sentarse, como esté mejor, y sujétala si puede caerse. Tranquilízala y sigue hablándole.",
+        "Si pierde el conocimiento: comprueba la respiración. Si respira, posición lateral; si no, reanimación."
+      ],
+      "never": [
+        "No esperes a que se le pase: aunque los signos desaparezcan en pocos minutos, tiene que verla un médico enseguida."
+      ]
+    }
+  },
+  {
+    "id": "anaphylaxis",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Reazione allergica grave",
+      "keywords": "allergia anafilassi shock anafilattico puntura ape vespa gonfiore orticaria adrenalina autoiniettore",
+      "steps": [
+        "Dopo un cibo o una puntura d'insetto: fatica a respirare, fischio nel respiro, gonfiore, pelle arrossata o con bolle, pelle fredda e sudata, svenimento, mal di pancia o vomito. È una reazione allergica grave.",
+        "Chiama il {emergency}.",
+        "Falla stare seduta o sdraiata.",
+        "Se ha l'autoiniettore di adrenalina, usalo subito sulla parte esterna della coscia.",
+        "Se dopo 5 minuti non migliora, fai una seconda dose.",
+        "Se perde coscienza e non respira normalmente: rianimazione."
+      ],
+      "never": [
+        "Non farla alzare né camminare."
+      ]
+    },
+    "en": {
+      "title": "Severe allergic reaction",
+      "keywords": "allergy anaphylaxis anaphylactic shock sting bee wasp swelling hives adrenaline epinephrine autoinjector epipen",
+      "steps": [
+        "After a food or an insect sting: trouble breathing, wheezing, swelling, flushed skin or hives, cold clammy skin, feeling faint, stomach pain or vomiting. It is a severe allergic reaction.",
+        "Call {emergency}.",
+        "Keep them sitting or lying down.",
+        "If they have an adrenaline autoinjector, use it at once on the outer thigh.",
+        "If there is no improvement after 5 minutes, give a second dose.",
+        "If they become unresponsive and are not breathing normally: CPR."
+      ],
+      "never": [
+        "Do not let them stand up or walk."
+      ]
+    },
+    "fr": {
+      "title": "Réaction allergique grave",
+      "keywords": "allergie anaphylaxie choc anaphylactique piqûre abeille guêpe gonflement urticaire adrénaline auto-injecteur",
+      "steps": [
+        "Après un aliment ou une piqûre d'insecte : difficulté à respirer, sifflement, gonflement, peau rouge ou urticaire, peau froide et moite, malaise, mal au ventre ou vomissements. C'est une réaction allergique grave.",
+        "Appelez le {emergency}.",
+        "Gardez-la assise ou allongée.",
+        "Si elle a un auto-injecteur d'adrénaline, utilisez-le tout de suite sur la face externe de la cuisse.",
+        "Si rien ne s'améliore après 5 minutes, faites une deuxième dose.",
+        "Si elle perd connaissance et ne respire pas normalement : réanimation."
+      ],
+      "never": [
+        "Ne la laissez pas se lever ni marcher."
+      ]
+    },
+    "de": {
+      "title": "Schwere allergische Reaktion",
+      "keywords": "allergie anaphylaxie anaphylaktischer schock stich biene wespe schwellung nesselsucht adrenalin autoinjektor",
+      "steps": [
+        "Nach einem Lebensmittel oder Insektenstich: Atemnot, pfeifende Atmung, Schwellung, gerötete Haut oder Quaddeln, kalte feuchte Haut, Schwäche, Bauchschmerzen oder Erbrechen. Das ist eine schwere allergische Reaktion.",
+        "Rufen Sie {emergency} an.",
+        "Die Person sitzen oder liegen lassen.",
+        "Hat sie einen Adrenalin-Autoinjektor, sofort an der Außenseite des Oberschenkels anwenden.",
+        "Keine Besserung nach 5 Minuten: eine zweite Dosis geben.",
+        "Wird sie bewusstlos und atmet nicht normal: Wiederbelebung."
+      ],
+      "never": [
+        "Nicht aufstehen oder gehen lassen."
+      ]
+    },
+    "es": {
+      "title": "Reacción alérgica grave",
+      "keywords": "alergia anafilaxia shock anafiláctico picadura abeja avispa hinchazón urticaria adrenalina autoinyector",
+      "steps": [
+        "Después de un alimento o una picadura de insecto: dificultad para respirar, pitidos al respirar, hinchazón, piel roja o con ronchas, piel fría y sudada, mareo, dolor de tripa o vómitos. Es una reacción alérgica grave.",
+        "Llama al {emergency}.",
+        "Mantenla sentada o tumbada.",
+        "Si tiene un autoinyector de adrenalina, úsalo enseguida en la parte externa del muslo.",
+        "Si a los 5 minutos no mejora, pon una segunda dosis.",
+        "Si pierde el conocimiento y no respira normalmente: reanimación."
+      ],
+      "never": [
+        "No la dejes levantarse ni caminar."
+      ]
+    }
+  },
+  {
     "id": "burns",
     "group": "body",
     "refs": [
@@ -456,6 +699,258 @@
         "No pongas mantequilla, aceite ni otros remedios caseros.",
         "No revientes las ampollas ni arranques la ropa pegada.",
         "Niños pequeños: mientras enfrías la quemadura, vigila que no cojan demasiado frío."
+      ]
+    }
+  },
+  {
+    "id": "headinjury",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Colpo alla testa",
+      "keywords": "trauma cranico commozione cerebrale testa botta caduta collo vertebre mal di testa vomito",
+      "steps": [
+        "Dopo un colpo alla testa, guarda se ha: mal di testa, vista strana, capogiri, nausea o vomito, fastidio per luce e rumori, confusione, fatica a ricordare, molto sonno o un comportamento diverso.",
+        "Se ha uno di questi segni: deve smettere ogni attività e farsi visitare da un medico.",
+        "Se è caduto dall'alto, è stato schiacciato o ha avuto un incidente: può avere una lesione al collo. Se è sveglio, chiedigli di tenere il collo fermo, nella posizione più comoda.",
+        "Se non risponde: chiama il {emergency}, controlla il respiro e tieni ferma la testa con le mani ai lati, inginocchiato dietro di lui.",
+        "Se non respira normalmente: rianimazione. Se peggiora o ha convulsioni: chiama il {emergency}."
+      ],
+      "never": [
+        "Non forzarlo a muovere il collo o a cambiare posizione.",
+        "Niente sport o sforzi finché non l'ha visto un medico."
+      ]
+    },
+    "en": {
+      "title": "Head injury",
+      "keywords": "head injury concussion blow fall neck spine headache vomiting",
+      "steps": [
+        "After a blow to the head, look for: headache, blurred vision, dizziness, nausea or vomiting, sensitivity to light and noise, confusion, trouble remembering, unusual sleepiness or changed behaviour.",
+        "If they have any of these signs: they must stop all activity and see a doctor.",
+        "If they fell from a height, were crushed or were in an accident: the neck may be injured. If they are awake, ask them to keep the neck still, in the most comfortable position.",
+        "If they are unresponsive: call {emergency}, check breathing and hold the head still with your hands on both sides, kneeling behind them.",
+        "If they are not breathing normally: CPR. If they get worse or have seizures: call {emergency}."
+      ],
+      "never": [
+        "Do not force them to move their neck or change position.",
+        "No sport or exertion until a doctor has seen them."
+      ]
+    },
+    "fr": {
+      "title": "Coup à la tête",
+      "keywords": "traumatisme crânien commotion cérébrale tête choc chute cou vertèbres mal de tête vomissement",
+      "steps": [
+        "Après un coup à la tête, recherchez : mal de tête, vision anormale, vertiges, nausées ou vomissements, gêne à la lumière et au bruit, confusion, troubles de la mémoire, grande somnolence ou comportement différent.",
+        "S'il présente un de ces signes : il doit arrêter toute activité et consulter un médecin.",
+        "S'il est tombé de haut, a été écrasé ou a eu un accident : le cou est peut-être touché. S'il est éveillé, demandez-lui de garder le cou immobile, dans la position la plus confortable.",
+        "S'il ne répond pas : appelez le {emergency}, vérifiez la respiration et maintenez la tête immobile avec vos mains de chaque côté, à genoux derrière lui.",
+        "S'il ne respire pas normalement : réanimation. S'il s'aggrave ou convulse : appelez le {emergency}."
+      ],
+      "never": [
+        "Ne le forcez pas à bouger le cou ni à changer de position.",
+        "Pas de sport ni d'effort avant d'avoir vu un médecin."
+      ]
+    },
+    "de": {
+      "title": "Kopfverletzung",
+      "keywords": "kopfverletzung gehirnerschütterung schädel sturz nacken wirbelsäule kopfschmerzen erbrechen",
+      "steps": [
+        "Nach einem Schlag auf den Kopf auf Folgendes achten: Kopfschmerzen, Sehstörungen, Schwindel, Übelkeit oder Erbrechen, Licht- und Lärmempfindlichkeit, Verwirrtheit, Gedächtnisprobleme, starke Müdigkeit oder verändertes Verhalten.",
+        "Bei einem dieser Zeichen: jede Aktivität beenden und ärztlich untersuchen lassen.",
+        "Nach einem Sturz aus der Höhe, Einklemmen oder Unfall: der Hals kann verletzt sein. Ist die Person wach, soll sie den Hals in der bequemsten Position ruhig halten.",
+        "Reagiert er nicht: {emergency} anrufen, Atmung prüfen und den Kopf mit den Händen seitlich ruhig halten, hinter ihm kniend.",
+        "Atmet er nicht normal: Wiederbelebung. Verschlechtert er sich oder krampft: {emergency} anrufen."
+      ],
+      "never": [
+        "Nicht zwingen, den Hals zu bewegen oder die Lage zu ändern.",
+        "Kein Sport und keine Anstrengung, bevor ein Arzt sie untersucht hat."
+      ]
+    },
+    "es": {
+      "title": "Golpe en la cabeza",
+      "keywords": "traumatismo craneal conmoción cerebral cabeza golpe caída cuello columna dolor de cabeza vómito",
+      "steps": [
+        "Después de un golpe en la cabeza, mira si tiene: dolor de cabeza, visión rara, mareo, náuseas o vómitos, molestia con la luz y el ruido, confusión, dificultad para recordar, mucho sueño o un comportamiento distinto.",
+        "Si tiene alguno de estos signos: debe dejar toda actividad y verle un médico.",
+        "Si se ha caído desde altura, ha quedado aplastado o ha tenido un accidente: puede tener el cuello lesionado. Si está despierto, pídele que mantenga el cuello quieto, en la posición más cómoda.",
+        "Si no responde: llama al {emergency}, comprueba la respiración y sujeta la cabeza quieta con las manos a los lados, de rodillas detrás de él.",
+        "Si no respira normalmente: reanimación. Si empeora o tiene convulsiones: llama al {emergency}."
+      ],
+      "never": [
+        "No le obligues a mover el cuello ni a cambiar de postura.",
+        "Nada de deporte ni esfuerzos hasta que le vea un médico."
+      ]
+    }
+  },
+  {
+    "id": "hypoglycaemia",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Calo di zuccheri (diabete)",
+      "keywords": "ipoglicemia diabete zucchero glicemia bassa insulina confuso sudato glucosio caramelle",
+      "steps": [
+        "Chi ha il diabete, o mangia pochissimo, e all'improvviso è confuso, strano o poco reattivo: può avere uno zucchero troppo basso.",
+        "Se è sveglio e riesce a deglutire: dagli zucchero. Compresse di glucosio (15–20 g), oppure una manciata di caramelle o 50–100 ml di succo o bibita zuccherata.",
+        "Se dopo 15 minuti non va meglio, dagliene ancora.",
+        "Quando si riprende, fagli mangiare uno spuntino leggero.",
+        "Chiama il {emergency} se non risponde o non migliora.",
+        "Bambino che non riesce o non vuole deglutire: mezzo cucchiaino di zucchero sotto la lingua."
+      ],
+      "never": [
+        "Se non risponde, non dargli niente in bocca: potrebbe soffocare."
+      ]
+    },
+    "en": {
+      "title": "Low blood sugar (diabetes)",
+      "keywords": "hypoglycaemia hypoglycemia diabetes sugar low blood sugar insulin confused sweaty glucose sweets",
+      "steps": [
+        "Someone with diabetes, or who eats very little, suddenly becomes confused, odd or less responsive: their blood sugar may be too low.",
+        "If they are awake and can swallow: give sugar. Glucose tablets (15–20 g), or a handful of sweets or 50–100 ml of fruit juice or a sugary drink.",
+        "If they are no better after 15 minutes, give more.",
+        "Once they recover, have them eat a light snack.",
+        "Call {emergency} if they become unresponsive or do not improve.",
+        "A child who cannot or will not swallow: half a teaspoon of sugar under the tongue."
+      ],
+      "never": [
+        "If they are unresponsive, do not put anything in their mouth: they could choke."
+      ]
+    },
+    "fr": {
+      "title": "Hypoglycémie (diabète)",
+      "keywords": "hypoglycémie diabète sucre glycémie basse insuline confus transpiration glucose bonbons",
+      "steps": [
+        "Une personne diabétique, ou qui mange très peu, devient soudain confuse, bizarre ou moins réactive : son sucre est peut-être trop bas.",
+        "S'il est éveillé et peut avaler : donnez du sucre. Comprimés de glucose (15 à 20 g), ou une poignée de bonbons, ou 50 à 100 ml de jus de fruit ou de soda sucré.",
+        "S'il ne va pas mieux après 15 minutes, redonnez-en.",
+        "Quand il se rétablit, faites-lui manger une collation légère.",
+        "Appelez le {emergency} s'il ne répond plus ou ne s'améliore pas.",
+        "Enfant qui ne peut ou ne veut pas avaler : une demi-cuillère à café de sucre sous la langue."
+      ],
+      "never": [
+        "S'il ne répond pas, ne lui donnez rien par la bouche : il pourrait s'étouffer."
+      ]
+    },
+    "de": {
+      "title": "Unterzuckerung (Diabetes)",
+      "keywords": "unterzuckerung hypoglykämie diabetes zucker blutzucker insulin verwirrt schwitzen traubenzucker",
+      "steps": [
+        "Jemand mit Diabetes, oder der sehr wenig isst, wird plötzlich verwirrt, merkwürdig oder reagiert kaum: der Blutzucker ist vielleicht zu niedrig.",
+        "Wenn er wach ist und schlucken kann: Zucker geben. Traubenzucker-Tabletten (15–20 g), oder eine Handvoll Süßigkeiten oder 50–100 ml Fruchtsaft oder gezuckerte Limonade.",
+        "Keine Besserung nach 15 Minuten: noch einmal geben.",
+        "Wenn er sich erholt hat, einen kleinen Imbiss essen lassen.",
+        "Rufen Sie {emergency} an, wenn er nicht mehr reagiert oder sich nicht bessert.",
+        "Ein Kind, das nicht schlucken kann oder will: einen halben Teelöffel Zucker unter die Zunge."
+      ],
+      "never": [
+        "Wenn er nicht reagiert, nichts in den Mund geben: er könnte ersticken."
+      ]
+    },
+    "es": {
+      "title": "Bajada de azúcar (diabetes)",
+      "keywords": "hipoglucemia diabetes azúcar glucosa baja insulina confuso sudor caramelos",
+      "steps": [
+        "Alguien con diabetes, o que come muy poco, de repente está confuso, raro o responde poco: puede tener el azúcar demasiado bajo.",
+        "Si está despierto y puede tragar: dale azúcar. Comprimidos de glucosa (15–20 g), o un puñado de caramelos o 50–100 ml de zumo o refresco con azúcar.",
+        "Si a los 15 minutos no está mejor, dale más.",
+        "Cuando se recupere, que coma algo ligero.",
+        "Llama al {emergency} si no responde o no mejora.",
+        "Niño que no puede o no quiere tragar: media cucharadita de azúcar debajo de la lengua."
+      ],
+      "never": [
+        "Si no responde, no le des nada por la boca: podría atragantarse."
+      ]
+    }
+  },
+  {
+    "id": "distress",
+    "group": "body",
+    "refs": [
+      "doc:who-pfa",
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council) – Suicidal thoughts"
+    ],
+    "it": {
+      "title": "Persona sotto shock",
+      "keywords": "shock emotivo panico ansia trauma psicologico agitato piange spaventato supporto psicologico calmare",
+      "steps": [
+        "Prima guarda se è sicuro avvicinarti, e se ha ferite o bisogni urgenti: quelli vengono prima.",
+        "Avvicinati con calma, presentati e chiedi di cosa ha bisogno. Cerca un posto tranquillo e stai vicino, senza invadere.",
+        "Ascolta senza fretta e lascia anche il silenzio. Non insistere perché racconti.",
+        "Parla con voce calma. Dille che sei lì per aiutarla e che è al sicuro, se è vero. Se è molto agitata: piedi ben appoggiati a terra e respiri lenti, insieme a te.",
+        "Dalle informazioni vere e semplici. Se non sai qualcosa, dillo.",
+        "Aiutala con le cose pratiche (acqua, una coperta, un posto dove stare) e a contattare i suoi cari."
+      ],
+      "never": [
+        "Non fare promesse che non puoi mantenere e non giudicare. Non dire «dovresti sentirti fortunato».",
+        "Se pensa di farsi del male: non lasciarla sola e chiama il {emergency}."
+      ]
+    },
+    "en": {
+      "title": "Person in shock or distress",
+      "keywords": "emotional shock panic anxiety trauma distressed crying frightened psychological first aid calm",
+      "steps": [
+        "First check that it is safe to approach, and whether they have injuries or urgent needs: those come first.",
+        "Approach calmly, introduce yourself and ask what they need. Find a quiet place and stay close, without crowding them.",
+        "Listen without rushing and allow for silence. Do not push them to tell their story.",
+        "Speak in a calm voice. Tell them you are there to help and that they are safe, if it is true. If they are very distressed: feet firmly on the floor and slow breaths, together with you.",
+        "Give true, simple information. If you do not know something, say so.",
+        "Help with practical things (water, a blanket, a place to stay) and with contacting their loved ones."
+      ],
+      "never": [
+        "Do not make promises you cannot keep and do not judge. Do not say \"you should feel lucky\".",
+        "If they might hurt themselves: do not leave them alone and call {emergency}."
+      ]
+    },
+    "fr": {
+      "title": "Personne sous le choc",
+      "keywords": "choc émotionnel panique anxiété traumatisme agité pleure peur premiers secours psychologiques calmer",
+      "steps": [
+        "Vérifiez d'abord que vous pouvez approcher sans danger, et si elle a des blessures ou des besoins urgents : ils passent en premier.",
+        "Approchez calmement, présentez-vous et demandez ce dont elle a besoin. Trouvez un endroit calme et restez près d'elle, sans l'envahir.",
+        "Écoutez sans vous presser et laissez aussi place au silence. N'insistez pas pour qu'elle raconte.",
+        "Parlez d'une voix calme. Dites-lui que vous êtes là pour l'aider et qu'elle est en sécurité, si c'est vrai. Si elle est très agitée : pieds bien posés au sol et respirations lentes, avec vous.",
+        "Donnez-lui des informations vraies et simples. Si vous ne savez pas, dites-le.",
+        "Aidez-la pour les choses pratiques (eau, couverture, endroit où rester) et pour contacter ses proches."
+      ],
+      "never": [
+        "Ne faites pas de promesses que vous ne pouvez pas tenir et ne jugez pas. Ne dites pas « vous avez de la chance ».",
+        "Si elle risque de se faire du mal : ne la laissez pas seule et appelez le {emergency}."
+      ]
+    },
+    "de": {
+      "title": "Mensch unter Schock",
+      "keywords": "schock panik angst trauma aufgewühlt weinen verängstigt psychische erste hilfe beruhigen",
+      "steps": [
+        "Prüfen Sie zuerst, ob Sie sich gefahrlos nähern können und ob die Person verletzt ist oder dringend etwas braucht: das kommt zuerst.",
+        "Gehen Sie ruhig auf die Person zu, stellen Sie sich vor und fragen Sie, was sie braucht. Suchen Sie einen ruhigen Ort und bleiben Sie in der Nähe, ohne zu bedrängen.",
+        "Hören Sie ohne Eile zu und lassen Sie auch Stille zu. Drängen Sie nicht zum Erzählen.",
+        "Sprechen Sie mit ruhiger Stimme. Sagen Sie, dass Sie da sind, um zu helfen, und dass die Person in Sicherheit ist, wenn das stimmt. Bei starker Aufregung: Füße fest auf den Boden und langsam atmen, gemeinsam mit Ihnen.",
+        "Geben Sie wahre, einfache Informationen. Wenn Sie etwas nicht wissen, sagen Sie es.",
+        "Helfen Sie bei praktischen Dingen (Wasser, eine Decke, ein Platz zum Bleiben) und beim Kontakt mit Angehörigen."
+      ],
+      "never": [
+        "Keine Versprechen, die Sie nicht halten können, und nicht urteilen. Nicht sagen: „Sie können froh sein.“",
+        "Wenn die Person sich etwas antun könnte: nicht allein lassen und {emergency} anrufen."
+      ]
+    },
+    "es": {
+      "title": "Persona en estado de shock",
+      "keywords": "shock emocional pánico ansiedad trauma agitado llora miedo primeros auxilios psicológicos calmar",
+      "steps": [
+        "Primero mira si es seguro acercarte, y si tiene heridas o necesidades urgentes: eso va primero.",
+        "Acércate con calma, preséntate y pregúntale qué necesita. Busca un sitio tranquilo y quédate cerca, sin agobiarla.",
+        "Escucha sin prisa y deja también el silencio. No insistas en que cuente lo que pasó.",
+        "Habla con voz tranquila. Dile que estás ahí para ayudarla y que está a salvo, si es verdad. Si está muy agitada: pies bien apoyados en el suelo y respiraciones lentas, contigo.",
+        "Dale información verdadera y sencilla. Si no sabes algo, dilo.",
+        "Ayúdala con lo práctico (agua, una manta, un sitio donde estar) y a contactar con sus seres queridos."
+      ],
+      "never": [
+        "No hagas promesas que no puedas cumplir y no juzgues. No digas «deberías sentirte afortunado».",
+        "Si puede hacerse daño: no la dejes sola y llama al {emergency}."
       ]
     }
   },
@@ -1180,6 +1675,83 @@
       "never": [
         "No esperes a los servicios de emergencia para empezar a enfriarla.",
         "Si no está lúcida, no le des de beber: podría atragantarse."
+      ]
+    }
+  },
+  {
+    "id": "snakebite",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Morso di vipera",
+      "keywords": "morso vipera serpente veleno",
+      "steps": [
+        "Chiama il {emergency}.",
+        "Tieni la persona calma e ferma, a riposo.",
+        "Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.",
+        "Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare."
+      ],
+      "never": [
+        "Niente laccio, fasciatura stretta, ghiaccio o calore.",
+        "Non incidere la ferita e non succhiare il veleno."
+      ]
+    },
+    "en": {
+      "title": "Snake bite",
+      "keywords": "snake bite viper adder venom",
+      "steps": [
+        "Call {emergency}.",
+        "Keep the person calm and at rest.",
+        "Keep the bitten part still. If it is an arm or a leg, immobilise it.",
+        "Remove rings, watches and tight clothing from that limb: it may swell."
+      ],
+      "never": [
+        "No tourniquet, tight bandage, ice or heat.",
+        "Do not cut the wound or suck out the venom."
+      ]
+    },
+    "fr": {
+      "title": "Morsure de vipère",
+      "keywords": "morsure vipère serpent venin",
+      "steps": [
+        "Appelez le {emergency}.",
+        "Gardez la personne calme et au repos.",
+        "Gardez la partie mordue immobile. Si c'est un bras ou une jambe, immobilisez-le.",
+        "Retirez bagues, montres et vêtements serrés de ce côté : il peut gonfler."
+      ],
+      "never": [
+        "Pas de garrot, de bandage serré, de glace ni de chaleur.",
+        "N'incisez pas la plaie et n'aspirez pas le venin."
+      ]
+    },
+    "de": {
+      "title": "Schlangenbiss",
+      "keywords": "schlangenbiss kreuzotter viper schlange gift",
+      "steps": [
+        "Rufen Sie {emergency} an.",
+        "Die Person beruhigen und ruhig halten.",
+        "Die gebissene Stelle ruhig halten. Ist es ein Arm oder Bein: ruhigstellen.",
+        "Ringe, Uhren und enge Kleidung an dieser Stelle entfernen: sie kann anschwellen."
+      ],
+      "never": [
+        "Kein Abbinden, kein Druckverband, kein Eis, keine Wärme.",
+        "Die Wunde nicht einschneiden und das Gift nicht aussaugen."
+      ]
+    },
+    "es": {
+      "title": "Mordedura de víbora",
+      "keywords": "mordedura víbora serpiente veneno",
+      "steps": [
+        "Llama al {emergency}.",
+        "Mantén a la persona tranquila y en reposo.",
+        "Mantén quieta la parte mordida. Si es un brazo o una pierna, inmovilízalo.",
+        "Quita anillos, relojes y ropa ajustada de esa zona: se puede hinchar."
+      ],
+      "never": [
+        "Nada de torniquete, vendaje apretado, hielo ni calor.",
+        "No cortes la herida ni chupes el veneno."
       ]
     }
   },

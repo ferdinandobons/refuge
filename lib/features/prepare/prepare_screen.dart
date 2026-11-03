@@ -10,6 +10,7 @@ import '../tools/location_screen.dart';
 import '../tools/radio_screen.dart';
 import '../tools/supplies_screen.dart';
 import 'family_plan_screen.dart';
+import 'paper_copy.dart';
 
 /// Prepararsi prima che serva: numeri e allerte del paese, liste, scorte, contenuti da scaricare.
 class PrepareScreen extends StatelessWidget {
@@ -59,6 +60,7 @@ class PrepareScreen extends StatelessWidget {
             subtitle: t.planSubtitle,
             open: (_) => const FamilyPlanScreen(),
           ),
+          const _PaperTile(),
           _Tile(
             icon: Icons.inventory_2,
             title: t.suppliesTitle,
@@ -84,14 +86,16 @@ class PrepareScreen extends StatelessWidget {
     );
   }
 
-  static String _serviceName(AppLocalizations t, ServiceKind k) => switch (k) {
+  static String _serviceName(AppLocalizations t, ServiceKind k) => serviceName(t, k);
+}
+
+String serviceName(AppLocalizations t, ServiceKind k) => switch (k) {
         ServiceKind.ambulance => t.serviceAmbulance,
         ServiceKind.fire => t.serviceFire,
         ServiceKind.police => t.servicePolice,
         ServiceKind.poison => t.servicePoison,
         ServiceKind.deafSms => t.serviceDeafSms,
       };
-}
 
 class _Section extends StatelessWidget {
   const _Section(this.text);
@@ -139,4 +143,44 @@ class _Tile extends StatelessWidget {
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: open)),
         ),
       );
+}
+
+/// Copia su carta: crea il PDF e apre il pannello per stamparlo o salvarlo.
+class _PaperTile extends StatefulWidget {
+  const _PaperTile();
+
+  @override
+  State<_PaperTile> createState() => _PaperTileState();
+}
+
+class _PaperTileState extends State<_PaperTile> {
+  bool _busy = false;
+
+  Future<void> _make(AppLocalizations t) async {
+    setState(() => _busy = true);
+    final s = AppSettings.instance;
+    try {
+      await sharePaperCopy(language: s.language, country: s.country, t: t);
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Card(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+        leading: const Icon(Icons.print, color: kAccent, size: 30),
+        title: Text(t.paperTitle, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(t.paperSubtitle),
+        trailing: _busy
+            ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 3))
+            : const Icon(Icons.chevron_right),
+        onTap: _busy ? null : () => _make(t),
+      ),
+    );
+  }
 }

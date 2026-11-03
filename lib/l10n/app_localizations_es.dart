@@ -1450,4 +1450,75 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get bagMissing => 'Falta';
+
+  @override
+  String get attributionsTitle => 'Licencias y atribuciones';
+
+  @override
+  String get attributionsSubtitle =>
+      'De dónde vienen los contenidos y con qué licencia';
+
+  @override
+  String get attributionsBody =>
+      'Las fichas están escritas con nuestras palabras a partir de las fuentes oficiales de abajo; los documentos y guías originales siguen siendo de sus autores. Cada ficha indica sus fuentes, frase por frase, en el archivo docs/verifica-schede.md del proyecto.';
+
+  @override
+  String get attributionsApp => 'Código de la app y textos de las fichas';
+
+  @override
+  String get softwareLicenses => 'Licencias de las bibliotecas de software';
+
+  @override
+  String get paperTitle => 'Copia en papel';
+
+  @override
+  String get paperSubtitle =>
+      'Números, radio, plan familiar, mochila y fichas, en un PDF para imprimir';
+
+  @override
+  String get paperIntro =>
+      'Imprímela y guárdala con las provisiones y en la mochila: sirve cuando el móvil está sin batería o roto. Actualízala cuando cambie algo.';
+
+  @override
+  String get paperNumbers => 'Números y alertas';
+
+  @override
+  String get paperBagKey => '[x] listo · [   ] falta';
+
+  @override
+  String get paperSources =>
+      'Fuentes: ERC 2025, IFRC 2025, directrices de la UE, protecciones civiles nacionales, OMS. Lista completa en la app: Más › Licencias y atribuciones. No sustituye a un curso de primeros auxilios ni a las indicaciones de las autoridades.';
+
+  @override
+  String get paperFileName => 'copia-en-papel';
+
+  @override
+  String get bagCheckReminder =>
+      'Revisa la comida, las medicinas y las pilas de la mochila: algunas cosas pueden haber caducado.';
+
+  @override
+  String get hospitalsButton => 'Hospitales';
+
+  @override
+  String get hospitalsTitle => 'Hospitales cercanos';
+
+  @override
+  String hospitalsNote(String number) {
+    return 'Del mapa sin conexión (OpenStreetMap), con la distancia en línea recta. En una emergencia llama siempre al $number: te dirán adónde ir.';
+  }
+
+  @override
+  String get hospitalsNeedMap =>
+      'Para buscar hospitales hace falta el mapa detallado de tu país: descárgalo desde Mapas.';
+
+  @override
+  String get hospitalsNone =>
+      'Ningún hospital en el mapa a menos de unos 50 km.';
+
+  @override
+  String get hospitalUnnamed => 'Hospital';
+
+  @override
+  String get hospitalsNeedGps =>
+      'Hace falta la posición GPS: espera a que el móvil la encuentre y vuelve a intentarlo.';
 }

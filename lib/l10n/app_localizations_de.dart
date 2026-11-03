@@ -1448,4 +1448,75 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get bagMissing => 'Fehlt';
+
+  @override
+  String get attributionsTitle => 'Lizenzen und Quellen';
+
+  @override
+  String get attributionsSubtitle =>
+      'Woher die Inhalte stammen und unter welcher Lizenz';
+
+  @override
+  String get attributionsBody =>
+      'Die Karten sind in eigenen Worten nach den unten genannten offiziellen Quellen geschrieben; die Originaldokumente und Ratgeber gehören ihren Urhebern. Jede Karte nennt ihre Quellen Satz für Satz in der Datei docs/verifica-schede.md des Projekts.';
+
+  @override
+  String get attributionsApp => 'App-Code und Kartentexte';
+
+  @override
+  String get softwareLicenses => 'Lizenzen der Software-Bibliotheken';
+
+  @override
+  String get paperTitle => 'Papierkopie';
+
+  @override
+  String get paperSubtitle =>
+      'Nummern, Radio, Familienplan, Notgepäck und Karten als PDF zum Ausdrucken';
+
+  @override
+  String get paperIntro =>
+      'Ausdrucken und bei den Vorräten und im Notgepäck aufbewahren: hilft, wenn das Handy leer oder kaputt ist. Aktualisieren, wenn sich etwas ändert.';
+
+  @override
+  String get paperNumbers => 'Nummern und Warnungen';
+
+  @override
+  String get paperBagKey => '[x] bereit · [   ] fehlt';
+
+  @override
+  String get paperSources =>
+      'Quellen: ERC 2025, IFRC 2025, EU-Leitlinien, nationale Katastrophenschutzbehörden, WHO. Vollständige Liste in der App: Mehr › Lizenzen und Quellen. Ersetzt keinen Erste-Hilfe-Kurs und keine Anweisungen der Behörden.';
+
+  @override
+  String get paperFileName => 'papierkopie';
+
+  @override
+  String get bagCheckReminder =>
+      'Prüfen Sie Lebensmittel, Medikamente und Batterien im Notgepäck: manches könnte abgelaufen sein.';
+
+  @override
+  String get hospitalsButton => 'Kliniken';
+
+  @override
+  String get hospitalsTitle => 'Krankenhäuser in der Nähe';
+
+  @override
+  String hospitalsNote(String number) {
+    return 'Aus der Offline-Karte (OpenStreetMap), mit Luftlinie. Im Notfall immer $number anrufen: dort sagt man Ihnen, wohin.';
+  }
+
+  @override
+  String get hospitalsNeedMap =>
+      'Für die Suche nach Krankenhäusern brauchen Sie die genaue Karte Ihres Landes: unter Karten herunterladen.';
+
+  @override
+  String get hospitalsNone =>
+      'Kein Krankenhaus auf der Karte im Umkreis von etwa 50 km.';
+
+  @override
+  String get hospitalUnnamed => 'Krankenhaus';
+
+  @override
+  String get hospitalsNeedGps =>
+      'Der GPS-Standort fehlt: warten, bis das Handy ihn findet, dann erneut versuchen.';
 }

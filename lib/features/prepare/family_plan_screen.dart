@@ -5,6 +5,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 
+/// Titolo, suggerimento e icona di ogni voce del piano.
+(String, String, IconData) planField(AppLocalizations t, String f) => switch (f) {
+      'contacts' => (t.planContacts, t.planContactsHint, Icons.contacts),
+      'meetNear' => (t.planMeetNear, t.planMeetNearHint, Icons.place),
+      'meetFar' => (t.planMeetFar, t.planMeetFarHint, Icons.near_me),
+      'shelter' => (t.planShelter, t.planShelterHint, Icons.night_shelter),
+      'children' => (t.planChildren, t.planChildrenHint, Icons.child_care),
+      'help' => (t.planHelp, t.planHelpHint, Icons.accessible),
+      'health' => (t.planHealth, t.planHealthHint, Icons.medication),
+      _ => (t.planNotes, '', Icons.notes),
+    };
+
 /// Piano di emergenza della famiglia, come raccomandano le linee guida UE sulle 72 ore
 /// (SWD(2026) 826 e 828): contatti scritti, punti d'incontro, rifugio, chi aiuta chi.
 /// Resta sul telefono; si può copiare per scriverlo su carta o condividerlo.
@@ -41,16 +53,7 @@ class _FamilyPlanScreenState extends State<FamilyPlanScreen> {
     super.dispose();
   }
 
-  (String, String, IconData) _field(AppLocalizations t, String f) => switch (f) {
-        'contacts' => (t.planContacts, t.planContactsHint, Icons.contacts),
-        'meetNear' => (t.planMeetNear, t.planMeetNearHint, Icons.place),
-        'meetFar' => (t.planMeetFar, t.planMeetFarHint, Icons.near_me),
-        'shelter' => (t.planShelter, t.planShelterHint, Icons.night_shelter),
-        'children' => (t.planChildren, t.planChildrenHint, Icons.child_care),
-        'help' => (t.planHelp, t.planHelpHint, Icons.accessible),
-        'health' => (t.planHealth, t.planHealthHint, Icons.medication),
-        _ => (t.planNotes, '', Icons.notes),
-      };
+  (String, String, IconData) _field(AppLocalizations t, String f) => planField(t, f);
 
   void _copy(AppLocalizations t) {
     final text = [

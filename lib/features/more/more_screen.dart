@@ -4,6 +4,7 @@ import '../../app/countries.dart';
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
+import 'attributions_screen.dart';
 
 /// Impostazioni e informazioni sull'app.
 class MoreScreen extends StatelessWidget {
@@ -23,6 +24,8 @@ class MoreScreen extends StatelessWidget {
           _Tile(Icons.flag, t.country, s.country.name(t), () => _pickCountry(context)),
           const SizedBox(height: 20),
           _Tile(Icons.info_outline, t.about, t.aboutBody, () => _about(context)),
+          _Tile(Icons.gavel, t.attributionsTitle, t.attributionsSubtitle,
+              () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AttributionsScreen()))),
         ],
       ),
     );

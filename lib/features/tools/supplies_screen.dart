@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../app/reminders.dart';
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
@@ -46,8 +47,9 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
         appBar: AppBar(
           title: Text(t.suppliesTitle),
           bottom: TabBar(tabs: [
-            Tab(icon: const Icon(Icons.home), text: t.suppliesHome),
-            Tab(icon: const Icon(Icons.backpack), text: t.suppliesBackpack),
+            // Le schede hanno un'altezza fissa: il testo si ingrandisce solo un po'.
+            for (final (icon, label) in [(Icons.home, t.suppliesHome), (Icons.backpack, t.suppliesBackpack)])
+              Tab(icon: Icon(icon), child: MediaQuery.withClampedTextScaling(maxScaleFactor: 1.2, child: Text(label))),
           ]),
         ),
         body: FutureBuilder<SupplyChecklist>(
@@ -231,7 +233,14 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
             leading: Icon(Icons.event_repeat, color: due ? kAccent : Colors.lightGreen),
             title: Text(t.bagCheckTitle),
             subtitle: Text(t.bagCheckBody(checked == null ? t.bagCheckNever : df.format(checked))),
-            trailing: TextButton(onPressed: inv.markBagChecked, child: Text(t.bagCheckDone)),
+            trailing: TextButton(
+              onPressed: () {
+                inv.markBagChecked();
+                // Tra 6 mesi un avviso ricorda di ricontrollarlo, anche ad app chiusa.
+                Reminders.bagCheck(DateTime.now(), t);
+              },
+              child: Text(t.bagCheckDone),
+            ),
           ),
         ),
       ],
@@ -623,8 +632,10 @@ class _Stepper extends StatelessWidget {
             IconButton.outlined(icon: const Icon(Icons.remove), onPressed: value > min ? () => onChanged(value - 1) : null),
             SizedBox(
               width: 56,
-              child: Text('$value',
-                  textAlign: TextAlign.center, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text('$value', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              ),
             ),
             IconButton.outlined(icon: const Icon(Icons.add), onPressed: value < max ? () => onChanged(value + 1) : null),
           ]),
@@ -674,8 +685,10 @@ class _ItemRow extends StatelessWidget {
             ),
             SizedBox(
               width: 40,
-              child: Text('${item.qty}',
-                  textAlign: TextAlign.center, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text('${item.qty}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
             ),
             IconButton(
               icon: const Icon(Icons.add_circle_outline, color: kAccent),

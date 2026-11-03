@@ -2575,6 +2575,126 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Manca'**
   String get bagMissing;
+
+  /// No description provided for @attributionsTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Licenze e attribuzioni'**
+  String get attributionsTitle;
+
+  /// No description provided for @attributionsSubtitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Da dove vengono i contenuti e con quale licenza'**
+  String get attributionsSubtitle;
+
+  /// No description provided for @attributionsBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Le schede sono scritte con parole nostre a partire dalle fonti ufficiali qui sotto; i documenti e le guide originali restano dei loro autori. Ogni scheda indica le sue fonti, frase per frase, nel file docs/verifica-schede.md del progetto.'**
+  String get attributionsBody;
+
+  /// No description provided for @attributionsApp.
+  ///
+  /// In it, this message translates to:
+  /// **'Codice dell\'app e testi delle schede'**
+  String get attributionsApp;
+
+  /// No description provided for @softwareLicenses.
+  ///
+  /// In it, this message translates to:
+  /// **'Licenze delle librerie software'**
+  String get softwareLicenses;
+
+  /// No description provided for @paperTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Copia su carta'**
+  String get paperTitle;
+
+  /// No description provided for @paperSubtitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Numeri, radio, piano della famiglia, zaino e schede, in un PDF da stampare'**
+  String get paperSubtitle;
+
+  /// No description provided for @paperIntro.
+  ///
+  /// In it, this message translates to:
+  /// **'Stampala e tienila con le scorte e nello zaino: serve quando il telefono è scarico o rotto. Aggiornala quando cambi qualcosa.'**
+  String get paperIntro;
+
+  /// No description provided for @paperNumbers.
+  ///
+  /// In it, this message translates to:
+  /// **'Numeri e allerte'**
+  String get paperNumbers;
+
+  /// No description provided for @paperBagKey.
+  ///
+  /// In it, this message translates to:
+  /// **'[x] pronto · [   ] manca'**
+  String get paperBagKey;
+
+  /// No description provided for @paperSources.
+  ///
+  /// In it, this message translates to:
+  /// **'Fonti: ERC 2025, IFRC 2025, linee guida UE, protezioni civili nazionali, OMS. Elenco completo nell\'app: Altro › Licenze e attribuzioni. Non sostituisce un corso di primo soccorso né le indicazioni delle autorità.'**
+  String get paperSources;
+
+  /// No description provided for @paperFileName.
+  ///
+  /// In it, this message translates to:
+  /// **'copia-su-carta'**
+  String get paperFileName;
+
+  /// No description provided for @bagCheckReminder.
+  ///
+  /// In it, this message translates to:
+  /// **'Controlla cibo, farmaci e batterie nello zaino: alcune cose potrebbero essere scadute.'**
+  String get bagCheckReminder;
+
+  /// No description provided for @hospitalsButton.
+  ///
+  /// In it, this message translates to:
+  /// **'Ospedali'**
+  String get hospitalsButton;
+
+  /// No description provided for @hospitalsTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Ospedali vicini'**
+  String get hospitalsTitle;
+
+  /// No description provided for @hospitalsNote.
+  ///
+  /// In it, this message translates to:
+  /// **'Dalla mappa offline (OpenStreetMap), con la distanza in linea d\'aria. In emergenza chiama sempre il {number}: ti dicono dove andare.'**
+  String hospitalsNote(String number);
+
+  /// No description provided for @hospitalsNeedMap.
+  ///
+  /// In it, this message translates to:
+  /// **'Per cercare gli ospedali serve la mappa dettagliata del tuo paese: scaricala da Mappe.'**
+  String get hospitalsNeedMap;
+
+  /// No description provided for @hospitalsNone.
+  ///
+  /// In it, this message translates to:
+  /// **'Nessun ospedale nella mappa entro circa 50 km.'**
+  String get hospitalsNone;
+
+  /// No description provided for @hospitalUnnamed.
+  ///
+  /// In it, this message translates to:
+  /// **'Ospedale'**
+  String get hospitalUnnamed;
+
+  /// No description provided for @hospitalsNeedGps.
+  ///
+  /// In it, this message translates to:
+  /// **'Serve la posizione GPS: aspetta che il telefono la trovi, poi riprova.'**
+  String get hospitalsNeedGps;
 }
 
 class _AppLocalizationsDelegate

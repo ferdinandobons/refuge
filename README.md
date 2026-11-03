@@ -1,14 +1,33 @@
 # Refuge
 
-App open source di sopravvivenza e conoscenza **completamente offline** per iOS, Android e desktop (Flutter).
+App open source per le emergenze e la preparazione, che funziona **senza internet**. Per iPhone e Android (Flutter),
+in 5 lingue: italiano, inglese, francese, tedesco, spagnolo.
 
-- **Guide**: testi ufficiali della Protezione Civile (CC BY 4.0) riprodotti integralmente; primo soccorso con estratti
-  fedeli di Wikipedia (CC BY-SA 4.0) e rimandi ai manuali ufficiali.
-- **Documenti**: manuali ufficiali integrali in PDF (esercito USA, Croce Rossa internazionale, *Nuclear War Survival Skills*).
-- **Biblioteca**: Wikipedia, WikiMed e altre raccolte Kiwix (file ZIM) scaricabili e leggibili senza rete.
-- **Strumenti**: torcia/SOS, Morse, bussola, coordinate GPS/UTM/MGRS, checklist, scorte, fallout.
+## Cosa contiene
 
-Specifica, fonti e licenze: [SPEC.md](SPEC.md).
+- **Emergenza**: 22 schede brevi, passo per passo (primo soccorso, allarme aereo, nucleare, alluvione, terremoto,
+  incendio, blackout, acqua…), con numero di emergenza e allerte del paese scelto e SOS luminoso.
+- **Prepararsi**: piano di emergenza della famiglia, scorte di casa e zaino, mappe offline ed enciclopedie da scaricare.
+- **Strumenti**: radio in emergenza (frequenze per paese), timer del fallout, scorte, manuali e guide, torcia e SOS,
+  posizione e mappe (punti, distanza, percorso), bussola, Morse.
+- **Manuali e guide**: documenti ufficiali europei e internazionali (inclusi o scaricabili dal sito dell'ente),
+  guide della Protezione Civile, enciclopedie offline Wikipedia e WikiMed (Kiwix).
+
+## Da dove vengono i contenuti
+
+Le schede seguono le fonti ufficiali europee: linee guida ERC 2025 e IFRC 2025 per il primo soccorso, linee guida UE
+sulla preparazione (72 ore), protezioni civili nazionali (Italia, Germania, Svezia, Paesi Bassi, Regno Unito), OMS.
+Ogni frase delle schede ha la sua fonte in [docs/verifica-schede.md](docs/verifica-schede.md); la ricerca sulle fonti
+europee e le licenze è in [docs/fonti-ue.md](docs/fonti-ue.md). Nell'app: Altro › Licenze e attribuzioni.
+
+L'app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.
+
+## Licenze
+
+- Codice: [GPL-3.0](LICENSE).
+- Testi delle schede e traduzioni scritte per l'app: CC BY-SA 4.0.
+- Contenuti di terzi con la loro licenza (Protezione Civile CC BY 4.0, Commissione europea CC BY 4.0, OpenStreetMap
+  ODbL, Wikipedia CC BY-SA 4.0…): l'elenco completo è in `assets/legal/attributions.json`.
 
 ## Sviluppo
 
@@ -18,11 +37,4 @@ flutter test
 flutter run
 ```
 
-Aggiornare i testi importati:
-
-```bash
-python3 -I tool/import_iononrischio.py
-python3 -I tool/import_wikipedia_it.py
-```
-
-Test sui file ZIM reali (non inclusi nel repository): `ZIM_TEST_DIR=/cartella/con/file.zim flutter test test/zim_test.dart`.
+Specifica del progetto: [SPEC.md](SPEC.md).

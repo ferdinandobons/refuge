@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../app/reminders.dart';
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
@@ -36,7 +37,11 @@ class _FalloutScreenState extends State<FalloutScreen> {
     super.dispose();
   }
 
-  void _setStart(DateTime? start) => _timer.set(start);
+  void _setStart(DateTime? start) {
+    _timer.set(start);
+    // Un avviso a ogni cambio di fase, anche ad app chiusa.
+    Reminders.fallout(start, AppLocalizations.of(context));
+  }
 
   Future<void> _pickTime() async {
     final now = DateTime.now();
