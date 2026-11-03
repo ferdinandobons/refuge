@@ -1,0 +1,54 @@
+[
+  {
+    "file": "us-army-atp-4-02-11-first-aid-2026.pdf",
+    "title": "Casualty Response, Tactical Combat Casualty Care, and First Aid (ATP 4-02.11)",
+    "author": "Headquarters, Department of the Army (USA)",
+    "year": 2026,
+    "language": "en",
+    "pages": 254,
+    "category": "Primo soccorso",
+    "description": "Manuale ufficiale di primo soccorso dell'esercito USA: emorragie, laccio emostatico, vie aeree, ustioni, fratture, ferite da esplosione. Sostituisce TC 4-02.1 (2016).",
+    "license": "Pubblico dominio (opera del governo USA). Distribution Restriction: Approved for public release, distribution is unlimited.",
+    "source": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN46159-ATP_4-02.11-000-WEB-1.pdf",
+    "sha256": "a4a0650f5bb14c1c7163b9b1e9f08bcc012fb3fe49ea4432f0ccaffb9af86542"
+  },
+  {
+    "file": "us-army-atp-3-50-21-survival-2018.pdf",
+    "title": "Survival (ATP 3-50.21)",
+    "author": "Headquarters, Department of the Army (USA)",
+    "year": 2018,
+    "language": "en",
+    "pages": 228,
+    "category": "Sopravvivenza",
+    "description": "Manuale ufficiale di sopravvivenza dell'esercito USA: acqua, cibo, riparo, fuoco, orientamento e spostamenti, primo soccorso sul campo, climi estremi.",
+    "license": "Pubblico dominio (opera del governo USA). Distribution Restriction: Approved for public release; distribution is unlimited.",
+    "source": "https://armypubs.army.mil (copia da https://irp.fas.org/doddir/army/atp3-50-21.pdf)",
+    "sha256": "817746b13262e9e26e8ac7d25bf879790df369c2aa0a2600f69158ec4090461c"
+  },
+  {
+    "file": "ifrc-first-aid-guidelines-2020.pdf",
+    "title": "International First Aid, Resuscitation, and Education Guidelines 2020",
+    "author": "International Federation of Red Cross and Red Crescent Societies (IFRC) – Global First Aid Reference Centre",
+    "year": 2020,
+    "language": "en",
+    "pages": 476,
+    "category": "Primo soccorso",
+    "description": "Linee guida internazionali della Croce Rossa sul primo soccorso e la rianimazione, basate sulle evidenze scientifiche. Destinate a formatori e organizzazioni.",
+    "license": "© International Federation of Red Cross and Red Crescent Societies, Geneva, 2020. Copies of all or part of this study may be made for non-commercial use, providing the source is acknowledged.",
+    "source": "https://www.ifrc.org/document/international-first-aid-resuscitation-and-education-guidelines",
+    "sha256": "e14ab9dbc492a5b6f61ac11cfcddbb5e327cb7690ae9006ac5f9b4c308af3ec7"
+  },
+  {
+    "file": "kearny-nuclear-war-survival-skills-1987.pdf",
+    "title": "Nuclear War Survival Skills (edizione 1987)",
+    "author": "Cresson H. Kearny – Oak Ridge National Laboratory (edizione originale 1979)",
+    "year": 1987,
+    "language": "en",
+    "pages": 267,
+    "category": "Rischio nucleare",
+    "description": "Manuale pratico su rifugi antifallout, ventilazione, acqua, cibo e misurazione delle radiazioni, nato da ricerche dell'Oak Ridge National Laboratory.",
+    "license": "Parti del 1979: non coperte da copyright. Aggiunte: Copyright (c) 1986 by Cresson H. Kearny. The copyrighted material may be reproduced without obtaining permission from anyone, provided all copyrighted material is reproduced full-scale and the copyright notice is printed. Riprodotto integralmente.",
+    "source": "Oregon Institute of Science and Medicine (oism.org/nwss); copia da archive.org/details/Nuclear_War_Survival_Skills_Cresson_Kearny",
+    "sha256": "efa4603c9c2a0d9c8c70c2dc4b7cd0822165ea868564d2f2516dcb9ba42e16ed"
+  }
+]
