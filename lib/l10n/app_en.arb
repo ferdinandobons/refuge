@@ -38,6 +38,9 @@
   "searchTip": "Type what is happening or what you need. Partial words and typos work too.",
   "searchEmpty": "No results.",
   "whatsHappening": "What's happening?",
+  "groupBody": "First aid",
+  "groupDanger": "Dangers",
+  "groupSurvive": "Survival",
   "search": "Search",
   "readAloud": "Read aloud",
   "allSteps": "All steps",
@@ -733,5 +736,16 @@
   "hospitalsNeedMap": "To search for hospitals you need the detailed map of your country: download it from Maps.",
   "hospitalsNone": "No hospital on the map within about 50 km.",
   "hospitalUnnamed": "Hospital",
-  "hospitalsNeedGps": "A GPS position is needed: wait for the phone to find it, then try again."
+  "hospitalsNeedGps": "A GPS position is needed: wait for the phone to find it, then try again.",
+  "readyTitle": "How prepared you are",
+  "readyTodo": "To do",
+  "readyPlanDone": "Contacts, meeting points and shelter written down",
+  "readyMissing": "Missing: {list}",
+  "readyWaterFood": "Water and food",
+  "readyDays": "Days: water {water} · food {food} · goal {days}",
+  "readyWaterFoodEmpty": "How much you need for {days, plural, =1{1 day} other{{days} days}} and how much you have",
+  "readyHome": "Things to have at home",
+  "readyOf": "{done} of {total}",
+  "readyToDownload": "To download: {name}",
+  "paperMade": "Created on {date}"
 }

@@ -38,6 +38,9 @@
   "searchTip": "Escribe qué pasa o qué necesitas. Funciona también con palabras incompletas o con errores.",
   "searchEmpty": "Sin resultados.",
   "whatsHappening": "¿Qué pasa?",
+  "groupBody": "Primeros auxilios",
+  "groupDanger": "Peligros",
+  "groupSurvive": "Supervivencia",
   "search": "Buscar",
   "readAloud": "Leer en voz alta",
   "allSteps": "Todos los pasos",
@@ -733,5 +736,16 @@
   "hospitalsNeedMap": "Para buscar hospitales hace falta el mapa detallado de tu país: descárgalo desde Mapas.",
   "hospitalsNone": "Ningún hospital en el mapa a menos de unos 50 km.",
   "hospitalUnnamed": "Hospital",
-  "hospitalsNeedGps": "Hace falta la posición GPS: espera a que el móvil la encuentre y vuelve a intentarlo."
+  "hospitalsNeedGps": "Hace falta la posición GPS: espera a que el móvil la encuentre y vuelve a intentarlo.",
+  "readyTitle": "Tu preparación",
+  "readyTodo": "Pendiente",
+  "readyPlanDone": "Contactos, puntos de encuentro y refugio anotados",
+  "readyMissing": "Faltan: {list}",
+  "readyWaterFood": "Agua y comida",
+  "readyDays": "Días: agua {water} · comida {food} · objetivo {days}",
+  "readyWaterFoodEmpty": "Cuánto necesitas para {days, plural, =1{1 día} other{{days} días}} y cuánto tienes",
+  "readyHome": "Cosas para tener en casa",
+  "readyOf": "{done} de {total}",
+  "readyToDownload": "Por descargar: {name}",
+  "paperMade": "Creada el {date}"
 }

@@ -92,6 +92,15 @@ class AppLocalizationsIt extends AppLocalizations {
   String get whatsHappening => 'Cosa succede?';
 
   @override
+  String get groupBody => 'Primo soccorso';
+
+  @override
+  String get groupDanger => 'Pericoli';
+
+  @override
+  String get groupSurvive => 'Sopravvivenza';
+
+  @override
   String get search => 'Cerca';
 
   @override
@@ -1518,4 +1527,55 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get hospitalsNeedGps =>
       'Serve la posizione GPS: aspetta che il telefono la trovi, poi riprova.';
+
+  @override
+  String get readyTitle => 'Quanto sei pronto';
+
+  @override
+  String get readyTodo => 'Da fare';
+
+  @override
+  String get readyPlanDone => 'Contatti, punti d\'incontro e rifugio scritti';
+
+  @override
+  String readyMissing(String list) {
+    return 'Mancano: $list';
+  }
+
+  @override
+  String get readyWaterFood => 'Acqua e cibo';
+
+  @override
+  String readyDays(String water, String food, int days) {
+    return 'Giorni: acqua $water · cibo $food · obiettivo $days';
+  }
+
+  @override
+  String readyWaterFoodEmpty(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days giorni',
+      one: '1 giorno',
+    );
+    return 'Quanto ne serve per $_temp0 e quanto ne hai';
+  }
+
+  @override
+  String get readyHome => 'Cose da avere in casa';
+
+  @override
+  String readyOf(int done, int total) {
+    return '$done di $total';
+  }
+
+  @override
+  String readyToDownload(String name) {
+    return 'Da scaricare: $name';
+  }
+
+  @override
+  String paperMade(String date) {
+    return 'Creata il $date';
+  }
 }

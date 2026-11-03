@@ -248,6 +248,24 @@ abstract class AppLocalizations {
   /// **'Cosa succede?'**
   String get whatsHappening;
 
+  /// No description provided for @groupBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Primo soccorso'**
+  String get groupBody;
+
+  /// No description provided for @groupDanger.
+  ///
+  /// In it, this message translates to:
+  /// **'Pericoli'**
+  String get groupDanger;
+
+  /// No description provided for @groupSurvive.
+  ///
+  /// In it, this message translates to:
+  /// **'Sopravvivenza'**
+  String get groupSurvive;
+
   /// No description provided for @search.
   ///
   /// In it, this message translates to:
@@ -2695,6 +2713,72 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Serve la posizione GPS: aspetta che il telefono la trovi, poi riprova.'**
   String get hospitalsNeedGps;
+
+  /// No description provided for @readyTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Quanto sei pronto'**
+  String get readyTitle;
+
+  /// No description provided for @readyTodo.
+  ///
+  /// In it, this message translates to:
+  /// **'Da fare'**
+  String get readyTodo;
+
+  /// No description provided for @readyPlanDone.
+  ///
+  /// In it, this message translates to:
+  /// **'Contatti, punti d\'incontro e rifugio scritti'**
+  String get readyPlanDone;
+
+  /// No description provided for @readyMissing.
+  ///
+  /// In it, this message translates to:
+  /// **'Mancano: {list}'**
+  String readyMissing(String list);
+
+  /// No description provided for @readyWaterFood.
+  ///
+  /// In it, this message translates to:
+  /// **'Acqua e cibo'**
+  String get readyWaterFood;
+
+  /// No description provided for @readyDays.
+  ///
+  /// In it, this message translates to:
+  /// **'Giorni: acqua {water} · cibo {food} · obiettivo {days}'**
+  String readyDays(String water, String food, int days);
+
+  /// No description provided for @readyWaterFoodEmpty.
+  ///
+  /// In it, this message translates to:
+  /// **'Quanto ne serve per {days, plural, =1{1 giorno} other{{days} giorni}} e quanto ne hai'**
+  String readyWaterFoodEmpty(int days);
+
+  /// No description provided for @readyHome.
+  ///
+  /// In it, this message translates to:
+  /// **'Cose da avere in casa'**
+  String get readyHome;
+
+  /// No description provided for @readyOf.
+  ///
+  /// In it, this message translates to:
+  /// **'{done} di {total}'**
+  String readyOf(int done, int total);
+
+  /// No description provided for @readyToDownload.
+  ///
+  /// In it, this message translates to:
+  /// **'Da scaricare: {name}'**
+  String readyToDownload(String name);
+
+  /// No description provided for @paperMade.
+  ///
+  /// In it, this message translates to:
+  /// **'Creata il {date}'**
+  String paperMade(String date);
 }
 
 class _AppLocalizationsDelegate

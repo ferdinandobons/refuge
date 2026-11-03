@@ -50,6 +50,8 @@ listen to; your family plan; and how much water and food you have.
 
 ### Prepare
 
+- **How prepared you are**: what is done and what is missing, item by item: family plan, water and food
+  for the days you choose, things to have at home, backpack, the detailed map of your country, the paper copy.
 - Your country's **emergency numbers**, **phone alerts** (IT-alert, NL-Alert, Cell Broadcast…) and **sirens**.
 - **Family emergency plan**: contacts, meeting points, nearest shelter, who collects the children, who needs help,
   medicines.
@@ -86,8 +88,8 @@ listen to; your family plan; and how much water and food you have.
 |:-:|:-:|:-:|
 | <img src="docs/screenshots/emergency.png" width="250" alt="Emergency screen with Call 112, SOS light and the cards"> | <img src="docs/screenshots/card.png" width="250" alt="Heavy bleeding card, step 2 of 7"> | <img src="docs/screenshots/supplies.png" width="250" alt="Supplies: water, food and cooking gas compared with what is needed"> |
 | Emergency | Step-by-step card | Supplies |
-| <img src="docs/screenshots/map.png" width="250" alt="Location and offline map"> | <img src="docs/screenshots/radio.png" width="250" alt="Emergency radio for Italy"> | <img src="docs/screenshots/tools.png" width="250" alt="Tools"> |
-| Location and offline map | Emergency radio | Tools |
+| <img src="docs/screenshots/prepare.png" width="250" alt="Prepare: how prepared you are, item by item"> | <img src="docs/screenshots/map.png" width="250" alt="Location and offline map"> | <img src="docs/screenshots/radio.png" width="250" alt="Emergency radio for Italy"> |
+| How prepared you are | Location and offline map | Emergency radio |
 
 ## Install
 

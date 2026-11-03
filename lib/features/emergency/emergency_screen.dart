@@ -70,24 +70,28 @@ class EmergencyScreen extends StatelessWidget {
             if (snap.hasData)
               SliverPadding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+                // Un titolo per gruppo: il colore da solo non basta (chi distingue male rosso e giallo).
                 // Le schede crescono con il testo: con i caratteri grandi (accessibilità) una per riga.
                 sliver: SliverList.list(children: [
-                  for (final row in _rows(snap.data!, _columns(context)))
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: IntrinsicHeight(
-                        child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                          for (final (i, c) in row.indexed) ...[
-                            if (i > 0) const SizedBox(width: 10),
-                            Expanded(child: _CardTile(c)),
-                          ],
-                          if (row.length == 1 && _columns(context) == 2) ...[
-                            const SizedBox(width: 10),
-                            const Expanded(child: SizedBox()),
-                          ],
-                        ]),
+                  for (final (group, cards) in _groups(snap.data!)) ...[
+                    _GroupHeader(groupTitle(t, group), groupColor(group)),
+                    for (final row in _rows(cards, _columns(context)))
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: IntrinsicHeight(
+                          child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                            for (final (i, c) in row.indexed) ...[
+                              if (i > 0) const SizedBox(width: 10),
+                              Expanded(child: _CardTile(c)),
+                            ],
+                            if (row.length == 1 && _columns(context) == 2) ...[
+                              const SizedBox(width: 10),
+                              const Expanded(child: SizedBox()),
+                            ],
+                          ]),
+                        ),
                       ),
-                    ),
+                  ],
                 ]),
               ),
           ]),
@@ -102,6 +106,42 @@ int _columns(BuildContext context) => MediaQuery.textScalerOf(context).scale(1) 
 List<List<EmergencyCard>> _rows(List<EmergencyCard> cards, int columns) => [
       for (var i = 0; i < cards.length; i += columns) cards.sublist(i, (i + columns).clamp(0, cards.length)),
     ];
+
+/// Le schede divise per gruppo, nell'ordine del file (prima le rosse, poi le gialle, poi le blu).
+List<(String, List<EmergencyCard>)> _groups(List<EmergencyCard> cards) {
+  final groups = <String, List<EmergencyCard>>{};
+  for (final c in cards) {
+    (groups[c.group] ??= []).add(c);
+  }
+  return [for (final e in groups.entries) (e.key, e.value)];
+}
+
+class _GroupHeader extends StatelessWidget {
+  const _GroupHeader(this.title, this.color);
+
+  final String title;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+        header: true,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 6, bottom: 10),
+          child: Row(children: [
+            Container(
+              width: 4,
+              height: 18,
+              decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(2)),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(title.toUpperCase(),
+                  style: TextStyle(color: color, fontSize: 15, fontWeight: FontWeight.bold, letterSpacing: 1.1)),
+            ),
+          ]),
+        ),
+      );
+}
 
 class _BigButton extends StatelessWidget {
   const _BigButton({required this.icon, required this.label, required this.color, required this.onTap});

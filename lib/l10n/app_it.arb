@@ -38,6 +38,9 @@
   "searchTip": "Scrivi cosa succede o cosa ti serve. Funziona anche con parole incomplete o con errori.",
   "searchEmpty": "Nessun risultato.",
   "whatsHappening": "Cosa succede?",
+  "groupBody": "Primo soccorso",
+  "groupDanger": "Pericoli",
+  "groupSurvive": "Sopravvivenza",
   "search": "Cerca",
   "readAloud": "Leggi ad alta voce",
   "allSteps": "Tutti i passi",
@@ -812,6 +815,68 @@
   "@hospitalsNote": {
     "placeholders": {
       "number": {
+        "type": "String"
+      }
+    }
+  },
+  "readyTitle": "Quanto sei pronto",
+  "readyTodo": "Da fare",
+  "readyPlanDone": "Contatti, punti d'incontro e rifugio scritti",
+  "readyMissing": "Mancano: {list}",
+  "@readyMissing": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "readyWaterFood": "Acqua e cibo",
+  "readyDays": "Giorni: acqua {water} · cibo {food} · obiettivo {days}",
+  "@readyDays": {
+    "placeholders": {
+      "water": {
+        "type": "String"
+      },
+      "food": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "readyWaterFoodEmpty": "Quanto ne serve per {days, plural, =1{1 giorno} other{{days} giorni}} e quanto ne hai",
+  "@readyWaterFoodEmpty": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "readyHome": "Cose da avere in casa",
+  "readyOf": "{done} di {total}",
+  "@readyOf": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "readyToDownload": "Da scaricare: {name}",
+  "@readyToDownload": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "paperMade": "Creata il {date}",
+  "@paperMade": {
+    "placeholders": {
+      "date": {
         "type": "String"
       }
     }

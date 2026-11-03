@@ -61,12 +61,21 @@ class EmergencyCard {
         _ => Icons.help,
       };
 
-  Color get color => switch (group) {
-        'body' => kDanger,
-        'danger' => kAccent,
-        _ => Colors.lightBlueAccent,
-      };
+  Color get color => groupColor(group);
 }
+
+/// Rosso per il primo soccorso, giallo per i pericoli, blu per la sopravvivenza.
+Color groupColor(String group) => switch (group) {
+      'body' => kDanger,
+      'danger' => kAccent,
+      _ => Colors.lightBlueAccent,
+    };
+
+String groupTitle(AppLocalizations t, String group) => switch (group) {
+      'body' => t.groupBody,
+      'danger' => t.groupDanger,
+      _ => t.groupSurvive,
+    };
 
 List<dynamic>? _raw;
 

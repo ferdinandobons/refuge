@@ -126,13 +126,26 @@ class _CardScreenState extends State<CardScreen> {
             ]),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-            child: TextButton.icon(
-              style: TextButton.styleFrom(foregroundColor: kDanger, minimumSize: const Size.fromHeight(48)),
-              icon: const Icon(Icons.call),
-              label: Text(t.callNumber(country.emergency), style: const TextStyle(fontSize: 17)),
-              onPressed: () => callNumber(country.emergency),
-            ),
+            padding: EdgeInsets.fromLTRB(16, card.group == 'body' ? 2 : 0, 16, 8),
+            // Nel primo soccorso chiamare è spesso la cosa più urgente: lì è un pulsante vero.
+            child: card.group == 'body'
+                ? OutlinedButton.icon(
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: kDanger,
+                      side: const BorderSide(color: kDanger, width: 2),
+                      minimumSize: const Size.fromHeight(56),
+                    ),
+                    icon: const Icon(Icons.call, size: 24),
+                    label: Text(t.callNumber(country.emergency),
+                        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
+                    onPressed: () => callNumber(country.emergency),
+                  )
+                : TextButton.icon(
+                    style: TextButton.styleFrom(foregroundColor: kDanger, minimumSize: const Size.fromHeight(48)),
+                    icon: const Icon(Icons.call),
+                    label: Text(t.callNumber(country.emergency), style: const TextStyle(fontSize: 17)),
+                    onPressed: () => callNumber(country.emergency),
+                  ),
           ),
         ]),
       ),

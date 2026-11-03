@@ -50,6 +50,8 @@ offline; quale radio ascoltare; il piano della famiglia; quanta acqua e quanto c
 
 ### Prepararsi
 
+- **Quanto sei pronto**: cosa è fatto e cosa manca, voce per voce: piano della famiglia, acqua e cibo per i
+  giorni che scegli, cose da avere in casa, zaino, mappa dettagliata del tuo paese, copia su carta.
 - I **numeri di emergenza** del tuo paese, le **allerte sul telefono** (IT-alert, NL-Alert, Cell Broadcast…) e le
   **sirene**.
 - **Piano di emergenza della famiglia**: contatti, punti d'incontro, rifugio più vicino, chi prende i bambini, chi ha
@@ -87,8 +89,8 @@ offline; quale radio ascoltare; il piano della famiglia; quanta acqua e quanto c
 |:-:|:-:|:-:|
 | <img src="docs/screenshots/emergency.png" width="250" alt="Schermata Emergenza con Chiama 112, SOS luce e le schede"> | <img src="docs/screenshots/card.png" width="250" alt="Scheda sangue che esce forte, passo 2 di 7"> | <img src="docs/screenshots/supplies.png" width="250" alt="Scorte: acqua, cibo e gas rispetto a quanto serve"> |
 | Emergenza | Scheda passo per passo | Scorte |
-| <img src="docs/screenshots/map.png" width="250" alt="Posizione e mappa offline"> | <img src="docs/screenshots/radio.png" width="250" alt="Radio in emergenza per l'Italia"> | <img src="docs/screenshots/tools.png" width="250" alt="Strumenti"> |
-| Posizione e mappa offline | Radio in emergenza | Strumenti |
+| <img src="docs/screenshots/prepare.png" width="250" alt="Prepararsi: quanto sei pronto, voce per voce"> | <img src="docs/screenshots/map.png" width="250" alt="Posizione e mappa offline"> | <img src="docs/screenshots/radio.png" width="250" alt="Radio in emergenza per l'Italia"> |
+| Quanto sei pronto | Posizione e mappa offline | Radio in emergenza |
 
 Le schermate sono in inglese; l'app segue la lingua scelta.
 

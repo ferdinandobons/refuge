@@ -6,13 +6,11 @@ import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../emergency/emergency_screen.dart';
 import '../library/library_screen.dart';
-import '../tools/location_screen.dart';
 import '../tools/radio_screen.dart';
-import '../tools/supplies_screen.dart';
-import 'family_plan_screen.dart';
-import 'paper_copy.dart';
+import 'readiness_card.dart';
 
-/// Prepararsi prima che serva: numeri e allerte del paese, liste, scorte, contenuti da scaricare.
+/// Prepararsi prima che serva: quanto sei pronto (piano, scorte, zaino, mappa, copia su carta),
+/// numeri e allerte del paese, contenuti da scaricare.
 class PrepareScreen extends StatelessWidget {
   const PrepareScreen({super.key});
 
@@ -27,6 +25,9 @@ class PrepareScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          _Section(t.readyTitle),
+          const ReadinessCard(),
+          const SizedBox(height: 20),
           _Section(t.yourCountry(country.name(t))),
           Card(
             child: Column(children: [
@@ -53,28 +54,7 @@ class PrepareScreen extends StatelessWidget {
             ]),
           ),
           const SizedBox(height: 20),
-          _Section(t.checklists),
-          _Tile(
-            icon: Icons.family_restroom,
-            title: t.planTitle,
-            subtitle: t.planSubtitle,
-            open: (_) => const FamilyPlanScreen(),
-          ),
-          const _PaperTile(),
-          _Tile(
-            icon: Icons.inventory_2,
-            title: t.suppliesTitle,
-            subtitle: t.suppliesSubtitle,
-            open: (_) => const SuppliesScreen(),
-          ),
-          const SizedBox(height: 20),
           _Section(t.offlineContent),
-          _Tile(
-            icon: Icons.map,
-            title: t.mapsTitle,
-            subtitle: t.onbMapBody,
-            open: (_) => const LocationScreen(),
-          ),
           _Tile(
             icon: Icons.download,
             title: t.downloadEncyclopedias,
@@ -143,44 +123,4 @@ class _Tile extends StatelessWidget {
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: open)),
         ),
       );
-}
-
-/// Copia su carta: crea il PDF e apre il pannello per stamparlo o salvarlo.
-class _PaperTile extends StatefulWidget {
-  const _PaperTile();
-
-  @override
-  State<_PaperTile> createState() => _PaperTileState();
-}
-
-class _PaperTileState extends State<_PaperTile> {
-  bool _busy = false;
-
-  Future<void> _make(AppLocalizations t) async {
-    setState(() => _busy = true);
-    final s = AppSettings.instance;
-    try {
-      await sharePaperCopy(language: s.language, country: s.country, t: t);
-    } finally {
-      if (mounted) setState(() => _busy = false);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppLocalizations.of(context);
-    return Card(
-      margin: const EdgeInsets.only(bottom: 10),
-      child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-        leading: const Icon(Icons.print, color: kAccent, size: 30),
-        title: Text(t.paperTitle, style: const TextStyle(fontWeight: FontWeight.w600)),
-        subtitle: Text(t.paperSubtitle),
-        trailing: _busy
-            ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 3))
-            : const Icon(Icons.chevron_right),
-        onTap: _busy ? null : () => _make(t),
-      ),
-    );
-  }
 }
