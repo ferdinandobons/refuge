@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'guide.dart';
 import 'guide_repository.dart';
 import 'guide_screen.dart';
 
+/// Testi originali (Protezione Civile, estratti di Wikipedia), nella loro lingua: approfondimento opzionale.
 class GuidesScreen extends StatefulWidget {
   const GuidesScreen({super.key});
 
@@ -16,39 +18,46 @@ class _GuidesScreenState extends State<GuidesScreen> {
   String _query = '';
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Guide')),
-        body: FutureBuilder<List<Guide>>(
-          future: GuideRepository.load(),
-          builder: (context, snap) {
-            if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-            final q = _query.trim().toLowerCase();
-            final guides = q.isEmpty ? snap.data! : snap.data!.where((g) => g.searchText.contains(q)).toList();
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.search),
-                      hintText: 'Cerca (es. emorragia, acqua, iodio)',
-                      border: OutlineInputBorder(),
-                    ),
-                    onChanged: (v) => setState(() => _query = v),
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Scaffold(
+      appBar: AppBar(title: Text(t.originalTexts)),
+      body: FutureBuilder<List<Guide>>(
+        future: GuideRepository.load(),
+        builder: (context, snap) {
+          if (!snap.hasData) return const Center(child: CircularProgressIndicator());
+          final q = _query.trim().toLowerCase();
+          final guides = q.isEmpty ? snap.data! : snap.data!.where((g) => g.searchText.contains(q)).toList();
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                child: Text(t.originalTextsNote, style: const TextStyle(color: Colors.white54)),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    hintText: t.search,
+                    border: const OutlineInputBorder(),
                   ),
+                  onChanged: (v) => setState(() => _query = v),
                 ),
-                Expanded(
-                  child: guides.isEmpty
-                      ? const Center(child: Text('Nessuna guida trovata'))
-                      : ListView(children: _buildList(context, guides)),
-                ),
-              ],
-            );
-          },
-        ),
-      );
+              ),
+              Expanded(
+                child: guides.isEmpty
+                    ? Center(child: Text(t.searchEmpty))
+                    : ListView(children: _buildList(guides)),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
 
-  List<Widget> _buildList(BuildContext context, List<Guide> guides) {
+  List<Widget> _buildList(List<Guide> guides) {
     final items = <Widget>[];
     String? category;
     for (final g in guides) {
@@ -64,51 +73,13 @@ class _GuidesScreenState extends State<GuidesScreen> {
           ]),
         ));
       }
-      items.add(GuideTile(guide: g));
+      items.add(ListTile(
+        title: Text(g.title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(g.summary, maxLines: 2, overflow: TextOverflow.ellipsis),
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => GuideScreen(guide: g))),
+      ));
     }
     items.add(const SizedBox(height: 24));
     return items;
   }
-}
-
-class GuideTile extends StatelessWidget {
-  const GuideTile({super.key, required this.guide});
-
-  final Guide guide;
-
-  @override
-  Widget build(BuildContext context) => ListTile(
-        leading: UrgencyDot(guide.urgency),
-        title: Text.rich(TextSpan(children: [
-          TextSpan(text: guide.title, style: const TextStyle(fontWeight: FontWeight.w600)),
-          if (guide.status != GuideStatus.bozza)
-            const WidgetSpan(
-              alignment: PlaceholderAlignment.middle,
-              child: Padding(
-                padding: EdgeInsets.only(left: 6),
-                child: Icon(Icons.verified, size: 16, color: Colors.lightGreen),
-              ),
-            ),
-          if (guide.status == GuideStatus.bozza)
-            const TextSpan(text: '  BOZZA', style: TextStyle(fontSize: 11, color: Colors.lightBlueAccent)),
-        ])),
-        subtitle: Text(guide.summary, maxLines: 2, overflow: TextOverflow.ellipsis),
-        trailing: Text('${guide.minutes} min', style: const TextStyle(color: Colors.white54)),
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => GuideScreen(guide: guide))),
-      );
-}
-
-class UrgencyDot extends StatelessWidget {
-  const UrgencyDot(this.urgency, {super.key});
-
-  final Urgency urgency;
-
-  static Color colorOf(Urgency u) => switch (u) {
-        Urgency.alta => kDanger,
-        Urgency.media => kAccent,
-        Urgency.bassa => Colors.lightGreen,
-      };
-
-  @override
-  Widget build(BuildContext context) => Icon(Icons.circle, size: 14, color: colorOf(urgency));
 }

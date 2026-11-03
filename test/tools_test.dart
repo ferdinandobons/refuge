@@ -4,7 +4,9 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rifugio/features/guides/guide.dart';
 import 'package:rifugio/features/tools/coords.dart';
+import 'package:rifugio/features/prepare/inventory.dart';
 import 'package:rifugio/features/tools/fallout.dart';
+import 'package:rifugio/features/tools/fallout_phases.dart';
 import 'package:rifugio/features/tools/morse.dart';
 
 void main() {
@@ -27,7 +29,7 @@ void main() {
 
     test('DMS', () {
       expect(toDms(41.5, isLat: true), "41° 30' 00.0\" N");
-      expect(toDms(-12.25, isLat: false), "12° 15' 00.0\" O");
+      expect(toDms(-12.25, isLat: false, west: 'O'), "12° 15' 00.0\" O");
     });
   });
 
@@ -59,7 +61,7 @@ void main() {
 
   test('tutte le guide e checklist si leggono correttamente', () {
     for (final dir in ['assets/guides', 'assets/checklists']) {
-      for (final f in Directory(dir).listSync().whereType<File>().where((f) => f.path.endsWith('.md'))) {
+      for (final f in Directory(dir).listSync(recursive: true).whereType<File>().where((f) => f.path.endsWith('.md'))) {
         final g = Guide.parse('x', f.readAsStringSync());
         expect(g.title, isNot('x'), reason: f.path);
         expect(g.blocks, isNotEmpty, reason: f.path);
@@ -114,5 +116,87 @@ void main() {
       }
     }
     expect(links, greaterThan(20));
+  });
+
+  test('schede: tutte le lingue, stessi passi, solo segnaposto noti', () {
+    final cards = (jsonDecode(File('assets/cards/cards.json').readAsStringSync()) as List).cast<Map<String, dynamic>>();
+    expect(cards.length, greaterThanOrEqualTo(14));
+    for (final c in cards) {
+      final it = c['it'] as Map<String, dynamic>;
+      for (final lang in ['it', 'en', 'fr', 'de', 'es']) {
+        final l = c[lang] as Map<String, dynamic>?;
+        expect(l, isNotNull, reason: '${c['id']} $lang');
+        expect((l!['steps'] as List).length, (it['steps'] as List).length, reason: '${c['id']} $lang');
+        expect((l['never'] as List).length, (it['never'] as List).length, reason: '${c['id']} $lang');
+        expect(l['title'], isNotEmpty);
+        final text = [...l['steps'] as List, ...l['never'] as List].join(' ');
+        for (final m in RegExp(r'\{(\w+)\}').allMatches(text)) {
+          expect(['emergency', 'alert'], contains(m.group(1)), reason: '${c['id']} $lang');
+        }
+      }
+    }
+  });
+
+  test('liste: stessa struttura in tutte le lingue', () {
+    for (final name in ['zaino-72-ore.md', 'scorte-casa.md']) {
+      final it = Guide.parse('x', File('assets/checklists/it/$name').readAsStringSync());
+      for (final lang in ['en', 'fr', 'de', 'es']) {
+        final l = Guide.parse('x', File('assets/checklists/$lang/$name').readAsStringSync());
+        int count(Guide g, BlockType t) => g.blocks.where((b) => b.type == t).length;
+        expect(count(l, BlockType.bullet), count(it, BlockType.bullet), reason: '$lang/$name');
+        expect(count(l, BlockType.heading), count(it, BlockType.heading), reason: '$lang/$name');
+      }
+    }
+  });
+
+  group('inventario', () {
+    test('totali di acqua, calorie e gas', () {
+      final inv = Inventory.instance
+        ..people = 2
+        ..days = 10
+        ..items = [
+          SupplyItem(id: 'a', preset: 'water', size: 1.5, qty: 10),
+          SupplyItem(id: 'b', preset: 'water', size: 5, qty: 2),
+          SupplyItem(id: 'c', preset: 'pasta', size: 500, qty: 4),
+          SupplyItem(id: 'd', preset: 'customFood', size: 100, qty: 1, kcalPer100: 250),
+          SupplyItem(id: 'e', preset: 'cartridge', size: 220, qty: 2),
+          SupplyItem(id: 'f', preset: 'batteries', size: 1, qty: 8),
+        ];
+      expect(inv.waterLiters, 25);
+      expect(inv.waterNeeded, 80);
+      expect(inv.kcal, 4 * 1800 + 250);
+      expect(inv.gasMeals, 18);
+      expect(inv.waterDays(), closeTo(3.125, 1e-9));
+      expect(inv.foodDays(), closeTo(7450 / 4000, 1e-9));
+    });
+
+    test('ogni tipo di scorta ha unità e valori sensati', () {
+      for (final p in kPresets) {
+        expect(['L', 'g', 'ml', 'pz'], contains(p.unit), reason: p.key);
+        expect(p.sizes, isNotEmpty, reason: p.key);
+        expect(p.sizes.every((s) => s > 0), isTrue, reason: p.key);
+        if (p.category == SupplyCategory.food) expect(p.kcalPer100, greaterThan(0), reason: p.key);
+      }
+    });
+  });
+
+  group('fasi del fallout', () {
+    test('confini delle fasi', () {
+      expect(phaseAt(0).phase, FalloutPhase.immediate);
+      expect(phaseAt(0.99).phase, FalloutPhase.immediate);
+      expect(phaseAt(1).phase, FalloutPhase.shelter);
+      expect(phaseAt(23.9).phase, FalloutPhase.shelter);
+      expect(phaseAt(24).phase, FalloutPhase.essentialOnly);
+      expect(phaseAt(100).phase, FalloutPhase.decreasing);
+      expect(phaseAt(400).phase, FalloutPhase.low);
+      expect(phaseAt(1).canGoOut, isFalse);
+      expect(phaseAt(30).canGoOut, isTrue);
+    });
+
+    test('radiazione residua secondo la regola del 7-10', () {
+      expect(remainingFraction(0.5), 1);
+      expect(remainingFraction(7), closeTo(0.097, 0.002));
+      expect(remainingFraction(49), closeTo(0.0094, 0.0005));
+    });
   });
 }

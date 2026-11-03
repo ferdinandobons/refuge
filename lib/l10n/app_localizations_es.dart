@@ -1,0 +1,962 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Spanish Castilian (`es`).
+class AppLocalizationsEs extends AppLocalizations {
+  AppLocalizationsEs([String locale = 'es']) : super(locale);
+
+  @override
+  String get appTitle => 'Rifugio';
+
+  @override
+  String get tabEmergency => 'Emergencia';
+
+  @override
+  String get tabPrepare => 'Prepararse';
+
+  @override
+  String get tabTools => 'Herramientas';
+
+  @override
+  String get tabMore => 'Más';
+
+  @override
+  String get onbLanguageTitle => 'Elige el idioma';
+
+  @override
+  String get onbCountryTitle => '¿En qué país estás?';
+
+  @override
+  String get onbCountryHint =>
+      'Sirve para el número de emergencias y las alertas locales. Puedes cambiarlo después.';
+
+  @override
+  String get onbReadyTitle => 'Todo listo';
+
+  @override
+  String onbReadyBody(String number) {
+    return 'La app funciona sin internet. En caso de emergencia, llama al $number.';
+  }
+
+  @override
+  String get onbStart => 'Empezar';
+
+  @override
+  String get onbDownload => 'Descargar enciclopedias (opcional)';
+
+  @override
+  String get onbOptionalTitle => 'Opcional: enciclopedias sin conexión';
+
+  @override
+  String get onbOptionalBody =>
+      'Las fichas de emergencia ya están incluidas. Si quieres, mientras tengas internet puedes añadir:';
+
+  @override
+  String get onbPackWikimed => 'WikiMed (inglés)';
+
+  @override
+  String get onbPackWikimedBody =>
+      'Enciclopedia médica: enfermedades, síntomas, medicamentos, heridas, primeros auxilios. Unos 2 GB.';
+
+  @override
+  String get onbPackWikipedia => 'Wikipedia en tu idioma';
+
+  @override
+  String get onbPackWikipediaBody =>
+      'Todo el conocimiento general: historia, lugares, ciencia, técnica, cómo funcionan las cosas. De unos pocos GB (versión reducida) a decenas de GB (completa).';
+
+  @override
+  String get onbPackWikivoyage => 'Wikivoyage';
+
+  @override
+  String get onbPackWikivoyageBody =>
+      'Países y ciudades: cómo moverse, fronteras, hospitales, información práctica. Unos cientos de MB.';
+
+  @override
+  String get onbDownloadNote =>
+      'Necesitas Wi-Fi y espacio libre. También puedes hacerlo más tarde desde Prepararse.';
+
+  @override
+  String callNumber(String number) {
+    return 'Llamar al $number';
+  }
+
+  @override
+  String get sosLight => 'Luz SOS';
+
+  @override
+  String get searchHint => 'Busca: sangre, yodo, terremoto…';
+
+  @override
+  String get searchTip =>
+      'Escribe qué pasa o qué necesitas. Funciona también con palabras incompletas o con errores.';
+
+  @override
+  String get searchEmpty => 'Sin resultados.';
+
+  @override
+  String get whatsHappening => '¿Qué pasa?';
+
+  @override
+  String get search => 'Buscar';
+
+  @override
+  String get readAloud => 'Leer en voz alta';
+
+  @override
+  String get allSteps => 'Todos los pasos';
+
+  @override
+  String get neverDo => 'No hagas';
+
+  @override
+  String get sources => 'Fuentes';
+
+  @override
+  String stepOf(int n, int total) {
+    return 'Paso $n de $total';
+  }
+
+  @override
+  String get previous => 'Atrás';
+
+  @override
+  String get next => 'Siguiente';
+
+  @override
+  String get done => 'Hecho';
+
+  @override
+  String get countryIT => 'Italia';
+
+  @override
+  String get countryFR => 'Francia';
+
+  @override
+  String get countryDE => 'Alemania';
+
+  @override
+  String get countryES => 'España';
+
+  @override
+  String get countryAT => 'Austria';
+
+  @override
+  String get countryCH => 'Suiza';
+
+  @override
+  String get countryBE => 'Bélgica';
+
+  @override
+  String get countryNL => 'Países Bajos';
+
+  @override
+  String get countryLU => 'Luxemburgo';
+
+  @override
+  String get countryPT => 'Portugal';
+
+  @override
+  String get countryGB => 'Reino Unido';
+
+  @override
+  String get countryIE => 'Irlanda';
+
+  @override
+  String get countryOther => 'Otro país europeo';
+
+  @override
+  String get officialAlerts => 'alertas oficiales';
+
+  @override
+  String get sirenFR =>
+      'Alarma: sonido que sube y baja durante 1 minuto y 41 segundos, repetido 3 veces. Fin de la alarma: sonido continuo de 30 segundos. Prueba el primer miércoles de cada mes a mediodía.';
+
+  @override
+  String get sirenDE =>
+      'Alarma: sonido que sube y baja durante 1 minuto. Fin de la alarma: sonido continuo de 1 minuto.';
+
+  @override
+  String get sirenAT =>
+      'Prealarma: sonido continuo de 3 minutos. Alarma: sonido que sube y baja durante 1 minuto. Fin de la alarma: sonido continuo de 1 minuto.';
+
+  @override
+  String get sirenCH =>
+      'Alarma general: sonido que sube y baja durante 1 minuto, repetido a los 2 minutos. Escucha la radio y sigue las instrucciones.';
+
+  @override
+  String get noteIodineDE =>
+      'En Alemania, las pastillas de yodo no están indicadas para mayores de 45 años.';
+
+  @override
+  String yourCountry(String name) {
+    return 'Tu país: $name';
+  }
+
+  @override
+  String get emergencyNumber => 'Número de emergencias';
+
+  @override
+  String get serviceAmbulance => 'Ambulancia';
+
+  @override
+  String get serviceFire => 'Bomberos';
+
+  @override
+  String get servicePolice => 'Policía';
+
+  @override
+  String get servicePoison => 'Información toxicológica';
+
+  @override
+  String get serviceDeafSms => 'SMS para personas sordas';
+
+  @override
+  String get phoneAlerts => 'Alertas en el móvil';
+
+  @override
+  String phoneAlertsBody(String name) {
+    return '$name: llegan solas al móvil, incluso sin app. Mantenlas activadas en los ajustes del móvil.';
+  }
+
+  @override
+  String get sirens => 'Sirenas';
+
+  @override
+  String get checklists => 'Listas';
+
+  @override
+  String get offlineContent => 'Descárgalo mientras haya internet';
+
+  @override
+  String get downloadEncyclopedias => 'Descargar enciclopedias';
+
+  @override
+  String get downloadEncyclopediasBody =>
+      'Wikipedia y WikiMed en tu idioma, para leer sin conexión.';
+
+  @override
+  String get library => 'Biblioteca';
+
+  @override
+  String get libraryBody => 'Enciclopedias sin conexión y manuales originales';
+
+  @override
+  String get originalTexts => 'Textos originales';
+
+  @override
+  String get originalTextsBody =>
+      'Textos íntegros de la Protección Civil italiana y otras fuentes (en italiano)';
+
+  @override
+  String get originalTextsNote =>
+      'Textos completos en el idioma original, para saber más.';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get country => 'País';
+
+  @override
+  String get about => 'Información';
+
+  @override
+  String get aboutBody => 'Fuentes, licencias y advertencias';
+
+  @override
+  String get aboutText =>
+      'App de código abierto que funciona sin internet.\n\nLas fichas de emergencia siguen las guías europeas de primeros auxilios (European Resuscitation Council) y las indicaciones de protección civil. Los textos originales, los manuales y las enciclopedias están en la Biblioteca, con fuentes y licencias.\n\nEsta app no sustituye a un curso de primeros auxilios ni a las indicaciones de las autoridades.';
+
+  @override
+  String get documents => 'Documentos';
+
+  @override
+  String get documentsBody => 'Manuales oficiales originales, en inglés.';
+
+  @override
+  String get torchTitle => 'Linterna y SOS';
+
+  @override
+  String get torchSubtitle => 'Luz, SOS intermitente, luz de la pantalla';
+
+  @override
+  String get torchKeywords =>
+      'linterna luz oscuridad sos intermitente señal noche';
+
+  @override
+  String get torchOn => 'Encender linterna';
+
+  @override
+  String get torchOff => 'Apagar linterna';
+
+  @override
+  String get torchMissing =>
+      'Linterna no disponible en este dispositivo. Usa la luz de la pantalla.';
+
+  @override
+  String get sosBlinking => 'SOS intermitente';
+
+  @override
+  String get sosStop => 'Detener SOS';
+
+  @override
+  String get screenLight => 'Luz de la pantalla';
+
+  @override
+  String get sosInfo =>
+      'SOS = ··· ─── ··· repetido. Señal internacional de socorro, visible de noche incluso desde lejos.';
+
+  @override
+  String get tapToClose => 'Toca para cerrar';
+
+  @override
+  String get morseTitle => 'Morse';
+
+  @override
+  String get morseSubtitle => 'Transmite un mensaje con la luz';
+
+  @override
+  String get morseKeywords => 'morse código señal luz mensaje';
+
+  @override
+  String get morseMessage => 'Mensaje';
+
+  @override
+  String get useTorchToo => 'Usar también la linterna';
+
+  @override
+  String get repeat => 'Repetir';
+
+  @override
+  String morseSpeed(int ms) {
+    return 'Velocidad: punto = $ms ms';
+  }
+
+  @override
+  String get transmit => 'Transmitir';
+
+  @override
+  String get stop => 'Detener';
+
+  @override
+  String get morseTable => 'Tabla';
+
+  @override
+  String get compassTitle => 'Brújula';
+
+  @override
+  String get compassSubtitle => 'Dirección y puntos cardinales';
+
+  @override
+  String get compassKeywords => 'brújula norte dirección orientación';
+
+  @override
+  String get compassUnavailable => 'Brújula no disponible en este dispositivo.';
+
+  @override
+  String get compassWaiting => 'Esperando al sensor…';
+
+  @override
+  String get compassHint =>
+      'Mantén el móvil en horizontal, lejos de metales e imanes. Si la dirección es rara, mueve el móvil dibujando un 8.';
+
+  @override
+  String get cardinals => 'N,NE,E,SE,S,SO,O,NO';
+
+  @override
+  String get locationTitle => 'Ubicación';
+
+  @override
+  String get locationSubtitle =>
+      'Coordenadas GPS para dictar a los servicios de emergencia';
+
+  @override
+  String get locationKeywords =>
+      'ubicación posición gps coordenadas dónde estoy mapa utm mgrs';
+
+  @override
+  String get locServiceOff =>
+      'La ubicación está desactivada. Actívala en los ajustes del móvil: el GPS funciona también en modo avión.';
+
+  @override
+  String get locDenied =>
+      'Permiso de ubicación denegado. Puedes concederlo en los ajustes del móvil.';
+
+  @override
+  String get locUnavailable => 'Ubicación no disponible en este dispositivo.';
+
+  @override
+  String gpsError(String error) {
+    return 'Error de GPS: $error';
+  }
+
+  @override
+  String get searchingSats =>
+      'Buscando satélites… Al aire libre es más rápido.';
+
+  @override
+  String get fmtDecimal => 'Decimal';
+
+  @override
+  String get fmtDms => 'Grados, minutos, segundos';
+
+  @override
+  String get fmtMgrs => 'MGRS (militares, rescate)';
+
+  @override
+  String get altitude => 'Altitud';
+
+  @override
+  String get accuracy => 'Precisión';
+
+  @override
+  String get copy => 'Copiar';
+
+  @override
+  String get copied => 'Copiado';
+
+  @override
+  String locHint(String number) {
+    return 'Al teléfono con el $number, dicta las coordenadas decimales.';
+  }
+
+  @override
+  String get westLetter => 'O';
+
+  @override
+  String get suppliesTitle => 'Provisiones';
+
+  @override
+  String get suppliesSubtitle => 'Agua y comida según personas y días';
+
+  @override
+  String get suppliesKeywords =>
+      'reservas agua comida raciones cuánto cálculo provisiones';
+
+  @override
+  String get people => 'Personas';
+
+  @override
+  String get days => 'Días';
+
+  @override
+  String get suppliesNote =>
+      'Valores orientativos para adultos. El calor, el esfuerzo, los niños y las personas mayores cambian las necesidades. Consume primero las provisiones más antiguas.';
+
+  @override
+  String get falloutTitle => 'Lluvia radiactiva';
+
+  @override
+  String get falloutSubtitle =>
+      'Temporizador tras una explosión: qué hacer y cuándo';
+
+  @override
+  String get falloutKeywords =>
+      'fallout lluvia radiactiva radiación dosímetro nuclear 7 10 decaimiento';
+
+  @override
+  String get measuredRate => 'Intensidad medida';
+
+  @override
+  String falloutDose(String dose) {
+    return 'Si te quedas al aire libre 24 horas: unos $dose. Un sótano la reduce de 10 a 40 veces.';
+  }
+
+  @override
+  String get resetChecklistQ => '¿Reiniciar la lista?';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get reset => 'Reiniciar';
+
+  @override
+  String doneOf(int done, int total) {
+    return '$done de $total';
+  }
+
+  @override
+  String get encyclopedias => 'Enciclopedias sin conexión';
+
+  @override
+  String get noEncyclopedias =>
+      'No hay ninguna enciclopedia en el móvil. Descárgala mientras tengas internet: luego funciona también sin conexión.';
+
+  @override
+  String get iosImportHint =>
+      'Archivos muy grandes: descárgalos en el ordenador desde download.kiwix.org y cópialos con el Finder o la app Archivos en la carpeta Rifugio › zim. Luego toca ↻.';
+
+  @override
+  String get deleteFromDevice => 'Eliminar del móvil';
+
+  @override
+  String deleteQ(String title) {
+    return '¿Eliminar «$title»?';
+  }
+
+  @override
+  String deleteBody(String size) {
+    return 'Liberarás $size. Para recuperarla tendrás que descargarla de nuevo.';
+  }
+
+  @override
+  String get delete => 'Eliminar';
+
+  @override
+  String get dlWaiting => 'En espera (requiere Wi-Fi si lo has elegido)…';
+
+  @override
+  String get dlRetrying => 'Conexión perdida, reintentando…';
+
+  @override
+  String dlPaused(String pct) {
+    return 'En pausa · $pct%';
+  }
+
+  @override
+  String get resume => 'Reanudar';
+
+  @override
+  String get pause => 'Pausa';
+
+  @override
+  String get catalogSearchHint => 'Buscar en el catálogo de Kiwix';
+
+  @override
+  String get catalogUnreachable =>
+      'No se puede acceder al catálogo. Necesitas conexión a internet.';
+
+  @override
+  String get recWikimed => 'WikiMed: enciclopedia médica (en inglés)';
+
+  @override
+  String get recWikipediaMedicine => 'Wikipedia: solo medicina';
+
+  @override
+  String get recWikipedia => 'Wikipedia completa';
+
+  @override
+  String get recWikivoyage => 'Wikivoyage: países y ciudades';
+
+  @override
+  String get recMedicalTextbooks => 'Libros de texto de medicina (en inglés)';
+
+  @override
+  String resultsFor(String query) {
+    return 'Resultados de «$query»';
+  }
+
+  @override
+  String get flavourMini => 'Mini, solo introducciones';
+
+  @override
+  String get flavourNopic => 'Sin imágenes';
+
+  @override
+  String get flavourMaxi => 'Con imágenes';
+
+  @override
+  String get flavourFull => 'Completa';
+
+  @override
+  String get zimitUnsupported =>
+      'Sitio web archivado: formato aún no compatible';
+
+  @override
+  String get download => 'Descargar';
+
+  @override
+  String downloadQ(String size) {
+    return '¿Descargar $size?';
+  }
+
+  @override
+  String get downloadBody =>
+      'Comprueba que tienes suficiente espacio libre. La descarga sigue aunque cierres la app y se reanuda donde se quedó.';
+
+  @override
+  String get wifiOnly => 'Solo con Wi-Fi';
+
+  @override
+  String get externalLink => 'Enlace externo: no disponible sin conexión.';
+
+  @override
+  String get mainPage => 'Página principal';
+
+  @override
+  String get searchByTitle => 'Buscar por título';
+
+  @override
+  String get searchByTitleTip =>
+      'Escribe el principio del título de un artículo.';
+
+  @override
+  String get searchDocument => 'Buscar en el documento (en inglés)';
+
+  @override
+  String pagesN(int n) {
+    return '$n páginas';
+  }
+
+  @override
+  String get license => 'Licencia';
+
+  @override
+  String get reproducedInFull =>
+      'Documento reproducido íntegramente, sin cambios.';
+
+  @override
+  String get notAvailable => 'No disponible en esta versión.';
+
+  @override
+  String entryMissing(String title) {
+    return 'Artículo «$title» no encontrado: descarga WikiMed desde la Biblioteca para leerlo sin conexión.';
+  }
+
+  @override
+  String get needsTitle => 'Necesidades';
+
+  @override
+  String get summaryTitle => 'Resumen';
+
+  @override
+  String get inventoryTitle => 'Inventario';
+
+  @override
+  String get inventoryHint =>
+      'Toca + cuando compres y − cuando consumas. Los artículos a cero son los que te faltan. Toca un artículo para cambiarlo.';
+
+  @override
+  String get catWater => 'Agua';
+
+  @override
+  String get catFood => 'Comida';
+
+  @override
+  String get catGas => 'Gas para cocinar';
+
+  @override
+  String get catOther => 'Otros';
+
+  @override
+  String coversDays(String days) {
+    return 'Alcanza para $days días';
+  }
+
+  @override
+  String missingWater(String liters, int bottles) {
+    return 'Faltan $liters L ≈ $bottles botellas de 1,5 L';
+  }
+
+  @override
+  String missingFood(String kcal, String kg) {
+    return 'Faltan $kcal kcal ≈ $kg kg de pasta o arroz';
+  }
+
+  @override
+  String missingGas(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n cartuchos',
+      one: '1 cartucho',
+    );
+    return 'Faltan $_temp0 de 220 g';
+  }
+
+  @override
+  String mealsHave(int have, int need) {
+    return '$have / $need comidas calientes';
+  }
+
+  @override
+  String get addItem => 'Añadir';
+
+  @override
+  String get addOne => 'Añadir uno';
+
+  @override
+  String get consumeOne => 'Quitar uno';
+
+  @override
+  String get itemName => 'Nombre';
+
+  @override
+  String get unitSize => 'Contenido de un envase';
+
+  @override
+  String get kcalPer100 => 'kcal por cada 100 g';
+
+  @override
+  String get quantity => 'Cantidad';
+
+  @override
+  String get save => 'Guardar';
+
+  @override
+  String get chooseProduct => '¿Qué quieres añadir?';
+
+  @override
+  String get chooseSize => 'Formato';
+
+  @override
+  String get otherSize => 'Otro formato';
+
+  @override
+  String get addToInventory => 'Añadir al inventario';
+
+  @override
+  String get otherItemHint => 'Escribe un objeto, p. ej. linterna';
+
+  @override
+  String get suggestions => 'Sugerencias';
+
+  @override
+  String get otherSuggestions =>
+      'Pilas AA,Pilas AAA,Batería externa,Linterna frontal,Velas,Cerillas,Mechero,Radio a pilas,Medicamentos habituales,Analgésicos,Botiquín,Sales de rehidratación,Pastillas potabilizadoras,Lejía sin perfume,Mascarillas FFP2,Guantes desechables,Manta térmica,Mantas,Bolsas de basura,Cinta americana,Lonas de plástico,Cuerda,Navaja multiusos,Papel higiénico,Jabón,Toallitas,Compresas,Pañales,Comida para mascotas,Dinero en efectivo';
+
+  @override
+  String get pWaterBottle => 'Botella de agua';
+
+  @override
+  String get pWaterTank => 'Garrafa de agua';
+
+  @override
+  String get pPasta => 'Pasta';
+
+  @override
+  String get pRice => 'Arroz';
+
+  @override
+  String get pDryLegumes => 'Legumbres secas';
+
+  @override
+  String get pCannedLegumes => 'Legumbres en lata';
+
+  @override
+  String get pTuna => 'Atún en lata';
+
+  @override
+  String get pCannedMeat => 'Carne en lata';
+
+  @override
+  String get pCannedVeg => 'Verduras en lata';
+
+  @override
+  String get pNuts => 'Frutos secos';
+
+  @override
+  String get pBiscuits => 'Galletas, crackers';
+
+  @override
+  String get pBars => 'Barritas';
+
+  @override
+  String get pUhtMilk => 'Leche UHT';
+
+  @override
+  String get pPowderMilk => 'Leche en polvo';
+
+  @override
+  String get pOil => 'Aceite';
+
+  @override
+  String get pSugar => 'Azúcar';
+
+  @override
+  String get pHoney => 'Miel';
+
+  @override
+  String get pCustomFood => 'Otra comida';
+
+  @override
+  String get pCartridge => 'Cartucho de gas';
+
+  @override
+  String get pCustomOther => 'Otro objeto';
+
+  @override
+  String get falloutStartIntro =>
+      'Si ha habido una explosión nuclear, inicia el temporizador: te dice cuánto tiempo quedarte a cubierto, qué hacer y qué ponerte en cada momento.';
+
+  @override
+  String get falloutStartNow => 'Explosión ahora: iniciar';
+
+  @override
+  String get falloutStartAt => 'Fijar la hora de la explosión';
+
+  @override
+  String get falloutResetQ => '¿Reiniciar el temporizador?';
+
+  @override
+  String falloutSince(String time) {
+    return 'Explosión: $time';
+  }
+
+  @override
+  String durationHM(int h, int m) {
+    return '$h h $m min';
+  }
+
+  @override
+  String durationDHM(int d, int h, int m) {
+    return '$d d $h h $m min';
+  }
+
+  @override
+  String get falloutMax => 'Radiación al máximo: es el momento más peligroso.';
+
+  @override
+  String falloutRemaining(String pct) {
+    return 'Radiación: en torno al $pct de la que había 1 hora después de la explosión.';
+  }
+
+  @override
+  String falloutNextPhase(String left, String time) {
+    return 'Siguiente fase en $left (a las $time)';
+  }
+
+  @override
+  String get whatToWear => 'Si tienes que salir';
+
+  @override
+  String get whatToDoNow => 'Qué hacer ahora';
+
+  @override
+  String get falloutTimeline => 'Fases';
+
+  @override
+  String get doNotGoOut => 'No salgas';
+
+  @override
+  String get falloutBannerOut =>
+      'Sal solo si es necesario, cubierto de pies a cabeza';
+
+  @override
+  String get wearMask => 'Mascarilla FFP2/FFP3';
+
+  @override
+  String get wearGloves => 'Guantes';
+
+  @override
+  String get wearCovered => 'Gorro, manga larga, impermeable';
+
+  @override
+  String get wearBoots => 'Zapatos cerrados o botas';
+
+  @override
+  String get phase0Title => 'Peligro máximo: ponte a cubierto ya';
+
+  @override
+  String get phase0a =>
+      'Entra en el edificio más sólido que tengas cerca y ve al centro o al sótano.';
+
+  @override
+  String get phase0b =>
+      'Cierra puertas y ventanas, apaga la ventilación y el aire acondicionado.';
+
+  @override
+  String get phase0c =>
+      'Si estabas fuera: quítate la ropa, ciérrala en una bolsa y lávate.';
+
+  @override
+  String get phase0d => 'No salgas por ningún motivo.';
+
+  @override
+  String get phase1Title => 'Quédate a cubierto';
+
+  @override
+  String get phase1a =>
+      'La radiación baja rápido: a las 7 horas es más o menos una décima parte.';
+
+  @override
+  String get phase1b =>
+      'Quédate dentro, lejos de las paredes exteriores y del tejado.';
+
+  @override
+  String get phase1c => 'Escucha la radio, la TV y las alertas en el móvil.';
+
+  @override
+  String get phase1d =>
+      'Bebe y come solo de envases cerrados. Sal solo si el refugio corre peligro (incendio, derrumbe).';
+
+  @override
+  String get phase2Title => 'Sal solo si es imprescindible';
+
+  @override
+  String get phase2a =>
+      'Sigue a las autoridades: pueden indicar que te desplaces o evacúes.';
+
+  @override
+  String get phase2b => 'Salidas muy breves, cubierto de la cabeza a los pies.';
+
+  @override
+  String get phase2c =>
+      'Al volver, quítate la ropa exterior antes de entrar y lávate.';
+
+  @override
+  String get phase3Title => 'Peligro en descenso';
+
+  @override
+  String get phase3a =>
+      'A los 2 días la radiación es más o menos una centésima parte de la inicial.';
+
+  @override
+  String get phase3b =>
+      'Salidas breves si es necesario, con protección. Evita el polvo.';
+
+  @override
+  String get phase3c =>
+      'No comas alimentos que hayan estado al aire libre y usa agua de recipientes cerrados.';
+
+  @override
+  String get phase4Title => 'Peligro muy reducido';
+
+  @override
+  String get phase4a =>
+      'A las 2 semanas la radiación es más o menos una milésima parte de la inicial.';
+
+  @override
+  String get phase4b => 'Sigue a las autoridades para volver a la normalidad.';
+
+  @override
+  String get phase4c => 'Mantén las precauciones con la comida y el agua.';
+
+  @override
+  String get falloutDisclaimer =>
+      'Indicaciones generales basadas en la regla del 7-10. Cuándo salir lo deciden las autoridades y las mediciones reales con un dosímetro.';
+
+  @override
+  String get haveDosimeter => '¿Tienes un dosímetro?';
+
+  @override
+  String inHours(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n horas',
+      one: '1 hora',
+    );
+    return 'Dentro de $_temp0';
+  }
+
+  @override
+  String get levelFlat => 'En horizontal';
+
+  @override
+  String get levelAlmost => 'Casi en horizontal';
+
+  @override
+  String get levelTilted => 'Pon el móvil en horizontal';
+
+  @override
+  String tiltDegrees(int n) {
+    return 'Inclinación $n°';
+  }
+}

@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../../app/settings.dart';
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'coords.dart';
+
+enum _LocationProblem { serviceOff, denied, unavailable }
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});
@@ -13,73 +17,70 @@ class LocationScreen extends StatefulWidget {
 }
 
 class _LocationScreenState extends State<LocationScreen> {
-  late final Future<String?> _permission = _checkPermission();
+  late final Future<_LocationProblem?> _permission = _checkPermission();
 
-  /// Restituisce un messaggio d'errore, o null se la posizione è utilizzabile.
-  Future<String?> _checkPermission() async {
+  Future<_LocationProblem?> _checkPermission() async {
     try {
-      if (!await Geolocator.isLocationServiceEnabled()) {
-        return 'La localizzazione è disattivata. Attivala nelle impostazioni del telefono '
-            '(il GPS funziona anche in modalità aereo).';
-      }
+      if (!await Geolocator.isLocationServiceEnabled()) return _LocationProblem.serviceOff;
       var p = await Geolocator.checkPermission();
       if (p == LocationPermission.denied) p = await Geolocator.requestPermission();
-      if (p == LocationPermission.denied || p == LocationPermission.deniedForever) {
-        return 'Permesso di posizione negato. Puoi concederlo dalle impostazioni del telefono.';
-      }
+      if (p == LocationPermission.denied || p == LocationPermission.deniedForever) return _LocationProblem.denied;
       return null;
-    } catch (e) {
-      return 'Posizione non disponibile su questo dispositivo.';
+    } catch (_) {
+      return _LocationProblem.unavailable;
     }
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Posizione')),
-        body: FutureBuilder<String?>(
-          future: _permission,
-          builder: (context, snap) {
-            if (snap.connectionState != ConnectionState.done) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            if (snap.data != null) {
-              return Center(
-                child: Padding(padding: const EdgeInsets.all(24), child: Text(snap.data!, textAlign: TextAlign.center)),
-              );
-            }
-            return StreamBuilder<Position>(
-              stream: Geolocator.getPositionStream(
-                locationSettings: const LocationSettings(accuracy: LocationAccuracy.best, distanceFilter: 1),
-              ),
-              builder: (context, pos) {
-                if (pos.hasError) return Center(child: Text('Errore GPS: ${pos.error}'));
-                if (!pos.hasData) {
-                  return const Center(
-                    child: Text('Ricerca satelliti… all\'aperto è più veloce.', textAlign: TextAlign.center),
-                  );
-                }
-                return _PositionView(pos.data!);
-              },
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Scaffold(
+      appBar: AppBar(title: Text(t.locationTitle)),
+      body: FutureBuilder<_LocationProblem?>(
+        future: _permission,
+        builder: (context, snap) {
+          if (snap.connectionState != ConnectionState.done) return const Center(child: CircularProgressIndicator());
+          if (snap.data != null) {
+            final message = switch (snap.data!) {
+              _LocationProblem.serviceOff => t.locServiceOff,
+              _LocationProblem.denied => t.locDenied,
+              _LocationProblem.unavailable => t.locUnavailable,
+            };
+            return Center(
+              child: Padding(padding: const EdgeInsets.all(24), child: Text(message, textAlign: TextAlign.center)),
             );
-          },
-        ),
-      );
+          }
+          return StreamBuilder<Position>(
+            stream: Geolocator.getPositionStream(
+              locationSettings: const LocationSettings(accuracy: LocationAccuracy.best, distanceFilter: 1),
+            ),
+            builder: (context, pos) {
+              if (pos.hasError) return Center(child: Text(t.gpsError('${pos.error}')));
+              if (!pos.hasData) return Center(child: Text(t.searchingSats, textAlign: TextAlign.center));
+              return _PositionView(pos.data!, t);
+            },
+          );
+        },
+      ),
+    );
+  }
 }
 
 class _PositionView extends StatelessWidget {
-  const _PositionView(this.p);
+  const _PositionView(this.p, this.t);
 
   final Position p;
+  final AppLocalizations t;
 
   @override
   Widget build(BuildContext context) {
     final rows = <(String, String)>[
-      ('Decimale', '${p.latitude.toStringAsFixed(6)}, ${p.longitude.toStringAsFixed(6)}'),
-      ('Gradi, minuti, secondi', '${toDms(p.latitude, isLat: true)}\n${toDms(p.longitude, isLat: false)}'),
-      ('UTM', toUtm(p.latitude, p.longitude)?.toString() ?? 'n/d'),
-      ('MGRS (militare / soccorsi)', toMgrs(p.latitude, p.longitude) ?? 'n/d'),
-      ('Altitudine', '${p.altitude.round()} m'),
-      ('Precisione', '± ${p.accuracy.round()} m'),
+      (t.fmtDecimal, '${p.latitude.toStringAsFixed(6)}, ${p.longitude.toStringAsFixed(6)}'),
+      (t.fmtDms, '${toDms(p.latitude, isLat: true)}\n${toDms(p.longitude, isLat: false, west: t.westLetter)}'),
+      ('UTM', toUtm(p.latitude, p.longitude)?.toString() ?? '—'),
+      (t.fmtMgrs, toMgrs(p.latitude, p.longitude) ?? '—'),
+      (t.altitude, '${p.altitude.round()} m'),
+      (t.accuracy, '± ${p.accuracy.round()} m'),
     ];
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -93,19 +94,15 @@ class _PositionView extends StatelessWidget {
                   style: const TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'monospace', height: 1.4)),
               trailing: IconButton(
                 icon: const Icon(Icons.copy, color: kAccent),
-                tooltip: 'Copia',
+                tooltip: t.copy,
                 onPressed: () {
                   Clipboard.setData(ClipboardData(text: value));
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Copiato')));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(t.copied)));
                 },
               ),
             ),
           ),
-        const Text(
-          'Al telefono con il 112 detta le coordinate decimali. Con militari o protezione civile '
-          'può servire il formato MGRS.',
-          style: TextStyle(color: Colors.white54),
-        ),
+        Text(t.locHint(AppSettings.instance.country.emergency), style: const TextStyle(color: Colors.white54)),
       ],
     );
   }

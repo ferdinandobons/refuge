@@ -1,0 +1,509 @@
+{
+  "@@locale": "en",
+  "appTitle": "Rifugio",
+  "tabEmergency": "Emergency",
+  "tabPrepare": "Prepare",
+  "tabTools": "Tools",
+  "tabMore": "More",
+  "onbLanguageTitle": "Choose your language",
+  "onbCountryTitle": "Which country are you in?",
+  "onbCountryHint": "Used for the emergency number and local alerts. You can change it later.",
+  "onbReadyTitle": "All set",
+  "onbReadyBody": "The app works without internet. In an emergency, call {number}.",
+  "@onbReadyBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "onbStart": "Start",
+  "onbDownload": "Download encyclopedias (optional)",
+  "onbOptionalTitle": "Optional: offline encyclopedias",
+  "onbOptionalBody": "The emergency cards are already included. While you have internet, you can also add:",
+  "onbPackWikimed": "WikiMed (English)",
+  "onbPackWikimedBody": "Medical encyclopedia: diseases, symptoms, medicines, injuries, first aid. About 2 GB.",
+  "onbPackWikipedia": "Wikipedia in your language",
+  "onbPackWikipediaBody": "General knowledge of every kind: history, places, science, technology, how things work. From a few GB (reduced version) to tens of GB (complete).",
+  "onbPackWikivoyage": "Wikivoyage",
+  "onbPackWikivoyageBody": "Countries and cities: getting around, borders, hospitals, practical information. A few hundred MB.",
+  "onbDownloadNote": "You need Wi-Fi and free space. You can also do this later from Prepare.",
+  "callNumber": "Call {number}",
+  "@callNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "sosLight": "SOS light",
+  "searchHint": "Search: bleeding, iodine, earthquake…",
+  "searchTip": "Type what is happening or what you need. Partial words and typos work too.",
+  "searchEmpty": "No results.",
+  "whatsHappening": "What's happening?",
+  "search": "Search",
+  "readAloud": "Read aloud",
+  "allSteps": "All steps",
+  "neverDo": "Don't",
+  "sources": "Sources",
+  "stepOf": "Step {n} of {total}",
+  "@stepOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "previous": "Back",
+  "next": "Next",
+  "done": "Done",
+  "countryIT": "Italy",
+  "countryFR": "France",
+  "countryDE": "Germany",
+  "countryES": "Spain",
+  "countryAT": "Austria",
+  "countryCH": "Switzerland",
+  "countryBE": "Belgium",
+  "countryNL": "Netherlands",
+  "countryLU": "Luxembourg",
+  "countryPT": "Portugal",
+  "countryGB": "United Kingdom",
+  "countryIE": "Ireland",
+  "countryOther": "Other European country",
+  "officialAlerts": "official alerts",
+  "sirenFR": "Alert: rising and falling tone for 1 minute 41 seconds, repeated 3 times. All clear: steady tone for 30 seconds. Tested on the first Wednesday of each month at noon.",
+  "sirenDE": "Alert: rising and falling tone for 1 minute. All clear: steady tone for 1 minute.",
+  "sirenAT": "Warning: steady tone for 3 minutes. Alert: rising and falling tone for 1 minute. All clear: steady tone for 1 minute.",
+  "sirenCH": "General alert: rising and falling tone for 1 minute, repeated after 2 minutes. Listen to the radio and follow instructions.",
+  "noteIodineDE": "In Germany, iodine tablets are not recommended for people over 45.",
+  "yourCountry": "Your country: {name}",
+  "@yourCountry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyNumber": "Emergency number",
+  "serviceAmbulance": "Ambulance",
+  "serviceFire": "Fire service",
+  "servicePolice": "Police",
+  "servicePoison": "Poison control",
+  "serviceDeafSms": "SMS for deaf people",
+  "phoneAlerts": "Phone alerts",
+  "phoneAlertsBody": "{name}: they arrive on your phone automatically, even without an app. Keep them on in your phone settings.",
+  "@phoneAlertsBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sirens": "Sirens",
+  "checklists": "Checklists",
+  "offlineContent": "Download while you have internet",
+  "downloadEncyclopedias": "Download encyclopedias",
+  "downloadEncyclopediasBody": "Wikipedia and WikiMed in your language, to read offline.",
+  "library": "Library",
+  "libraryBody": "Offline encyclopedias and original manuals",
+  "originalTexts": "Original texts",
+  "originalTextsBody": "Full texts from Italian Civil Protection and other sources (Italian)",
+  "originalTextsNote": "Complete texts in the original language, for further reading.",
+  "language": "Language",
+  "country": "Country",
+  "about": "About",
+  "aboutBody": "Sources, licenses and disclaimers",
+  "aboutText": "Open source app that works without internet.\n\nThe emergency cards follow European first aid guidelines (European Resuscitation Council) and civil protection advice. Original texts, manuals and encyclopedias are in the Library, with sources and licenses.\n\nThis app does not replace a first aid course or instructions from the authorities.",
+  "documents": "Documents",
+  "documentsBody": "Original official manuals, in English.",
+  "torchTitle": "Flashlight and SOS",
+  "torchSubtitle": "Light, flashing SOS, screen light",
+  "torchKeywords": "flashlight torch light dark sos flashing signal night",
+  "torchOn": "Turn on flashlight",
+  "torchOff": "Turn off flashlight",
+  "torchMissing": "Flashlight not available on this device. Use the screen light.",
+  "sosBlinking": "Flashing SOS",
+  "sosStop": "Stop SOS",
+  "screenLight": "Screen light",
+  "sosInfo": "SOS = ··· ─── ··· repeated. International distress signal, visible at night even from far away.",
+  "tapToClose": "Tap to close",
+  "morseTitle": "Morse",
+  "morseSubtitle": "Send a message with light",
+  "morseKeywords": "morse code signal light message",
+  "morseMessage": "Message",
+  "useTorchToo": "Also use the flashlight",
+  "repeat": "Repeat",
+  "morseSpeed": "Speed: dot = {ms} ms",
+  "@morseSpeed": {
+    "placeholders": {
+      "ms": {
+        "type": "int"
+      }
+    }
+  },
+  "transmit": "Send",
+  "stop": "Stop",
+  "morseTable": "Chart",
+  "compassTitle": "Compass",
+  "compassSubtitle": "Direction and cardinal points",
+  "compassKeywords": "compass north direction orientation bearing",
+  "compassUnavailable": "Compass not available on this device.",
+  "compassWaiting": "Waiting for sensor…",
+  "compassHint": "Hold the phone flat, away from metal and magnets. If the direction looks wrong, move the phone in a figure 8.",
+  "cardinals": "N,NE,E,SE,S,SW,W,NW",
+  "locationTitle": "Location",
+  "locationSubtitle": "GPS coordinates to read out to rescuers",
+  "locationKeywords": "location position gps coordinates where am i map utm mgrs",
+  "locServiceOff": "Location is turned off. Turn it on in your phone settings: GPS works even in airplane mode.",
+  "locDenied": "Location permission denied. You can grant it in your phone settings.",
+  "locUnavailable": "Location not available on this device.",
+  "gpsError": "GPS error: {error}",
+  "@gpsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchingSats": "Searching for satellites… Faster outdoors.",
+  "fmtDecimal": "Decimal",
+  "fmtDms": "Degrees, minutes, seconds",
+  "fmtMgrs": "MGRS (military, rescue)",
+  "altitude": "Altitude",
+  "accuracy": "Accuracy",
+  "copy": "Copy",
+  "copied": "Copied",
+  "locHint": "When on the phone with {number}, read out the decimal coordinates.",
+  "@locHint": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "westLetter": "W",
+  "suppliesTitle": "Supplies",
+  "suppliesSubtitle": "Water and food by number of people and days",
+  "suppliesKeywords": "supplies water food rations how much calculate provisions stockpile",
+  "people": "People",
+  "days": "Days",
+  "suppliesNote": "Rough values for adults. Heat, exertion, children and the elderly change needs. Use the oldest supplies first.",
+  "falloutTitle": "Fallout",
+  "falloutSubtitle": "Timer after an explosion: what to do and when",
+  "falloutKeywords": "fallout radiation dosimeter nuclear 7 10 decay",
+  "measuredRate": "Measured dose rate",
+  "falloutDose": "Staying outdoors for 24 hours: about {dose}. A basement cuts it by 10-40 times.",
+  "@falloutDose": {
+    "placeholders": {
+      "dose": {
+        "type": "String"
+      }
+    }
+  },
+  "resetChecklistQ": "Reset the checklist?",
+  "cancel": "Cancel",
+  "reset": "Reset",
+  "doneOf": "{done} of {total}",
+  "@doneOf": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "encyclopedias": "Offline encyclopedias",
+  "noEncyclopedias": "No encyclopedias on this phone. Download one while you have internet: then it works offline too.",
+  "iosImportHint": "Very large files: download them on a computer from download.kiwix.org and copy them with Finder or the Files app into the Rifugio › zim folder, then tap ↻.",
+  "deleteFromDevice": "Delete from phone",
+  "deleteQ": "Delete “{title}”?",
+  "@deleteQ": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteBody": "This will free {size}. To get it back you will need to download it again.",
+  "@deleteBody": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "delete": "Delete",
+  "dlWaiting": "Waiting (needs Wi-Fi if set to Wi-Fi only)…",
+  "dlRetrying": "Connection lost, retrying…",
+  "dlPaused": "Paused · {pct}%",
+  "@dlPaused": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "Resume",
+  "pause": "Pause",
+  "catalogSearchHint": "Search the Kiwix catalog",
+  "catalogUnreachable": "Catalog unreachable. An internet connection is needed.",
+  "recWikimed": "WikiMed: medical encyclopedia (English)",
+  "recWikipediaMedicine": "Wikipedia: medicine only",
+  "recWikipedia": "Full Wikipedia",
+  "recWikivoyage": "Wikivoyage: countries and cities",
+  "recMedicalTextbooks": "Medical textbooks (English)",
+  "resultsFor": "Results for “{query}”",
+  "@resultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "flavourMini": "Mini, introductions only",
+  "flavourNopic": "No images",
+  "flavourMaxi": "With images",
+  "flavourFull": "Full",
+  "zimitUnsupported": "Archived website: format not supported yet",
+  "download": "Download",
+  "downloadQ": "Download {size}?",
+  "@downloadQ": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadBody": "Make sure you have enough free space. The download continues even when the app is closed and resumes where it stopped.",
+  "wifiOnly": "Wi-Fi only",
+  "externalLink": "External link: not available offline.",
+  "mainPage": "Main page",
+  "searchByTitle": "Search by title",
+  "searchByTitleTip": "Type the beginning of an article title.",
+  "searchDocument": "Search the document (in English)",
+  "pagesN": "{n} pages",
+  "@pagesN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "license": "License",
+  "reproducedInFull": "Document reproduced in full, unchanged.",
+  "notAvailable": "Not available in this version.",
+  "entryMissing": "Article “{title}” not found: download WikiMed from the Library to read it offline.",
+  "@entryMissing": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "needsTitle": "Needs",
+  "summaryTitle": "Summary",
+  "inventoryTitle": "Inventory",
+  "inventoryHint": "Tap + when you buy, − when you use. Items at zero are what you are missing. Tap an item to change it.",
+  "catWater": "Water",
+  "catFood": "Food",
+  "catGas": "Cooking gas",
+  "catOther": "Other",
+  "coversDays": "Enough for {days} days",
+  "@coversDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "missingWater": "Still need {liters} L ≈ {bottles} bottles of 1.5 L",
+  "@missingWater": {
+    "placeholders": {
+      "liters": {
+        "type": "String"
+      },
+      "bottles": {
+        "type": "int"
+      }
+    }
+  },
+  "missingFood": "Still need {kcal} kcal ≈ {kg} kg of pasta or rice",
+  "@missingFood": {
+    "placeholders": {
+      "kcal": {
+        "type": "String"
+      },
+      "kg": {
+        "type": "String"
+      }
+    }
+  },
+  "missingGas": "Still need {n, plural, =1{1 cartridge} other{{n} cartridges}} of 220 g",
+  "@missingGas": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mealsHave": "{have} / {need} hot meals",
+  "@mealsHave": {
+    "placeholders": {
+      "have": {
+        "type": "int"
+      },
+      "need": {
+        "type": "int"
+      }
+    }
+  },
+  "addItem": "Add",
+  "addOne": "Add one",
+  "consumeOne": "Remove one",
+  "itemName": "Name",
+  "unitSize": "Contents of one pack",
+  "kcalPer100": "kcal per 100 g",
+  "quantity": "Quantity",
+  "save": "Save",
+  "chooseProduct": "What do you want to add?",
+  "chooseSize": "Size",
+  "otherSize": "Other size",
+  "addToInventory": "Add to inventory",
+  "otherItemHint": "Type an item, e.g. flashlight",
+  "suggestions": "Suggestions",
+  "otherSuggestions": "AA batteries,AAA batteries,Power bank,Headlamp,Candles,Matches,Lighter,Battery radio,Regular medicines,Painkillers,First aid kit,Oral rehydration salts,Water purification tablets,Unscented bleach,FFP2 masks,Disposable gloves,Foil blanket,Blankets,Trash bags,Duct tape,Plastic sheeting,Rope,Multi-tool,Toilet paper,Soap,Wet wipes,Sanitary pads,Diapers,Pet food,Cash",
+  "pWaterBottle": "Water bottle",
+  "pWaterTank": "Water jerrycan",
+  "pPasta": "Pasta",
+  "pRice": "Rice",
+  "pDryLegumes": "Dried legumes",
+  "pCannedLegumes": "Canned legumes",
+  "pTuna": "Canned tuna",
+  "pCannedMeat": "Canned meat",
+  "pCannedVeg": "Canned vegetables",
+  "pNuts": "Nuts and dried fruit",
+  "pBiscuits": "Biscuits, crackers",
+  "pBars": "Snack bars",
+  "pUhtMilk": "Long-life milk",
+  "pPowderMilk": "Powdered milk",
+  "pOil": "Oil",
+  "pSugar": "Sugar",
+  "pHoney": "Honey",
+  "pCustomFood": "Other food",
+  "pCartridge": "Gas cartridge",
+  "pCustomOther": "Other item",
+  "falloutStartIntro": "If there has been a nuclear explosion, start the timer: it tells you how long to stay sheltered, what to do and what to wear at each moment.",
+  "falloutStartNow": "Explosion now: start",
+  "falloutStartAt": "Set the time of the explosion",
+  "falloutResetQ": "Reset the timer?",
+  "falloutSince": "Explosion: {time}",
+  "@falloutSince": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHM": "{h} h {m} min",
+  "@durationHM": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "durationDHM": "{d} d {h} h {m} min",
+  "@durationDHM": {
+    "placeholders": {
+      "d": {
+        "type": "int"
+      },
+      "h": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "falloutMax": "Radiation at its peak: this is the most dangerous time.",
+  "falloutRemaining": "Radiation at about {pct} of its level 1 hour after the explosion.",
+  "@falloutRemaining": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "falloutNextPhase": "Next phase in {left} (at {time})",
+  "@falloutNextPhase": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whatToWear": "If you must go out",
+  "whatToDoNow": "What to do now",
+  "falloutTimeline": "Phases",
+  "doNotGoOut": "Do not go out",
+  "falloutBannerOut": "Go out only if necessary, covered from head to toe",
+  "wearMask": "FFP2/FFP3 mask",
+  "wearGloves": "Gloves",
+  "wearCovered": "Hat, long sleeves, raincoat",
+  "wearBoots": "Closed shoes or boots",
+  "phase0Title": "Maximum danger: take shelter now",
+  "phase0a": "Get into the sturdiest building near you and go to the center or the basement.",
+  "phase0b": "Close doors and windows, turn off ventilation and air conditioning.",
+  "phase0c": "If you were outside: take off your clothes, seal them in a bag and wash.",
+  "phase0d": "Do not go out for any reason.",
+  "phase1Title": "Stay sheltered",
+  "phase1a": "Radiation drops fast: after 7 hours it is about a tenth.",
+  "phase1b": "Stay inside, away from outer walls and the roof.",
+  "phase1c": "Listen to radio, TV and phone alerts.",
+  "phase1d": "Eat and drink only from sealed packages. Go out only if the shelter is in danger (fire, collapse).",
+  "phase2Title": "Go out only if essential",
+  "phase2a": "Follow the authorities: they may tell you to move or evacuate.",
+  "phase2b": "Very short trips, covered from head to toe.",
+  "phase2c": "When you come back, take off your outer clothes before going in, and wash.",
+  "phase3Title": "Danger decreasing",
+  "phase3a": "After 2 days radiation is about a hundredth of the initial level.",
+  "phase3b": "Short trips only when needed, with protection. Avoid dust.",
+  "phase3c": "Do not eat food left outdoors and use water from sealed containers.",
+  "phase4Title": "Danger much lower",
+  "phase4a": "After 2 weeks radiation is about a thousandth of the initial level.",
+  "phase4b": "Follow the authorities for returning to normal.",
+  "phase4c": "Keep taking precautions with food and water.",
+  "falloutDisclaimer": "General guidance based on the 7-10 rule. When to go out is decided by the authorities and by real measurements with a dosimeter.",
+  "haveDosimeter": "Do you have a dosimeter?",
+  "inHours": "In {n, plural, =1{1 hour} other{{n} hours}}",
+  "@inHours": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelFlat": "Flat",
+  "levelAlmost": "Almost flat",
+  "levelTilted": "Lay the phone flat",
+  "tiltDegrees": "Tilt {n}°",
+  "@tiltDegrees": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  }
+}

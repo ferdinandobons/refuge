@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'guide.dart';
 import 'guide_links.dart';
-import 'guides_screen.dart';
 
 class GuideScreen extends StatelessWidget {
   const GuideScreen({super.key, required this.guide});
@@ -17,60 +17,18 @@ class GuideScreen extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 4, 16, 40),
           children: [
             Text(guide.title, style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 6),
-            Row(children: [
-              UrgencyDot(guide.urgency),
-              const SizedBox(width: 6),
-              Text('Urgenza ${guide.urgency.name} · ${guide.minutes} min di lettura',
-                  style: const TextStyle(color: Colors.white60)),
-            ]),
             const SizedBox(height: 12),
-            if (guide.status == GuideStatus.ufficiale)
-              _Callout(
-                icon: Icons.verified,
-                color: Colors.lightGreen,
-                child: Text(
-                  'TESTO UFFICIALE riprodotto integralmente. ${guide.sources.first}',
-                  style: const TextStyle(fontSize: 14),
-                ),
-              )
-            else if (guide.status == GuideStatus.estratti)
-              const _Callout(
-                icon: Icons.format_quote,
-                color: Colors.lightGreen,
-                child: Text(
-                  'ESTRATTI FEDELI di testi scritti da persone (Wikipedia in italiano), non riscritti, con rimandi '
-                  'ai manuali ufficiali. Wikipedia non è una fonte ufficiale: dove i manuali dicono altro, '
-                  'segui i manuali.',
-                  style: TextStyle(fontSize: 14),
-                ),
-              )
-            else if (guide.status == GuideStatus.bozza)
-              const _Callout(
-                icon: Icons.rate_review,
-                color: Colors.lightBlueAccent,
-                child: Text(
-                  'BOZZA: riassunto delle fonti indicate in fondo, non ancora verificato da personale qualificato. '
-                  'In caso di dubbio segui le fonti ufficiali e le indicazioni del 112.',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
             for (final b in guide.blocks) BlockView(b),
             if (guide.sources.isNotEmpty) ...[
               const Divider(height: 40),
-              const Text('Fonti', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70)),
+              Text(AppLocalizations.of(context).sources,
+                  style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white70)),
               for (final s in guide.sources)
                 Padding(
                   padding: const EdgeInsets.only(top: 4),
                   child: Text('• $s', style: const TextStyle(color: Colors.white54, fontSize: 13)),
                 ),
             ],
-            const SizedBox(height: 16),
-            const Text(
-              'Queste guide non sostituiscono un corso di primo soccorso né le indicazioni delle autorità. '
-              'Se puoi, chiama il 112.',
-              style: TextStyle(color: Colors.white38, fontSize: 12),
-            ),
           ],
         ),
       );
@@ -156,7 +114,7 @@ class BlockView extends StatelessWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('“${block.text}”', style: body.copyWith(fontStyle: FontStyle.italic)),
               const SizedBox(height: 6),
-              Text('${block.source ?? ''} · testo originale, tocca per aprire',
+              Text(block.source ?? '',
                   style: const TextStyle(fontSize: 13, color: Colors.lightGreen)),
             ]),
           ),

@@ -2,8 +2,9 @@ import 'dart:math' as math;
 
 /// Conversioni di coordinate WGS84: gradi/minuti/secondi, UTM e MGRS.
 
-String toDms(double deg, {required bool isLat}) {
-  final hemi = isLat ? (deg >= 0 ? 'N' : 'S') : (deg >= 0 ? 'E' : 'O');
+/// [west] è la lettera dell'Ovest nella lingua scelta (O in italiano, W in inglese/tedesco…).
+String toDms(double deg, {required bool isLat, String west = 'W'}) {
+  final hemi = isLat ? (deg >= 0 ? 'N' : 'S') : (deg >= 0 ? 'E' : west);
   var a = deg.abs();
   final d = a.floor();
   a = (a - d) * 60;

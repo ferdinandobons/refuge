@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../app/theme.dart';
+import '../../../l10n/app_localizations.dart';
 import 'zim_archive.dart';
 import 'zim_library.dart';
 import 'zim_server.dart';
@@ -42,7 +43,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
             return NavigationDecision.navigate;
           }
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Link esterno: non disponibile offline.')),
+            SnackBar(content: Text(AppLocalizations.of(context).externalLink)),
           );
           return NavigationDecision.prevent;
         },
@@ -54,12 +55,17 @@ class _ReaderScreenState extends State<ReaderScreen> {
       _web.loadRequest(await ZimServer.instance.urlFor(widget.book.id, entryUrl));
 
   Future<void> _search() async {
-    final entry = await showSearch<ZimEntry?>(context: context, delegate: _TitleSearch(widget.book.archive));
+    final entry = await showSearch<ZimEntry?>(
+      context: context,
+      delegate: _TitleSearch(widget.book.archive, AppLocalizations.of(context)),
+    );
     if (entry != null) await _open(entry.url);
   }
 
   @override
-  Widget build(BuildContext context) => PopScope(
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return PopScope(
         canPop: !_canGoBack,
         onPopInvokedWithResult: (didPop, _) async {
           if (!didPop && await _web.canGoBack()) await _web.goBack();
@@ -68,8 +74,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
           appBar: AppBar(
             title: Text(widget.book.title, maxLines: 1, overflow: TextOverflow.ellipsis),
             actions: [
-              IconButton(icon: const Icon(Icons.search), tooltip: 'Cerca', onPressed: _search),
-              IconButton(icon: const Icon(Icons.home), tooltip: 'Pagina principale', onPressed: () => _open(null)),
+              IconButton(icon: const Icon(Icons.search), tooltip: t.search, onPressed: _search),
+              IconButton(icon: const Icon(Icons.home), tooltip: t.mainPage, onPressed: () => _open(null)),
             ],
             bottom: _progress < 100
                 ? PreferredSize(
@@ -81,12 +87,14 @@ class _ReaderScreenState extends State<ReaderScreen> {
           body: WebViewWidget(controller: _web),
         ),
       );
+  }
 }
 
 class _TitleSearch extends SearchDelegate<ZimEntry?> {
-  _TitleSearch(this.archive) : super(searchFieldLabel: 'Cerca per titolo');
+  _TitleSearch(this.archive, this.t) : super(searchFieldLabel: t.searchByTitle);
 
   final ZimArchive archive;
+  final AppLocalizations t;
 
   @override
   ThemeData appBarTheme(BuildContext context) => Theme.of(context);
@@ -105,10 +113,9 @@ class _TitleSearch extends SearchDelegate<ZimEntry?> {
   @override
   Widget buildSuggestions(BuildContext context) {
     if (query.trim().length < 2) {
-      return const Padding(
-        padding: EdgeInsets.all(24),
-        child: Text('Scrivi l\'inizio del titolo di una voce, es. "Emorr" o "Roma".',
-            style: TextStyle(color: Colors.white60)),
+      return Padding(
+        padding: const EdgeInsets.all(24),
+        child: Text(t.searchByTitleTip, style: const TextStyle(color: Colors.white60)),
       );
     }
     return FutureBuilder<List<ZimEntry>>(
@@ -117,7 +124,7 @@ class _TitleSearch extends SearchDelegate<ZimEntry?> {
         if (!snap.hasData) return const LinearProgressIndicator(minHeight: 2);
         final hits = snap.data!;
         if (hits.isEmpty) {
-          return const Padding(padding: EdgeInsets.all(24), child: Text('Nessuna voce trovata.'));
+          return Padding(padding: const EdgeInsets.all(24), child: Text(t.searchEmpty));
         }
         return ListView(children: [
           for (final e in hits)

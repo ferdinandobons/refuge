@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
+import '../../l10n/app_localizations.dart';
+
 /// Direzione in gradi (0 = nord, 90 = est) del lato superiore del telefono.
 ///
 /// Su iOS usa la bussola di sistema (CLLocationManager, già calibrata).
@@ -56,7 +58,7 @@ Stream<double> _sensorHeading() {
   return controller.stream;
 }
 
-String cardinal(double deg) {
-  const names = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
+String cardinal(double deg, AppLocalizations t) {
+  final names = t.cardinals.split(',');
   return names[((deg + 22.5) % 360 ~/ 45)];
 }

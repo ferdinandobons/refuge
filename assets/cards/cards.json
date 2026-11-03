@@ -1,0 +1,1220 @@
+[
+  {
+    "id": "bleeding",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – First Aid (European Resuscitation Council)",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#61",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#62",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#187"
+    ],
+    "it": {
+      "title": "Sangue che esce forte",
+      "keywords": "sangue emorragia ferita taglio sanguina laccio emostatico arteria amputazione dissanguamento",
+      "steps": [
+        "Chiama il {emergency} e metti il vivavoce.",
+        "Premi forte sulla ferita con un panno pulito o con le mani. Non smettere di premere.",
+        "Se il panno si inzuppa, non toglierlo: mettine un altro sopra e continua a premere.",
+        "Se la ferita è a un braccio o a una gamba e il sangue non si ferma: stringi un laccio 5–7 cm sopra la ferita, mai su gomito o ginocchio.",
+        "Stringi finché il sangue si ferma. Scrivi l'ora sul laccio o sulla fronte.",
+        "Tieni la persona sdraiata e coperta finché arrivano i soccorsi."
+      ],
+      "never": [
+        "Non allentare e non togliere mai il laccio.",
+        "Non togliere oggetti conficcati nella ferita."
+      ]
+    },
+    "en": {
+      "title": "Heavy bleeding",
+      "keywords": "blood bleeding haemorrhage hemorrhage wound cut tourniquet artery amputation bleeding out",
+      "steps": [
+        "Call {emergency} and turn on the speaker.",
+        "Press hard on the wound with a clean cloth or your hands. Keep pressing.",
+        "If the cloth soaks through, do not remove it: add another on top and keep pressing.",
+        "Arm or leg, and the bleeding does not stop: tighten a tourniquet 5–7 cm above the wound, never over the elbow or knee.",
+        "Tighten until the bleeding stops. Write the time on the tourniquet or on their forehead.",
+        "Keep the person lying down and covered until help arrives."
+      ],
+      "never": [
+        "Never loosen or remove the tourniquet.",
+        "Do not pull out objects stuck in the wound."
+      ]
+    },
+    "fr": {
+      "title": "Saignement abondant",
+      "keywords": "sang saignement saigne hémorragie plaie coupure garrot artère amputation",
+      "steps": [
+        "Appelez le {emergency} et mettez le haut-parleur.",
+        "Appuyez fort sur la plaie avec un tissu propre ou vos mains. Continuez d'appuyer.",
+        "Si le tissu est imbibé, ne l'enlevez pas : ajoutez-en un autre par-dessus et continuez d'appuyer.",
+        "Bras ou jambe, et le saignement ne s'arrête pas : serrez un garrot 5 à 7 cm au-dessus de la plaie, jamais sur le coude ou le genou.",
+        "Serrez jusqu'à l'arrêt du saignement. Notez l'heure sur le garrot ou sur le front.",
+        "Gardez la personne allongée et couverte jusqu'à l'arrivée des secours."
+      ],
+      "never": [
+        "Ne desserrez et ne retirez jamais le garrot.",
+        "Ne retirez pas un objet planté dans la plaie."
+      ]
+    },
+    "de": {
+      "title": "Starke Blutung",
+      "keywords": "blut blutung wunde schnitt tourniquet abbinden arterie amputation verbluten",
+      "steps": [
+        "Rufen Sie {emergency} an und schalten Sie den Lautsprecher ein.",
+        "Drücken Sie fest mit einem sauberen Tuch oder den Händen auf die Wunde. Weiter drücken.",
+        "Wenn das Tuch durchblutet, nicht entfernen: ein weiteres darauflegen und weiter drücken.",
+        "Arm oder Bein, und die Blutung hört nicht auf: Tourniquet 5–7 cm oberhalb der Wunde festziehen, nie über Ellbogen oder Knie.",
+        "Festziehen, bis die Blutung stoppt. Uhrzeit auf das Tourniquet oder die Stirn schreiben.",
+        "Die Person liegend und zugedeckt halten, bis Hilfe kommt."
+      ],
+      "never": [
+        "Das Tourniquet nie lockern oder abnehmen.",
+        "Steckende Gegenstände nicht aus der Wunde ziehen."
+      ]
+    },
+    "es": {
+      "title": "Hemorragia fuerte",
+      "keywords": "sangre hemorragia sangrado herida corte torniquete arteria amputación desangrarse",
+      "steps": [
+        "Llama al {emergency} y pon el altavoz.",
+        "Presiona fuerte la herida con un paño limpio o con las manos. No dejes de presionar.",
+        "Si el paño se empapa, no lo quites: pon otro encima y sigue presionando.",
+        "Brazo o pierna, y la sangre no para: aprieta un torniquete 5–7 cm por encima de la herida, nunca sobre el codo ni la rodilla.",
+        "Aprieta hasta que pare la sangre. Escribe la hora en el torniquete o en la frente.",
+        "Mantén a la persona tumbada y abrigada hasta que llegue ayuda."
+      ],
+      "never": [
+        "Nunca aflojes ni quites el torniquete.",
+        "No saques objetos clavados en la herida."
+      ]
+    }
+  },
+  {
+    "id": "cpr",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – Basic Life Support (European Resuscitation Council)",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#134",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#33"
+    ],
+    "it": {
+      "title": "Non risponde e non respira",
+      "keywords": "rianimazione rcp massaggio cardiaco arresto cardiaco infarto non respira svenuto incosciente defibrillatore dae cuore",
+      "steps": [
+        "Scuoti la persona per le spalle e chiedi forte: «Mi senti?».",
+        "Se non risponde, chiama il {emergency} in vivavoce. Fai cercare un defibrillatore (DAE).",
+        "Inclina la testa all'indietro e guarda se respira normalmente, per al massimo 10 secondi.",
+        "Se non respira normalmente: mani una sull'altra al centro del petto, braccia tese.",
+        "Spingi forte e veloce: 5–6 cm, 100–120 volte al minuto. Non fermarti.",
+        "Se sai farlo, alterna 30 compressioni e 2 insufflazioni. Altrimenti solo compressioni.",
+        "Appena arriva il DAE, accendilo e segui la voce."
+      ],
+      "never": [
+        "Non fermarti per controllare il polso.",
+        "Respiri rari e rumorosi non sono un respiro normale: inizia le compressioni."
+      ]
+    },
+    "en": {
+      "title": "Unresponsive, not breathing",
+      "keywords": "cpr resuscitation cardiac arrest heart attack not breathing unconscious collapse defibrillator aed chest compressions",
+      "steps": [
+        "Shake the person by the shoulders and shout: “Can you hear me?”",
+        "If there is no response, call {emergency} on speaker. Send someone for a defibrillator (AED).",
+        "Tilt the head back and check for normal breathing for no more than 10 seconds.",
+        "If breathing is not normal: hands one on top of the other in the center of the chest, arms straight.",
+        "Push hard and fast: 5–6 cm, 100–120 times a minute. Do not stop.",
+        "If you are trained, alternate 30 compressions with 2 rescue breaths. Otherwise compressions only.",
+        "As soon as the AED arrives, switch it on and follow the voice."
+      ],
+      "never": [
+        "Do not stop to check for a pulse.",
+        "Infrequent, noisy gasps are not normal breathing: start compressions."
+      ]
+    },
+    "fr": {
+      "title": "Ne répond pas, ne respire pas",
+      "keywords": "réanimation rcp massage cardiaque arrêt cardiaque crise cardiaque ne respire pas inconscient évanoui défibrillateur dae cœur",
+      "steps": [
+        "Secouez la personne par les épaules et demandez fort : « Vous m'entendez ? »",
+        "Si elle ne répond pas, appelez le {emergency} en haut-parleur. Faites chercher un défibrillateur (DAE).",
+        "Basculez la tête en arrière et regardez si elle respire normalement, 10 secondes au maximum.",
+        "Si elle ne respire pas normalement : mains l'une sur l'autre au centre de la poitrine, bras tendus.",
+        "Appuyez fort et vite : 5 à 6 cm, 100 à 120 fois par minute. Ne vous arrêtez pas.",
+        "Si vous savez le faire, alternez 30 compressions et 2 insufflations. Sinon, seulement les compressions.",
+        "Dès que le DAE arrive, allumez-le et suivez la voix."
+      ],
+      "never": [
+        "Ne vous arrêtez pas pour prendre le pouls.",
+        "Des respirations rares et bruyantes ne sont pas normales : commencez les compressions."
+      ]
+    },
+    "de": {
+      "title": "Reagiert nicht, atmet nicht",
+      "keywords": "wiederbelebung herzdruckmassage herzstillstand herzinfarkt atmet nicht bewusstlos defibrillator aed reanimation",
+      "steps": [
+        "Die Person an den Schultern rütteln und laut fragen: „Hören Sie mich?“",
+        "Keine Reaktion: {emergency} anrufen, Lautsprecher an. Jemanden einen Defibrillator (AED) holen lassen.",
+        "Kopf nach hinten neigen und höchstens 10 Sekunden prüfen, ob die Person normal atmet.",
+        "Keine normale Atmung: Hände übereinander in die Mitte der Brust, Arme gestreckt.",
+        "Fest und schnell drücken: 5–6 cm, 100–120 Mal pro Minute. Nicht aufhören.",
+        "Wenn Sie es können: 30 Mal drücken, 2 Mal beatmen. Sonst nur drücken.",
+        "Sobald der AED da ist: einschalten und der Stimme folgen."
+      ],
+      "never": [
+        "Nicht unterbrechen, um den Puls zu fühlen.",
+        "Seltene, geräuschvolle Atemzüge (Schnappatmung) sind keine normale Atmung: mit dem Drücken beginnen."
+      ]
+    },
+    "es": {
+      "title": "No responde, no respira",
+      "keywords": "reanimación rcp masaje cardiaco parada cardiaca infarto no respira desmayado inconsciente desfibrilador dea corazón",
+      "steps": [
+        "Sacude a la persona por los hombros y pregunta en voz alta: «¿Me oye?».",
+        "Si no responde, llama al {emergency} con el altavoz. Pide que traigan un desfibrilador (DEA).",
+        "Inclina la cabeza hacia atrás y mira si respira normalmente, como máximo 10 segundos.",
+        "Si no respira normalmente: manos una sobre otra en el centro del pecho, brazos rectos.",
+        "Empuja fuerte y rápido: 5–6 cm, 100–120 veces por minuto. No pares.",
+        "Si sabes hacerlo, alterna 30 compresiones y 2 insuflaciones. Si no, solo compresiones.",
+        "En cuanto llegue el DEA, enciéndelo y sigue la voz."
+      ],
+      "never": [
+        "No pares para tomar el pulso.",
+        "Respiraciones escasas y ruidosas no son una respiración normal: empieza las compresiones."
+      ]
+    }
+  },
+  {
+    "id": "choking",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – Basic Life Support: choking",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#170",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#81"
+    ],
+    "it": {
+      "title": "Soffoca",
+      "keywords": "soffocamento soffoca heimlich ostruzione vie aeree boccone cibo gola tosse non respira",
+      "steps": [
+        "Se tossisce, incoraggialo a tossire forte.",
+        "Se non riesce a tossire, parlare o respirare: piegalo in avanti e dai 5 colpi forti tra le scapole.",
+        "Poi mettiti dietro di lui, pugno sopra l'ombelico, e tira forte verso di te e verso l'alto, fino a 5 volte.",
+        "Alterna 5 colpi sulla schiena e 5 compressioni sulla pancia finché l'oggetto esce.",
+        "Se perde coscienza: chiama il {emergency} e inizia la rianimazione."
+      ],
+      "never": [
+        "Neonati sotto 1 anno: niente compressioni sulla pancia. 5 colpi sulla schiena e 5 compressioni sul petto con due dita."
+      ]
+    },
+    "en": {
+      "title": "Choking",
+      "keywords": "choking heimlich airway obstruction food throat cough cannot breathe",
+      "steps": [
+        "If they can cough, encourage them to keep coughing.",
+        "If they cannot cough, speak or breathe: lean them forward and give 5 sharp blows between the shoulder blades.",
+        "Then stand behind them, fist above the navel, and pull sharply inwards and upwards, up to 5 times.",
+        "Alternate 5 back blows and 5 abdominal thrusts until the object comes out.",
+        "If they lose consciousness: call {emergency} and start CPR."
+      ],
+      "never": [
+        "Babies under 1 year: no abdominal thrusts. Give 5 back blows and 5 chest thrusts with two fingers."
+      ]
+    },
+    "fr": {
+      "title": "Étouffement",
+      "keywords": "étouffement étouffe s'étouffe heimlich obstruction voies aériennes aliment gorge toux ne respire pas",
+      "steps": [
+        "S'il tousse, encouragez-le à tousser fort.",
+        "S'il ne peut ni tousser, ni parler, ni respirer : penchez-le en avant et donnez 5 claques fortes entre les omoplates.",
+        "Puis placez-vous derrière lui, poing au-dessus du nombril, et tirez fort vers vous et vers le haut, jusqu'à 5 fois.",
+        "Alternez 5 claques dans le dos et 5 compressions abdominales jusqu'à ce que l'objet sorte.",
+        "S'il perd connaissance : appelez le {emergency} et commencez la réanimation."
+      ],
+      "never": [
+        "Bébés de moins d'un an : pas de compressions sur le ventre. 5 claques dans le dos et 5 compressions sur la poitrine avec deux doigts."
+      ]
+    },
+    "de": {
+      "title": "Ersticken",
+      "keywords": "ersticken verschlucken heimlich atemwege fremdkörper essen hals husten keine luft",
+      "steps": [
+        "Wenn die Person husten kann: zum kräftigen Husten auffordern.",
+        "Kann sie nicht husten, sprechen oder atmen: nach vorne beugen und 5 kräftige Schläge zwischen die Schulterblätter geben.",
+        "Dann hinter die Person stellen: Faust über den Bauchnabel, kräftig nach innen und oben ziehen, bis zu 5 Mal.",
+        "5 Rückenschläge und 5 Oberbauchkompressionen abwechseln, bis der Gegenstand herauskommt.",
+        "Wird sie bewusstlos: {emergency} anrufen und mit der Wiederbelebung beginnen."
+      ],
+      "never": [
+        "Babys unter 1 Jahr: keine Oberbauchkompressionen. 5 Rückenschläge und 5 Brustkorbkompressionen mit zwei Fingern."
+      ]
+    },
+    "es": {
+      "title": "Atragantamiento",
+      "keywords": "atragantamiento asfixia heimlich obstrucción vía aérea bocado comida garganta tos no respira",
+      "steps": [
+        "Si tose, anímale a seguir tosiendo fuerte.",
+        "Si no puede toser, hablar ni respirar: inclínale hacia delante y da 5 golpes fuertes entre los omóplatos.",
+        "Después, por detrás: puño encima del ombligo y tira fuerte hacia ti y hacia arriba, hasta 5 veces.",
+        "Alterna 5 golpes en la espalda y 5 compresiones abdominales hasta que salga el objeto.",
+        "Si pierde el conocimiento: llama al {emergency} y empieza la reanimación."
+      ],
+      "never": [
+        "Bebés menores de 1 año: nada de compresiones en la barriga. 5 golpes en la espalda y 5 compresiones en el pecho con dos dedos."
+      ]
+    }
+  },
+  {
+    "id": "unconscious",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – First Aid: recovery position",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#128",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#74"
+    ],
+    "it": {
+      "title": "Svenuto, ma respira",
+      "keywords": "svenuto svenimento incosciente posizione laterale di sicurezza pls respira non risponde",
+      "steps": [
+        "Chiama il {emergency}.",
+        "Inginocchiati al suo fianco. Piega verso l'alto il suo braccio più vicino a te.",
+        "Metti il dorso della sua altra mano sotto la sua guancia.",
+        "Piega il ginocchio più lontano e girala sul fianco verso di te.",
+        "Inclina la testa all'indietro così la bocca resta aperta e libera.",
+        "Coprila e controlla il respiro ogni minuto. Se smette di respirare: rianimazione."
+      ],
+      "never": [
+        "Non darle da bere né da mangiare.",
+        "Se pensi a una lesione alla schiena e respira bene, non muoverla."
+      ]
+    },
+    "en": {
+      "title": "Unconscious but breathing",
+      "keywords": "unconscious fainted recovery position breathing unresponsive passed out",
+      "steps": [
+        "Call {emergency}.",
+        "Kneel beside them. Bend the arm nearest to you upwards.",
+        "Place the back of their other hand against their cheek.",
+        "Bend the far knee and roll them onto their side towards you.",
+        "Tilt the head back so the mouth stays open and clear.",
+        "Keep them covered and check breathing every minute. If breathing stops: start CPR."
+      ],
+      "never": [
+        "Do not give food or drink.",
+        "If you suspect a spinal injury and they breathe well, do not move them."
+      ]
+    },
+    "fr": {
+      "title": "Inconscient mais respire",
+      "keywords": "inconscient évanoui malaise position latérale de sécurité pls respire ne répond pas",
+      "steps": [
+        "Appelez le {emergency}.",
+        "Agenouillez-vous à côté. Pliez vers le haut le bras le plus proche de vous.",
+        "Placez le dos de son autre main sous sa joue.",
+        "Pliez le genou le plus éloigné et tournez la personne sur le côté vers vous.",
+        "Basculez la tête en arrière pour que la bouche reste ouverte et dégagée.",
+        "Couvrez-la et vérifiez la respiration chaque minute. Si elle s'arrête : réanimation."
+      ],
+      "never": [
+        "Ne lui donnez ni à boire ni à manger.",
+        "Si vous suspectez une blessure au dos et qu'elle respire bien, ne la bougez pas."
+      ]
+    },
+    "de": {
+      "title": "Bewusstlos, atmet",
+      "keywords": "bewusstlos ohnmacht stabile seitenlage atmet reagiert nicht",
+      "steps": [
+        "{emergency} anrufen.",
+        "Neben der Person knien. Den Arm auf Ihrer Seite nach oben anwinkeln.",
+        "Den Handrücken der anderen Hand unter ihre Wange legen.",
+        "Das entfernte Knie beugen und die Person zu sich auf die Seite drehen.",
+        "Kopf nach hinten neigen, damit der Mund offen und frei bleibt.",
+        "Zudecken und jede Minute die Atmung prüfen. Hört sie auf zu atmen: Wiederbelebung."
+      ],
+      "never": [
+        "Nichts zu essen oder zu trinken geben.",
+        "Bei Verdacht auf Rückenverletzung und guter Atmung: nicht bewegen."
+      ]
+    },
+    "es": {
+      "title": "Inconsciente, pero respira",
+      "keywords": "inconsciente desmayo posición lateral de seguridad pls respira no responde",
+      "steps": [
+        "Llama al {emergency}.",
+        "Arrodíllate a su lado. Dobla hacia arriba el brazo más cercano a ti.",
+        "Pon el dorso de su otra mano contra su mejilla.",
+        "Dobla la rodilla más lejana y gírala de lado hacia ti.",
+        "Inclina la cabeza hacia atrás para que la boca quede abierta y libre.",
+        "Abrígala y comprueba la respiración cada minuto. Si deja de respirar: reanimación."
+      ],
+      "never": [
+        "No le des de beber ni de comer.",
+        "Si sospechas una lesión de espalda y respira bien, no la muevas."
+      ]
+    }
+  },
+  {
+    "id": "burns",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – First Aid: thermal burns",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#213",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#129"
+    ],
+    "it": {
+      "title": "Ustione",
+      "keywords": "ustione bruciatura scottatura fuoco fiamme bolle acqua bollente",
+      "steps": [
+        "Allontana la persona dal calore. Se i vestiti bruciano: fermati, buttati a terra, rotola.",
+        "Raffredda subito sotto acqua corrente per almeno 10 minuti, meglio 20.",
+        "Togli anelli, orologi e vestiti che non sono attaccati alla pelle.",
+        "Copri con pellicola trasparente o un panno pulito, senza stringere.",
+        "Chiama il {emergency} se l'ustione è grande, sul viso, sulle mani o sui genitali, o se è un bambino."
+      ],
+      "never": [
+        "Niente ghiaccio, burro, olio o creme.",
+        "Non bucare le bolle e non staccare i vestiti attaccati."
+      ]
+    },
+    "en": {
+      "title": "Burn",
+      "keywords": "burn scald fire flames blisters hot water",
+      "steps": [
+        "Move the person away from the heat. If clothes are on fire: stop, drop and roll.",
+        "Cool it at once under running water for at least 10 minutes, ideally 20.",
+        "Remove rings, watches and clothing that is not stuck to the skin.",
+        "Cover loosely with plastic wrap (cling film) or a clean cloth.",
+        "Call {emergency} if it is large, on the face, hands or genitals, or if it is a child."
+      ],
+      "never": [
+        "No ice, butter, oil or creams.",
+        "Do not burst blisters or pull off stuck clothing."
+      ]
+    },
+    "fr": {
+      "title": "Brûlure",
+      "keywords": "brûlure brûlé feu flammes cloques eau bouillante",
+      "steps": [
+        "Éloignez la personne de la chaleur. Si ses vêtements brûlent : arrêtez-vous, couchez-vous, roulez.",
+        "Refroidissez tout de suite sous l'eau courante pendant au moins 10 minutes, idéalement 20.",
+        "Retirez bagues, montres et vêtements qui ne collent pas à la peau.",
+        "Couvrez sans serrer avec du film alimentaire ou un tissu propre.",
+        "Appelez le {emergency} si elle est étendue, sur le visage, les mains ou les organes génitaux, ou s'il s'agit d'un enfant."
+      ],
+      "never": [
+        "Pas de glace, de beurre, d'huile ni de crème.",
+        "Ne percez pas les cloques et n'arrachez pas les vêtements collés."
+      ]
+    },
+    "de": {
+      "title": "Verbrennung",
+      "keywords": "verbrennung verbrüht feuer flammen blasen heißes wasser",
+      "steps": [
+        "Die Person von der Hitze wegbringen. Brennende Kleidung: stehen bleiben, hinlegen, wälzen.",
+        "Sofort unter fließendem Wasser kühlen, mindestens 10 Minuten, besser 20.",
+        "Ringe, Uhren und nicht festklebende Kleidung entfernen.",
+        "Locker mit Frischhaltefolie oder einem sauberen Tuch abdecken.",
+        "{emergency} anrufen bei großer Fläche, Gesicht, Händen, Genitalien oder bei Kindern."
+      ],
+      "never": [
+        "Kein Eis, keine Butter, kein Öl, keine Cremes.",
+        "Blasen nicht öffnen, festklebende Kleidung nicht abziehen."
+      ]
+    },
+    "es": {
+      "title": "Quemadura",
+      "keywords": "quemadura quemado fuego llamas ampollas agua hirviendo",
+      "steps": [
+        "Aleja a la persona del calor. Si la ropa arde: para, tírate al suelo y rueda.",
+        "Enfría enseguida con agua corriente durante al menos 10 minutos, mejor 20.",
+        "Quita anillos, relojes y la ropa que no esté pegada a la piel.",
+        "Cubre sin apretar con film transparente o un paño limpio.",
+        "Llama al {emergency} si es grande, en la cara, las manos o los genitales, o si es un niño."
+      ],
+      "never": [
+        "Nada de hielo, mantequilla, aceite ni cremas.",
+        "No revientes las ampollas ni arranques la ropa pegada."
+      ]
+    }
+  },
+  {
+    "id": "airraid",
+    "group": "danger",
+    "refs": [
+      "Protezione Civile – Io non rischio",
+      "doc:us-army-atp-3-50-21-survival-2018.pdf#137"
+    ],
+    "it": {
+      "title": "Allarme aereo, esplosioni",
+      "keywords": "allarme aereo bombardamento bombe missili droni esplosione sirena rifugio guerra attacco",
+      "steps": [
+        "Vai subito al riparo più vicino: rifugio, metropolitana, cantina, parcheggio sotterraneo.",
+        "Senza riparo: un corridoio o un bagno interno, con almeno due muri tra te e l'esterno.",
+        "Stai lontano da finestre e vetrate.",
+        "All'aperto: sdraiati a pancia in giù in un avvallamento, mani sulla testa.",
+        "Resta al riparo fino al cessato allarme.",
+        "Dopo: non toccare oggetti sconosciuti o frammenti. Allontanati e avvisa le autorità."
+      ],
+      "never": [
+        "Non uscire subito dopo un'esplosione: spesso ne segue un'altra.",
+        "Non fermarti a fare foto o video."
+      ]
+    },
+    "en": {
+      "title": "Air raid, explosions",
+      "keywords": "air raid bombing bombs missiles drones explosion siren shelter war attack",
+      "steps": [
+        "Go to the nearest shelter at once: public shelter, subway station, basement, underground parking garage.",
+        "If there is no shelter: an interior hallway or bathroom, with at least two walls between you and the outside.",
+        "Stay away from windows and glass.",
+        "Outdoors: lie face down in a dip in the ground, hands over your head.",
+        "Stay sheltered until the all-clear.",
+        "Afterwards: do not touch unknown objects or fragments. Move away and tell the authorities."
+      ],
+      "never": [
+        "Do not go out right after an explosion: another often follows.",
+        "Do not stop to take photos or videos."
+      ]
+    },
+    "fr": {
+      "title": "Alerte aérienne, explosions",
+      "keywords": "alerte aérienne bombardement bombes missiles drones explosion sirène abri guerre attaque",
+      "steps": [
+        "Allez tout de suite à l'abri le plus proche : abri, métro, cave, parking souterrain.",
+        "Sans abri : un couloir ou une salle de bain intérieure, avec au moins deux murs entre vous et l'extérieur.",
+        "Restez loin des fenêtres et des vitres.",
+        "Dehors : allongez-vous à plat ventre dans un creux du terrain, les mains sur la tête.",
+        "Restez à l'abri jusqu'à la fin de l'alerte.",
+        "Après : ne touchez aucun objet inconnu ni fragment. Éloignez-vous et prévenez les autorités."
+      ],
+      "never": [
+        "Ne sortez pas juste après une explosion : une autre suit souvent.",
+        "Ne vous arrêtez pas pour filmer ou photographier."
+      ]
+    },
+    "de": {
+      "title": "Luftalarm, Explosionen",
+      "keywords": "luftalarm bombenangriff bomben raketen drohnen explosion sirene schutzraum bunker krieg angriff",
+      "steps": [
+        "Sofort in den nächsten Schutzraum: Bunker, U-Bahn, Keller, Tiefgarage.",
+        "Ohne Schutzraum: innerer Flur oder Bad, mindestens zwei Wände zwischen Ihnen und draußen.",
+        "Abstand zu Fenstern und Glas halten.",
+        "Im Freien: in einer Mulde flach auf den Bauch legen, Hände auf den Kopf.",
+        "Bis zur Entwarnung in Deckung bleiben.",
+        "Danach: keine unbekannten Gegenstände oder Splitter berühren. Abstand halten und Behörden informieren."
+      ],
+      "never": [
+        "Nicht direkt nach einer Explosion hinausgehen: oft folgt eine weitere.",
+        "Nicht für Fotos oder Videos stehen bleiben."
+      ]
+    },
+    "es": {
+      "title": "Alerta aérea, explosiones",
+      "keywords": "alerta aérea bombardeo bombas misiles drones explosión sirena refugio guerra ataque",
+      "steps": [
+        "Ve enseguida al lugar protegido más cercano: refugio, metro, sótano, aparcamiento subterráneo.",
+        "Sin refugio: un pasillo o baño interior, con al menos dos paredes entre tú y el exterior.",
+        "Aléjate de ventanas y cristales.",
+        "Al aire libre: túmbate boca abajo en un hueco del terreno, con las manos sobre la cabeza.",
+        "Quédate a cubierto hasta el fin de la alerta.",
+        "Después: no toques objetos desconocidos ni fragmentos. Aléjate y avisa a las autoridades."
+      ],
+      "never": [
+        "No salgas justo después de una explosión: a menudo le sigue otra.",
+        "No te pares a hacer fotos o vídeos."
+      ]
+    }
+  },
+  {
+    "id": "nuclear",
+    "group": "danger",
+    "refs": [
+      "guide:pc-nucleare-cosa-fare",
+      "doc:kearny-nuclear-war-survival-skills-1987.pdf#1"
+    ],
+    "it": {
+      "title": "Allarme nucleare",
+      "keywords": "nucleare atomica radiazioni radioattività fallout bomba atomica centrale iodio nube radioattiva",
+      "steps": [
+        "Entra subito in un edificio, nel punto più interno. Meglio in cantina.",
+        "Chiudi porte e finestre. Spegni ventilazione e condizionatori.",
+        "Se eri fuori: togli i vestiti, chiudili in un sacchetto e fai la doccia, senza balsamo.",
+        "Resta dentro almeno 24 ore, o finché le autorità dicono di uscire.",
+        "Ascolta radio, TV e le allerte sul telefono ({alert}).",
+        "Prendi lo iodio solo se lo dicono le autorità."
+      ],
+      "never": [
+        "Non andare a prendere i figli a scuola: lì sono al sicuro.",
+        "Non mangiare cibi rimasti all'aperto e non bere acqua da fonti scoperte."
+      ]
+    },
+    "en": {
+      "title": "Nuclear alert",
+      "keywords": "nuclear atomic radiation radioactive fallout bomb power plant iodine radioactive cloud",
+      "steps": [
+        "Get inside a building at once and go to the innermost part. A basement is best.",
+        "Close doors and windows. Turn off ventilation and air conditioning.",
+        "If you were outside: take off your clothes, seal them in a bag and shower, without conditioner.",
+        "Stay inside for at least 24 hours, or until the authorities say you can go out.",
+        "Listen to radio, TV and phone alerts ({alert}).",
+        "Take iodine only if the authorities tell you to."
+      ],
+      "never": [
+        "Do not fetch children from school: they are safe there.",
+        "Do not eat food left outdoors or drink water from open sources."
+      ]
+    },
+    "fr": {
+      "title": "Alerte nucléaire",
+      "keywords": "nucléaire atomique radiations radioactivité retombées bombe centrale iode nuage radioactif",
+      "steps": [
+        "Entrez tout de suite dans un bâtiment, le plus à l'intérieur possible. Idéalement dans une cave.",
+        "Fermez portes et fenêtres. Coupez la ventilation et la climatisation.",
+        "Si vous étiez dehors : retirez vos vêtements, enfermez-les dans un sac et douchez-vous, sans après-shampoing.",
+        "Restez à l'intérieur au moins 24 heures, ou jusqu'à ce que les autorités disent de sortir.",
+        "Écoutez la radio, la télévision et les alertes sur le téléphone ({alert}).",
+        "Prenez l'iode uniquement sur consigne des autorités."
+      ],
+      "never": [
+        "N'allez pas chercher les enfants à l'école : ils y sont en sécurité.",
+        "Ne mangez pas d'aliments restés dehors et ne buvez pas l'eau de sources à découvert."
+      ]
+    },
+    "de": {
+      "title": "Atomalarm",
+      "keywords": "atom nuklear strahlung radioaktiv fallout atombombe kernkraftwerk jod jodtabletten",
+      "steps": [
+        "Sofort in ein Gebäude, möglichst weit ins Innere. Am besten in den Keller.",
+        "Türen und Fenster schließen. Lüftung und Klimaanlage ausschalten.",
+        "Wenn Sie draußen waren: Kleidung ausziehen, in einem Beutel verschließen und duschen, ohne Haarspülung.",
+        "Mindestens 24 Stunden drinnen bleiben oder bis die Behörden Entwarnung geben.",
+        "Radio, Fernsehen und Warnungen auf dem Handy verfolgen ({alert}).",
+        "Jodtabletten nur auf Anweisung der Behörden einnehmen."
+      ],
+      "never": [
+        "Kinder nicht von der Schule abholen: dort sind sie sicher.",
+        "Keine draußen gelagerten Lebensmittel essen, kein Wasser aus offenen Quellen trinken."
+      ]
+    },
+    "es": {
+      "title": "Alerta nuclear",
+      "keywords": "nuclear atómica radiación radiactividad lluvia radiactiva bomba central yodo nube",
+      "steps": [
+        "Entra enseguida en un edificio, lo más adentro posible. Mejor en un sótano.",
+        "Cierra puertas y ventanas. Apaga la ventilación y el aire acondicionado.",
+        "Si estabas fuera: quítate la ropa, ciérrala en una bolsa y dúchate, sin acondicionador.",
+        "Quédate dentro al menos 24 horas, o hasta que las autoridades digan que puedes salir.",
+        "Escucha la radio, la televisión y las alertas del móvil ({alert}).",
+        "Toma yodo solo si lo indican las autoridades."
+      ],
+      "never": [
+        "No vayas a recoger a los niños al colegio: allí están seguros.",
+        "No comas alimentos que hayan estado al aire libre ni bebas agua de fuentes descubiertas."
+      ]
+    }
+  },
+  {
+    "id": "chemical",
+    "group": "danger",
+    "refs": [
+      "guide:pc-industriale-cosa-fare"
+    ],
+    "it": {
+      "title": "Nube tossica, incidente chimico",
+      "keywords": "chimico nube tossica gas tossico incidente industriale fumo tossico odore irritazione",
+      "steps": [
+        "Non cercare di tornare a casa: entra nel luogo chiuso più vicino.",
+        "Chiudi porte e finestre e copri le fessure con nastro o panni bagnati.",
+        "Spegni ventilazione, condizionatori, luce e gas.",
+        "Se senti odori pungenti o bruciore: copri naso e bocca con un panno bagnato e lavati gli occhi.",
+        "Segui le autorità ({alert}) e non uscire prima del cessato allarme."
+      ],
+      "never": [
+        "Non fumare e non accendere fiamme.",
+        "Non andare a vedere cosa succede."
+      ]
+    },
+    "en": {
+      "title": "Toxic cloud, chemical accident",
+      "keywords": "chemical toxic cloud toxic gas industrial accident smoke smell irritation",
+      "steps": [
+        "Do not try to get home: go into the nearest building.",
+        "Close doors and windows and seal gaps with tape or wet cloths.",
+        "Turn off ventilation, air conditioning, electricity and gas.",
+        "If you notice a pungent smell or a burning sensation: cover nose and mouth with a wet cloth and rinse your eyes.",
+        "Follow the authorities ({alert}) and do not go out before the all-clear."
+      ],
+      "never": [
+        "Do not smoke or light any flame.",
+        "Do not go to see what is happening."
+      ]
+    },
+    "fr": {
+      "title": "Nuage toxique, accident chimique",
+      "keywords": "chimique nuage toxique gaz toxique accident industriel fumée odeur irritation",
+      "steps": [
+        "N'essayez pas de rentrer chez vous : entrez dans le lieu clos le plus proche.",
+        "Fermez portes et fenêtres et bouchez les interstices avec du ruban adhésif ou des linges mouillés.",
+        "Coupez ventilation, climatisation, électricité et gaz.",
+        "Si vous sentez une odeur piquante ou une irritation : couvrez le nez et la bouche avec un linge mouillé et rincez-vous les yeux.",
+        "Suivez les autorités ({alert}) et ne sortez pas avant la fin de l'alerte."
+      ],
+      "never": [
+        "Ne fumez pas et n'allumez aucune flamme.",
+        "N'allez pas voir ce qui se passe."
+      ]
+    },
+    "de": {
+      "title": "Giftwolke, Chemieunfall",
+      "keywords": "chemie giftwolke giftgas chemieunfall industrieunfall rauch geruch reizung",
+      "steps": [
+        "Nicht versuchen, nach Hause zu kommen: ins nächste Gebäude gehen.",
+        "Türen und Fenster schließen, Ritzen mit Klebeband oder nassen Tüchern abdichten.",
+        "Lüftung, Klimaanlage, Strom und Gas ausschalten.",
+        "Bei stechendem Geruch oder Reizung: Nase und Mund mit einem nassen Tuch bedecken, Augen ausspülen.",
+        "Den Behörden folgen ({alert}) und erst nach der Entwarnung hinausgehen."
+      ],
+      "never": [
+        "Nicht rauchen, keine Flamme anzünden.",
+        "Nicht nachsehen gehen, was passiert."
+      ]
+    },
+    "es": {
+      "title": "Nube tóxica, accidente químico",
+      "keywords": "químico nube tóxica gas tóxico accidente industrial humo olor irritación",
+      "steps": [
+        "No intentes volver a casa: entra en el lugar cerrado más cercano.",
+        "Cierra puertas y ventanas y tapa las rendijas con cinta o paños mojados.",
+        "Apaga la ventilación, el aire acondicionado, la luz y el gas.",
+        "Si notas olores penetrantes o escozor: cúbrete nariz y boca con un paño mojado y lávate los ojos.",
+        "Sigue a las autoridades ({alert}) y no salgas antes del fin de la alerta."
+      ],
+      "never": [
+        "No fumes ni enciendas fuego.",
+        "No vayas a ver lo que pasa."
+      ]
+    }
+  },
+  {
+    "id": "earthquake",
+    "group": "danger",
+    "refs": [
+      "guide:pc-terremoto-cosa-fare"
+    ],
+    "it": {
+      "title": "Terremoto",
+      "keywords": "terremoto scossa sisma crollo macerie",
+      "steps": [
+        "Durante la scossa: riparati sotto un tavolo robusto o vicino a un muro portante.",
+        "Stai lontano da finestre, mobili alti e oggetti che possono cadere.",
+        "Non correre fuori: aspetta che la scossa finisca.",
+        "All'aperto: allontanati da edifici, alberi, lampioni e fili elettrici.",
+        "Dopo: chiudi gas, acqua e luce, metti le scarpe ed esci senza ascensore.",
+        "Vai nell'area di attesa del tuo comune. Vicino al mare: allontanati e sali in alto."
+      ],
+      "never": [
+        "Non usare l'ascensore.",
+        "Non usare telefono e auto se non serve: lasciali liberi per i soccorsi."
+      ]
+    },
+    "en": {
+      "title": "Earthquake",
+      "keywords": "earthquake quake tremor collapse rubble",
+      "steps": [
+        "During the shaking: take cover under a sturdy table or next to a load-bearing wall.",
+        "Stay away from windows, tall furniture and things that can fall.",
+        "Do not run outside: wait for the shaking to stop.",
+        "Outdoors: move away from buildings, trees, street lights and power lines.",
+        "Afterwards: turn off gas, water and electricity, put on shoes and leave without using the elevator.",
+        "Go to your town's assembly area. Near the sea: move away and go to high ground."
+      ],
+      "never": [
+        "Do not use the elevator.",
+        "Do not use your phone or car unless needed: keep lines and roads clear for rescuers."
+      ]
+    },
+    "fr": {
+      "title": "Tremblement de terre",
+      "keywords": "tremblement de terre séisme secousse effondrement décombres",
+      "steps": [
+        "Pendant la secousse : abritez-vous sous une table solide ou près d'un mur porteur.",
+        "Restez loin des fenêtres, des meubles hauts et des objets qui peuvent tomber.",
+        "Ne courez pas dehors : attendez la fin de la secousse.",
+        "Dehors : éloignez-vous des bâtiments, des arbres, des lampadaires et des lignes électriques.",
+        "Après : coupez gaz, eau et électricité, mettez des chaussures et sortez sans prendre l'ascenseur.",
+        "Rejoignez le point de rassemblement de votre commune. Près de la mer : éloignez-vous et montez en hauteur."
+      ],
+      "never": [
+        "Ne prenez pas l'ascenseur.",
+        "N'utilisez le téléphone et la voiture qu'en cas de besoin : laissez-les libres pour les secours."
+      ]
+    },
+    "de": {
+      "title": "Erdbeben",
+      "keywords": "erdbeben beben erschütterung einsturz trümmer",
+      "steps": [
+        "Während des Bebens: unter einem stabilen Tisch oder an einer tragenden Wand Schutz suchen.",
+        "Abstand zu Fenstern, hohen Möbeln und Gegenständen halten, die herabfallen können.",
+        "Nicht hinausrennen: warten, bis das Beben aufhört.",
+        "Im Freien: weg von Gebäuden, Bäumen, Laternen und Stromleitungen.",
+        "Danach: Gas, Wasser und Strom abdrehen, Schuhe anziehen und ohne Aufzug hinausgehen.",
+        "Zum Sammelplatz Ihrer Gemeinde gehen. Am Meer: weg vom Ufer und auf eine Anhöhe."
+      ],
+      "never": [
+        "Keinen Aufzug benutzen.",
+        "Telefon und Auto nur benutzen, wenn nötig: für die Rettungskräfte frei halten."
+      ]
+    },
+    "es": {
+      "title": "Terremoto",
+      "keywords": "terremoto sismo temblor derrumbe escombros",
+      "steps": [
+        "Durante el temblor: protégete bajo una mesa robusta o junto a un muro de carga.",
+        "Aléjate de ventanas, muebles altos y objetos que puedan caer.",
+        "No salgas corriendo: espera a que termine el temblor.",
+        "Al aire libre: aléjate de edificios, árboles, farolas y cables eléctricos.",
+        "Después: cierra gas, agua y luz, ponte zapatos y sal sin usar el ascensor.",
+        "Ve al punto de encuentro de tu municipio. Cerca del mar: aléjate y sube a un lugar alto."
+      ],
+      "never": [
+        "No uses el ascensor.",
+        "No uses el teléfono ni el coche si no es necesario: déjalos libres para los servicios de emergencia."
+      ]
+    }
+  },
+  {
+    "id": "fire",
+    "group": "danger",
+    "refs": [
+      "guide:pc-incendi-boschivi-cosa-fare",
+      "doc:us-army-atp-3-50-21-survival-2018.pdf#118"
+    ],
+    "it": {
+      "title": "Incendio",
+      "keywords": "incendio fuoco fumo fiamme incendio boschivo bosco casa brucia",
+      "steps": [
+        "Avvisa tutti ed esci subito. Chiama il {emergency} quando sei fuori.",
+        "Se c'è fumo: cammina chinato o carponi, copri naso e bocca con un panno bagnato.",
+        "Prima di aprire una porta toccala: se è calda, non aprirla.",
+        "Chiudi le porte dietro di te per rallentare il fuoco.",
+        "Bloccato dentro: chiudi la porta, tappa le fessure con panni bagnati e fatti vedere alla finestra.",
+        "Incendio nel bosco: allontanati controvento, verso strade o zone senza vegetazione."
+      ],
+      "never": [
+        "Non usare l'ascensore.",
+        "Non tornare indietro a prendere oggetti."
+      ]
+    },
+    "en": {
+      "title": "Fire",
+      "keywords": "fire smoke flames wildfire forest fire house burning",
+      "steps": [
+        "Warn everyone and get out at once. Call {emergency} once you are outside.",
+        "If there is smoke: stay low or crawl, cover nose and mouth with a wet cloth.",
+        "Touch a door before opening it: if it is hot, do not open it.",
+        "Close doors behind you to slow the fire.",
+        "Trapped inside: close the door, block gaps with wet cloths and show yourself at the window.",
+        "Wildfire: move away upwind, towards roads or areas without vegetation."
+      ],
+      "never": [
+        "Do not use the elevator.",
+        "Do not go back for belongings."
+      ]
+    },
+    "fr": {
+      "title": "Incendie",
+      "keywords": "incendie feu fumée flammes feu de forêt maison brûle",
+      "steps": [
+        "Prévenez tout le monde et sortez tout de suite. Appelez le {emergency} une fois dehors.",
+        "S'il y a de la fumée : baissez-vous ou avancez à quatre pattes, couvrez le nez et la bouche avec un linge mouillé.",
+        "Touchez une porte avant de l'ouvrir : si elle est chaude, ne l'ouvrez pas.",
+        "Fermez les portes derrière vous pour ralentir le feu.",
+        "Bloqué à l'intérieur : fermez la porte, bouchez les interstices avec des linges mouillés et montrez-vous à la fenêtre.",
+        "Feu de forêt : éloignez-vous face au vent, vers des routes ou des zones sans végétation."
+      ],
+      "never": [
+        "Ne prenez pas l'ascenseur.",
+        "Ne revenez pas chercher des affaires."
+      ]
+    },
+    "de": {
+      "title": "Brand",
+      "keywords": "brand feuer rauch flammen waldbrand haus brennt",
+      "steps": [
+        "Alle warnen und sofort hinausgehen. Draußen {emergency} anrufen.",
+        "Bei Rauch: gebückt gehen oder kriechen, Nase und Mund mit einem nassen Tuch bedecken.",
+        "Tür vor dem Öffnen anfassen: Ist sie heiß, nicht öffnen.",
+        "Türen hinter sich schließen, um das Feuer zu bremsen.",
+        "Eingeschlossen: Tür schließen, Ritzen mit nassen Tüchern abdichten und am Fenster bemerkbar machen.",
+        "Waldbrand: gegen den Wind weggehen, zu Straßen oder Flächen ohne Bewuchs."
+      ],
+      "never": [
+        "Keinen Aufzug benutzen.",
+        "Nicht zurückgehen, um Sachen zu holen."
+      ]
+    },
+    "es": {
+      "title": "Incendio",
+      "keywords": "incendio fuego humo llamas incendio forestal bosque casa arde",
+      "steps": [
+        "Avisa a todos y sal enseguida. Llama al {emergency} cuando estés fuera.",
+        "Si hay humo: camina agachado o a gatas, cúbrete nariz y boca con un paño mojado.",
+        "Toca la puerta antes de abrirla: si está caliente, no la abras.",
+        "Cierra las puertas detrás de ti para frenar el fuego.",
+        "Atrapado dentro: cierra la puerta, tapa las rendijas con paños mojados y hazte ver desde la ventana.",
+        "Incendio forestal: aléjate contra el viento, hacia carreteras o zonas sin vegetación."
+      ],
+      "never": [
+        "No uses el ascensor.",
+        "No vuelvas a por tus cosas."
+      ]
+    }
+  },
+  {
+    "id": "flood",
+    "group": "danger",
+    "refs": [
+      "guide:pc-alluvione-cosa-fare"
+    ],
+    "it": {
+      "title": "Alluvione",
+      "keywords": "alluvione allagamento inondazione esondazione fiume acqua alta piena",
+      "steps": [
+        "Sali ai piani alti. Non scendere in cantine, seminterrati o garage.",
+        "Non uscire per spostare l'auto.",
+        "Chiudi il gas e stacca la corrente. Non toccare apparecchi elettrici con mani o piedi bagnati.",
+        "All'aperto: allontanati dall'acqua e raggiungi un punto alto.",
+        "Evita sottopassi, argini e ponti. Anche pochi centimetri d'acqua possono trascinarti.",
+        "Non bere l'acqua del rubinetto: potrebbe essere contaminata."
+      ],
+      "never": [
+        "Non usare l'ascensore.",
+        "Non guidare su strade allagate."
+      ]
+    },
+    "en": {
+      "title": "Flood",
+      "keywords": "flood flooding flash flood river overflow high water",
+      "steps": [
+        "Go to the upper floors. Do not go down to basements, cellars or garages.",
+        "Do not go out to move your car.",
+        "Turn off the gas and the electricity. Do not touch electrical devices with wet hands or feet.",
+        "Outdoors: move away from the water and get to high ground.",
+        "Avoid underpasses, embankments and bridges. Even a few centimeters of water can sweep you away.",
+        "Do not drink tap water: it may be contaminated."
+      ],
+      "never": [
+        "Do not use the elevator.",
+        "Do not drive on flooded roads."
+      ]
+    },
+    "fr": {
+      "title": "Inondation",
+      "keywords": "inondation crue débordement rivière montée des eaux",
+      "steps": [
+        "Montez dans les étages. Ne descendez pas dans les caves, sous-sols ou garages.",
+        "Ne sortez pas pour déplacer votre voiture.",
+        "Coupez le gaz et l'électricité. Ne touchez pas les appareils électriques avec les mains ou les pieds mouillés.",
+        "Dehors : éloignez-vous de l'eau et gagnez un point haut.",
+        "Évitez passages souterrains, digues et ponts. Quelques centimètres d'eau peuvent vous emporter.",
+        "Ne buvez pas l'eau du robinet : elle peut être contaminée."
+      ],
+      "never": [
+        "Ne prenez pas l'ascenseur.",
+        "Ne roulez pas sur une route inondée."
+      ]
+    },
+    "de": {
+      "title": "Hochwasser",
+      "keywords": "hochwasser überschwemmung flut sturzflut fluss überflutung",
+      "steps": [
+        "In die oberen Stockwerke gehen. Nicht in Keller, Souterrain oder Garage.",
+        "Nicht hinausgehen, um das Auto umzuparken.",
+        "Gas und Strom abschalten. Elektrische Geräte nicht mit nassen Händen oder Füßen berühren.",
+        "Im Freien: weg vom Wasser und auf eine Anhöhe.",
+        "Unterführungen, Deiche und Brücken meiden. Schon wenige Zentimeter Wasser können Sie mitreißen.",
+        "Kein Leitungswasser trinken: Es kann verunreinigt sein."
+      ],
+      "never": [
+        "Keinen Aufzug benutzen.",
+        "Nicht durch überflutete Straßen fahren."
+      ]
+    },
+    "es": {
+      "title": "Inundación",
+      "keywords": "inundación riada crecida desbordamiento río agua",
+      "steps": [
+        "Sube a los pisos altos. No bajes a sótanos, semisótanos ni garajes.",
+        "No salgas para mover el coche.",
+        "Cierra el gas y corta la luz. No toques aparatos eléctricos con las manos o los pies mojados.",
+        "Al aire libre: aléjate del agua y sube a un lugar alto.",
+        "Evita pasos subterráneos, diques y puentes. Unos pocos centímetros de agua pueden arrastrarte.",
+        "No bebas agua del grifo: puede estar contaminada."
+      ],
+      "never": [
+        "No uses el ascensor.",
+        "No conduzcas por calles inundadas."
+      ]
+    }
+  },
+  {
+    "id": "cold",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – First Aid: hypothermia",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#343",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#349",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#103"
+    ],
+    "it": {
+      "title": "Freddo estremo, ipotermia",
+      "keywords": "freddo ipotermia congelamento gelo neve assideramento trema",
+      "steps": [
+        "Porta la persona al riparo da vento, freddo e umidità.",
+        "Togli i vestiti bagnati e coprila con coperte asciutte, anche sotto di lei.",
+        "Copri anche testa e collo. Avvolgila nel telo termico se ce l'hai.",
+        "Se è sveglia e riesce a deglutire: dalle bevande calde e zuccherate.",
+        "Se è confusa, molto sonnolenta o non trema più: chiama il {emergency}.",
+        "Muovila con delicatezza e tienila sdraiata."
+      ],
+      "never": [
+        "Niente alcol.",
+        "Non strofinare le parti congelate e non usare acqua bollente."
+      ]
+    },
+    "en": {
+      "title": "Extreme cold, hypothermia",
+      "keywords": "cold hypothermia frostbite freezing snow shivering",
+      "steps": [
+        "Move the person out of the wind, cold and wet.",
+        "Remove wet clothes and cover them with dry blankets, with some underneath them too.",
+        "Cover the head and neck too. Wrap them in a foil blanket if you have one.",
+        "If they are awake and can swallow: warm, sweet drinks.",
+        "If they are confused, very drowsy or have stopped shivering: call {emergency}.",
+        "Move them gently and keep them lying down."
+      ],
+      "never": [
+        "No alcohol.",
+        "Do not rub frozen areas and do not use very hot water."
+      ]
+    },
+    "fr": {
+      "title": "Grand froid, hypothermie",
+      "keywords": "froid hypothermie gelure gel neige grelotte",
+      "steps": [
+        "Mettez la personne à l'abri du vent, du froid et de l'humidité.",
+        "Retirez les vêtements mouillés et couvrez-la de couvertures sèches, aussi en dessous.",
+        "Couvrez aussi la tête et le cou. Enveloppez-la dans une couverture de survie si vous en avez une.",
+        "Si elle est éveillée et peut avaler : boissons chaudes et sucrées.",
+        "Si elle est confuse, très somnolente ou ne grelotte plus : appelez le {emergency}.",
+        "Déplacez-la doucement et gardez-la allongée."
+      ],
+      "never": [
+        "Pas d'alcool.",
+        "Ne frottez pas les zones gelées et n'utilisez pas d'eau très chaude."
+      ]
+    },
+    "de": {
+      "title": "Extreme Kälte, Unterkühlung",
+      "keywords": "kälte unterkühlung erfrierung frost schnee zittern hypothermie",
+      "steps": [
+        "Die Person vor Wind, Kälte und Nässe schützen.",
+        "Nasse Kleidung ausziehen und mit trockenen Decken zudecken, auch eine darunterlegen.",
+        "Auch Kopf und Hals bedecken. In eine Rettungsdecke wickeln, wenn vorhanden.",
+        "Wenn sie wach ist und schlucken kann: warme, gesüßte Getränke.",
+        "Ist sie verwirrt, sehr schläfrig oder zittert nicht mehr: {emergency} anrufen.",
+        "Vorsichtig bewegen und liegend halten."
+      ],
+      "never": [
+        "Kein Alkohol.",
+        "Erfrorene Stellen nicht reiben, kein kochend heißes Wasser."
+      ]
+    },
+    "es": {
+      "title": "Frío extremo, hipotermia",
+      "keywords": "frío hipotermia congelación helada nieve tiritar",
+      "steps": [
+        "Lleva a la persona a resguardo del viento, el frío y la humedad.",
+        "Quítale la ropa mojada y cúbrela con mantas secas, también por debajo.",
+        "Cubre también la cabeza y el cuello. Envuélvela en una manta térmica si tienes una.",
+        "Si está despierta y puede tragar: bebidas calientes y azucaradas.",
+        "Si está confusa, muy somnolienta o ya no tiembla: llama al {emergency}.",
+        "Muévela con cuidado y mantenla tumbada."
+      ],
+      "never": [
+        "Nada de alcohol.",
+        "No frotes las zonas congeladas ni uses agua muy caliente."
+      ]
+    }
+  },
+  {
+    "id": "heat",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2021 – First Aid: heatstroke",
+      "doc:ifrc-first-aid-guidelines-2020.pdf#332",
+      "doc:us-army-atp-4-02-11-first-aid-2026.pdf#188"
+    ],
+    "it": {
+      "title": "Colpo di calore",
+      "keywords": "colpo di calore caldo ipertermia insolazione febbre sole disidratazione",
+      "steps": [
+        "Porta la persona all'ombra o in un luogo fresco.",
+        "Raffreddala subito: se puoi, immergila in acqua fredda fino al collo.",
+        "Altrimenti bagnala con acqua fredda, mettile addosso panni bagnati e falle aria.",
+        "Se è confusa, sviene o smette di sudare: chiama il {emergency}.",
+        "Se è sveglia: falle bere acqua a piccoli sorsi.",
+        "Continua a raffreddarla finché si riprende o arrivano i soccorsi."
+      ],
+      "never": [
+        "Niente alcol o caffè.",
+        "Non lasciarla da sola."
+      ]
+    },
+    "en": {
+      "title": "Heatstroke",
+      "keywords": "heatstroke heat stroke hyperthermia sunstroke hot overheating sun dehydration fever",
+      "steps": [
+        "Move the person into the shade or a cool place.",
+        "Cool them at once: if you can, immerse them in cold water up to the neck.",
+        "Otherwise soak them with cold water, apply wet cloths and fan them.",
+        "If they are confused, faint or stop sweating: call {emergency}.",
+        "If they are awake: give small sips of water.",
+        "Keep cooling until they recover or help arrives."
+      ],
+      "never": [
+        "No alcohol or coffee.",
+        "Do not leave them alone."
+      ]
+    },
+    "fr": {
+      "title": "Coup de chaleur",
+      "keywords": "coup de chaleur chaleur hyperthermie insolation canicule soleil fièvre déshydratation",
+      "steps": [
+        "Mettez la personne à l'ombre ou dans un endroit frais.",
+        "Refroidissez-la tout de suite : si possible, plongez-la dans l'eau froide jusqu'au cou.",
+        "Sinon mouillez-la avec de l'eau froide, posez des linges mouillés et éventez-la.",
+        "Si elle est confuse, s'évanouit ou ne transpire plus : appelez le {emergency}.",
+        "Si elle est éveillée : donnez-lui de l'eau à petites gorgées.",
+        "Continuez à la refroidir jusqu'à ce qu'elle aille mieux ou que les secours arrivent."
+      ],
+      "never": [
+        "Ni alcool ni café.",
+        "Ne la laissez pas seule."
+      ]
+    },
+    "de": {
+      "title": "Hitzschlag",
+      "keywords": "hitzschlag hitze überhitzung sonnenstich hyperthermie fieber sonne dehydrierung",
+      "steps": [
+        "Die Person in den Schatten oder an einen kühlen Ort bringen.",
+        "Sofort kühlen: wenn möglich bis zum Hals in kaltes Wasser tauchen.",
+        "Sonst mit kaltem Wasser übergießen, nasse Tücher auflegen und Luft zufächeln.",
+        "Ist sie verwirrt, wird ohnmächtig oder schwitzt nicht mehr: {emergency} anrufen.",
+        "Wenn sie wach ist: Wasser in kleinen Schlucken geben.",
+        "Weiter kühlen, bis sie sich erholt oder Hilfe kommt."
+      ],
+      "never": [
+        "Kein Alkohol, kein Kaffee.",
+        "Nicht allein lassen."
+      ]
+    },
+    "es": {
+      "title": "Golpe de calor",
+      "keywords": "golpe de calor calor hipertermia insolación ola de calor fiebre sol deshidratación",
+      "steps": [
+        "Lleva a la persona a la sombra o a un lugar fresco.",
+        "Enfríala enseguida: si puedes, sumérgela en agua fría hasta el cuello.",
+        "Si no, mójala con agua fría, ponle paños mojados y abanícala.",
+        "Si está confusa, se desmaya o deja de sudar: llama al {emergency}.",
+        "Si está despierta: dale agua a sorbos pequeños.",
+        "Sigue enfriándola hasta que se recupere o llegue ayuda."
+      ],
+      "never": [
+        "Nada de alcohol ni café.",
+        "No la dejes sola."
+      ]
+    }
+  },
+  {
+    "id": "water",
+    "group": "survive",
+    "refs": [
+      "WHO – Household water treatment",
+      "doc:us-army-atp-3-50-21-survival-2018.pdf#68"
+    ],
+    "it": {
+      "title": "Acqua da bere",
+      "keywords": "acqua potabile bere potabilizzare bollire candeggina cloro filtrare sete",
+      "steps": [
+        "Se l'acqua è torbida, lasciala riposare e filtrala con un panno pulito.",
+        "Il modo più sicuro: falla bollire per 1 minuto (3 minuti sopra i 2000 m).",
+        "Senza fuoco: 2 gocce di candeggina semplice, senza profumo, per ogni litro. Aspetta 30 minuti.",
+        "Conservala in contenitori puliti e chiusi.",
+        "Ogni persona ha bisogno di almeno 3–4 litri al giorno."
+      ],
+      "never": [
+        "Non usare candeggina profumata o con detergenti.",
+        "Bollire non toglie benzina o sostanze chimiche: non usare acqua che ne ha l'odore."
+      ]
+    },
+    "en": {
+      "title": "Drinking water",
+      "keywords": "water drinking safe purify boil bleach chlorine filter thirst",
+      "steps": [
+        "If the water is cloudy, let it settle and filter it through a clean cloth.",
+        "Safest: boil it for 1 minute (3 minutes above 2000 m).",
+        "Without fire: 2 drops of plain unscented bleach per liter. Wait 30 minutes.",
+        "Store it in clean, closed containers.",
+        "Each person needs at least 3–4 liters a day."
+      ],
+      "never": [
+        "Do not use scented bleach or bleach with detergents.",
+        "Boiling does not remove fuel or chemicals: do not use water that smells of them."
+      ]
+    },
+    "fr": {
+      "title": "Eau potable",
+      "keywords": "eau potable boire purifier bouillir javel chlore filtrer soif",
+      "steps": [
+        "Si l'eau est trouble, laissez-la reposer et filtrez-la avec un tissu propre.",
+        "Le plus sûr : faites-la bouillir 1 minute (3 minutes au-dessus de 2 000 m).",
+        "Sans feu : 2 gouttes d'eau de Javel simple, non parfumée, par litre. Attendez 30 minutes.",
+        "Conservez-la dans des récipients propres et fermés.",
+        "Chaque personne a besoin d'au moins 3 à 4 litres par jour."
+      ],
+      "never": [
+        "N'utilisez pas de Javel parfumée ou avec détergent.",
+        "Faire bouillir n'enlève ni carburant ni produits chimiques : n'utilisez pas une eau qui en a l'odeur."
+      ]
+    },
+    "de": {
+      "title": "Trinkwasser",
+      "keywords": "wasser trinkwasser trinken aufbereiten abkochen chlor bleichmittel filtern durst",
+      "steps": [
+        "Ist das Wasser trüb, absetzen lassen und durch ein sauberes Tuch filtern.",
+        "Am sichersten: 1 Minute kochen (über 2000 m: 3 Minuten).",
+        "Ohne Feuer: 2 Tropfen einfaches, unparfümiertes Chlorbleichmittel pro Liter. 30 Minuten warten.",
+        "In sauberen, geschlossenen Behältern aufbewahren.",
+        "Jede Person braucht mindestens 3–4 Liter pro Tag."
+      ],
+      "never": [
+        "Kein parfümiertes Bleichmittel oder Mittel mit Reinigungszusätzen.",
+        "Kochen entfernt keinen Treibstoff und keine Chemikalien: Wasser mit solchem Geruch nicht verwenden."
+      ]
+    },
+    "es": {
+      "title": "Agua potable",
+      "keywords": "agua potable beber potabilizar hervir lejía cloro filtrar sed",
+      "steps": [
+        "Si el agua está turbia, déjala reposar y fíltrala con un paño limpio.",
+        "Lo más seguro: hiérvela 1 minuto (3 minutos por encima de 2000 m).",
+        "Sin fuego: 2 gotas de lejía normal, sin perfume, por cada litro. Espera 30 minutos.",
+        "Guárdala en recipientes limpios y cerrados.",
+        "Cada persona necesita al menos 3–4 litros al día."
+      ],
+      "never": [
+        "No uses lejía perfumada ni con detergentes.",
+        "Hervir no elimina combustible ni productos químicos: no uses agua que huela a ellos."
+      ]
+    }
+  }
+]

@@ -184,6 +184,21 @@ assets/
   checklists/*.yaml
 ```
 
+## 7b. Lingue, paesi e schede d'emergenza
+
+- **Interfaccia** in italiano, inglese, francese, tedesco e spagnolo (`lib/l10n/app_*.arb`, generati con `flutter gen-l10n`).
+  La lingua si sceglie al primo avvio (lingua, paese, pronto) e si cambia da Altro.
+- **Schede d'emergenza** (`assets/cards/cards.json`): contenuto standard europeo, scritto una volta e tradotto nelle
+  5 lingue, un passo per schermata. Fonti di riferimento in inglese: linee guida ERC (European Resuscitation Council),
+  IFRC, manuali dell'esercito USA, protezione civile. Le fonti sono visibili solo su richiesta.
+- **Paese** (`lib/app/countries.dart`): solo le differenze reali, cioè numeri di emergenza, nome del sistema di
+  allerta sul telefono (IT-alert, FR-Alert, ES-Alert, NL-Alert, Cell Broadcast/NINA…), segnale delle sirene
+  (FR, DE, AT, CH) e note specifiche (es. iodio sopra i 45 anni in Germania).
+- **Menu**: Emergenza · Prepararsi · Strumenti · Altro (Biblioteca, testi originali, impostazioni).
+- **Ricerca unica** su schede, strumenti, liste, testi originali, documenti ed enciclopedie scaricate, con sinonimi
+  e tolleranza agli errori di battitura (`lib/features/search/`).
+- Le schede vanno riviste da un medico o soccorritore madrelingua prima della distribuzione pubblica.
+
 ## 8. Stato della fase 2 (Biblioteca)
 
 Fatto: lettore ZIM in Dart puro (`lib/features/library/zim/`, decompressione zstd/xz), server locale 127.0.0.1 + WebView,

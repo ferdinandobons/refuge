@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'documents.dart';
 
 class DocumentScreen extends StatefulWidget {
@@ -41,6 +42,7 @@ class _DocumentScreenState extends State<DocumentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
     final matches = _searcher.matches.length;
     final current = _searcher.currentIndex;
     return Scaffold(
@@ -49,7 +51,7 @@ class _DocumentScreenState extends State<DocumentScreen> {
             ? TextField(
                 controller: _query,
                 autofocus: true,
-                decoration: const InputDecoration(hintText: 'Cerca nel documento (in inglese)', border: InputBorder.none),
+                decoration: InputDecoration(hintText: t.searchDocument, border: InputBorder.none),
                 onSubmitted: (q) => q.trim().isEmpty ? _searcher.resetTextSearch() : _searcher.startTextSearch(q.trim()),
               )
             : Text(widget.doc.title, maxLines: 1, overflow: TextOverflow.ellipsis),
@@ -61,7 +63,7 @@ class _DocumentScreenState extends State<DocumentScreen> {
           ],
           IconButton(
             icon: Icon(_searching ? Icons.close : Icons.search),
-            tooltip: 'Cerca',
+            tooltip: t.search,
             onPressed: () => setState(() {
               _searching = !_searching;
               if (!_searching) {
@@ -70,7 +72,7 @@ class _DocumentScreenState extends State<DocumentScreen> {
               }
             }),
           ),
-          IconButton(icon: const Icon(Icons.info_outline), tooltip: 'Fonte e licenza', onPressed: _showInfo),
+          IconButton(icon: const Icon(Icons.info_outline), tooltip: t.sources, onPressed: _showInfo),
         ],
       ),
       body: Column(
@@ -100,6 +102,7 @@ class DocumentInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
     const label = TextStyle(color: Colors.white54, fontSize: 13);
     return SafeArea(
       child: SingleChildScrollView(
@@ -107,21 +110,18 @@ class DocumentInfo extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(doc.title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
-          Text('${doc.author} · ${doc.year} · ${doc.pages} pagine · ${doc.language.toUpperCase()}',
+          Text('${doc.author} · ${doc.year} · ${t.pagesN(doc.pages)} · ${doc.language.toUpperCase()}',
               style: const TextStyle(color: Colors.white70)),
           const SizedBox(height: 12),
           Text(doc.description),
           const SizedBox(height: 16),
-          const Text('LICENZA', style: label),
+          Text(t.license.toUpperCase(), style: label),
           Text(doc.license),
           const SizedBox(height: 12),
-          const Text('FONTE', style: label),
+          Text(t.sources.toUpperCase(), style: label),
           SelectableText(doc.source),
           const SizedBox(height: 12),
-          const Text(
-            'Documento riprodotto integralmente, senza modifiche.',
-            style: TextStyle(color: Colors.lightGreen),
-          ),
+          Text(t.reproducedInFull, style: const TextStyle(color: Colors.lightGreen)),
         ]),
       ),
     );

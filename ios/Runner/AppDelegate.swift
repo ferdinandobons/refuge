@@ -1,3 +1,4 @@
+import AVFoundation
 import CoreLocation
 import Flutter
 import UIKit
@@ -20,6 +21,31 @@ import UIKit
         .setStreamHandler(headingHandler)
       FlutterMethodChannel(name: "rifugio/files", binaryMessenger: registrar.messenger())
         .setMethodCallHandler(Self.handleFiles)
+      FlutterMethodChannel(name: "rifugio/speech", binaryMessenger: registrar.messenger())
+        .setMethodCallHandler { [weak self] call, result in self?.handleSpeech(call, result: result) }
+    }
+  }
+
+  private let synthesizer = AVSpeechSynthesizer()
+
+  /// Lettura ad alta voce con le voci di sistema (offline).
+  private func handleSpeech(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    switch call.method {
+    case "speak":
+      guard let args = call.arguments as? [String: Any], let text = args["text"] as? String else {
+        return result(FlutterError(code: "args", message: nil, details: nil))
+      }
+      synthesizer.stopSpeaking(at: .immediate)
+      try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
+      let utterance = AVSpeechUtterance(string: text)
+      utterance.voice = AVSpeechSynthesisVoice(language: args["language"] as? String)
+      synthesizer.speak(utterance)
+      result(nil)
+    case "stop":
+      synthesizer.stopSpeaking(at: .immediate)
+      result(nil)
+    default:
+      result(FlutterMethodNotImplemented)
     }
   }
 

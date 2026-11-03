@@ -44,7 +44,11 @@ dependencies:
   webview_flutter: ^4.14.1
   background_downloader: ^9.6.5
   xml: ^7.1.0
-
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  url_launcher: ^6.3.3
+  wakelock_plus: ^1.8.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,6 +65,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -69,7 +74,12 @@ flutter:
 
   assets:
     - assets/guides/
-    - assets/checklists/
+    - assets/checklists/it/
+    - assets/checklists/en/
+    - assets/checklists/fr/
+    - assets/checklists/de/
+    - assets/checklists/es/
+    - assets/cards/
     - assets/documents/
 
   # To add assets to your application, add an assets section, like this:

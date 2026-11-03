@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'document_screen.dart';
 import 'documents.dart';
 import 'zim/catalog_screen.dart';
@@ -11,6 +12,7 @@ import 'zim/kiwix_catalog.dart';
 import 'zim/reader_screen.dart';
 import 'zim/zim_library.dart';
 
+/// Biblioteca: enciclopedie offline (file ZIM) e documenti ufficiali originali.
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({super.key});
 
@@ -27,62 +29,50 @@ class _LibraryScreenState extends State<LibraryScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Biblioteca'),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.refresh),
-              tooltip: 'Aggiorna elenco file',
-              onPressed: ZimLibrary.instance.refresh,
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(t.library),
+        actions: [IconButton(icon: const Icon(Icons.refresh), onPressed: ZimLibrary.instance.refresh)],
+      ),
+      body: ListenableBuilder(
+        listenable: Listenable.merge([ZimLibrary.instance, ZimDownloads.instance]),
+        builder: (context, _) => ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _SectionTitle(t.encyclopedias),
+            if (ZimLibrary.instance.books.isEmpty && ZimLibrary.instance.loaded)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(t.noEncyclopedias, style: const TextStyle(color: Colors.white60)),
+              ),
+            for (final b in ZimLibrary.instance.books) _BookTile(b),
+            for (final s in ZimDownloads.instance.active) _DownloadTile(s),
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(52)),
+              icon: const Icon(Icons.download),
+              label: Text(t.downloadEncyclopedias),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CatalogScreen())),
             ),
+            if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Text(t.iosImportHint, style: const TextStyle(color: Colors.white38, fontSize: 13)),
+              ),
+            const SizedBox(height: 24),
+            _SectionTitle(t.documents),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text(t.documentsBody, style: const TextStyle(color: Colors.white60)),
+            ),
+            const _Documents(),
           ],
         ),
-        body: ListenableBuilder(
-          listenable: Listenable.merge([ZimLibrary.instance, ZimDownloads.instance]),
-          builder: (context, _) => ListView(
-            padding: const EdgeInsets.all(16),
-            children: [
-              const _SectionTitle('Enciclopedie offline'),
-              if (ZimLibrary.instance.books.isEmpty && ZimLibrary.instance.loaded)
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    'Nessuna enciclopedia sul dispositivo. Scarica Wikipedia o WikiMed finché hai internet: '
-                    'poi funzioneranno anche senza rete.',
-                    style: TextStyle(color: Colors.white60),
-                  ),
-                ),
-              for (final b in ZimLibrary.instance.books) _BookTile(b),
-              for (final s in ZimDownloads.instance.active) _DownloadTile(s),
-              const SizedBox(height: 8),
-              OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(52)),
-                icon: const Icon(Icons.download),
-                label: const Text('Scarica Wikipedia, WikiMed e altre'),
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CatalogScreen())),
-              ),
-              if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
-                const Padding(
-                  padding: EdgeInsets.only(top: 8),
-                  child: Text(
-                    'File molto grandi: scaricali sul computer da download.kiwix.org e copiali con il Finder '
-                    'o l\'app File nella cartella Rifugio › zim, poi tocca ↻.',
-                    style: TextStyle(color: Colors.white38, fontSize: 13),
-                  ),
-                ),
-              const SizedBox(height: 24),
-              const _SectionTitle('Documenti ufficiali (inclusi)'),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: Text('Manuali originali riprodotti integralmente. Funzionano senza internet.',
-                    style: TextStyle(color: Colors.white60)),
-              ),
-              const _Documents(),
-            ],
-          ),
-        ),
-      );
+      ),
+    );
+  }
 }
 
 class _BookTile extends StatelessWidget {
@@ -91,32 +81,35 @@ class _BookTile extends StatelessWidget {
   final ZimBook book;
 
   @override
-  Widget build(BuildContext context) => Card(
-        margin: const EdgeInsets.only(bottom: 10),
-        child: ListTile(
-          contentPadding: const EdgeInsets.fromLTRB(16, 6, 4, 6),
-          leading: book.icon == null
-              ? const Icon(Icons.public, color: kAccent, size: 32)
-              : Image.memory(book.icon!, width: 32, height: 32),
-          title: Text(book.title, style: const TextStyle(fontWeight: FontWeight.w600)),
-          subtitle: Text('${formatBytes(book.size)} · ${book.language}\n${book.description}', maxLines: 3),
-          trailing: PopupMenuButton<String>(
-            onSelected: (_) => _delete(context),
-            itemBuilder: (_) => const [PopupMenuItem(value: 'delete', child: Text('Elimina dal dispositivo'))],
-          ),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ReaderScreen(book: book))),
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Card(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: ListTile(
+        contentPadding: const EdgeInsets.fromLTRB(16, 6, 4, 6),
+        leading: book.icon == null
+            ? const Icon(Icons.public, color: kAccent, size: 32)
+            : Image.memory(book.icon!, width: 32, height: 32),
+        title: Text(book.title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text('${formatBytes(book.size)} · ${book.language}\n${book.description}', maxLines: 3),
+        trailing: PopupMenuButton<String>(
+          onSelected: (_) => _delete(context, t),
+          itemBuilder: (_) => [PopupMenuItem(value: 'delete', child: Text(t.deleteFromDevice))],
         ),
-      );
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => ReaderScreen(book: book))),
+      ),
+    );
+  }
 
-  Future<void> _delete(BuildContext context) async {
+  Future<void> _delete(BuildContext context, AppLocalizations t) async {
     final ok = await showDialog<bool>(
       context: context,
       builder: (c) => AlertDialog(
-        title: Text('Eliminare "${book.title}"?'),
-        content: Text('Libererai ${formatBytes(book.size)}. Per riaverlo dovrai scaricarlo di nuovo.'),
+        title: Text(t.deleteQ(book.title)),
+        content: Text(t.deleteBody(formatBytes(book.size))),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(c, false), child: const Text('Annulla')),
-          TextButton(onPressed: () => Navigator.pop(c, true), child: const Text('Elimina')),
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(t.cancel)),
+          TextButton(onPressed: () => Navigator.pop(c, true), child: Text(t.delete)),
         ],
       ),
     );
@@ -131,13 +124,14 @@ class _DownloadTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
     final paused = s.status == TaskStatus.paused;
     final pct = (s.progress.clamp(0, 1) * 100).toStringAsFixed(1);
     final detail = switch (s.status) {
-      TaskStatus.enqueued => 'In attesa (serve Wi-Fi se richiesto)…',
-      TaskStatus.waitingToRetry => 'Connessione persa, riprovo…',
-      TaskStatus.paused => 'In pausa · $pct%',
-      _ => '$pct%${s.expectedSize > 0 ? ' di ${formatBytes(s.expectedSize)}' : ''}'
+      TaskStatus.enqueued => t.dlWaiting,
+      TaskStatus.waitingToRetry => t.dlRetrying,
+      TaskStatus.paused => t.dlPaused(pct),
+      _ => '$pct%${s.expectedSize > 0 ? ' · ${formatBytes(s.expectedSize)}' : ''}'
           '${s.speedMBs > 0 ? ' · ${s.speedMBs.toStringAsFixed(1)} MB/s' : ''}'
           '${s.remaining.inMinutes > 0 ? ' · ~${s.remaining.inMinutes} min' : ''}',
     };
@@ -157,10 +151,10 @@ class _DownloadTile extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(paused ? Icons.play_arrow : Icons.pause),
-            tooltip: paused ? 'Riprendi' : 'Pausa',
+            tooltip: paused ? t.resume : t.pause,
             onPressed: () => paused ? ZimDownloads.instance.resume(s) : ZimDownloads.instance.pause(s),
           ),
-          IconButton(icon: const Icon(Icons.close), tooltip: 'Annulla', onPressed: () => ZimDownloads.instance.cancel(s)),
+          IconButton(icon: const Icon(Icons.close), tooltip: t.cancel, onPressed: () => ZimDownloads.instance.cancel(s)),
         ]),
       ),
     );
@@ -171,33 +165,35 @@ class _Documents extends StatelessWidget {
   const _Documents();
 
   @override
-  Widget build(BuildContext context) => FutureBuilder<List<OfficialDocument>>(
-        future: loadDocuments(),
-        builder: (context, snap) => Column(children: [
-          if (!snap.hasData) const Center(child: CircularProgressIndicator()),
-          for (final d in snap.data ?? const <OfficialDocument>[])
-            Card(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: ListTile(
-                contentPadding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-                leading: const Icon(Icons.picture_as_pdf, color: kAccent, size: 32),
-                title: Text(d.title, style: const TextStyle(fontWeight: FontWeight.w600)),
-                subtitle: Text('${d.author.split(' – ').first} · ${d.year} · ${d.pages} pag. · '
-                    '${d.language == 'en' ? 'inglese' : d.language}'),
-                trailing: IconButton(
-                  icon: const Icon(Icons.info_outline),
-                  tooltip: 'Fonte e licenza',
-                  onPressed: () => showModalBottomSheet<void>(
-                    context: context,
-                    isScrollControlled: true,
-                    builder: (_) => DocumentInfo(doc: d),
-                  ),
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return FutureBuilder<List<OfficialDocument>>(
+      future: loadDocuments(),
+      builder: (context, snap) => Column(children: [
+        if (!snap.hasData) const Center(child: CircularProgressIndicator()),
+        for (final d in snap.data ?? const <OfficialDocument>[])
+          Card(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: ListTile(
+              contentPadding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+              leading: const Icon(Icons.picture_as_pdf, color: kAccent, size: 32),
+              title: Text(d.title, style: const TextStyle(fontWeight: FontWeight.w600)),
+              subtitle: Text('${d.author.split(' – ').first} · ${d.year} · ${t.pagesN(d.pages)} · ${d.language.toUpperCase()}'),
+              trailing: IconButton(
+                icon: const Icon(Icons.info_outline),
+                tooltip: t.sources,
+                onPressed: () => showModalBottomSheet<void>(
+                  context: context,
+                  isScrollControlled: true,
+                  builder: (_) => DocumentInfo(doc: d),
                 ),
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => DocumentScreen(doc: d))),
               ),
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => DocumentScreen(doc: d))),
             ),
-        ]),
-      );
+          ),
+      ]),
+    );
+  }
 }
 
 class _SectionTitle extends StatelessWidget {

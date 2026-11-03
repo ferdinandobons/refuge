@@ -27,23 +27,20 @@ class CatalogEntry {
   /// Siti web archiviati con zimit: richiedono un riproduttore apposito, non ancora supportato.
   bool get isZimit => downloadUrl.path.contains('/zimit/');
 
-  /// Versione: "mini" (solo introduzioni), "nopic" (senza immagini), "maxi" (completa).
-  String get flavourLabel => switch (flavour) {
-        'mini' => 'Mini: solo l\'introduzione di ogni voce',
-        'nopic' => 'Completa, senza immagini',
-        'maxi' => 'Completa, con immagini',
-        _ => 'Completa',
-      };
 }
 
-/// Raccolte consigliate, in ordine di utilità per l'emergenza.
-const kRecommended = <(String name, String note)>[
-  ('mdwiki_en_all', 'WikiMed: enciclopedia medica (inglese)'),
-  ('wikipedia_it_all', 'Wikipedia in italiano'),
-  ('wikipedia_en_all', 'Wikipedia in inglese'),
-  ('wikivoyage_it_all', 'Wikivoyage: guide di paesi e città (italiano)'),
-  ('libretexts.org_en_med', 'Libri di testo di medicina (inglese)'),
-];
+/// Tipo di raccolta consigliata (il titolo viene tradotto nell'interfaccia).
+enum Recommended { wikimed, wikipediaMedicine, wikipedia, wikivoyage, medicalTextbooks }
+
+/// Raccolte consigliate per la lingua scelta, in ordine di utilità per l'emergenza.
+/// Le raccolte che non esistono in quella lingua semplicemente non compaiono.
+List<(String name, Recommended kind)> recommendedFor(String language) => [
+      ('mdwiki_en_all', Recommended.wikimed),
+      ('wikipedia_${language}_medicine', Recommended.wikipediaMedicine),
+      ('wikipedia_${language}_all', Recommended.wikipedia),
+      ('wikivoyage_${language}_all', Recommended.wikivoyage),
+      ('libretexts.org_en_med', Recommended.medicalTextbooks),
+    ];
 
 class KiwixCatalog {
   static final _base = Uri.parse('https://opds.library.kiwix.org/catalog/v2/entries');

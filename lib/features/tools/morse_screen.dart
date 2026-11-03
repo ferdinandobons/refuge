@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'morse.dart';
 
 class MorseScreen extends StatefulWidget {
@@ -40,15 +41,17 @@ class _MorseScreenState extends State<MorseScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Morse')),
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Scaffold(
+        appBar: AppBar(title: Text(t.morseTitle)),
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             TextField(
               controller: _controller,
               textCapitalization: TextCapitalization.characters,
-              decoration: const InputDecoration(labelText: 'Messaggio', border: OutlineInputBorder()),
+              decoration: InputDecoration(labelText: t.morseMessage, border: const OutlineInputBorder()),
               onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 12),
@@ -64,17 +67,17 @@ class _MorseScreenState extends State<MorseScreen> {
               ),
             ),
             SwitchListTile(
-              title: const Text('Usa anche la torcia'),
+              title: Text(t.useTorchToo),
               value: _useTorch,
               onChanged: _playing ? null : (v) => setState(() => _useTorch = v),
             ),
             SwitchListTile(
-              title: const Text('Ripeti'),
+              title: Text(t.repeat),
               value: _loop,
               onChanged: _playing ? null : (v) => setState(() => _loop = v),
             ),
             ListTile(
-              title: Text('Velocità: punto = ${_unitMs.round()} ms'),
+              title: Text(t.morseSpeed(_unitMs.round())),
               subtitle: Slider(
                 min: 80,
                 max: 600,
@@ -85,11 +88,11 @@ class _MorseScreenState extends State<MorseScreen> {
             FilledButton.icon(
               style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(56)),
               icon: Icon(_playing ? Icons.stop : Icons.play_arrow),
-              label: Text(_playing ? 'Ferma' : 'Trasmetti'),
+              label: Text(_playing ? t.stop : t.transmit),
               onPressed: _play,
             ),
             const SizedBox(height: 24),
-            const Text('Tabella', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+            Text(t.morseTable, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
             const SizedBox(height: 8),
             Wrap(
               spacing: 8,
@@ -107,4 +110,5 @@ class _MorseScreenState extends State<MorseScreen> {
           ],
         ),
       );
+  }
 }

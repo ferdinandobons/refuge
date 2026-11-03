@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../l10n/app_localizations.dart';
 import 'morse.dart';
 
 class FlashlightScreen extends StatefulWidget {
@@ -51,9 +52,11 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    return Scaffold(
         backgroundColor: _sos && _flash ? Colors.white : Colors.black,
-        appBar: AppBar(title: const Text('Torcia e SOS'), backgroundColor: Colors.transparent),
+        appBar: AppBar(title: Text(t.torchTitle), backgroundColor: Colors.transparent),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(24),
@@ -61,34 +64,34 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
               children: [
                 const Spacer(),
                 _BigButton(
-                  label: _torchOn ? 'Spegni torcia' : 'Accendi torcia',
+                  label: _torchOn ? t.torchOff : t.torchOn,
                   icon: _torchOn ? Icons.flashlight_off : Icons.flashlight_on,
                   color: kAccent,
                   onTap: _toggleTorch,
                 ),
                 if (_torchMissing)
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8),
-                    child: Text('Torcia non disponibile su questo dispositivo. Usa la luce schermo.',
-                        textAlign: TextAlign.center, style: TextStyle(color: Colors.white60)),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(t.torchMissing,
+                        textAlign: TextAlign.center, style: const TextStyle(color: Colors.white60)),
                   ),
                 const SizedBox(height: 20),
                 _BigButton(
-                  label: _sos ? 'Ferma SOS' : 'SOS lampeggiante',
-                  icon: Icons.sos,
+                  label: _sos ? t.sosStop : t.sosBlinking,
+                  icon: _sos ? Icons.stop_circle : Icons.flash_on,
                   color: kDanger,
                   onTap: _toggleSos,
                 ),
                 const SizedBox(height: 20),
                 _BigButton(
-                  label: 'Luce schermo',
+                  label: t.screenLight,
                   icon: Icons.light_mode,
                   color: Colors.white,
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const _ScreenLight())),
                 ),
                 const Spacer(),
                 Text(
-                  'SOS = ··· ─── ··· ripetuto. Segnale internazionale di soccorso, visibile di notte anche a chilometri.',
+                  t.sosInfo,
                   textAlign: TextAlign.center,
                   style: TextStyle(color: _sos && _flash ? Colors.black54 : Colors.white54),
                 ),
@@ -97,6 +100,7 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
           ),
         ),
       );
+  }
 }
 
 class _BigButton extends StatelessWidget {
@@ -131,9 +135,11 @@ class _ScreenLight extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GestureDetector(
         onTap: () => Navigator.pop(context),
-        child: const Scaffold(
+        child: Scaffold(
           backgroundColor: Colors.white,
-          body: Center(child: Text('Tocca per chiudere', style: TextStyle(color: Colors.black26))),
+          body: Center(
+            child: Text(AppLocalizations.of(context).tapToClose, style: const TextStyle(color: Colors.black26)),
+          ),
         ),
       );
 }

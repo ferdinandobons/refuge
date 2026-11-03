@@ -4,6 +4,7 @@ import '../library/document_screen.dart';
 import '../library/documents.dart';
 import '../library/zim/reader_screen.dart';
 import '../library/zim/zim_library.dart';
+import '../../l10n/app_localizations.dart';
 import 'guide_repository.dart';
 import 'guide_screen.dart';
 
@@ -24,19 +25,20 @@ Future<void> openGuideTarget(BuildContext context, String target) async {
   final value = target.substring(i + 1);
   final nav = Navigator.of(context);
   final messenger = ScaffoldMessenger.of(context);
+  final t = AppLocalizations.of(context);
 
   switch (kind) {
     case 'doc':
       final [file, page] = '$value#1'.split('#').take(2).toList();
       final docs = await loadDocuments();
       final doc = docs.where((d) => d.file == file).firstOrNull;
-      if (doc == null) return _missing(messenger, 'Documento non incluso in questa versione.');
+      if (doc == null) return _missing(messenger, t.notAvailable);
       await nav.push(MaterialPageRoute(
         builder: (_) => DocumentScreen(doc: doc, initialPage: int.tryParse(page) ?? 1),
       ));
     case 'guide':
       final guide = (await GuideRepository.load()).where((g) => g.id == value).firstOrNull;
-      if (guide == null) return _missing(messenger, 'Guida non trovata.');
+      if (guide == null) return _missing(messenger, t.notAvailable);
       await nav.push(MaterialPageRoute(builder: (_) => GuideScreen(guide: guide)));
     case 'zim':
       final library = ZimLibrary.instance;
@@ -49,7 +51,7 @@ Future<void> openGuideTarget(BuildContext context, String target) async {
           return;
         }
       }
-      _missing(messenger, 'Voce «$value» non trovata: scarica WikiMed dalla Biblioteca per leggerla offline.');
+      _missing(messenger, t.entryMissing(value));
   }
 }
 

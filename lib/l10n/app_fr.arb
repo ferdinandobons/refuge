@@ -1,0 +1,509 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Rifugio",
+  "tabEmergency": "Urgence",
+  "tabPrepare": "Se préparer",
+  "tabTools": "Outils",
+  "tabMore": "Plus",
+  "onbLanguageTitle": "Choisissez la langue",
+  "onbCountryTitle": "Dans quel pays êtes-vous ?",
+  "onbCountryHint": "Pour le numéro d'urgence et les alertes locales. Vous pourrez le changer plus tard.",
+  "onbReadyTitle": "Tout est prêt",
+  "onbReadyBody": "L'application fonctionne sans internet. En cas d'urgence, appelez le {number}.",
+  "@onbReadyBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "onbStart": "Commencer",
+  "onbDownload": "Télécharger des encyclopédies (facultatif)",
+  "onbOptionalTitle": "Facultatif : encyclopédies hors ligne",
+  "onbOptionalBody": "Les fiches d'urgence sont déjà incluses. Tant que vous avez internet, vous pouvez ajouter :",
+  "onbPackWikimed": "WikiMed (anglais)",
+  "onbPackWikimedBody": "Encyclopédie médicale : maladies, symptômes, médicaments, blessures, premiers secours. Environ 2 Go.",
+  "onbPackWikipedia": "Wikipédia dans votre langue",
+  "onbPackWikipediaBody": "Toute la culture générale : histoire, lieux, sciences, techniques, comment fonctionnent les choses. De quelques Go (version réduite) à des dizaines de Go (complète).",
+  "onbPackWikivoyage": "Wikivoyage",
+  "onbPackWikivoyageBody": "Pays et villes : se déplacer, frontières, hôpitaux, informations pratiques. Quelques centaines de Mo.",
+  "onbDownloadNote": "Il faut du Wi-Fi et de l'espace libre. Vous pouvez aussi le faire plus tard depuis l'onglet Se préparer.",
+  "callNumber": "Appeler le {number}",
+  "@callNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "sosLight": "SOS lumineux",
+  "searchHint": "Rechercher : sang, iode, séisme…",
+  "searchTip": "Écrivez ce qui se passe ou ce dont vous avez besoin. Cela fonctionne aussi avec des mots incomplets ou mal écrits.",
+  "searchEmpty": "Aucun résultat.",
+  "whatsHappening": "Que se passe-t-il ?",
+  "search": "Rechercher",
+  "readAloud": "Lire à voix haute",
+  "allSteps": "Toutes les étapes",
+  "neverDo": "À ne pas faire",
+  "sources": "Sources",
+  "stepOf": "Étape {n} sur {total}",
+  "@stepOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "previous": "Retour",
+  "next": "Suivant",
+  "done": "Terminé",
+  "countryIT": "Italie",
+  "countryFR": "France",
+  "countryDE": "Allemagne",
+  "countryES": "Espagne",
+  "countryAT": "Autriche",
+  "countryCH": "Suisse",
+  "countryBE": "Belgique",
+  "countryNL": "Pays-Bas",
+  "countryLU": "Luxembourg",
+  "countryPT": "Portugal",
+  "countryGB": "Royaume-Uni",
+  "countryIE": "Irlande",
+  "countryOther": "Autre pays européen",
+  "officialAlerts": "alertes officielles",
+  "sirenFR": "Signal national d'alerte : son montant et descendant de 1 minute 41 secondes, répété 3 fois. Fin d'alerte : son continu de 30 secondes. Essai le premier mercredi du mois à midi.",
+  "sirenDE": "Alerte : son montant et descendant pendant 1 minute. Fin d'alerte : son continu pendant 1 minute.",
+  "sirenAT": "Préalerte : son continu pendant 3 minutes. Alerte : son montant et descendant pendant 1 minute. Fin d'alerte : son continu pendant 1 minute.",
+  "sirenCH": "Alarme générale : son montant et descendant pendant 1 minute, répété après 2 minutes. Écoutez la radio et suivez les consignes.",
+  "noteIodineDE": "En Allemagne, les comprimés d'iode ne sont pas recommandés après 45 ans.",
+  "yourCountry": "Votre pays : {name}",
+  "@yourCountry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "emergencyNumber": "Numéro d'urgence",
+  "serviceAmbulance": "Ambulance",
+  "serviceFire": "Pompiers",
+  "servicePolice": "Police",
+  "servicePoison": "Centre antipoison",
+  "serviceDeafSms": "SMS pour personnes sourdes",
+  "phoneAlerts": "Alertes sur le téléphone",
+  "phoneAlertsBody": "{name} : elles arrivent toutes seules sur le téléphone, même sans application. Laissez-les activées dans les réglages du téléphone.",
+  "@phoneAlertsBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sirens": "Sirènes",
+  "checklists": "Listes",
+  "offlineContent": "À télécharger tant qu'il y a internet",
+  "downloadEncyclopedias": "Télécharger des encyclopédies",
+  "downloadEncyclopediasBody": "Wikipédia et WikiMed dans votre langue, à lire sans réseau.",
+  "library": "Bibliothèque",
+  "libraryBody": "Encyclopédies hors ligne et manuels originaux",
+  "originalTexts": "Textes originaux",
+  "originalTextsBody": "Textes intégraux de la Protection civile italienne et d'autres sources (en italien)",
+  "originalTextsNote": "Textes complets dans la langue d'origine, pour aller plus loin.",
+  "language": "Langue",
+  "country": "Pays",
+  "about": "À propos",
+  "aboutBody": "Sources, licences et avertissements",
+  "aboutText": "Application open source qui fonctionne sans internet.\n\nLes fiches d'urgence suivent les recommandations européennes de premiers secours (European Resuscitation Council) et les consignes de la protection civile. Les textes originaux, les manuels et les encyclopédies se trouvent dans la Bibliothèque, avec leurs sources et licences.\n\nCette application ne remplace ni une formation aux premiers secours ni les consignes des autorités.",
+  "documents": "Documents",
+  "documentsBody": "Manuels officiels originaux, en anglais.",
+  "torchTitle": "Lampe et SOS",
+  "torchSubtitle": "Lumière, SOS clignotant, écran lumineux",
+  "torchKeywords": "lampe torche lumière noir obscurité sos clignotant signal nuit",
+  "torchOn": "Allumer la lampe",
+  "torchOff": "Éteindre la lampe",
+  "torchMissing": "Lampe indisponible sur cet appareil. Utilisez l'écran lumineux.",
+  "sosBlinking": "SOS clignotant",
+  "sosStop": "Arrêter le SOS",
+  "screenLight": "Écran lumineux",
+  "sosInfo": "SOS = ··· ─── ··· répété. Signal international de détresse, visible de nuit même de loin.",
+  "tapToClose": "Touchez pour fermer",
+  "morseTitle": "Morse",
+  "morseSubtitle": "Transmettre un message avec la lumière",
+  "morseKeywords": "morse code signal lumière message",
+  "morseMessage": "Message",
+  "useTorchToo": "Utiliser aussi la lampe",
+  "repeat": "Répéter",
+  "morseSpeed": "Vitesse : point = {ms} ms",
+  "@morseSpeed": {
+    "placeholders": {
+      "ms": {
+        "type": "int"
+      }
+    }
+  },
+  "transmit": "Transmettre",
+  "stop": "Arrêter",
+  "morseTable": "Tableau",
+  "compassTitle": "Boussole",
+  "compassSubtitle": "Direction et points cardinaux",
+  "compassKeywords": "boussole nord direction orientation",
+  "compassUnavailable": "Boussole indisponible sur cet appareil.",
+  "compassWaiting": "En attente du capteur…",
+  "compassHint": "Tenez le téléphone à plat, loin des métaux et des aimants. Si la direction semble étrange, bougez le téléphone en dessinant un 8.",
+  "cardinals": "N,NE,E,SE,S,SO,O,NO",
+  "locationTitle": "Position",
+  "locationSubtitle": "Coordonnées GPS à dicter aux secours",
+  "locationKeywords": "position gps coordonnées où suis-je carte utm mgrs",
+  "locServiceOff": "La localisation est désactivée. Activez-la dans les réglages du téléphone : le GPS fonctionne même en mode avion.",
+  "locDenied": "Accès à la position refusé. Vous pouvez l'autoriser dans les réglages du téléphone.",
+  "locUnavailable": "Position indisponible sur cet appareil.",
+  "gpsError": "Erreur GPS : {error}",
+  "@gpsError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "searchingSats": "Recherche des satellites… C'est plus rapide en extérieur.",
+  "fmtDecimal": "Décimal",
+  "fmtDms": "Degrés, minutes, secondes",
+  "fmtMgrs": "MGRS (militaires, secours)",
+  "altitude": "Altitude",
+  "accuracy": "Précision",
+  "copy": "Copier",
+  "copied": "Copié",
+  "locHint": "Au téléphone avec le {number}, dictez les coordonnées décimales.",
+  "@locHint": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "westLetter": "O",
+  "suppliesTitle": "Réserves",
+  "suppliesSubtitle": "Eau et nourriture selon personnes et jours",
+  "suppliesKeywords": "réserves provisions eau nourriture rations combien calcul stock",
+  "people": "Personnes",
+  "days": "Jours",
+  "suppliesNote": "Valeurs indicatives pour adultes. La chaleur, l'effort, les enfants et les personnes âgées changent les besoins. Consommez d'abord les réserves les plus anciennes.",
+  "falloutTitle": "Retombées",
+  "falloutSubtitle": "Minuteur après une explosion : que faire et quand",
+  "falloutKeywords": "retombées fallout radiations radioactivité dosimètre nucléaire 7 10 décroissance",
+  "measuredRate": "Intensité mesurée",
+  "falloutDose": "En restant dehors 24 heures : environ {dose}. Une cave la réduit de 10 à 40 fois.",
+  "@falloutDose": {
+    "placeholders": {
+      "dose": {
+        "type": "String"
+      }
+    }
+  },
+  "resetChecklistQ": "Réinitialiser la liste ?",
+  "cancel": "Annuler",
+  "reset": "Réinitialiser",
+  "doneOf": "{done} sur {total}",
+  "@doneOf": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "encyclopedias": "Encyclopédies hors ligne",
+  "noEncyclopedias": "Aucune encyclopédie sur le téléphone. Téléchargez-en une tant que vous avez internet : elle fonctionnera ensuite sans réseau.",
+  "iosImportHint": "Fichiers très volumineux : téléchargez-les sur l'ordinateur depuis download.kiwix.org et copiez-les avec le Finder ou l'app Fichiers dans le dossier Rifugio › zim, puis touchez ↻.",
+  "deleteFromDevice": "Supprimer du téléphone",
+  "deleteQ": "Supprimer « {title} » ?",
+  "@deleteQ": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteBody": "Vous libérerez {size}. Pour la récupérer, il faudra la télécharger à nouveau.",
+  "@deleteBody": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "delete": "Supprimer",
+  "dlWaiting": "En attente (Wi-Fi requis si demandé)…",
+  "dlRetrying": "Connexion perdue, nouvel essai…",
+  "dlPaused": "En pause · {pct} %",
+  "@dlPaused": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "resume": "Reprendre",
+  "pause": "Pause",
+  "catalogSearchHint": "Rechercher dans le catalogue Kiwix",
+  "catalogUnreachable": "Catalogue inaccessible. Une connexion internet est nécessaire.",
+  "recWikimed": "WikiMed : encyclopédie médicale (en anglais)",
+  "recWikipediaMedicine": "Wikipédia : médecine uniquement",
+  "recWikipedia": "Wikipédia complète",
+  "recWikivoyage": "Wikivoyage : pays et villes",
+  "recMedicalTextbooks": "Manuels de médecine (en anglais)",
+  "resultsFor": "Résultats pour « {query} »",
+  "@resultsFor": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "flavourMini": "Mini, introductions seulement",
+  "flavourNopic": "Sans images",
+  "flavourMaxi": "Avec images",
+  "flavourFull": "Complète",
+  "zimitUnsupported": "Site web archivé : format pas encore pris en charge",
+  "download": "Télécharger",
+  "downloadQ": "Télécharger {size} ?",
+  "@downloadQ": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadBody": "Vérifiez que vous avez assez d'espace libre. Le téléchargement continue même quand l'application est fermée et reprend là où il s'était arrêté.",
+  "wifiOnly": "Wi-Fi uniquement",
+  "externalLink": "Lien externe : indisponible hors ligne.",
+  "mainPage": "Page d'accueil",
+  "searchByTitle": "Rechercher par titre",
+  "searchByTitleTip": "Écrivez le début du titre d'un article.",
+  "searchDocument": "Rechercher dans le document (en anglais)",
+  "pagesN": "{n} pages",
+  "@pagesN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "license": "Licence",
+  "reproducedInFull": "Document reproduit intégralement, sans modification.",
+  "notAvailable": "Indisponible dans cette version.",
+  "entryMissing": "Article « {title} » introuvable : téléchargez WikiMed depuis la Bibliothèque pour le lire hors ligne.",
+  "@entryMissing": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "needsTitle": "Besoins",
+  "summaryTitle": "Résumé",
+  "inventoryTitle": "Inventaire",
+  "inventoryHint": "Touchez + quand vous achetez, − quand vous consommez. Les articles à zéro sont ceux qui vous manquent. Touchez un article pour le modifier.",
+  "catWater": "Eau",
+  "catFood": "Nourriture",
+  "catGas": "Gaz pour cuisiner",
+  "catOther": "Autre",
+  "coversDays": "Suffit pour {days} jours",
+  "@coversDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "missingWater": "Il manque {liters} L ≈ {bottles} bouteilles de 1,5 L",
+  "@missingWater": {
+    "placeholders": {
+      "liters": {
+        "type": "String"
+      },
+      "bottles": {
+        "type": "int"
+      }
+    }
+  },
+  "missingFood": "Il manque {kcal} kcal ≈ {kg} kg de pâtes ou de riz",
+  "@missingFood": {
+    "placeholders": {
+      "kcal": {
+        "type": "String"
+      },
+      "kg": {
+        "type": "String"
+      }
+    }
+  },
+  "missingGas": "Il manque {n, plural, =1{1 cartouche} other{{n} cartouches}} de 220 g",
+  "@missingGas": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mealsHave": "{have} / {need} repas chauds",
+  "@mealsHave": {
+    "placeholders": {
+      "have": {
+        "type": "int"
+      },
+      "need": {
+        "type": "int"
+      }
+    }
+  },
+  "addItem": "Ajouter",
+  "addOne": "Ajouter un",
+  "consumeOne": "Retirer un",
+  "itemName": "Nom",
+  "unitSize": "Contenu d'un paquet",
+  "kcalPer100": "kcal pour 100 g",
+  "quantity": "Quantité",
+  "save": "Enregistrer",
+  "chooseProduct": "Que voulez-vous ajouter ?",
+  "chooseSize": "Format",
+  "otherSize": "Autre format",
+  "addToInventory": "Ajouter à l'inventaire",
+  "otherItemHint": "Écrivez un objet, p. ex. lampe torche",
+  "suggestions": "Suggestions",
+  "otherSuggestions": "Piles AA,Piles AAA,Batterie externe,Lampe frontale,Bougies,Allumettes,Briquet,Radio à piles,Médicaments habituels,Antidouleurs,Trousse de secours,Sels de réhydratation,Pastilles de purification d'eau,Eau de Javel sans parfum,Masques FFP2,Gants jetables,Couverture de survie,Couvertures,Sacs-poubelle,Ruban adhésif,Bâches en plastique,Corde,Couteau multifonction,Papier toilette,Savon,Lingettes,Serviettes hygiéniques,Couches,Nourriture pour animaux,Espèces",
+  "pWaterBottle": "Bouteille d'eau",
+  "pWaterTank": "Bidon d'eau",
+  "pPasta": "Pâtes",
+  "pRice": "Riz",
+  "pDryLegumes": "Légumineuses sèches",
+  "pCannedLegumes": "Légumineuses en conserve",
+  "pTuna": "Thon en conserve",
+  "pCannedMeat": "Viande en conserve",
+  "pCannedVeg": "Légumes en conserve",
+  "pNuts": "Fruits secs",
+  "pBiscuits": "Biscuits, crackers",
+  "pBars": "Barres de céréales",
+  "pUhtMilk": "Lait UHT",
+  "pPowderMilk": "Lait en poudre",
+  "pOil": "Huile",
+  "pSugar": "Sucre",
+  "pHoney": "Miel",
+  "pCustomFood": "Autre aliment",
+  "pCartridge": "Cartouche de gaz",
+  "pCustomOther": "Autre objet",
+  "falloutStartIntro": "En cas d'explosion nucléaire, lancez le minuteur : il vous indique combien de temps rester à l'abri, quoi faire et quoi porter à chaque moment.",
+  "falloutStartNow": "Explosion maintenant : lancer",
+  "falloutStartAt": "Régler l'heure de l'explosion",
+  "falloutResetQ": "Réinitialiser le minuteur ?",
+  "falloutSince": "Explosion : {time}",
+  "@falloutSince": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "durationHM": "{h} h {m} min",
+  "@durationHM": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "durationDHM": "{d} j {h} h {m} min",
+  "@durationDHM": {
+    "placeholders": {
+      "d": {
+        "type": "int"
+      },
+      "h": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "falloutMax": "Radiations au maximum : c'est le moment le plus dangereux.",
+  "falloutRemaining": "Radiations à environ {pct} de leur niveau 1 heure après l'explosion.",
+  "@falloutRemaining": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "falloutNextPhase": "Phase suivante dans {left} (à {time})",
+  "@falloutNextPhase": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whatToWear": "Si vous devez sortir",
+  "whatToDoNow": "Que faire maintenant",
+  "falloutTimeline": "Phases",
+  "doNotGoOut": "Ne sortez pas",
+  "falloutBannerOut": "Ne sortez qu'en cas de nécessité, couvert de la tête aux pieds",
+  "wearMask": "Masque FFP2/FFP3",
+  "wearGloves": "Gants",
+  "wearCovered": "Chapeau, manches longues, imperméable",
+  "wearBoots": "Chaussures fermées ou bottes",
+  "phase0Title": "Danger maximal : à l'abri tout de suite",
+  "phase0a": "Entrez dans le bâtiment le plus solide près de vous et allez au centre ou à la cave.",
+  "phase0b": "Fermez portes et fenêtres, coupez la ventilation et la climatisation.",
+  "phase0c": "Si vous étiez dehors : enlevez vos vêtements, enfermez-les dans un sac et lavez-vous.",
+  "phase0d": "Ne sortez sous aucun prétexte.",
+  "phase1Title": "Restez à l'abri",
+  "phase1a": "Les radiations baissent vite : après 7 heures, il en reste environ un dixième.",
+  "phase1b": "Restez à l'intérieur, loin des murs extérieurs et du toit.",
+  "phase1c": "Écoutez la radio, la télé et les alertes sur le téléphone.",
+  "phase1d": "Buvez et mangez uniquement des produits en emballage fermé. Ne sortez que si l'abri est en danger (incendie, effondrement).",
+  "phase2Title": "Sorties seulement si indispensables",
+  "phase2a": "Suivez les autorités : elles peuvent demander de vous déplacer ou d'évacuer.",
+  "phase2b": "Sorties très brèves, couvert de la tête aux pieds.",
+  "phase2c": "Au retour, enlevez vos vêtements extérieurs avant d'entrer et lavez-vous.",
+  "phase3Title": "Danger en baisse",
+  "phase3a": "Après 2 jours, les radiations sont environ un centième de leur niveau initial.",
+  "phase3b": "Sorties brèves si nécessaire, avec protection. Évitez la poussière.",
+  "phase3c": "Ne mangez pas d'aliments restés à l'air libre et utilisez l'eau de récipients fermés.",
+  "phase4Title": "Danger très réduit",
+  "phase4a": "Après 2 semaines, les radiations sont environ un millième de leur niveau initial.",
+  "phase4b": "Suivez les autorités pour le retour à la normale.",
+  "phase4c": "Continuez les précautions pour la nourriture et l'eau.",
+  "falloutDisclaimer": "Indications générales basées sur la règle des 7-10. Le moment de sortir est décidé par les autorités, avec des mesures réelles au dosimètre.",
+  "haveDosimeter": "Avez-vous un dosimètre ?",
+  "inHours": "Dans {n, plural, =1{1 heure} other{{n} heures}}",
+  "@inHours": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "levelFlat": "À plat",
+  "levelAlmost": "Presque à plat",
+  "levelTilted": "Mettez le téléphone à plat",
+  "tiltDegrees": "Inclinaison {n}°",
+  "@tiltDegrees": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  }
+}
