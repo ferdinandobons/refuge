@@ -105,33 +105,4 @@ class SupplyChecklist {
         for (final o in inv.ownBag)
           if (o.bag == BagState.fromHome) o.name ?? '',
       ];
-
-  /// Voci di casa che mancano, per gruppo.
-  Map<String, List<String>> missingHome(Inventory inv, String language) => {
-        for (final g in home)
-          g.name(language): [
-            for (final i in g.items)
-              if (!atHome(inv, i)) i.label(language),
-            for (final o in inv.ownHome)
-              if (o.group == g.id && !o.have) o.name ?? '',
-          ],
-      }..removeWhere((_, v) => v.isEmpty);
-
-  /// Voci dello zaino che mancano, per gruppo. Se la stessa cosa manca anche in casa, è già nella lista
-  /// di casa: non si ripete (si compra una volta, poi si decide dove tenerla).
-  Map<String, List<String>> missingBag(Inventory inv, String language) => {
-        for (final g in bag)
-          g.name(language): [
-            for (final i in g.items)
-              if (bagState(inv, i) == null && !_missingAtHomeToo(inv, i)) i.label(language),
-            for (final o in inv.ownBag)
-              if (o.group == g.id && o.bag == null) o.name ?? '',
-          ],
-      }..removeWhere((_, v) => v.isEmpty);
-
-  bool _missingAtHomeToo(Inventory inv, CheckItem bagItem) {
-    if (bagItem.homePreset != null) return inv.countOf(bagItem.homePreset!) == 0;
-    final h = homeItems.where((i) => i.id == bagItem.home).firstOrNull;
-    return h != null && !atHome(inv, h);
-  }
 }

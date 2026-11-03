@@ -750,21 +750,6 @@
   "pointsAndTrack": "Punti e percorso",
   "suppliesHome": "Casa",
   "suppliesBackpack": "Zaino",
-  "shopFor": "Per {people} persone e {days} giorni",
-  "shopAllDone": "Non manca niente.",
-  "shopCopied": "Lista copiata: incollala in un messaggio o nelle note.",
-  "@shopFor": {
-    "placeholders": {
-      "people": {
-        "type": "int"
-      },
-      "days": {
-        "type": "int"
-      }
-    }
-  },
-  "copyShopping": "Copia la lista della spesa",
-  "shoppingList": "Lista della spesa",
   "filterAll": "Tutto",
   "filterMissing": "Cosa manca",
   "suppliesQuantities": "Le quantità",

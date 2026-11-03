@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/settings.dart';
@@ -12,7 +11,7 @@ import '../prepare/supply_checklist.dart';
 /// - Casa: fabbisogno (persone × giorni), le quattro quantità che decidono quanti giorni si resiste
 ///   (ognuna con le sue voci, da aggiornare con + e −) e la lista sì/no delle cose da avere.
 /// - Zaino: per ogni cosa, se è già dentro, se si prende da casa al momento di uscire o se manca.
-/// Cosa manca si vede con il filtro "Cosa manca" e si copia come lista della spesa.
+/// Cosa manca si vede con il filtro "Cosa manca".
 class SuppliesScreen extends StatefulWidget {
   const SuppliesScreen({super.key, this.backpack = false});
 
@@ -46,16 +45,6 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(t.suppliesTitle),
-          actions: [
-            FutureBuilder<SupplyChecklist>(
-              future: _checklist,
-              builder: (context, snap) => IconButton(
-                icon: const Icon(Icons.shopping_cart),
-                tooltip: t.copyShopping,
-                onPressed: snap.data == null ? null : () => _copyShopping(t, snap.data!),
-              ),
-            ),
-          ],
           bottom: TabBar(tabs: [
             Tab(icon: const Icon(Icons.home), text: t.suppliesHome),
             Tab(icon: const Icon(Icons.backpack), text: t.suppliesBackpack),
@@ -366,35 +355,6 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
           note: t.electricityBasis,
         ),
     };
-  }
-
-  /// Lista della spesa: quantità che mancano, cose da avere in casa e nello zaino. Ogni cosa una volta sola.
-  void _copyShopping(AppLocalizations t, SupplyChecklist c) {
-    final nf = NumberFormat.decimalPattern(_lang);
-    final lines = <String>[
-      '${t.shoppingList.toUpperCase()} · ${t.shopFor(inv.people, inv.days)}',
-      '',
-      t.suppliesHome.toUpperCase(),
-    ];
-    for (final n in Need.values) {
-      final info = _needInfo(t, n, nf);
-      if (info.missing != null) lines.add('• ${needName(t, n)}: ${info.missing}');
-    }
-    for (final e in c.missingHome(inv, _lang).entries) {
-      lines.add('• ${e.key}: ${e.value.join(', ')}');
-    }
-    final bag = c.missingBag(inv, _lang);
-    if (bag.isNotEmpty) {
-      lines
-        ..add('')
-        ..add(t.suppliesBackpack.toUpperCase());
-      for (final e in bag.entries) {
-        lines.add('• ${e.key}: ${e.value.join(', ')}');
-      }
-    }
-    if (lines.length == 3) lines.add(t.shopAllDone);
-    Clipboard.setData(ClipboardData(text: lines.join('\n')));
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(t.shopCopied)));
   }
 
   Future<void> _addItem(BuildContext context, AppLocalizations t, Need need) => showModalBottomSheet<void>(

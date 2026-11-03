@@ -48,23 +48,6 @@ void main() {
     expect(c.bagState(inv, pb), BagState.fromHome);
   });
 
-  test('lista della spesa: ogni cosa una volta sola', () {
-    // Il kit manca in casa e nello zaino: compare solo tra le cose di casa.
-    final homeMissing = c.missingHome(inv, 'it').values.expand((v) => v).toList();
-    final bagMissing = c.missingBag(inv, 'it').values.expand((v) => v).toList();
-    expect(homeMissing, contains('Kit di primo soccorso con istruzioni'));
-    expect(bagMissing, isNot(contains('Materiale di primo soccorso')));
-    // Senza power bank in casa, il conto dell'elettricità lo chiede già: non si ripete per lo zaino.
-    expect(bagMissing, isNot(contains('Power bank carico')));
-    // Una cosa solo dello zaino (borraccia) compare nello zaino.
-    expect(bagMissing, contains('Borraccia riempibile per ogni persona'));
-
-    // In casa il kit c'è: per lo zaino resta da decidere (comprarne un altro o prenderlo da casa).
-    inv.setHave('firstAidKit', true);
-    expect(c.missingBag(inv, 'it').values.expand((v) => v), contains('Materiale di primo soccorso'));
-    expect(c.missingHome(inv, 'it').values.expand((v) => v), isNot(contains('Kit di primo soccorso con istruzioni')));
-  });
-
   test('conteggi di casa e zaino, con le voci scritte dall\'utente', () {
     expect(c.homeDone(inv), 0);
     inv

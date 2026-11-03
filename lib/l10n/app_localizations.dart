@@ -2444,36 +2444,6 @@ abstract class AppLocalizations {
   /// **'Zaino'**
   String get suppliesBackpack;
 
-  /// No description provided for @shopFor.
-  ///
-  /// In it, this message translates to:
-  /// **'Per {people} persone e {days} giorni'**
-  String shopFor(int people, int days);
-
-  /// No description provided for @shopAllDone.
-  ///
-  /// In it, this message translates to:
-  /// **'Non manca niente.'**
-  String get shopAllDone;
-
-  /// No description provided for @shopCopied.
-  ///
-  /// In it, this message translates to:
-  /// **'Lista copiata: incollala in un messaggio o nelle note.'**
-  String get shopCopied;
-
-  /// No description provided for @copyShopping.
-  ///
-  /// In it, this message translates to:
-  /// **'Copia la lista della spesa'**
-  String get copyShopping;
-
-  /// No description provided for @shoppingList.
-  ///
-  /// In it, this message translates to:
-  /// **'Lista della spesa'**
-  String get shoppingList;
-
   /// No description provided for @filterAll.
   ///
   /// In it, this message translates to:

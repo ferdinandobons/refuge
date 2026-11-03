@@ -1377,24 +1377,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get suppliesBackpack => 'Mochila';
 
   @override
-  String shopFor(int people, int days) {
-    return 'Para $people personas y $days días';
-  }
-
-  @override
-  String get shopAllDone => 'No falta nada.';
-
-  @override
-  String get shopCopied =>
-      'Lista copiada: pégala en un mensaje o en tus notas.';
-
-  @override
-  String get copyShopping => 'Copiar la lista de la compra';
-
-  @override
-  String get shoppingList => 'Lista de la compra';
-
-  @override
   String get filterAll => 'Todo';
 
   @override
