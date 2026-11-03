@@ -31,6 +31,7 @@ Una mochila por persona, lista junto a la puerta, para sobrevivir 3 días si tie
 - Fotocopias de los documentos en una funda impermeable
 - Dinero en efectivo en billetes pequeños
 - Mapa en papel de la zona con los puntos de encuentro marcados
+- Llaves de repuesto de casa y coche
 
 ## Ropa y refugio
 - Muda completa, calcetines de lana, ropa interior

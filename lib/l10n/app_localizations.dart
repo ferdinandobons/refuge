@@ -527,7 +527,7 @@ abstract class AppLocalizations {
   /// No description provided for @libraryBody.
   ///
   /// In it, this message translates to:
-  /// **'Enciclopedie offline e manuali originali'**
+  /// **'Enciclopedie offline e documenti ufficiali europei'**
   String get libraryBody;
 
   /// No description provided for @originalTexts.
@@ -539,7 +539,7 @@ abstract class AppLocalizations {
   /// No description provided for @originalTextsBody.
   ///
   /// In it, this message translates to:
-  /// **'Testi integrali della Protezione Civile e altre fonti (italiano)'**
+  /// **'Testi integrali della Protezione Civile italiana (in italiano)'**
   String get originalTextsBody;
 
   /// No description provided for @originalTextsNote.
@@ -575,7 +575,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutText.
   ///
   /// In it, this message translates to:
-  /// **'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee di primo soccorso (European Resuscitation Council) e le indicazioni della Protezione Civile. I testi originali, i manuali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.'**
+  /// **'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell\'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.'**
   String get aboutText;
 
   /// No description provided for @documents.
@@ -587,7 +587,7 @@ abstract class AppLocalizations {
   /// No description provided for @documentsBody.
   ///
   /// In it, this message translates to:
-  /// **'Manuali ufficiali originali, in inglese.'**
+  /// **'Documenti ufficiali europei e internazionali, nella tua lingua quando esistono, altrimenti in inglese. Alcuni sono già nell\'app, gli altri si scaricano dal sito ufficiale.'**
   String get documentsBody;
 
   /// No description provided for @torchTitle.
@@ -893,7 +893,7 @@ abstract class AppLocalizations {
   /// No description provided for @suppliesNote.
   ///
   /// In it, this message translates to:
-  /// **'Valori indicativi per adulti. Caldo, fatica, bambini e anziani cambiano il fabbisogno. Consuma prima le scorte più vecchie.'**
+  /// **'L\'UE raccomanda almeno 72 ore di autonomia; meglio di più. Il calcolo usa 4 litri d\'acqua a persona al giorno (3 da bere, 1 per cucinare e lavarsi) e 2000 kcal. Sono valori indicativi per adulti: caldo, fatica, bambini e anziani cambiano il fabbisogno. Consuma prima le scorte più vecchie.'**
   String get suppliesNote;
 
   /// No description provided for @falloutTitle.
@@ -923,7 +923,7 @@ abstract class AppLocalizations {
   /// No description provided for @falloutDose.
   ///
   /// In it, this message translates to:
-  /// **'Restando all\'aperto 24 ore: circa {dose}. Una cantina la riduce di 10-40 volte.'**
+  /// **'Restando all\'aperto 24 ore: circa {dose}. Al chiuso, al centro di un edificio solido o in cantina, è molto meno.'**
   String falloutDose(String dose);
 
   /// No description provided for @resetChecklistQ.
@@ -1205,7 +1205,7 @@ abstract class AppLocalizations {
   /// No description provided for @inventoryHint.
   ///
   /// In it, this message translates to:
-  /// **'Tocca + quando compri, − quando consumi. Le voci a zero sono quelle che ti mancano. Tocca una voce per cambiarla.'**
+  /// **'Aggiungi quello che hai in casa, sezione per sezione. Poi tocca + quando compri e − quando consumi.'**
   String get inventoryHint;
 
   /// No description provided for @catWater.
@@ -1349,7 +1349,7 @@ abstract class AppLocalizations {
   /// No description provided for @otherSuggestions.
   ///
   /// In it, this message translates to:
-  /// **'Batterie AA,Batterie AAA,Power bank,Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Candeggina senza profumo,Mascherine FFP2,Guanti monouso,Telo termico,Coperte,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Carta igienica,Sapone,Salviette,Assorbenti,Pannolini,Cibo per animali,Contanti'**
+  /// **'Contanti,Fotocopie dei documenti,Numeri importanti su carta,Chiavi di riserva,Coperte,Sacchi a pelo,Vestiti caldi,Telo termico,Fischietto,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Estintore,Cibo per animali'**
   String get otherSuggestions;
 
   /// No description provided for @pWaterBottle.
@@ -1945,6 +1945,402 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Scarica, aggiorna o elimina le mappe del mondo, dell\'Europa e dei paesi'**
   String get mapsMoreBody;
+
+  /// No description provided for @energySuggestions.
+  ///
+  /// In it, this message translates to:
+  /// **'Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Radio a manovella'**
+  String get energySuggestions;
+
+  /// No description provided for @healthSuggestions.
+  ///
+  /// In it, this message translates to:
+  /// **'Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Mascherine FFP2,Guanti monouso,Occhiali di ricambio,Carta igienica,Sapone,Gel disinfettante,Salviette,Assorbenti,Pannolini,Secchio con coperchio,Lettiera o segatura'**
+  String get healthSuggestions;
+
+  /// No description provided for @catEnergy.
+  ///
+  /// In it, this message translates to:
+  /// **'Energia e luce'**
+  String get catEnergy;
+
+  /// No description provided for @catHealth.
+  ///
+  /// In it, this message translates to:
+  /// **'Salute e igiene'**
+  String get catHealth;
+
+  /// No description provided for @emptySection.
+  ///
+  /// In it, this message translates to:
+  /// **'Niente ancora. Tocca «Aggiungi».'**
+  String get emptySection;
+
+  /// No description provided for @catElectricity.
+  ///
+  /// In it, this message translates to:
+  /// **'Elettricità'**
+  String get catElectricity;
+
+  /// No description provided for @chargesHave.
+  ///
+  /// In it, this message translates to:
+  /// **'{have} / {need} ricariche'**
+  String chargesHave(int have, int need);
+
+  /// No description provided for @missingCharges.
+  ///
+  /// In it, this message translates to:
+  /// **'Mancano {n} ricariche del telefono ≈ {pb} power bank da 10.000 mAh'**
+  String missingCharges(int n, int pb);
+
+  /// No description provided for @electricityBasis.
+  ///
+  /// In it, this message translates to:
+  /// **'Conto: 1 ricarica completa del telefono a persona al giorno. Power bank al 65% e power station all\'85% della capacità dichiarata.'**
+  String get electricityBasis;
+
+  /// No description provided for @solarExtra.
+  ///
+  /// In it, this message translates to:
+  /// **'In più: {n, plural, =1{1 pannello solare} other{{n} pannelli solari}} per ricaricare con il sole'**
+  String solarExtra(int n);
+
+  /// No description provided for @pPowerBank.
+  ///
+  /// In it, this message translates to:
+  /// **'Power bank'**
+  String get pPowerBank;
+
+  /// No description provided for @pPowerStation.
+  ///
+  /// In it, this message translates to:
+  /// **'Power station'**
+  String get pPowerStation;
+
+  /// No description provided for @pSolarPanel.
+  ///
+  /// In it, this message translates to:
+  /// **'Pannello solare'**
+  String get pSolarPanel;
+
+  /// No description provided for @pBatteriesAA.
+  ///
+  /// In it, this message translates to:
+  /// **'Batterie AA'**
+  String get pBatteriesAA;
+
+  /// No description provided for @pBatteriesAAA.
+  ///
+  /// In it, this message translates to:
+  /// **'Batterie AAA'**
+  String get pBatteriesAAA;
+
+  /// No description provided for @radioTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Radio in emergenza'**
+  String get radioTitle;
+
+  /// No description provided for @radioSubtitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Cosa ascoltare e su quali frequenze'**
+  String get radioSubtitle;
+
+  /// No description provided for @radioKeywords.
+  ///
+  /// In it, this message translates to:
+  /// **'radio frequenze fm am dab onde medie notizie autorità walkie talkie pmr'**
+  String get radioKeywords;
+
+  /// No description provided for @radioListen.
+  ///
+  /// In it, this message translates to:
+  /// **'Cosa ascoltare'**
+  String get radioListen;
+
+  /// No description provided for @radioListenBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Sono le emittenti che trasmettono i messaggi ufficiali delle autorità durante un\'emergenza.'**
+  String get radioListenBody;
+
+  /// No description provided for @radioFm.
+  ///
+  /// In it, this message translates to:
+  /// **'FM nelle città principali'**
+  String get radioFm;
+
+  /// No description provided for @radioAm.
+  ///
+  /// In it, this message translates to:
+  /// **'Onde medie e lunghe (AM)'**
+  String get radioAm;
+
+  /// No description provided for @radioAmNote.
+  ///
+  /// In it, this message translates to:
+  /// **'Di notte le onde medie e lunghe arrivano molto più lontano.'**
+  String get radioAmNote;
+
+  /// No description provided for @radioDab.
+  ///
+  /// In it, this message translates to:
+  /// **'Radio digitale DAB+'**
+  String get radioDab;
+
+  /// No description provided for @radioNationwide.
+  ///
+  /// In it, this message translates to:
+  /// **'In tutto il paese'**
+  String get radioNationwide;
+
+  /// No description provided for @radioNoData.
+  ///
+  /// In it, this message translates to:
+  /// **'Per questo paese non ci sono ancora dati verificati.'**
+  String get radioNoData;
+
+  /// No description provided for @radioNotFound.
+  ///
+  /// In it, this message translates to:
+  /// **'Se non trovi la stazione'**
+  String get radioNotFound;
+
+  /// No description provided for @radioTip1.
+  ///
+  /// In it, this message translates to:
+  /// **'Fai la ricerca automatica su tutta la banda FM e poi su quella AM.'**
+  String get radioTip1;
+
+  /// No description provided for @radioTip2.
+  ///
+  /// In it, this message translates to:
+  /// **'Avvicinati a una finestra o sali di piano, ed estendi del tutto l\'antenna.'**
+  String get radioTip2;
+
+  /// No description provided for @radioTip3.
+  ///
+  /// In it, this message translates to:
+  /// **'Le frequenze FM cambiano da zona a zona: quelle qui sono delle città principali.'**
+  String get radioTip3;
+
+  /// No description provided for @radioTip4.
+  ///
+  /// In it, this message translates to:
+  /// **'Ascolta a orari fissi, all\'inizio di ogni ora, per risparmiare le batterie.'**
+  String get radioTip4;
+
+  /// No description provided for @radioWhich.
+  ///
+  /// In it, this message translates to:
+  /// **'Che radio tenere in casa'**
+  String get radioWhich;
+
+  /// No description provided for @radioWhich1.
+  ///
+  /// In it, this message translates to:
+  /// **'Una radio a manovella o a pile con FM, onde medie (AM) e, se possibile, DAB+ e onde corte.'**
+  String get radioWhich1;
+
+  /// No description provided for @radioWhich2.
+  ///
+  /// In it, this message translates to:
+  /// **'Batterie di ricambio dello stesso formato, conservate a parte.'**
+  String get radioWhich2;
+
+  /// No description provided for @radioWhich3.
+  ///
+  /// In it, this message translates to:
+  /// **'Funziona anche se il telefono è scarico e la rete è giù.'**
+  String get radioWhich3;
+
+  /// No description provided for @pmrTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Walkie-talkie PMR446'**
+  String get pmrTitle;
+
+  /// No description provided for @pmrBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Si usano senza licenza in tutta Europa (0,5 W, di solito 1-3 km). Accordati in famiglia su un canale.'**
+  String get pmrBody;
+
+  /// No description provided for @pmrChannel.
+  ///
+  /// In it, this message translates to:
+  /// **'Can. {n}'**
+  String pmrChannel(int n);
+
+  /// No description provided for @radioOpsec.
+  ///
+  /// In it, this message translates to:
+  /// **'Ricevere è sicuro: chi ascolta non emette segnali. Trasmettere invece si può rilevare: in zona di guerra parla poco, brevemente e solo se serve.'**
+  String get radioOpsec;
+
+  /// No description provided for @radioChecked.
+  ///
+  /// In it, this message translates to:
+  /// **'Dati controllati su fonti ufficiali il {date}.'**
+  String radioChecked(String date);
+
+  /// No description provided for @radioFinder.
+  ///
+  /// In it, this message translates to:
+  /// **'Cerca la frequenza della tua zona (online): {name}'**
+  String radioFinder(String name);
+
+  /// No description provided for @docDownloadFailed.
+  ///
+  /// In it, this message translates to:
+  /// **'Download non riuscito. Controlla la connessione e riprova.'**
+  String get docDownloadFailed;
+
+  /// No description provided for @docDownloading.
+  ///
+  /// In it, this message translates to:
+  /// **'Download… {pct}%'**
+  String docDownloading(String pct);
+
+  /// No description provided for @docToDownload.
+  ///
+  /// In it, this message translates to:
+  /// **'Da scaricare · {size}'**
+  String docToDownload(String size);
+
+  /// No description provided for @docNotDownloaded.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica prima il documento dalla Biblioteca.'**
+  String get docNotDownloaded;
+
+  /// No description provided for @planTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Piano di emergenza della famiglia'**
+  String get planTitle;
+
+  /// No description provided for @planSubtitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Contatti, punti d\'incontro, chi aiuta chi'**
+  String get planSubtitle;
+
+  /// No description provided for @planIntro.
+  ///
+  /// In it, this message translates to:
+  /// **'Mettetevi d\'accordo prima, tutti insieme: in un\'emergenza il telefono e internet possono non funzionare.'**
+  String get planIntro;
+
+  /// No description provided for @planContacts.
+  ///
+  /// In it, this message translates to:
+  /// **'Contatti di emergenza'**
+  String get planContacts;
+
+  /// No description provided for @planContactsHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Nome e telefono di 2–3 persone, anche una fuori città'**
+  String get planContactsHint;
+
+  /// No description provided for @planMeetNear.
+  ///
+  /// In it, this message translates to:
+  /// **'Punto d\'incontro vicino a casa'**
+  String get planMeetNear;
+
+  /// No description provided for @planMeetNearHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Es. davanti alla farmacia all\'angolo'**
+  String get planMeetNearHint;
+
+  /// No description provided for @planMeetFar.
+  ///
+  /// In it, this message translates to:
+  /// **'Punto d\'incontro fuori dal quartiere'**
+  String get planMeetFar;
+
+  /// No description provided for @planMeetFarHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Se non si può tornare a casa'**
+  String get planMeetFarHint;
+
+  /// No description provided for @planShelter.
+  ///
+  /// In it, this message translates to:
+  /// **'Rifugio o area di attesa più vicina'**
+  String get planShelter;
+
+  /// No description provided for @planShelterHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Quella indicata dal comune'**
+  String get planShelterHint;
+
+  /// No description provided for @planChildren.
+  ///
+  /// In it, this message translates to:
+  /// **'Chi va a prendere i bambini'**
+  String get planChildren;
+
+  /// No description provided for @planChildrenHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Scuola, asilo, e chi li prende se tu non puoi'**
+  String get planChildrenHint;
+
+  /// No description provided for @planHelp.
+  ///
+  /// In it, this message translates to:
+  /// **'Chi ha bisogno di aiuto'**
+  String get planHelp;
+
+  /// No description provided for @planHelpHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Anziani, persone con disabilità, animali: chi li aiuta e come'**
+  String get planHelpHint;
+
+  /// No description provided for @planHealth.
+  ///
+  /// In it, this message translates to:
+  /// **'Medicine e informazioni mediche'**
+  String get planHealth;
+
+  /// No description provided for @planHealthHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Farmaci, allergie, dispositivi medici'**
+  String get planHealthHint;
+
+  /// No description provided for @planNotes.
+  ///
+  /// In it, this message translates to:
+  /// **'Altre note'**
+  String get planNotes;
+
+  /// No description provided for @planCopy.
+  ///
+  /// In it, this message translates to:
+  /// **'Copia il piano'**
+  String get planCopy;
+
+  /// No description provided for @planCopied.
+  ///
+  /// In it, this message translates to:
+  /// **'Piano copiato: incollalo in un messaggio o stampalo.'**
+  String get planCopied;
+
+  /// No description provided for @planPaper.
+  ///
+  /// In it, this message translates to:
+  /// **'Scrivi il piano anche su carta e tienilo con le scorte. Dallo alle persone dei contatti di emergenza.'**
+  String get planPaper;
 }
 
 class _AppLocalizationsDelegate

@@ -19,10 +19,17 @@ class DownloadsBanner extends StatelessWidget {
 
   static Iterable<DownloadState> get _zims => ZimDownloads.instance.active;
 
+  // Ascolta direttamente i download: essendo un widget costante, il ridisegno del genitore non lo aggiornerebbe.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ListenableBuilder(
+        listenable: Listenable.merge([MapRegions.instance, ZimDownloads.instance]),
+        builder: (context, _) => _content(context),
+      );
+
+  Widget _content(BuildContext context) {
     final t = AppLocalizations.of(context);
     final maps = _maps.toList(), zims = _zims.toList();
+    if (maps.isEmpty && zims.isEmpty) return const SizedBox.shrink();
     final names = [for (final j in maps) regionName(t, j.region), for (final z in zims) z.title];
     // Avanzamento pesato sui byte di tutti i download.
     var done = 0.0, total = 0.0;

@@ -1,39 +1,56 @@
 ---
-title: Vorräte für zu Hause (2 Wochen)
+title: Vorräte für zu Hause
 order: 2
 ---
-Um zwei Wochen ohne Einkaufsmöglichkeit, fließendes Wasser und Strom zu Hause auszukommen. Mit dem Werkzeug „Vorräte“ lassen sich die Mengen berechnen.
+Die Europäische Union empfiehlt jedem Haushalt, mindestens 72 Stunden ohne Einkaufsmöglichkeit, fließendes Wasser und Strom zu Hause auszukommen. Länger ist besser. Mit dem Werkzeug „Vorräte“ lassen sich die Mengen berechnen.
 
 ## Wasser
-- 4 Liter pro Person und Tag in verschlossenen Behältern
-- Parfümfreies Chlorbleichmittel (zur Wasserdesinfektion)
+- Mindestens 3 Liter pro Person und Tag zum Trinken, mehr zum Kochen und Waschen
+- Verschlossene Flaschen oder Kanister, kühl und dunkel gelagert
+- Wasserentkeimungstabletten
 - Badewanne und Töpfe sofort bei einer Warnung füllen
 
 ## Haltbare Lebensmittel
+- Lebensmittel, die man ohne Kochen und mit wenig Wasser essen kann (Konserven, Cracker, Nüsse und Trockenobst)
 - Nudeln, Reis, getrocknete Hülsenfrüchte
 - Konserven (Hülsenfrüchte, Thunfisch, Fleisch, Gemüse)
 - Öl, Salz, Zucker, Honig
-- Kekse, Cracker, Nüsse und Trockenobst
 - H-Milch oder Milchpulver
 - Babynahrung und Tierfutter, falls nötig
 - Campingkocher mit Ersatz-Gaskartuschen
 
-## Gesundheit und Hygiene
-- Vollständiges Erste-Hilfe-Set
-- Regelmäßig benötigte Medikamente für einen Monat
+## Gesundheit
+- Erste-Hilfe-Set mit Anleitung
+- Regelmäßig benötigte Medikamente für mindestens 2 Wochen
 - Schmerz- und fiebersenkende Mittel
-- Seife, Zahnpasta, Binden, Windeln
-- Reißfeste Säcke und Katzenstreu oder Sägemehl für eine Behelfstoilette
+- Ersatzbrille und Hilfsmittel, die Sie täglich brauchen
 
-## Energie und Licht
-- LED-Taschenlampen und -Laternen mit Batterien
+## Hygiene und Toilette ohne Wasser
+- Seife, Handdesinfektion, Feuchttücher, Toilettenpapier
+- Zahnpasta, Binden, Windeln
+- Reißfeste Müllsäcke und ein Eimer mit Deckel
+- Katzenstreu oder Sägemehl zum Abdecken der Toilettenabfälle
+
+## Licht, Energie und Information
+- LED-Taschen- oder Stirnlampen mit Ersatzbatterien
 - Kerzen und Streichhölzer (Vorsicht, Brandgefahr)
-- Powerbank und, wenn möglich, faltbares Solarpanel
-- Batterie- oder Kurbelradio
+- Geladene Powerbanks und, wenn möglich, faltbares Solarpanel
+- Batterie-, Kurbel- oder Solarradio, mit der Notfallfrequenz darauf notiert
+
+## Wärme und Kälte
+- Decken und Schlafsäcke
+- Warme Kleidung: Wolle, dicke Socken, Mütze, Handschuhe
+- Batterieventilator für große Hitze
+
+## Geld und Dokumente
+- Bargeld in kleinen Scheinen und Münzen
+- Kopien der Ausweisdokumente
+- Wichtige Telefonnummern auf Papier
+- Notfallplan der Familie: Kontakte und Treffpunkt
 
 ## Haus
 - Klebeband und Plastikfolie (zum Abdichten eines Raums)
 - Feuerlöscher
 - Rollgabelschlüssel zum Absperren von Gas und Wasser
-- Decken und Schlafsäcke
+- Trillerpfeife, damit man Sie findet
 - Grundwerkzeug (Hammer, Schraubendreher, Zange)

@@ -2,6 +2,7 @@ import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import 'document_screen.dart';
@@ -161,37 +162,96 @@ class _DownloadTile extends StatelessWidget {
   }
 }
 
-class _Documents extends StatelessWidget {
+class _Documents extends StatefulWidget {
   const _Documents();
+
+  @override
+  State<_Documents> createState() => _DocumentsState();
+}
+
+class _DocumentsState extends State<_Documents> {
+  late final Future<List<OfficialDocument>> _docs = loadDocuments(AppSettings.instance.language).then((d) async {
+    await DocumentFiles.instance.refresh(d);
+    return d;
+  });
+
+  Future<void> _download(OfficialDocument d) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final t = AppLocalizations.of(context);
+    if (!await DocumentFiles.instance.download(d)) messenger.showSnackBar(SnackBar(content: Text(t.docDownloadFailed)));
+  }
+
+  Future<void> _delete(OfficialDocument d) async {
+    final t = AppLocalizations.of(context);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(t.deleteQ(d.title)),
+        content: Text(t.deleteBody(formatBytes(d.size))),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(t.cancel)),
+          TextButton(onPressed: () => Navigator.pop(c, true), child: Text(t.delete)),
+        ],
+      ),
+    );
+    if (ok == true) await DocumentFiles.instance.delete(d);
+  }
 
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
+    final files = DocumentFiles.instance;
     return FutureBuilder<List<OfficialDocument>>(
-      future: loadDocuments(),
-      builder: (context, snap) => Column(children: [
-        if (!snap.hasData) const Center(child: CircularProgressIndicator()),
-        for (final d in snap.data ?? const <OfficialDocument>[])
-          Card(
-            margin: const EdgeInsets.only(bottom: 10),
-            child: ListTile(
-              contentPadding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-              leading: const Icon(Icons.picture_as_pdf, color: kAccent, size: 32),
-              title: Text(d.title, style: const TextStyle(fontWeight: FontWeight.w600)),
-              subtitle: Text('${d.author.split(' – ').first} · ${d.year} · ${t.pagesN(d.pages)} · ${d.language.toUpperCase()}'),
-              trailing: IconButton(
-                icon: const Icon(Icons.info_outline),
-                tooltip: t.sources,
-                onPressed: () => showModalBottomSheet<void>(
-                  context: context,
-                  isScrollControlled: true,
-                  builder: (_) => DocumentInfo(doc: d),
-                ),
+      future: _docs,
+      builder: (context, snap) => ListenableBuilder(
+        listenable: files,
+        builder: (context, _) => Column(children: [
+          if (!snap.hasData) const Center(child: CircularProgressIndicator()),
+          for (final d in snap.data ?? const <OfficialDocument>[])
+            Card(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: ListTile(
+                contentPadding: const EdgeInsets.fromLTRB(16, 8, 4, 8),
+                leading: Icon(Icons.picture_as_pdf, color: files.isAvailable(d) ? kAccent : Colors.white38, size: 32),
+                title: Text(d.title, style: const TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text([
+                  '${d.author.split(RegExp(r' \(| – |, |;')).first} · ${d.year} · ${d.language.toUpperCase()}',
+                  if (files.progress[d.file] case final p?)
+                    t.docDownloading((p * 100).toStringAsFixed(0))
+                  else if (!files.isAvailable(d))
+                    t.docToDownload(formatBytes(d.size))
+                  else
+                    t.pagesN(d.pages),
+                ].join('\n')),
+                trailing: files.progress.containsKey(d.file)
+                    ? const Padding(
+                        padding: EdgeInsets.all(12),
+                        child: SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 3)),
+                      )
+                    : PopupMenuButton<String>(
+                        onSelected: (v) => switch (v) {
+                          'info' => showModalBottomSheet<void>(
+                              context: context,
+                              isScrollControlled: true,
+                              builder: (_) => DocumentInfo(doc: d),
+                            ),
+                          'download' => _download(d),
+                          _ => _delete(d),
+                        },
+                        itemBuilder: (_) => [
+                          PopupMenuItem(value: 'info', child: Text(t.sources)),
+                          if (!files.isAvailable(d)) PopupMenuItem(value: 'download', child: Text(t.download)),
+                          if (!d.bundled && files.isAvailable(d))
+                            PopupMenuItem(value: 'delete', child: Text(t.deleteFromDevice)),
+                        ],
+                      ),
+                onTap: () => files.isAvailable(d)
+                    ? Navigator.push(context, MaterialPageRoute(builder: (_) => DocumentScreen(doc: d)))
+                    : _download(d),
               ),
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => DocumentScreen(doc: d))),
             ),
-          ),
-      ]),
+        ]),
+      ),
     );
   }
 }

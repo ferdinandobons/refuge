@@ -9,8 +9,10 @@ import '../guides/guide.dart';
 import '../library/zim/catalog_screen.dart';
 import '../maps/map_download.dart';
 import '../tools/checklist_screen.dart';
+import '../tools/radio_screen.dart';
 import '../tools/supplies_screen.dart';
 import 'checklists.dart';
+import 'family_plan_screen.dart';
 
 /// Prepararsi prima che serva: numeri e allerte del paese, liste, scorte, contenuti da scaricare.
 class PrepareScreen extends StatelessWidget {
@@ -37,6 +39,13 @@ class PrepareScreen extends StatelessWidget {
                 title: Text(t.phoneAlerts),
                 subtitle: Text(t.phoneAlertsBody(country.alertName(t))),
               ),
+              ListTile(
+                leading: const Icon(Icons.radio, color: kAccent),
+                title: Text(t.radioTitle),
+                subtitle: Text(t.radioSubtitle),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const RadioScreen())),
+              ),
               if (siren != null)
                 ListTile(
                   leading: const Icon(Icons.campaign, color: kAccent),
@@ -58,6 +67,12 @@ class PrepareScreen extends StatelessWidget {
                   open: (_) => ChecklistScreen(list: c),
                 ),
             ]),
+          ),
+          _Tile(
+            icon: Icons.family_restroom,
+            title: t.planTitle,
+            subtitle: t.planSubtitle,
+            open: (_) => const FamilyPlanScreen(),
           ),
           _Tile(
             icon: Icons.calculate,

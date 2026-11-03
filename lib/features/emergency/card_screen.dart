@@ -170,14 +170,20 @@ class _CardScreenState extends State<CardScreen> {
                 Padding(padding: const EdgeInsets.only(top: 6), child: Text('✕  $n', style: const TextStyle(fontSize: 16))),
               const Divider(height: 32),
               Text(t.sources, style: const TextStyle(color: Colors.white54)),
-              for (final r in card.refs)
-                r.contains(':') && !r.contains(' ')
-                    ? TextButton(
-                        style: TextButton.styleFrom(alignment: Alignment.centerLeft, padding: EdgeInsets.zero),
-                        onPressed: () => openGuideTarget(context, r),
-                        child: Text(r.split(':').last.split('#').first, style: const TextStyle(fontSize: 13)),
-                      )
-                    : Text(r, style: const TextStyle(color: Colors.white38, fontSize: 13)),
+              FutureBuilder(
+                future: refTitles(card.refs, AppSettings.instance.language),
+                builder: (context, snap) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  for (final r in card.refs)
+                    r.contains(':') && !r.contains(' ')
+                        ? TextButton(
+                            style: TextButton.styleFrom(alignment: Alignment.centerLeft, padding: EdgeInsets.zero),
+                            onPressed: () => openGuideTarget(context, r),
+                            child: Text(snap.data?[r] ?? r.split(':').last.split('#').first,
+                                style: const TextStyle(fontSize: 13)),
+                          )
+                        : Text(r, style: const TextStyle(color: Colors.white38, fontSize: 13)),
+                ]),
+              ),
             ],
           ),
         ),

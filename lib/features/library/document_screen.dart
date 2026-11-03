@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pdfrx/pdfrx.dart';
 
+import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import 'documents.dart';
@@ -33,6 +34,11 @@ class _DocumentScreenState extends State<DocumentScreen> {
     _query.dispose();
     super.dispose();
   }
+
+  PdfViewerParams get _params => PdfViewerParams(
+        backgroundColor: kSurface,
+        pagePaintCallbacks: [_searcher.pageTextMatchPaintCallback],
+      );
 
   void _showInfo() => showModalBottomSheet<void>(
         context: context,
@@ -79,15 +85,16 @@ class _DocumentScreenState extends State<DocumentScreen> {
         children: [
           if (_searcher.isSearching) const LinearProgressIndicator(minHeight: 2),
           Expanded(
-            child: PdfViewer.asset(
-              widget.doc.asset,
-              controller: _controller,
-              initialPageNumber: widget.initialPage,
-              params: PdfViewerParams(
-                backgroundColor: kSurface,
-                pagePaintCallbacks: [_searcher.pageTextMatchPaintCallback],
-              ),
-            ),
+            child: widget.doc.bundled
+                ? PdfViewer.asset(widget.doc.asset,
+                    controller: _controller, initialPageNumber: widget.initialPage, params: _params)
+                : FutureBuilder(
+                    future: DocumentFiles.instance.file(widget.doc),
+                    builder: (context, snap) => snap.hasData
+                        ? PdfViewer.file(snap.data!.path,
+                            controller: _controller, initialPageNumber: widget.initialPage, params: _params)
+                        : const Center(child: CircularProgressIndicator()),
+                  ),
           ),
         ],
       ),
@@ -113,7 +120,7 @@ class DocumentInfo extends StatelessWidget {
           Text('${doc.author} · ${doc.year} · ${t.pagesN(doc.pages)} · ${doc.language.toUpperCase()}',
               style: const TextStyle(color: Colors.white70)),
           const SizedBox(height: 12),
-          Text(doc.description),
+          Text(doc.description(AppSettings.instance.language)),
           const SizedBox(height: 16),
           Text(t.license.toUpperCase(), style: label),
           Text(doc.license),

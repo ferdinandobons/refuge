@@ -1,54 +1,322 @@
 [
   {
-    "file": "us-army-atp-4-02-11-first-aid-2026.pdf",
-    "title": "Casualty Response, Tactical Combat Casualty Care, and First Aid (ATP 4-02.11)",
-    "author": "Headquarters, Department of the Army (USA)",
+    "id": "eu-72h",
+    "file": "eu-72-hours-self-sufficiency-2026.pdf",
+    "url": null,
+    "language": "en",
+    "title": "Population preparedness: reaching self-sufficiency of at least 72 hours – SWD(2026) 826",
+    "author": "European Commission (DG ECHO)",
     "year": 2026,
-    "language": "en",
-    "pages": 254,
-    "category": "Primo soccorso",
-    "description": "Manuale ufficiale di primo soccorso dell'esercito USA: emorragie, laccio emostatico, vie aeree, ustioni, fratture, ferite da esplosione. Sostituisce TC 4-02.1 (2016).",
-    "license": "Pubblico dominio (opera del governo USA). Distribution Restriction: Approved for public release, distribution is unlimited.",
-    "source": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN46159-ATP_4-02.11-000-WEB-1.pdf",
-    "sha256": "a4a0650f5bb14c1c7163b9b1e9f08bcc012fb3fe49ea4432f0ccaffb9af86542"
+    "pages": 31,
+    "size": 431723,
+    "description": {
+      "it": "Linee guida dell'Unione Europea sulle scorte e l'autonomia di casa per almeno 72 ore: acqua, cibo, luce, riscaldamento, medicine, radio, contanti, piano familiare e zaino di evacuazione.",
+      "en": "European Union guidelines on household supplies and self-sufficiency for at least 72 hours: water, food, light, heating, medicines, radio, cash, family plan and evacuation bag.",
+      "fr": "Lignes directrices de l'Union européenne sur les réserves et l'autonomie du foyer pendant au moins 72 heures : eau, nourriture, éclairage, chauffage, médicaments, radio, espèces, plan familial et sac d'évacuation.",
+      "de": "Leitlinien der Europäischen Union zu Vorräten und Selbstversorgung des Haushalts für mindestens 72 Stunden: Wasser, Lebensmittel, Licht, Heizung, Medikamente, Radio, Bargeld, Familienplan und Notgepäck.",
+      "es": "Directrices de la Unión Europea sobre reservas y autonomía del hogar durante al menos 72 horas: agua, comida, luz, calefacción, medicinas, radio, efectivo, plan familiar y mochila de evacuación."
+    },
+    "license": "© European Union, 2026. Reuse authorised under CC BY 4.0 (Commission Decision 2011/833/EU).",
+    "source": "https://civil-protection-knowledge-network.europa.eu/preparedness-0/guidelines-population-preparedness"
   },
   {
-    "file": "us-army-atp-3-50-21-survival-2018.pdf",
-    "title": "Survival (ATP 3-50.21)",
-    "author": "Headquarters, Department of the Army (USA)",
-    "year": 2018,
+    "id": "erc-2025",
+    "file": "erc-guidelines-2025-everyone.pdf",
+    "url": "https://www.erc.edu/media/p5ymaeej/gl2025_layperson_book_ipdf-v11-e.pdf",
     "language": "en",
-    "pages": 228,
-    "category": "Sopravvivenza",
-    "description": "Manuale ufficiale di sopravvivenza dell'esercito USA: acqua, cibo, riparo, fuoco, orientamento e spostamenti, primo soccorso sul campo, climi estremi.",
-    "license": "Pubblico dominio (opera del governo USA). Distribution Restriction: Approved for public release; distribution is unlimited.",
-    "source": "https://armypubs.army.mil (copia da https://irp.fas.org/doddir/army/atp3-50-21.pdf)",
-    "sha256": "817746b13262e9e26e8ac7d25bf879790df369c2aa0a2600f69158ec4090461c"
+    "title": "The ERC Guidelines 2025 on Resuscitation for Everyone",
+    "author": "European Resuscitation Council (ERC)",
+    "year": 2025,
+    "pages": 66,
+    "size": 17446129,
+    "description": {
+      "it": "Le linee guida europee 2025 su rianimazione e primo soccorso, spiegate per tutti: arresto cardiaco, defibrillatore, soffocamento, annegamento, ipotermia.",
+      "en": "The 2025 European guidelines on resuscitation and first aid, explained for everyone: cardiac arrest, defibrillator, choking, drowning, hypothermia.",
+      "fr": "Les lignes directrices européennes 2025 sur la réanimation et les premiers secours, expliquées pour tous : arrêt cardiaque, défibrillateur, étouffement, noyade, hypothermie.",
+      "de": "Die europäischen Leitlinien 2025 zu Wiederbelebung und Erster Hilfe, für alle erklärt: Herzstillstand, Defibrillator, Ersticken, Ertrinken, Unterkühlung.",
+      "es": "Las directrices europeas 2025 de reanimación y primeros auxilios, explicadas para todos: parada cardiaca, desfibrilador, atragantamiento, ahogamiento, hipotermia."
+    },
+    "license": "© European Resuscitation Council 2025. All rights reserved. Downloaded from the official ERC website.",
+    "source": "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english"
   },
   {
-    "file": "ifrc-first-aid-guidelines-2020.pdf",
-    "title": "International First Aid, Resuscitation, and Education Guidelines 2020",
-    "author": "International Federation of Red Cross and Red Crescent Societies (IFRC) – Global First Aid Reference Centre",
-    "year": 2020,
+    "id": "ifrc-2025",
+    "file": "ifrc-first-aid-guidelines-2025.pdf",
+    "url": null,
     "language": "en",
-    "pages": 476,
-    "category": "Primo soccorso",
-    "description": "Linee guida internazionali della Croce Rossa sul primo soccorso e la rianimazione, basate sulle evidenze scientifiche. Destinate a formatori e organizzazioni.",
-    "license": "© International Federation of Red Cross and Red Crescent Societies, Geneva, 2020. Copies of all or part of this study may be made for non-commercial use, providing the source is acknowledged.",
-    "source": "https://www.ifrc.org/document/international-first-aid-resuscitation-and-education-guidelines",
-    "sha256": "e14ab9dbc492a5b6f61ac11cfcddbb5e327cb7690ae9006ac5f9b4c308af3ec7"
+    "title": "International First Aid, Resuscitation and Education Guidelines 2025",
+    "author": "International Federation of Red Cross and Red Crescent Societies (IFRC)",
+    "year": 2025,
+    "pages": 594,
+    "size": 6261070,
+    "description": {
+      "it": "Le linee guida internazionali della Croce Rossa sul primo soccorso, basate sulle prove scientifiche, anche per disastri e conflitti. Testo completo per consultazione.",
+      "en": "The Red Cross international first aid guidelines, based on scientific evidence, including disasters and conflicts. Full text for reference.",
+      "fr": "Les lignes directrices internationales de la Croix-Rouge sur les premiers secours, fondées sur les preuves scientifiques, y compris catastrophes et conflits. Texte complet de référence.",
+      "de": "Die internationalen Erste-Hilfe-Leitlinien des Roten Kreuzes, wissenschaftlich fundiert, auch für Katastrophen und Konflikte. Volltext zum Nachschlagen.",
+      "es": "Las directrices internacionales de primeros auxilios de la Cruz Roja, basadas en pruebas científicas, también para desastres y conflictos. Texto completo de consulta."
+    },
+    "license": "© IFRC, Geneva, 2025. Copies of all or part of this study may be made for non-commercial use, providing the source is acknowledged.",
+    "source": "https://www.ifrc.org/document/international-first-aid-resuscitation-and-education-guidelines"
   },
   {
-    "file": "kearny-nuclear-war-survival-skills-1987.pdf",
-    "title": "Nuclear War Survival Skills (edizione 1987)",
-    "author": "Cresson H. Kearny – Oak Ridge National Laboratory (edizione originale 1979)",
-    "year": 1987,
+    "id": "who-pfa",
+    "file": "who-psychological-first-aid-it.pdf",
+    "url": "https://iris.who.int/server/api/core/bitstreams/9ad9dc4f-fb6f-41df-89da-bad636c3c68e/content",
+    "language": "it",
+    "title": "Primo soccorso psicologico: manuale per operatori sul campo",
+    "author": "World Health Organization, War Trauma Foundation, World Vision International",
+    "year": 2011,
+    "pages": 72,
+    "size": 1419679,
+    "description": {
+      "it": "Come stare vicino a chi ha appena vissuto un evento terribile: ascoltare, confortare, aiutare a trovare sostegno, senza fare danni.",
+      "en": "How to support people who have just been through a terrible event: listen, comfort and help them find support, without causing harm.",
+      "fr": "Comment soutenir une personne qui vient de vivre un événement terrible : écouter, réconforter, aider à trouver du soutien, sans nuire.",
+      "de": "Wie man Menschen beisteht, die gerade etwas Schreckliches erlebt haben: zuhören, trösten, beim Finden von Unterstützung helfen, ohne zu schaden.",
+      "es": "Cómo acompañar a quien acaba de vivir un hecho terrible: escuchar, consolar y ayudar a encontrar apoyo, sin causar daño."
+    },
+    "license": "© World Health Organization 2011. Downloaded from the official WHO website.",
+    "source": "https://www.who.int/publications/i/item/9789241548205"
+  },
+  {
+    "id": "who-pfa",
+    "file": "who-psychological-first-aid-en.pdf",
+    "url": "https://iris.who.int/server/api/core/bitstreams/e7e129fb-b306-496d-84a5-67bb70abc130/content",
     "language": "en",
-    "pages": 267,
-    "category": "Rischio nucleare",
-    "description": "Manuale pratico su rifugi antifallout, ventilazione, acqua, cibo e misurazione delle radiazioni, nato da ricerche dell'Oak Ridge National Laboratory.",
-    "license": "Parti del 1979: non coperte da copyright. Aggiunte: Copyright (c) 1986 by Cresson H. Kearny. The copyrighted material may be reproduced without obtaining permission from anyone, provided all copyrighted material is reproduced full-scale and the copyright notice is printed. Riprodotto integralmente.",
-    "source": "Oregon Institute of Science and Medicine (oism.org/nwss); copia da archive.org/details/Nuclear_War_Survival_Skills_Cresson_Kearny",
-    "sha256": "efa4603c9c2a0d9c8c70c2dc4b7cd0822165ea868564d2f2516dcb9ba42e16ed"
+    "title": "Psychological first aid: Guide for field workers",
+    "author": "World Health Organization, War Trauma Foundation, World Vision International",
+    "year": 2011,
+    "pages": 64,
+    "size": 1487833,
+    "description": {
+      "it": "Come stare vicino a chi ha appena vissuto un evento terribile: ascoltare, confortare, aiutare a trovare sostegno, senza fare danni.",
+      "en": "How to support people who have just been through a terrible event: listen, comfort and help them find support, without causing harm.",
+      "fr": "Comment soutenir une personne qui vient de vivre un événement terrible : écouter, réconforter, aider à trouver du soutien, sans nuire.",
+      "de": "Wie man Menschen beisteht, die gerade etwas Schreckliches erlebt haben: zuhören, trösten, beim Finden von Unterstützung helfen, ohne zu schaden.",
+      "es": "Cómo acompañar a quien acaba de vivir un hecho terrible: escuchar, consolar y ayudar a encontrar apoyo, sin causar daño."
+    },
+    "license": "© World Health Organization 2011. Downloaded from the official WHO website.",
+    "source": "https://www.who.int/publications/i/item/9789241548205"
+  },
+  {
+    "id": "who-pfa",
+    "file": "who-psychological-first-aid-fr.pdf",
+    "url": "https://iris.who.int/server/api/core/bitstreams/94c73eb9-4a94-4efd-8a4a-fdf9ace1c5ba/content",
+    "language": "fr",
+    "title": "Les premiers secours psychologiques : guide pour les acteurs de terrain",
+    "author": "World Health Organization, War Trauma Foundation, World Vision International",
+    "year": 2011,
+    "pages": 68,
+    "size": 4733028,
+    "description": {
+      "it": "Come stare vicino a chi ha appena vissuto un evento terribile: ascoltare, confortare, aiutare a trovare sostegno, senza fare danni.",
+      "en": "How to support people who have just been through a terrible event: listen, comfort and help them find support, without causing harm.",
+      "fr": "Comment soutenir une personne qui vient de vivre un événement terrible : écouter, réconforter, aider à trouver du soutien, sans nuire.",
+      "de": "Wie man Menschen beisteht, die gerade etwas Schreckliches erlebt haben: zuhören, trösten, beim Finden von Unterstützung helfen, ohne zu schaden.",
+      "es": "Cómo acompañar a quien acaba de vivir un hecho terrible: escuchar, consolar y ayudar a encontrar apoyo, sin causar daño."
+    },
+    "license": "© World Health Organization 2011. Downloaded from the official WHO website.",
+    "source": "https://www.who.int/publications/i/item/9789241548205"
+  },
+  {
+    "id": "who-pfa",
+    "file": "who-psychological-first-aid-de.pdf",
+    "url": "https://iris.who.int/server/api/core/bitstreams/894b406a-c6a7-4151-931d-99c93c4a9741/content",
+    "language": "de",
+    "title": "Psychische Erste Hilfe – Handbuch",
+    "author": "World Health Organization; deutsche Übersetzung: Österreichisches Rotes Kreuz",
+    "year": 2011,
+    "pages": 55,
+    "size": 5861522,
+    "description": {
+      "it": "Come stare vicino a chi ha appena vissuto un evento terribile: ascoltare, confortare, aiutare a trovare sostegno, senza fare danni.",
+      "en": "How to support people who have just been through a terrible event: listen, comfort and help them find support, without causing harm.",
+      "fr": "Comment soutenir une personne qui vient de vivre un événement terrible : écouter, réconforter, aider à trouver du soutien, sans nuire.",
+      "de": "Wie man Menschen beisteht, die gerade etwas Schreckliches erlebt haben: zuhören, trösten, beim Finden von Unterstützung helfen, ohne zu schaden.",
+      "es": "Cómo acompañar a quien acaba de vivir un hecho terrible: escuchar, consolar y ayudar a encontrar apoyo, sin causar daño."
+    },
+    "license": "© World Health Organization 2011. Downloaded from the official WHO website.",
+    "source": "https://www.who.int/publications/i/item/9789241548205"
+  },
+  {
+    "id": "who-pfa",
+    "file": "who-psychological-first-aid-es.pdf",
+    "url": "https://iris.who.int/server/api/core/bitstreams/8af49662-0dc0-419b-bec3-fc7d1bcf7096/content",
+    "language": "es",
+    "title": "Primera ayuda psicológica: guía para trabajadores de campo",
+    "author": "World Health Organization, War Trauma Foundation, World Vision International",
+    "year": 2011,
+    "pages": 68,
+    "size": 5174939,
+    "description": {
+      "it": "Come stare vicino a chi ha appena vissuto un evento terribile: ascoltare, confortare, aiutare a trovare sostegno, senza fare danni.",
+      "en": "How to support people who have just been through a terrible event: listen, comfort and help them find support, without causing harm.",
+      "fr": "Comment soutenir une personne qui vient de vivre un événement terrible : écouter, réconforter, aider à trouver du soutien, sans nuire.",
+      "de": "Wie man Menschen beisteht, die gerade etwas Schreckliches erlebt haben: zuhören, trösten, beim Finden von Unterstützung helfen, ohne zu schaden.",
+      "es": "Cómo acompañar a quien acaba de vivir un hecho terrible: escuchar, consolar y ayudar a encontrar apoyo, sin causar daño."
+    },
+    "license": "© World Health Organization 2011. Downloaded from the official WHO website.",
+    "source": "https://www.who.int/publications/i/item/9789241548205"
+  },
+  {
+    "id": "nl-denkvooruit",
+    "file": "denkvooruit-prepare-en.pdf",
+    "url": "https://english.denkvooruit.nl/site/binaries/site-content/collections/documents/2025/11/25/information-booklet-prepare-for-an-emergency-situation/information-booklet-prepare-for-an-emergency-situation.pdf",
+    "language": "en",
+    "title": "Prepare for an emergency situation",
+    "author": "Government of the Netherlands (NCTV) – Denk vooruit",
+    "year": 2025,
+    "pages": 32,
+    "size": 9898504,
+    "description": {
+      "it": "L'opuscolo del governo olandese per prepararsi a un'emergenza: kit per 72 ore, piano familiare, cosa fare se manca la corrente per tre giorni.",
+      "en": "The Dutch government booklet on preparing for an emergency: 72-hour kit, family plan, what to do if the power fails for three days.",
+      "fr": "La brochure du gouvernement néerlandais pour se préparer à une urgence : kit pour 72 heures, plan familial, que faire si le courant manque trois jours.",
+      "de": "Die Broschüre der niederländischen Regierung zur Notfallvorsorge: Notfallpaket für 72 Stunden, Notfallplan, was tun, wenn drei Tage der Strom ausfällt.",
+      "es": "El folleto del Gobierno de los Países Bajos para prepararse ante una emergencia: kit para 72 horas, plan familiar, qué hacer si falta la luz tres días."
+    },
+    "license": "Text: CC0 (Rijksoverheid, Denk vooruit); images and infographics excluded. Downloaded from the official website.",
+    "source": "https://english.denkvooruit.nl/translations"
+  },
+  {
+    "id": "nl-denkvooruit",
+    "file": "denkvooruit-prepare-fr.pdf",
+    "url": "https://english.denkvooruit.nl/site/binaries/site-content/collections/documents/2025/11/25/bien-se-preparer-a-une-situation-durgence/bien-se-pr-parer-une-situation-d-urgence.pdf",
+    "language": "fr",
+    "title": "Bien se préparer à une situation d'urgence",
+    "author": "Government of the Netherlands (NCTV) – Denk vooruit",
+    "year": 2025,
+    "pages": 32,
+    "size": 9867515,
+    "description": {
+      "it": "L'opuscolo del governo olandese per prepararsi a un'emergenza: kit per 72 ore, piano familiare, cosa fare se manca la corrente per tre giorni.",
+      "en": "The Dutch government booklet on preparing for an emergency: 72-hour kit, family plan, what to do if the power fails for three days.",
+      "fr": "La brochure du gouvernement néerlandais pour se préparer à une urgence : kit pour 72 heures, plan familial, que faire si le courant manque trois jours.",
+      "de": "Die Broschüre der niederländischen Regierung zur Notfallvorsorge: Notfallpaket für 72 Stunden, Notfallplan, was tun, wenn drei Tage der Strom ausfällt.",
+      "es": "El folleto del Gobierno de los Países Bajos para prepararse ante una emergencia: kit para 72 horas, plan familiar, qué hacer si falta la luz tres días."
+    },
+    "license": "Text: CC0 (Rijksoverheid, Denk vooruit); images and infographics excluded. Downloaded from the official website.",
+    "source": "https://english.denkvooruit.nl/translations"
+  },
+  {
+    "id": "nl-denkvooruit",
+    "file": "denkvooruit-prepare-de.pdf",
+    "url": "https://english.denkvooruit.nl/site/binaries/site-content/collections/documents/2025/11/25/tipps-zur-notfallvorsorge/tipps-zur-notfallvorsorge.pdf",
+    "language": "de",
+    "title": "Tipps zur Notfallvorsorge",
+    "author": "Government of the Netherlands (NCTV) – Denk vooruit",
+    "year": 2025,
+    "pages": 32,
+    "size": 9809753,
+    "description": {
+      "it": "L'opuscolo del governo olandese per prepararsi a un'emergenza: kit per 72 ore, piano familiare, cosa fare se manca la corrente per tre giorni.",
+      "en": "The Dutch government booklet on preparing for an emergency: 72-hour kit, family plan, what to do if the power fails for three days.",
+      "fr": "La brochure du gouvernement néerlandais pour se préparer à une urgence : kit pour 72 heures, plan familial, que faire si le courant manque trois jours.",
+      "de": "Die Broschüre der niederländischen Regierung zur Notfallvorsorge: Notfallpaket für 72 Stunden, Notfallplan, was tun, wenn drei Tage der Strom ausfällt.",
+      "es": "El folleto del Gobierno de los Países Bajos para prepararse ante una emergencia: kit para 72 horas, plan familiar, qué hacer si falta la luz tres días."
+    },
+    "license": "Text: CC0 (Rijksoverheid, Denk vooruit); images and infographics excluded. Downloaded from the official website.",
+    "source": "https://english.denkvooruit.nl/translations"
+  },
+  {
+    "id": "nl-denkvooruit",
+    "file": "denkvooruit-prepare-es.pdf",
+    "url": "https://english.denkvooruit.nl/site/binaries/site-content/collections/documents/2025/11/25/preparese-para-una-situacion-de-emergencia/prep-rese-para-una-situaci-n-de-emergencia.pdf",
+    "language": "es",
+    "title": "Prepárese para una situación de emergencia",
+    "author": "Government of the Netherlands (NCTV) – Denk vooruit",
+    "year": 2025,
+    "pages": 32,
+    "size": 9777359,
+    "description": {
+      "it": "L'opuscolo del governo olandese per prepararsi a un'emergenza: kit per 72 ore, piano familiare, cosa fare se manca la corrente per tre giorni.",
+      "en": "The Dutch government booklet on preparing for an emergency: 72-hour kit, family plan, what to do if the power fails for three days.",
+      "fr": "La brochure du gouvernement néerlandais pour se préparer à une urgence : kit pour 72 heures, plan familial, que faire si le courant manque trois jours.",
+      "de": "Die Broschüre der niederländischen Regierung zur Notfallvorsorge: Notfallpaket für 72 Stunden, Notfallplan, was tun, wenn drei Tage der Strom ausfällt.",
+      "es": "El folleto del Gobierno de los Países Bajos para prepararse ante una emergencia: kit para 72 horas, plan familiar, qué hacer si falta la luz tres días."
+    },
+    "license": "Text: CC0 (Rijksoverheid, Denk vooruit); images and infographics excluded. Downloaded from the official website.",
+    "source": "https://english.denkvooruit.nl/translations"
+  },
+  {
+    "id": "de-bbk",
+    "file": "bbk-planning-ahead-de.pdf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/BBK-Vorsorgen-fuer-Krisen-und-Katastrophen.pdf?__blob=publicationFile",
+    "language": "de",
+    "title": "Vorsorgen für Krisen und Katastrophen",
+    "author": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK, Germany)",
+    "year": 2025,
+    "pages": 40,
+    "size": 7807979,
+    "description": {
+      "it": "La guida della protezione civile tedesca: scorte, blackout, incendi, alluvioni, sostanze pericolose, con liste di controllo.",
+      "en": "The German civil protection guide: supplies, power cuts, fires, floods, hazardous substances, with checklists.",
+      "fr": "Le guide de la protection civile allemande : réserves, pannes de courant, incendies, inondations, substances dangereuses, avec listes de contrôle.",
+      "de": "Der Ratgeber des BBK: Vorräte, Stromausfall, Brände, Hochwasser, Gefahrstoffe, mit Checklisten.",
+      "es": "La guía de la protección civil alemana: reservas, apagones, incendios, inundaciones, sustancias peligrosas, con listas de control."
+    },
+    "license": "© BBK. Downloaded from the official BBK website.",
+    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html"
+  },
+  {
+    "id": "de-bbk",
+    "file": "bbk-planning-ahead-en.pdf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/Fremdsprachen/ratgeber-englisch_download.pdf?__blob=publicationFile",
+    "language": "en",
+    "title": "Planning ahead for crises and disasters",
+    "author": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK, Germany)",
+    "year": 2025,
+    "pages": 40,
+    "size": 6087475,
+    "description": {
+      "it": "La guida della protezione civile tedesca: scorte, blackout, incendi, alluvioni, sostanze pericolose, con liste di controllo.",
+      "en": "The German civil protection guide: supplies, power cuts, fires, floods, hazardous substances, with checklists.",
+      "fr": "Le guide de la protection civile allemande : réserves, pannes de courant, incendies, inondations, substances dangereuses, avec listes de contrôle.",
+      "de": "Der Ratgeber des BBK: Vorräte, Stromausfall, Brände, Hochwasser, Gefahrstoffe, mit Checklisten.",
+      "es": "La guía de la protección civil alemana: reservas, apagones, incendios, inundaciones, sustancias peligrosas, con listas de control."
+    },
+    "license": "© BBK. Downloaded from the official BBK website.",
+    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html"
+  },
+  {
+    "id": "de-bbk",
+    "file": "bbk-planning-ahead-fr.pdf",
+    "url": "https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/Fremdsprachen/ratgeber-franzoesisch_download.pdf?__blob=publicationFile",
+    "language": "fr",
+    "title": "Prévenir les crises et les catastrophes",
+    "author": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK, Germany)",
+    "year": 2025,
+    "pages": 40,
+    "size": 5585472,
+    "description": {
+      "it": "La guida della protezione civile tedesca: scorte, blackout, incendi, alluvioni, sostanze pericolose, con liste di controllo.",
+      "en": "The German civil protection guide: supplies, power cuts, fires, floods, hazardous substances, with checklists.",
+      "fr": "Le guide de la protection civile allemande : réserves, pannes de courant, incendies, inondations, substances dangereuses, avec listes de contrôle.",
+      "de": "Der Ratgeber des BBK: Vorräte, Stromausfall, Brände, Hochwasser, Gefahrstoffe, mit Checklisten.",
+      "es": "La guía de la protección civil alemana: reservas, apagones, incendios, inundaciones, sustancias peligrosas, con listas de control."
+    },
+    "license": "© BBK. Downloaded from the official BBK website.",
+    "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html"
+  },
+  {
+    "id": "se-mcf",
+    "file": "mcf-in-case-of-crisis-or-war-en.pdf",
+    "url": "https://rib.msb.se/filer/pdf/31523.pdf",
+    "language": "en",
+    "title": "In case of crisis or war",
+    "author": "Swedish Civil Defence and Resilience Agency (MCF)",
+    "year": 2026,
+    "pages": 32,
+    "size": 4260915,
+    "description": {
+      "it": "L'opuscolo svedese inviato a tutte le famiglie: allarmi e sirene, rifugi durante gli attacchi aerei, acqua, cibo, calore, comunicazioni.",
+      "en": "The Swedish brochure sent to every household: warnings and sirens, shelter during air raids, water, food, heat, communication.",
+      "fr": "La brochure suédoise envoyée à tous les foyers : alertes et sirènes, abris pendant les attaques aériennes, eau, nourriture, chaleur, communication.",
+      "de": "Die schwedische Broschüre für alle Haushalte: Warnungen und Sirenen, Schutz bei Luftangriffen, Wasser, Lebensmittel, Wärme, Kommunikation.",
+      "es": "El folleto sueco enviado a todos los hogares: alertas y sirenas, refugio en ataques aéreos, agua, comida, calor, comunicación."
+    },
+    "license": "© MCF (Sweden). Downloaded from the official MCF website.",
+    "source": "https://www.mcf.se/en/advice-for-individuals/the-brochure-in-case-of-crisis-or-war/download-and-order-the-brochure-in-case-of-crisis-or-war/"
   }
 ]

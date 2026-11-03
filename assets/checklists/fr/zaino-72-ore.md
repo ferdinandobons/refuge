@@ -31,6 +31,7 @@ Un sac par personne, prêt près de la porte, pour tenir 3 jours si vous devez q
 - Photocopies des documents dans une pochette étanche
 - Espèces en petites coupures
 - Carte papier de la zone avec les points de rassemblement indiqués
+- Clés de rechange de la maison et de la voiture
 
 ## Vêtements et abri
 - Tenue de rechange complète, chaussettes en laine, sous-vêtements

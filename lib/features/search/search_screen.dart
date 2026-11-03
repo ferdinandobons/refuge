@@ -11,6 +11,7 @@ import '../guides/guide_repository.dart';
 import '../guides/guide_screen.dart';
 import '../library/document_screen.dart';
 import '../library/documents.dart';
+import '../library/library_screen.dart';
 import '../library/zim/reader_screen.dart';
 import '../library/zim/zim_library.dart';
 import '../prepare/checklists.dart';
@@ -90,12 +91,14 @@ class _SearchScreenState extends State<SearchScreen> {
         priority: 3,
       ));
     }
-    for (final d in await loadDocuments()) {
+    final docs = await loadDocuments(s.language);
+    await DocumentFiles.instance.refresh(docs);
+    for (final d in docs) {
       index.add(Indexed(
-        _Result(d.title, t.documents, Icons.picture_as_pdf, Colors.white70, (_) => DocumentScreen(doc: d)),
+        _Result(d.title, t.documents, Icons.picture_as_pdf, Colors.white70,
+            (_) => DocumentFiles.instance.isAvailable(d) ? DocumentScreen(doc: d) : const LibraryScreen()),
         title: d.title,
-        keywords: d.category,
-        body: d.description,
+        body: d.description(s.language),
         priority: 4,
       ));
     }

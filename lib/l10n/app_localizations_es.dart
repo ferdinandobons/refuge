@@ -243,14 +243,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get library => 'Biblioteca';
 
   @override
-  String get libraryBody => 'Enciclopedias sin conexión y manuales originales';
+  String get libraryBody =>
+      'Enciclopedias sin conexión y documentos oficiales europeos';
 
   @override
   String get originalTexts => 'Textos originales';
 
   @override
   String get originalTextsBody =>
-      'Textos íntegros de la Protección Civil italiana y otras fuentes (en italiano)';
+      'Textos íntegros de la Protección Civil italiana (en italiano)';
 
   @override
   String get originalTextsNote =>
@@ -270,13 +271,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get aboutText =>
-      'App de código abierto que funciona sin internet.\n\nLas fichas de emergencia siguen las guías europeas de primeros auxilios (European Resuscitation Council) y las indicaciones de protección civil. Los textos originales, los manuales y las enciclopedias están en la Biblioteca, con fuentes y licencias.\n\nEsta app no sustituye a un curso de primeros auxilios ni a las indicaciones de las autoridades.';
+      'App de código abierto que funciona sin internet.\n\nLas fichas de emergencia siguen las guías europeas: primeros auxilios del Consejo Europeo de Resucitación (ERC 2025) y de la Cruz Roja (IFRC), preparación según las directrices de la Unión Europea sobre las 72 horas, e indicaciones de las protecciones civiles nacionales. Los documentos originales y las enciclopedias están en la Biblioteca, con fuentes y licencias.\n\nEsta app no sustituye a un curso de primeros auxilios ni a las indicaciones de las autoridades.';
 
   @override
   String get documents => 'Documentos';
 
   @override
-  String get documentsBody => 'Manuales oficiales originales, en inglés.';
+  String get documentsBody =>
+      'Documentos oficiales europeos e internacionales, en tu idioma cuando existen, si no en inglés. Algunos ya están en la app, los demás se descargan del sitio oficial.';
 
   @override
   String get torchTitle => 'Linterna y SOS';
@@ -446,7 +448,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get suppliesNote =>
-      'Valores orientativos para adultos. El calor, el esfuerzo, los niños y las personas mayores cambian las necesidades. Consume primero las provisiones más antiguas.';
+      'La UE recomienda al menos 72 horas de autonomía; mejor si es más. El cálculo usa 4 litros de agua por persona y día (3 para beber, 1 para cocinar y lavarse) y 2000 kcal. Son valores orientativos para adultos: el calor, el esfuerzo, los niños y las personas mayores cambian las necesidades. Consume primero las provisiones más antiguas.';
 
   @override
   String get falloutTitle => 'Lluvia radiactiva';
@@ -464,7 +466,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String falloutDose(String dose) {
-    return 'Si te quedas al aire libre 24 horas: unos $dose. Un sótano la reduce de 10 a 40 veces.';
+    return 'Si te quedas al aire libre 24 horas: unos $dose. Dentro, en el centro de un edificio sólido o en un sótano, es mucho menos.';
   }
 
   @override
@@ -630,7 +632,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get inventoryHint =>
-      'Toca + cuando compres y − cuando consumas. Los artículos a cero son los que te faltan. Toca un artículo para cambiarlo.';
+      'Añade lo que tienes en casa, sección por sección. Luego toca + cuando compres y − cuando consumas.';
 
   @override
   String get catWater => 'Agua';
@@ -719,7 +721,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get otherSuggestions =>
-      'Pilas AA,Pilas AAA,Batería externa,Linterna frontal,Velas,Cerillas,Mechero,Radio a pilas,Medicamentos habituales,Analgésicos,Botiquín,Sales de rehidratación,Pastillas potabilizadoras,Lejía sin perfume,Mascarillas FFP2,Guantes desechables,Manta térmica,Mantas,Bolsas de basura,Cinta americana,Lonas de plástico,Cuerda,Navaja multiusos,Papel higiénico,Jabón,Toallitas,Compresas,Pañales,Comida para mascotas,Dinero en efectivo';
+      'Dinero en efectivo,Fotocopias de documentos,Números importantes en papel,Llaves de repuesto,Mantas,Sacos de dormir,Ropa de abrigo,Manta térmica,Silbato,Bolsas de basura,Cinta americana,Lonas de plástico,Cuerda,Navaja multiusos,Extintor,Comida para mascotas';
 
   @override
   String get pWaterBottle => 'Botella de agua';
@@ -1073,4 +1075,247 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get mapsMoreBody =>
       'Descarga, actualiza o elimina mapas del mundo, de Europa y de los países';
+
+  @override
+  String get energySuggestions =>
+      'Linterna frontal,Velas,Cerillas,Mechero,Radio a pilas,Radio de manivela';
+
+  @override
+  String get healthSuggestions =>
+      'Medicamentos habituales,Analgésicos,Botiquín,Sales de rehidratación,Pastillas potabilizadoras,Mascarillas FFP2,Guantes desechables,Gafas de repuesto,Papel higiénico,Jabón,Gel desinfectante,Toallitas,Compresas,Pañales,Cubo con tapa,Arena para gatos o serrín';
+
+  @override
+  String get catEnergy => 'Energía y luz';
+
+  @override
+  String get catHealth => 'Salud e higiene';
+
+  @override
+  String get emptySection => 'Nada todavía. Toca «Añadir».';
+
+  @override
+  String get catElectricity => 'Electricidad';
+
+  @override
+  String chargesHave(int have, int need) {
+    return '$have / $need cargas';
+  }
+
+  @override
+  String missingCharges(int n, int pb) {
+    return 'Faltan $n cargas del móvil ≈ $pb baterías externas de 10.000 mAh';
+  }
+
+  @override
+  String get electricityBasis =>
+      'Cálculo: 1 carga completa del móvil por persona y día. Baterías externas al 65 % y estaciones de energía al 85 % de la capacidad indicada.';
+
+  @override
+  String solarExtra(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n paneles solares',
+      one: '1 panel solar',
+    );
+    return 'Además: $_temp0 para cargar con el sol';
+  }
+
+  @override
+  String get pPowerBank => 'Batería externa';
+
+  @override
+  String get pPowerStation => 'Estación de energía';
+
+  @override
+  String get pSolarPanel => 'Panel solar';
+
+  @override
+  String get pBatteriesAA => 'Pilas AA';
+
+  @override
+  String get pBatteriesAAA => 'Pilas AAA';
+
+  @override
+  String get radioTitle => 'Radio en emergencias';
+
+  @override
+  String get radioSubtitle => 'Qué escuchar y en qué frecuencias';
+
+  @override
+  String get radioKeywords =>
+      'radio frecuencia fm am dab onda media noticias autoridades walkie talkie pmr';
+
+  @override
+  String get radioListen => 'Qué escuchar';
+
+  @override
+  String get radioListenBody =>
+      'Estas emisoras transmiten los mensajes oficiales de las autoridades durante una emergencia.';
+
+  @override
+  String get radioFm => 'FM en las ciudades principales';
+
+  @override
+  String get radioAm => 'Onda media y larga (AM)';
+
+  @override
+  String get radioAmNote =>
+      'De noche, la onda media y la larga llegan mucho más lejos.';
+
+  @override
+  String get radioDab => 'Radio digital DAB+';
+
+  @override
+  String get radioNationwide => 'En todo el país';
+
+  @override
+  String get radioNoData => 'Todavía no hay datos verificados para este país.';
+
+  @override
+  String get radioNotFound => 'Si no encuentras la emisora';
+
+  @override
+  String get radioTip1 =>
+      'Haz una búsqueda automática en toda la banda FM y luego en AM.';
+
+  @override
+  String get radioTip2 =>
+      'Acércate a una ventana o sube de piso, y extiende del todo la antena.';
+
+  @override
+  String get radioTip3 =>
+      'Las frecuencias FM cambian según la zona: las de aquí son de las ciudades principales.';
+
+  @override
+  String get radioTip4 =>
+      'Escucha a horas fijas, al principio de cada hora, para ahorrar pilas.';
+
+  @override
+  String get radioWhich => 'Qué radio tener en casa';
+
+  @override
+  String get radioWhich1 =>
+      'Una radio de manivela o a pilas con FM, onda media (AM) y, si es posible, DAB+ y onda corta.';
+
+  @override
+  String get radioWhich2 =>
+      'Pilas de repuesto del mismo tamaño, guardadas aparte.';
+
+  @override
+  String get radioWhich3 =>
+      'Funciona aunque el móvil esté descargado y no haya red.';
+
+  @override
+  String get pmrTitle => 'Walkie-talkies PMR446';
+
+  @override
+  String get pmrBody =>
+      'Sin licencia en toda Europa (0,5 W, normalmente 1-3 km). Acordad un canal en familia.';
+
+  @override
+  String pmrChannel(int n) {
+    return 'Can. $n';
+  }
+
+  @override
+  String get radioOpsec =>
+      'Recibir es seguro: quien escucha no emite señal. Transmitir se puede detectar: en zona de guerra, habla poco, breve y solo si hace falta.';
+
+  @override
+  String radioChecked(String date) {
+    return 'Datos comprobados en fuentes oficiales el $date.';
+  }
+
+  @override
+  String radioFinder(String name) {
+    return 'Busca la frecuencia de tu zona (en línea): $name';
+  }
+
+  @override
+  String get docDownloadFailed =>
+      'La descarga ha fallado. Comprueba la conexión y vuelve a intentarlo.';
+
+  @override
+  String docDownloading(String pct) {
+    return 'Descargando… $pct %';
+  }
+
+  @override
+  String docToDownload(String size) {
+    return 'Para descargar · $size';
+  }
+
+  @override
+  String get docNotDownloaded =>
+      'Descarga primero el documento desde la Biblioteca.';
+
+  @override
+  String get planTitle => 'Plan de emergencia familiar';
+
+  @override
+  String get planSubtitle =>
+      'Contactos, puntos de encuentro, quién ayuda a quién';
+
+  @override
+  String get planIntro =>
+      'Poneos de acuerdo antes, todos juntos: en una emergencia el teléfono e internet pueden no funcionar.';
+
+  @override
+  String get planContacts => 'Contactos de emergencia';
+
+  @override
+  String get planContactsHint =>
+      'Nombre y teléfono de 2–3 personas, también una fuera de la ciudad';
+
+  @override
+  String get planMeetNear => 'Punto de encuentro cerca de casa';
+
+  @override
+  String get planMeetNearHint => 'P. ej. delante de la farmacia de la esquina';
+
+  @override
+  String get planMeetFar => 'Punto de encuentro fuera del barrio';
+
+  @override
+  String get planMeetFarHint => 'Por si no se puede volver a casa';
+
+  @override
+  String get planShelter => 'Refugio o punto de encuentro más cercano';
+
+  @override
+  String get planShelterHint => 'El que indica el ayuntamiento';
+
+  @override
+  String get planChildren => 'Quién recoge a los niños';
+
+  @override
+  String get planChildrenHint =>
+      'Colegio, guardería, y quién los recoge si tú no puedes';
+
+  @override
+  String get planHelp => 'Quién necesita ayuda';
+
+  @override
+  String get planHelpHint =>
+      'Personas mayores, con discapacidad, mascotas: quién les ayuda y cómo';
+
+  @override
+  String get planHealth => 'Medicinas e información médica';
+
+  @override
+  String get planHealthHint => 'Medicamentos, alergias, dispositivos médicos';
+
+  @override
+  String get planNotes => 'Otras notas';
+
+  @override
+  String get planCopy => 'Copiar el plan';
+
+  @override
+  String get planCopied => 'Plan copiado: pégalo en un mensaje o imprímelo.';
+
+  @override
+  String get planPaper =>
+      'Escribe también el plan en papel y guárdalo con las provisiones. Dáselo a tus contactos de emergencia.';
 }

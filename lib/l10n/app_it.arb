@@ -108,17 +108,17 @@
   "downloadEncyclopedias": "Scarica enciclopedie",
   "downloadEncyclopediasBody": "Wikipedia e WikiMed nella tua lingua, da leggere senza rete.",
   "library": "Biblioteca",
-  "libraryBody": "Enciclopedie offline e manuali originali",
+  "libraryBody": "Enciclopedie offline e documenti ufficiali europei",
   "originalTexts": "Testi originali",
-  "originalTextsBody": "Testi integrali della Protezione Civile e altre fonti (italiano)",
+  "originalTextsBody": "Testi integrali della Protezione Civile italiana (in italiano)",
   "originalTextsNote": "Testi completi nella lingua originale, per approfondire.",
   "language": "Lingua",
   "country": "Paese",
   "about": "Informazioni",
   "aboutBody": "Fonti, licenze e avvertenze",
-  "aboutText": "App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee di primo soccorso (European Resuscitation Council) e le indicazioni della Protezione Civile. I testi originali, i manuali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.",
+  "aboutText": "App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.",
   "documents": "Documenti",
-  "documentsBody": "Manuali ufficiali originali, in inglese.",
+  "documentsBody": "Documenti ufficiali europei e internazionali, nella tua lingua quando esistono, altrimenti in inglese. Alcuni sono già nell'app, gli altri si scaricano dal sito ufficiale.",
   "torchTitle": "Torcia e SOS",
   "torchSubtitle": "Luce, SOS lampeggiante, luce dello schermo",
   "torchKeywords": "torcia luce buio sos lampeggiante segnale notte",
@@ -190,12 +190,12 @@
   "suppliesKeywords": "scorte acqua cibo razioni quanto calcolo provviste",
   "people": "Persone",
   "days": "Giorni",
-  "suppliesNote": "Valori indicativi per adulti. Caldo, fatica, bambini e anziani cambiano il fabbisogno. Consuma prima le scorte più vecchie.",
+  "suppliesNote": "L'UE raccomanda almeno 72 ore di autonomia; meglio di più. Il calcolo usa 4 litri d'acqua a persona al giorno (3 da bere, 1 per cucinare e lavarsi) e 2000 kcal. Sono valori indicativi per adulti: caldo, fatica, bambini e anziani cambiano il fabbisogno. Consuma prima le scorte più vecchie.",
   "falloutTitle": "Fallout",
   "falloutSubtitle": "Timer dopo un'esplosione: cosa fare e quando",
   "falloutKeywords": "fallout radiazioni dosimetro nucleare 7 10 decadimento",
   "measuredRate": "Intensità misurata",
-  "falloutDose": "Restando all'aperto 24 ore: circa {dose}. Una cantina la riduce di 10-40 volte.",
+  "falloutDose": "Restando all'aperto 24 ore: circa {dose}. Al chiuso, al centro di un edificio solido o in cantina, è molto meno.",
   "@falloutDose": {
     "placeholders": {
       "dose": {
@@ -308,7 +308,7 @@
   "needsTitle": "Fabbisogno",
   "summaryTitle": "Riepilogo",
   "inventoryTitle": "Inventario",
-  "inventoryHint": "Tocca + quando compri, − quando consumi. Le voci a zero sono quelle che ti mancano. Tocca una voce per cambiarla.",
+  "inventoryHint": "Aggiungi quello che hai in casa, sezione per sezione. Poi tocca + quando compri e − quando consumi.",
   "catWater": "Acqua",
   "catFood": "Cibo",
   "catGas": "Gas per cucinare",
@@ -376,7 +376,7 @@
   "addToInventory": "Aggiungi all'inventario",
   "otherItemHint": "Scrivi cosa, es. torcia",
   "suggestions": "Suggerimenti",
-  "otherSuggestions": "Batterie AA,Batterie AAA,Power bank,Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Candeggina senza profumo,Mascherine FFP2,Guanti monouso,Telo termico,Coperte,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Carta igienica,Sapone,Salviette,Assorbenti,Pannolini,Cibo per animali,Contanti",
+  "otherSuggestions": "Contanti,Fotocopie dei documenti,Numeri importanti su carta,Chiavi di riserva,Coperte,Sacchi a pelo,Vestiti caldi,Telo termico,Fischietto,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Estintore,Cibo per animali",
   "pWaterBottle": "Bottiglia d'acqua",
   "pWaterTank": "Tanica d'acqua",
   "pPasta": "Pasta",
@@ -567,5 +567,133 @@
         "type": "String"
       }
     }
-  }
+  },
+  "energySuggestions": "Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Radio a manovella",
+  "healthSuggestions": "Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Mascherine FFP2,Guanti monouso,Occhiali di ricambio,Carta igienica,Sapone,Gel disinfettante,Salviette,Assorbenti,Pannolini,Secchio con coperchio,Lettiera o segatura",
+  "catEnergy": "Energia e luce",
+  "catHealth": "Salute e igiene",
+  "emptySection": "Niente ancora. Tocca «Aggiungi».",
+  "catElectricity": "Elettricità",
+  "chargesHave": "{have} / {need} ricariche",
+  "@chargesHave": {
+    "placeholders": {
+      "have": {
+        "type": "int"
+      },
+      "need": {
+        "type": "int"
+      }
+    }
+  },
+  "missingCharges": "Mancano {n} ricariche del telefono ≈ {pb} power bank da 10.000 mAh",
+  "@missingCharges": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "pb": {
+        "type": "int"
+      }
+    }
+  },
+  "electricityBasis": "Conto: 1 ricarica completa del telefono a persona al giorno. Power bank al 65% e power station all'85% della capacità dichiarata.",
+  "solarExtra": "In più: {n, plural, =1{1 pannello solare} other{{n} pannelli solari}} per ricaricare con il sole",
+  "@solarExtra": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pPowerBank": "Power bank",
+  "pPowerStation": "Power station",
+  "pSolarPanel": "Pannello solare",
+  "pBatteriesAA": "Batterie AA",
+  "pBatteriesAAA": "Batterie AAA",
+  "radioTitle": "Radio in emergenza",
+  "radioSubtitle": "Cosa ascoltare e su quali frequenze",
+  "radioKeywords": "radio frequenze fm am dab onde medie notizie autorità walkie talkie pmr",
+  "radioListen": "Cosa ascoltare",
+  "radioListenBody": "Sono le emittenti che trasmettono i messaggi ufficiali delle autorità durante un'emergenza.",
+  "radioFm": "FM nelle città principali",
+  "radioAm": "Onde medie e lunghe (AM)",
+  "radioAmNote": "Di notte le onde medie e lunghe arrivano molto più lontano.",
+  "radioDab": "Radio digitale DAB+",
+  "radioNationwide": "In tutto il paese",
+  "radioNoData": "Per questo paese non ci sono ancora dati verificati.",
+  "radioNotFound": "Se non trovi la stazione",
+  "radioTip1": "Fai la ricerca automatica su tutta la banda FM e poi su quella AM.",
+  "radioTip2": "Avvicinati a una finestra o sali di piano, ed estendi del tutto l'antenna.",
+  "radioTip3": "Le frequenze FM cambiano da zona a zona: quelle qui sono delle città principali.",
+  "radioTip4": "Ascolta a orari fissi, all'inizio di ogni ora, per risparmiare le batterie.",
+  "radioWhich": "Che radio tenere in casa",
+  "radioWhich1": "Una radio a manovella o a pile con FM, onde medie (AM) e, se possibile, DAB+ e onde corte.",
+  "radioWhich2": "Batterie di ricambio dello stesso formato, conservate a parte.",
+  "radioWhich3": "Funziona anche se il telefono è scarico e la rete è giù.",
+  "pmrTitle": "Walkie-talkie PMR446",
+  "pmrBody": "Si usano senza licenza in tutta Europa (0,5 W, di solito 1-3 km). Accordati in famiglia su un canale.",
+  "pmrChannel": "Can. {n}",
+  "@pmrChannel": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "radioOpsec": "Ricevere è sicuro: chi ascolta non emette segnali. Trasmettere invece si può rilevare: in zona di guerra parla poco, brevemente e solo se serve.",
+  "radioChecked": "Dati controllati su fonti ufficiali il {date}.",
+  "@radioChecked": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "radioFinder": "Cerca la frequenza della tua zona (online): {name}",
+  "@radioFinder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "docDownloadFailed": "Download non riuscito. Controlla la connessione e riprova.",
+  "docDownloading": "Download… {pct}%",
+  "@docDownloading": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      }
+    }
+  },
+  "docToDownload": "Da scaricare · {size}",
+  "@docToDownload": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "docNotDownloaded": "Scarica prima il documento dalla Biblioteca.",
+  "planTitle": "Piano di emergenza della famiglia",
+  "planSubtitle": "Contatti, punti d'incontro, chi aiuta chi",
+  "planIntro": "Mettetevi d'accordo prima, tutti insieme: in un'emergenza il telefono e internet possono non funzionare.",
+  "planContacts": "Contatti di emergenza",
+  "planContactsHint": "Nome e telefono di 2–3 persone, anche una fuori città",
+  "planMeetNear": "Punto d'incontro vicino a casa",
+  "planMeetNearHint": "Es. davanti alla farmacia all'angolo",
+  "planMeetFar": "Punto d'incontro fuori dal quartiere",
+  "planMeetFarHint": "Se non si può tornare a casa",
+  "planShelter": "Rifugio o area di attesa più vicina",
+  "planShelterHint": "Quella indicata dal comune",
+  "planChildren": "Chi va a prendere i bambini",
+  "planChildrenHint": "Scuola, asilo, e chi li prende se tu non puoi",
+  "planHelp": "Chi ha bisogno di aiuto",
+  "planHelpHint": "Anziani, persone con disabilità, animali: chi li aiuta e come",
+  "planHealth": "Medicine e informazioni mediche",
+  "planHealthHint": "Farmaci, allergie, dispositivi medici",
+  "planNotes": "Altre note",
+  "planCopy": "Copia il piano",
+  "planCopied": "Piano copiato: incollalo in un messaggio o stampalo.",
+  "planPaper": "Scrivi il piano anche su carta e tienilo con le scorte. Dallo alle persone dei contatti di emergenza."
 }

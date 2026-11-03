@@ -28,13 +28,10 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
     final nf = NumberFormat.decimalPattern(AppSettings.instance.language);
+    // Con un decimale quando serve: 0,5 L non deve diventare "1 L".
+    final nf1 = NumberFormat('#,##0.#', AppSettings.instance.language);
     return Scaffold(
       appBar: AppBar(title: Text(t.suppliesTitle)),
-      floatingActionButton: FloatingActionButton.extended(
-        icon: const Icon(Icons.add),
-        label: Text(t.addItem),
-        onPressed: () => _addItem(context, t),
-      ),
       body: ListenableBuilder(
         listenable: inv,
         builder: (context, _) {
@@ -50,12 +47,12 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
               _Summary(
                 icon: Icons.water_drop,
                 title: t.catWater,
-                have: '${nf.format(inv.waterLiters.round())} / ${nf.format(inv.waterNeeded.round())} L',
+                have: '${nf1.format(inv.waterLiters)} / ${nf1.format(inv.waterNeeded)} L',
                 ratio: inv.waterLiters / inv.waterNeeded,
                 days: inv.waterDays(),
                 missing: inv.waterLiters >= inv.waterNeeded
                     ? null
-                    : t.missingWater(nf.format((inv.waterNeeded - inv.waterLiters).ceil()),
+                    : t.missingWater(nf1.format(inv.waterNeeded - inv.waterLiters),
                         ((inv.waterNeeded - inv.waterLiters) / 1.5).ceil()),
                 nf: nf,
               ),
@@ -82,17 +79,47 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
                     : t.missingGas(((inv.mealsNeeded - inv.gasMeals) / kMealsPerCartridge).ceil()),
                 nf: nf,
               ),
+              _Summary(
+                icon: Icons.battery_charging_full,
+                title: t.catElectricity,
+                have: t.chargesHave(inv.phoneCharges.floor(), inv.chargesNeeded.round()),
+                ratio: inv.phoneCharges / inv.chargesNeeded,
+                days: inv.chargeDays(),
+                missing: inv.phoneCharges >= inv.chargesNeeded
+                    ? null
+                    : t.missingCharges((inv.chargesNeeded - inv.phoneCharges).ceil(),
+                        ((inv.chargesNeeded - inv.phoneCharges) / Inventory.chargesPer10k).ceil()),
+                note: [t.electricityBasis, if (inv.solarPanels > 0) t.solarExtra(inv.solarPanels)].join('\n'),
+                nf: nf,
+              ),
               const SizedBox(height: 16),
               _Section(t.inventoryTitle),
               Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(t.inventoryHint, style: const TextStyle(color: Colors.white60)),
               ),
+              // Ogni sezione sempre visibile, con il suo pulsante: si aggiunge esattamente dove serve.
               for (final cat in SupplyCategory.values) ...[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(4, 12, 4, 4),
-                  child: Text(categoryName(t, cat), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                  padding: const EdgeInsets.fromLTRB(4, 14, 0, 4),
+                  child: Row(children: [
+                    Icon(categoryIcon(cat), color: kAccent, size: 22),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(categoryName(t, cat), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                    ),
+                    TextButton.icon(
+                      icon: const Icon(Icons.add),
+                      label: Text(t.addItem),
+                      onPressed: () => _addItem(context, t, cat),
+                    ),
+                  ]),
                 ),
+                if (inv.inCategory(cat).isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(34, 0, 4, 6),
+                    child: Text(t.emptySection, style: const TextStyle(color: Colors.white38)),
+                  ),
                 for (final item in inv.inCategory(cat))
                   _ItemRow(item: item, nf: nf, onEdit: () => _editItem(context, t, item)),
               ],
@@ -105,12 +132,13 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
     );
   }
 
-  Future<void> _addItem(BuildContext context, AppLocalizations t) => showModalBottomSheet<void>(
+  Future<void> _addItem(BuildContext context, AppLocalizations t, SupplyCategory category) =>
+      showModalBottomSheet<void>(
         context: context,
         isScrollControlled: true,
         builder: (c) => Padding(
           padding: EdgeInsets.only(bottom: MediaQuery.of(c).viewInsets.bottom),
-          child: _AddSheet(inv: inv, t: t),
+          child: _AddSheet(inv: inv, t: t, category: category),
         ),
       );
 
@@ -128,8 +156,34 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
 String categoryName(AppLocalizations t, SupplyCategory c) => switch (c) {
       SupplyCategory.water => t.catWater,
       SupplyCategory.food => t.catFood,
-      SupplyCategory.gas => t.catGas,
+      SupplyCategory.energy => t.catEnergy,
+      SupplyCategory.health => t.catHealth,
       SupplyCategory.other => t.catOther,
+    };
+
+IconData categoryIcon(SupplyCategory c) => switch (c) {
+      SupplyCategory.water => Icons.water_drop,
+      SupplyCategory.food => Icons.restaurant,
+      SupplyCategory.energy => Icons.bolt,
+      SupplyCategory.health => Icons.medical_services,
+      SupplyCategory.other => Icons.category,
+    };
+
+/// Suggerimenti di oggetti da aggiungere, per sezione.
+List<String> suggestionsFor(AppLocalizations t, SupplyCategory c) => switch (c) {
+      SupplyCategory.energy => t.energySuggestions.split(','),
+      SupplyCategory.health => t.healthSuggestions.split(','),
+      SupplyCategory.other => t.otherSuggestions.split(','),
+      _ => const [],
+    };
+
+/// Tipo "libero" (nome scritto dall'utente) per ogni sezione; l'acqua non ne ha.
+String? customPresetFor(SupplyCategory c) => switch (c) {
+      SupplyCategory.food => 'customFood',
+      SupplyCategory.energy => 'customEnergy',
+      SupplyCategory.health => 'customHealth',
+      SupplyCategory.other => 'customOther',
+      SupplyCategory.water => null,
     };
 
 /// Nome del prodotto; per l'acqua dipende dal formato (bottiglia o tanica).
@@ -152,6 +206,11 @@ String presetName(AppLocalizations t, String key, {double size = 1}) => switch (
       'honey' => t.pHoney,
       'customFood' => t.pCustomFood,
       'cartridge' => t.pCartridge,
+      'powerBank' => t.pPowerBank,
+      'powerStation' => t.pPowerStation,
+      'solarPanel' => t.pSolarPanel,
+      'batteriesAA' => t.pBatteriesAA,
+      'batteriesAAA' => t.pBatteriesAAA,
       _ => t.pCustomOther,
     };
 
@@ -210,12 +269,16 @@ class _Summary extends StatelessWidget {
     required this.days,
     required this.missing,
     required this.nf,
+    this.note,
   });
 
   final IconData icon;
   final String title, have;
   final double ratio, days;
   final String? missing;
+
+  /// Come è fatto il conto (es. per l'elettricità).
+  final String? note;
   final NumberFormat nf;
 
   @override
@@ -240,6 +303,7 @@ class _Summary extends StatelessWidget {
           const SizedBox(height: 8),
           Text(t.coversDays(nf.format((days * 10).floor() / 10)), style: TextStyle(color: color, fontWeight: FontWeight.w600)),
           if (missing != null) Text(missing!, style: const TextStyle(color: Colors.white70)),
+          if (note != null) Text(note!, style: const TextStyle(color: Colors.white38, fontSize: 13)),
         ]),
       ),
     );
@@ -415,19 +479,21 @@ class _ItemEditorState extends State<_ItemEditor> {
   }
 }
 
-IconData presetIcon(SupplyPreset p) => switch (p.category) {
-      SupplyCategory.water => Icons.water_drop,
-      SupplyCategory.food => Icons.restaurant,
-      SupplyCategory.gas => Icons.local_fire_department,
-      SupplyCategory.other => Icons.category,
+IconData presetIcon(SupplyPreset p) => switch (p.key) {
+      'cartridge' => Icons.local_fire_department,
+      'powerBank' || 'powerStation' => Icons.battery_charging_full,
+      'solarPanel' => Icons.solar_power,
+      'batteriesAA' || 'batteriesAAA' => Icons.battery_full,
+      _ => categoryIcon(p.category),
     };
 
 /// Aggiunta in tre tocchi: prodotto, formato (quelli in commercio o uno a scelta), quantità.
 class _AddSheet extends StatefulWidget {
-  const _AddSheet({required this.inv, required this.t});
+  const _AddSheet({required this.inv, required this.t, required this.category});
 
   final Inventory inv;
   final AppLocalizations t;
+  final SupplyCategory category;
 
   @override
   State<_AddSheet> createState() => _AddSheetState();
@@ -497,50 +563,55 @@ class _AddSheetState extends State<_AddSheet> {
         ),
       );
 
-  /// Passo 1: che cosa.
-  Widget _products() => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(t.chooseProduct, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-        for (final cat in [SupplyCategory.water, SupplyCategory.food, SupplyCategory.gas]) ...[
-          const SizedBox(height: 14),
-          Text(categoryName(t, cat), style: const TextStyle(color: kAccent, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 6),
-          Wrap(spacing: 8, runSpacing: 8, children: [
-            for (final p in kPresets.where((p) => p.category == cat))
-              ActionChip(
-                avatar: Icon(presetIcon(p), size: 18),
-                label: Text(p.key == 'water' ? t.catWater : presetName(t, p.key), style: const TextStyle(fontSize: 16)),
-                onPressed: () => _choose(p),
-              ),
-          ]),
-        ],
+  /// Passo 1: che cosa, solo dentro la sezione toccata.
+  Widget _products() {
+    final cat = widget.category;
+    final custom = customPresetFor(cat);
+    final products = kPresets.where((p) => p.category == cat && !p.key.startsWith('custom')).toList();
+    void pickCustom(String name) {
+      if (custom != null && name.trim().isNotEmpty) _choose(presetByKey(custom), name: name.trim());
+    }
+
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Row(children: [
+        Icon(categoryIcon(cat), color: kAccent),
+        const SizedBox(width: 8),
+        Text(categoryName(t, cat), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+      ]),
+      if (products.isNotEmpty) ...[
         const SizedBox(height: 14),
-        Text(t.catOther, style: const TextStyle(color: kAccent, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 6),
+        Wrap(spacing: 8, runSpacing: 8, children: [
+          for (final p in products)
+            ActionChip(
+              avatar: Icon(presetIcon(p), size: 18),
+              label: Text(p.key == 'water' ? t.catWater : presetName(t, p.key), style: const TextStyle(fontSize: 16)),
+              onPressed: () => _choose(p),
+            ),
+        ]),
+      ],
+      if (custom != null) ...[
+        const SizedBox(height: 16),
         TextField(
           controller: _name,
           textCapitalization: TextCapitalization.sentences,
           decoration: InputDecoration(
             hintText: t.otherItemHint,
             border: const OutlineInputBorder(),
-            suffixIcon: IconButton(
-              icon: const Icon(Icons.arrow_forward),
-              onPressed: () {
-                if (_name.text.trim().isNotEmpty) _choose(presetByKey('customOther'), name: _name.text.trim());
-              },
-            ),
+            suffixIcon: IconButton(icon: const Icon(Icons.arrow_forward), onPressed: () => pickCustom(_name.text)),
           ),
-          onSubmitted: (v) {
-            if (v.trim().isNotEmpty) _choose(presetByKey('customOther'), name: v.trim());
-          },
+          onSubmitted: pickCustom,
         ),
-        const SizedBox(height: 10),
+      ],
+      if (suggestionsFor(t, cat).isNotEmpty) ...[
+        const SizedBox(height: 12),
         Text(t.suggestions, style: const TextStyle(color: Colors.white60)),
         const SizedBox(height: 6),
         Wrap(spacing: 8, runSpacing: 8, children: [
-          for (final s in t.otherSuggestions.split(','))
-            ActionChip(label: Text(s.trim()), onPressed: () => _choose(presetByKey('customOther'), name: s.trim())),
+          for (final s in suggestionsFor(t, cat)) ActionChip(label: Text(s.trim()), onPressed: () => pickCustom(s)),
         ]),
-      ]);
+      ],
+    ]);
+  }
 
   /// Passo 2: formato e quantità.
   Widget _details() {

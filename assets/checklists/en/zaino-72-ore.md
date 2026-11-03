@@ -31,6 +31,7 @@ One backpack per person, ready by the door, to survive 3 days if you have to lea
 - Photocopies of documents in a waterproof bag
 - Cash in small notes
 - Paper map of the area with meeting points marked
+- Spare house and car keys
 
 ## Clothing and shelter
 - Full change of clothes, wool socks, underwear

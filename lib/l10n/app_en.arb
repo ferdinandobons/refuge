@@ -108,17 +108,17 @@
   "downloadEncyclopedias": "Download encyclopedias",
   "downloadEncyclopediasBody": "Wikipedia and WikiMed in your language, to read offline.",
   "library": "Library",
-  "libraryBody": "Offline encyclopedias and original manuals",
+  "libraryBody": "Offline encyclopedias and official European documents",
   "originalTexts": "Original texts",
-  "originalTextsBody": "Full texts from Italian Civil Protection and other sources (Italian)",
+  "originalTextsBody": "Full texts from Italian Civil Protection (in Italian)",
   "originalTextsNote": "Complete texts in the original language, for further reading.",
   "language": "Language",
   "country": "Country",
   "about": "About",
   "aboutBody": "Sources, licenses and disclaimers",
-  "aboutText": "Open source app that works without internet.\n\nThe emergency cards follow European first aid guidelines (European Resuscitation Council) and civil protection advice. Original texts, manuals and encyclopedias are in the Library, with sources and licenses.\n\nThis app does not replace a first aid course or instructions from the authorities.",
+  "aboutText": "Open source app that works without internet.\n\nThe emergency cards follow European guidelines: first aid from the European Resuscitation Council (ERC 2025) and the Red Cross (IFRC), preparedness from the European Union 72-hour guidelines, and advice from national civil protection agencies. Original documents and encyclopedias are in the Library, with sources and licences.\n\nThis app does not replace a first aid course or instructions from the authorities.",
   "documents": "Documents",
-  "documentsBody": "Original official manuals, in English.",
+  "documentsBody": "Official European and international documents, in your language when available, otherwise in English. Some are already in the app, the others are downloaded from the official website.",
   "torchTitle": "Flashlight and SOS",
   "torchSubtitle": "Light, flashing SOS, screen light",
   "torchKeywords": "flashlight torch light dark sos flashing signal night",
@@ -190,12 +190,12 @@
   "suppliesKeywords": "supplies water food rations how much calculate provisions stockpile",
   "people": "People",
   "days": "Days",
-  "suppliesNote": "Rough values for adults. Heat, exertion, children and the elderly change needs. Use the oldest supplies first.",
+  "suppliesNote": "The EU recommends at least 72 hours of self-sufficiency; longer is better. The calculation uses 4 litres of water per person per day (3 for drinking, 1 for cooking and washing) and 2000 kcal. These are rough values for adults: heat, exertion, children and older people change needs. Use the oldest supplies first.",
   "falloutTitle": "Fallout",
   "falloutSubtitle": "Timer after an explosion: what to do and when",
   "falloutKeywords": "fallout radiation dosimeter nuclear 7 10 decay",
   "measuredRate": "Measured dose rate",
-  "falloutDose": "Staying outdoors for 24 hours: about {dose}. A basement cuts it by 10-40 times.",
+  "falloutDose": "Staying outdoors for 24 hours: about {dose}. Indoors, in the middle of a solid building or in a basement, it is much less.",
   "@falloutDose": {
     "placeholders": {
       "dose": {
@@ -308,7 +308,7 @@
   "needsTitle": "Needs",
   "summaryTitle": "Summary",
   "inventoryTitle": "Inventory",
-  "inventoryHint": "Tap + when you buy, − when you use. Items at zero are what you are missing. Tap an item to change it.",
+  "inventoryHint": "Add what you have at home, section by section. Then tap + when you buy and − when you use something.",
   "catWater": "Water",
   "catFood": "Food",
   "catGas": "Cooking gas",
@@ -376,7 +376,7 @@
   "addToInventory": "Add to inventory",
   "otherItemHint": "Type an item, e.g. flashlight",
   "suggestions": "Suggestions",
-  "otherSuggestions": "AA batteries,AAA batteries,Power bank,Headlamp,Candles,Matches,Lighter,Battery radio,Regular medicines,Painkillers,First aid kit,Oral rehydration salts,Water purification tablets,Unscented bleach,FFP2 masks,Disposable gloves,Foil blanket,Blankets,Trash bags,Duct tape,Plastic sheeting,Rope,Multi-tool,Toilet paper,Soap,Wet wipes,Sanitary pads,Diapers,Pet food,Cash",
+  "otherSuggestions": "Cash,Copies of documents,Important numbers on paper,Spare keys,Blankets,Sleeping bags,Warm clothes,Foil blanket,Whistle,Rubbish bags,Duct tape,Plastic sheeting,Rope,Multi-tool,Fire extinguisher,Pet food",
   "pWaterBottle": "Water bottle",
   "pWaterTank": "Water jerrycan",
   "pPasta": "Pasta",
@@ -567,5 +567,119 @@
         "type": "String"
       }
     }
-  }
+  },
+  "energySuggestions": "Headlamp,Candles,Matches,Lighter,Battery radio,Wind-up radio",
+  "healthSuggestions": "Regular medicines,Painkillers,First aid kit,Oral rehydration salts,Water purification tablets,FFP2 masks,Disposable gloves,Spare glasses,Toilet paper,Soap,Hand sanitiser,Wet wipes,Sanitary pads,Nappies,Bucket with lid,Cat litter or sawdust",
+  "catEnergy": "Energy and light",
+  "catHealth": "Health and hygiene",
+  "emptySection": "Nothing yet. Tap “Add”.",
+  "catElectricity": "Electricity",
+  "chargesHave": "{have} / {need} charges",
+  "@chargesHave": {
+    "placeholders": {
+      "have": {
+        "type": "int"
+      },
+      "need": {
+        "type": "int"
+      }
+    }
+  },
+  "missingCharges": "Still need {n} phone charges ≈ {pb} power banks of 10,000 mAh",
+  "@missingCharges": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "pb": {
+        "type": "int"
+      }
+    }
+  },
+  "electricityBasis": "Basis: 1 full phone charge per person per day. Power banks at 65% and power stations at 85% of their rated capacity.",
+  "solarExtra": "Plus {n, plural, =1{1 solar panel} other{{n} solar panels}} to recharge with sunlight",
+  "@solarExtra": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pPowerBank": "Power bank",
+  "pPowerStation": "Power station",
+  "pSolarPanel": "Solar panel",
+  "pBatteriesAA": "AA batteries",
+  "pBatteriesAAA": "AAA batteries",
+  "radioTitle": "Emergency radio",
+  "radioSubtitle": "What to listen to and on which frequencies",
+  "radioKeywords": "radio frequency fm am dab medium wave news authorities walkie talkie pmr",
+  "radioListen": "What to listen to",
+  "radioListenBody": "These broadcasters carry the authorities' official messages during an emergency.",
+  "radioFm": "FM in the main cities",
+  "radioAm": "Medium and long wave (AM)",
+  "radioAmNote": "At night, medium and long wave reach much farther.",
+  "radioDab": "Digital radio DAB+",
+  "radioNationwide": "Nationwide",
+  "radioNoData": "No verified data for this country yet.",
+  "radioNotFound": "If you can't find the station",
+  "radioTip1": "Run an automatic scan over the whole FM band, then over AM.",
+  "radioTip2": "Move close to a window or to a higher floor, and fully extend the antenna.",
+  "radioTip3": "FM frequencies change from area to area: the ones here are for the main cities.",
+  "radioTip4": "Listen at fixed times, at the start of each hour, to save batteries.",
+  "radioWhich": "Which radio to keep at home",
+  "radioWhich1": "A hand-crank or battery radio with FM, medium wave (AM) and, if possible, DAB+ and shortwave.",
+  "radioWhich2": "Spare batteries of the same size, stored separately.",
+  "radioWhich3": "It works even if your phone is dead and the network is down.",
+  "pmrTitle": "PMR446 walkie-talkies",
+  "pmrBody": "Licence-free across Europe (0.5 W, usually 1-3 km). Agree on a channel with your family.",
+  "pmrChannel": "Ch. {n}",
+  "@pmrChannel": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "radioOpsec": "Receiving is safe: listeners send no signal. Transmitting can be detected: in a war zone, talk little, briefly and only when needed.",
+  "radioChecked": "Data checked against official sources on {date}.",
+  "@radioChecked": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "radioFinder": "Find the frequency for your area (online): {name}",
+  "@radioFinder": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "docDownloadFailed": "Download failed. Check your connection and try again.",
+  "docDownloading": "Downloading… {pct}%",
+  "docToDownload": "To download · {size}",
+  "docNotDownloaded": "Download the document from the Library first.",
+  "planTitle": "Family emergency plan",
+  "planSubtitle": "Contacts, meeting points, who helps whom",
+  "planIntro": "Agree on it beforehand, together: in an emergency phones and the internet may not work.",
+  "planContacts": "Emergency contacts",
+  "planContactsHint": "Name and phone of 2–3 people, including one outside town",
+  "planMeetNear": "Meeting point near home",
+  "planMeetNearHint": "E.g. in front of the pharmacy on the corner",
+  "planMeetFar": "Meeting point outside the neighbourhood",
+  "planMeetFarHint": "In case you cannot go home",
+  "planShelter": "Nearest shelter or assembly area",
+  "planShelterHint": "The one named by your local authority",
+  "planChildren": "Who collects the children",
+  "planChildrenHint": "School, nursery, and who collects them if you cannot",
+  "planHelp": "Who needs help",
+  "planHelpHint": "Older people, people with disabilities, pets: who helps them and how",
+  "planHealth": "Medicines and medical information",
+  "planHealthHint": "Medicines, allergies, medical devices",
+  "planNotes": "Other notes",
+  "planCopy": "Copy the plan",
+  "planCopied": "Plan copied: paste it into a message or print it.",
+  "planPaper": "Also write the plan on paper and keep it with your supplies. Give it to your emergency contacts."
 }

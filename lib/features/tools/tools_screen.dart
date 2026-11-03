@@ -7,6 +7,7 @@ import 'fallout_screen.dart';
 import 'flashlight_screen.dart';
 import 'location_screen.dart';
 import 'morse_screen.dart';
+import 'radio_screen.dart';
 import 'supplies_screen.dart';
 
 class ToolItem {
@@ -17,13 +18,15 @@ class ToolItem {
   final WidgetBuilder builder;
 }
 
+/// In ordine di rilevanza in emergenza: prima informarsi e proteggersi, poi le scorte, poi orientarsi e segnalare.
 List<ToolItem> toolItems(AppLocalizations t) => [
-      ToolItem(t.torchTitle, t.torchSubtitle, t.torchKeywords, Icons.flashlight_on, (_) => const FlashlightScreen()),
-      ToolItem(t.compassTitle, t.compassSubtitle, t.compassKeywords, Icons.explore, (_) => const CompassScreen()),
-      ToolItem(t.locationTitle, t.locationSubtitle, t.locationKeywords, Icons.my_location, (_) => const LocationScreen()),
-      ToolItem(t.morseTitle, t.morseSubtitle, t.morseKeywords, Icons.more_horiz, (_) => const MorseScreen()),
-      ToolItem(t.suppliesTitle, t.suppliesSubtitle, t.suppliesKeywords, Icons.inventory_2, (_) => const SuppliesScreen()),
+      ToolItem(t.radioTitle, t.radioSubtitle, t.radioKeywords, Icons.radio, (_) => const RadioScreen()),
       ToolItem(t.falloutTitle, t.falloutSubtitle, t.falloutKeywords, Icons.radar, (_) => const FalloutScreen()),
+      ToolItem(t.suppliesTitle, t.suppliesSubtitle, t.suppliesKeywords, Icons.inventory_2, (_) => const SuppliesScreen()),
+      ToolItem(t.torchTitle, t.torchSubtitle, t.torchKeywords, Icons.flashlight_on, (_) => const FlashlightScreen()),
+      ToolItem(t.locationTitle, t.locationSubtitle, t.locationKeywords, Icons.my_location, (_) => const LocationScreen()),
+      ToolItem(t.compassTitle, t.compassSubtitle, t.compassKeywords, Icons.explore, (_) => const CompassScreen()),
+      ToolItem(t.morseTitle, t.morseSubtitle, t.morseKeywords, Icons.more_horiz, (_) => const MorseScreen()),
     ];
 
 class ToolsScreen extends StatelessWidget {

@@ -50,6 +50,7 @@ class EmergencyCard {
         'cold' => Icons.ac_unit,
         'heat' => Icons.wb_sunny,
         'water' => Icons.water_drop,
+        'blackout' => Icons.power_off,
         _ => Icons.help,
       };
 

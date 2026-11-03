@@ -1,0 +1,258 @@
+{
+  "updated": "2026-11-03",
+  "countries": {
+    "IT": {
+      "emergency": [
+        {"station": "RAI (Radio 1, Radio 2, Radio 3, RaiNews24)", "source": "https://www.protezionecivile.gov.it/static/9d7d432a277eb16af343afa6fca89177/indirizzioperativiemergenze.pdf"},
+        {"station": "Rai Isoradio", "source": "https://www.protezionecivile.gov.it/static/9d7d432a277eb16af343afa6fca89177/indirizzioperativiemergenze.pdf"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [],
+      "finder": null
+    },
+    "ES": {
+      "emergency": [
+        {"station": "RNE Radio Nacional", "source": "https://www.rtve.es/rtve/20251118/rtve-anuncia-fin-emisiones-onda-media-refuerza-su-apuesta-por-radio-digital-dab/16820579.shtml"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [
+        {"city": "Madrid", "mhz": 88.2, "station": "RNE Radio Nacional (Torrespaña)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Barcelona", "mhz": 88.3, "station": "RNE Radio Nacional (Collserola)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Valencia", "mhz": 89.8, "station": "RNE Radio Nacional (Picayo)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Sevilla", "mhz": 91.2, "station": "RNE Radio Nacional (Valencina)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Zaragoza", "mhz": 104.4, "station": "RNE Radio Nacional (Torrero)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Málaga", "mhz": 106.6, "station": "RNE Radio Nacional (Mijas)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Bilbao", "mhz": 100.7, "station": "RNE Radio Nacional (Archanda)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Murcia", "mhz": 101.7, "station": "RNE Radio Nacional (Carrascoy)", "source": "https://www.rtve.es/frecuencias-rne/"},
+        {"city": "Las Palmas", "mhz": 92.8, "station": "RNE Radio Nacional (Isleta)", "source": "https://www.rtve.es/frecuencias-rne/"}
+      ],
+      "finder": {"name": "RTVE – frecuencias RNE", "url": "https://www.rtve.es/frecuencias-rne/"}
+    },
+    "PT": {
+      "emergency": [
+        {"station": "RTP Antena 1", "source": "https://cdn-images.rtp.pt/mcm/pdf/441/441de572d02f00b6845b41c66559b5021.pdf"}
+      ],
+      "dab": [],
+      "am": [
+        {"khz": 666, "station": "RTP Antena 1", "location": "Lisboa, Santarém, Setúbal", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 630, "station": "RTP Antena 1", "location": "Coimbra", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 720, "station": "RTP Antena 1", "location": "Castelo Branco, Guarda, Elvas, Mirandela", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 666, "station": "RTP Antena 1", "location": "Bragança, Covilhã, Vila Real, Viseu, Valença", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 756, "station": "RTP Antena 1", "location": "Lamego", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 1287, "station": "RTP Antena 1", "location": "Portalegre", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"khz": 828, "station": "RTP Antena 1", "location": "Açores (Corvo, Flores)", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"}
+      ],
+      "fm": [
+        {"city": "Lisboa", "mhz": 95.7, "station": "RTP Antena 1 (Monsanto)", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Porto", "mhz": 96.7, "station": "RTP Antena 1 (Monte da Virgem)", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Braga", "mhz": 91.3, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Coimbra", "mhz": 94.9, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Setúbal", "mhz": 95.7, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Faro", "mhz": 97.6, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Funchal", "mhz": 104.6, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"},
+        {"city": "Ponta Delgada", "mhz": 94.1, "station": "RTP Antena 1", "source": "https://media.rtp.pt/empresa/mais-rtp/rede-de-frequencias-2/"}
+      ],
+      "finder": {"name": "RTP Antena 1 – frequências", "url": "https://antena1.rtp.pt/frequencias/"}
+    },
+    "IE": {
+      "emergency": [
+        {"station": "RTÉ Radio 1", "source": "https://www.irishstatutebook.ie/2009/en/act/pub/0018/sec0122.html"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [
+        {"city": "Dublin", "mhz": 88.5, "station": "RTÉ Radio 1 (Three Rock)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Dublin / East", "mhz": 89.1, "station": "RTÉ Radio 1 (Kippure)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Cork", "mhz": 89.2, "station": "RTÉ Radio 1 (Spur Hill)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Limerick", "mhz": 89.4, "station": "RTÉ Radio 1 (Woodcock Hill)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Galway", "mhz": 88.8, "station": "RTÉ Radio 1 (Maghera)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Waterford", "mhz": 88.3, "station": "RTÉ Radio 1", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "Athlone", "mhz": 89.3, "station": "RTÉ Radio 1", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"},
+        {"city": "South-East", "mhz": 89.6, "station": "RTÉ Radio 1 (Mount Leinster)", "source": "https://2rn.ie/wp-content/uploads/2023/11/2RN_FM_table_Nov_2023_web.pdf"}
+      ],
+      "finder": {"name": "RTÉ – Keep Listening", "url": "https://www.rte.ie/keeplistening"}
+    },
+    "FR": {
+      "emergency": [
+        {"station": "ici (ex France Bleu)", "source": "https://www.radiofrance.com/presse/radio-france-et-le-ministere-de-linterieur-reaffirment-le-role-vital-de-la-radio-de-service"},
+        {"station": "franceinfo", "source": "https://www.radiofrance.com/presse/radio-france-et-le-ministere-de-linterieur-reaffirment-le-role-vital-de-la-radio-de-service"},
+        {"station": "France Inter", "source": "https://www.radiofrance.com/presse/radio-france-et-le-ministere-de-linterieur-reaffirment-le-role-vital-de-la-radio-de-service"}
+      ],
+      "dab": [
+        {"channel": "8C", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Paris, Nantes, Lille", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "8B", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Marseille", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "7B", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Lyon, Bordeaux", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "12A", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Toulouse", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "9C", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Nice", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "6B", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Strasbourg", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"channel": "10C", "stations": ["France Inter", "franceinfo", "France Culture", "FIP"], "coverage": "Montpellier", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"}
+      ],
+      "am": [],
+      "fm": [
+        {"city": "Paris", "mhz": 107.1, "station": "ici Paris Île-de-France", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Paris", "mhz": 105.5, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Paris", "mhz": 87.8, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Marseille", "mhz": 103.6, "station": "ici Provence", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Marseille", "mhz": 94.2, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Marseille", "mhz": 91.3, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Lyon", "mhz": 101.8, "station": "ici Isère", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Lyon", "mhz": 105.4, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Lyon", "mhz": 101.1, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Toulouse", "mhz": 91.8, "station": "ici Occitanie", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Toulouse", "mhz": 91.1, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Toulouse", "mhz": 88.1, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Nice", "mhz": 103.8, "station": "ici Azur", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Nice", "mhz": 105.7, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Nice", "mhz": 100.2, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Nantes", "mhz": 101.8, "station": "ici Loire Océan", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Nantes", "mhz": 98.9, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Nantes", "mhz": 90.6, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Strasbourg", "mhz": 101.4, "station": "ici Alsace", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Strasbourg", "mhz": 104.4, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Strasbourg", "mhz": 97.3, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Montpellier", "mhz": 101.1, "station": "ici Hérault", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Montpellier", "mhz": 92.9, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Montpellier", "mhz": 89.4, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Bordeaux", "mhz": 100.1, "station": "ici Gironde", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Bordeaux", "mhz": 93.5, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Bordeaux", "mhz": 89.7, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"},
+        {"city": "Lille", "mhz": 87.8, "station": "ici Nord", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"},
+        {"city": "Lille", "mhz": 105.2, "station": "franceinfo", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-info"},
+        {"city": "Lille", "mhz": 103.7, "station": "France Inter", "source": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios/france-inter"}
+      ],
+      "finder": {"name": "Arcom – radios FM et DAB+", "url": "https://www.arcom.fr/radio-et-audio-numerique/radio-fm-dab/radios"}
+    },
+    "BE": {
+      "emergency": [
+        {"station": "RTBF La Première / Vivacité", "source": "https://crisiscentrum.be/nl/wat-doen-overheden/crisisbeheer/informatie-aan-de-bevolking"},
+        {"station": "VRT Radio 1 / Radio 2", "source": "https://crisiscentrum.be/nl/wat-doen-overheden/crisisbeheer/informatie-aan-de-bevolking"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [
+        {"city": "Bruxelles / Brussel", "mhz": 92.5, "station": "RTBF La Première", "source": "https://www.rtbf.be/lapremiere/infos/frequences"},
+        {"city": "Bruxelles / Brussel", "mhz": 99.3, "station": "RTBF Vivacité", "source": "https://www.rtbf.be/vivacite/infos/frequences"},
+        {"city": "Charleroi", "mhz": 94.8, "station": "RTBF La Première", "source": "https://www.rtbf.be/lapremiere/infos/frequences"},
+        {"city": "Charleroi", "mhz": 92.3, "station": "RTBF Vivacité", "source": "https://www.rtbf.be/vivacite/infos/frequences"},
+        {"city": "Liège", "mhz": 96.4, "station": "RTBF La Première", "source": "https://www.rtbf.be/lapremiere/infos/frequences"},
+        {"city": "Liège", "mhz": 90.5, "station": "RTBF Vivacité", "source": "https://www.rtbf.be/vivacite/infos/frequences"},
+        {"city": "Namur", "mhz": 102.7, "station": "RTBF La Première", "source": "https://www.rtbf.be/lapremiere/infos/frequences"},
+        {"city": "Namur", "mhz": 89.1, "station": "RTBF Vivacité", "source": "https://www.rtbf.be/vivacite/infos/frequences"}
+      ],
+      "finder": {"name": "RTBF La Première – fréquences", "url": "https://www.rtbf.be/lapremiere/infos/frequences"}
+    },
+    "LU": {
+      "emergency": [
+        {"station": "RTL Radio Lëtzebuerg", "source": "https://letzprepare.public.lu/dam-assets/images/guide-letzeprepare/hcpn-campagne26-guide-accessible-fr-002.pdf"},
+        {"station": "radio 100,7", "source": "https://letzprepare.public.lu/dam-assets/images/guide-letzeprepare/hcpn-campagne26-guide-accessible-fr-002.pdf"}
+      ],
+      "dab": [
+        {"channel": "7D", "stations": ["RTL Radio Lëtzebuerg", "radio 100,7"], "coverage": "nationwide", "source": "https://www.ilr.lu/wp-content/uploads/frequences-radioelectriques/ilr-fre-list-20261001_Programmes-de-radio-numeriques-au-Luxembourg.pdf"}
+      ],
+      "am": [],
+      "fm": [
+        {"city": "Sud / Centre", "mhz": 88.9, "station": "RTL Radio Lëtzebuerg (Dudelange)", "source": "https://www.ilr.lu/wp-content/uploads/frequences-radioelectriques/ilr-fre-list-20261001_Programmes-de-radio-au-Luxembourg.pdf"},
+        {"city": "Sud / Centre", "mhz": 100.7, "station": "radio 100,7 (Dudelange)", "source": "https://www.ilr.lu/wp-content/uploads/frequences-radioelectriques/ilr-fre-list-20261001_Programmes-de-radio-au-Luxembourg.pdf"},
+        {"city": "Nord", "mhz": 92.5, "station": "RTL Radio Lëtzebuerg (Hosingen)", "source": "https://www.ilr.lu/wp-content/uploads/frequences-radioelectriques/ilr-fre-list-20261001_Programmes-de-radio-au-Luxembourg.pdf"},
+        {"city": "Nord", "mhz": 95.9, "station": "radio 100,7 (Neidhausen)", "source": "https://www.ilr.lu/wp-content/uploads/frequences-radioelectriques/ilr-fre-list-20261001_Programmes-de-radio-au-Luxembourg.pdf"}
+      ],
+      "finder": {"name": "ILR – liste des émetteurs radio", "url": "https://www.ilr.lu/publications/liste-des-emetteurs-de-programmes-de-radio/"}
+    },
+    "CH": {
+      "emergency": [
+        {"station": "Radio SRF 1 / RTS La Première / RSI Rete Uno", "source": "https://blog.alertswiss.ch/de/alertswiss/die-kantonspolizei-teilt-mit-verbreitungspflichtige-radiomeldungen-zur-warnung-und-alarmierung-der-bevoelkerung/"},
+        {"station": "IBBK (radio d'emergenza della Confederazione)", "source": "https://www.babs.admin.ch/en/radio-en"}
+      ],
+      "dab": [
+        {"channel": "12C", "stations": ["SRG (Radio SRF)"], "coverage": "Deutschschweiz", "source": "https://www.bakom.admin.ch/dam/fr/sd-web/mV8RI25DtNye/Betriebsdaten_T-DAB_f_260902.pdf"},
+        {"channel": "12A", "stations": ["SRG (RTS)"], "coverage": "Suisse romande", "source": "https://www.bakom.admin.ch/dam/fr/sd-web/mV8RI25DtNye/Betriebsdaten_T-DAB_f_260902.pdf"},
+        {"channel": "12A", "stations": ["SRG (RSI)"], "coverage": "Ticino, Grigioni italiano", "source": "https://www.bakom.admin.ch/dam/fr/sd-web/mV8RI25DtNye/Betriebsdaten_T-DAB_f_260902.pdf"},
+        {"channel": "12D", "stations": ["SRG (RTR)"], "coverage": "Graubünden", "source": "https://www.bakom.admin.ch/dam/fr/sd-web/mV8RI25DtNye/Betriebsdaten_T-DAB_f_260902.pdf"}
+      ],
+      "am": [],
+      "fm": [],
+      "finder": {"name": "broadcast.ch – DAB+", "url": "https://www.broadcast.ch/de/radio/dab"}
+    },
+    "AT": {
+      "emergency": [
+        {"station": "ORF (Ö1, Ö3, Landesradios)", "source": "https://www.oesterreich.gv.at/themen/notfaelle_unfaelle_und_kriminalitaet/katastrophenfaelle/2/Seite.29500311.html"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [
+        {"city": "Wien", "mhz": 92.0, "station": "Ö1 (Kahlenberg)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Wien", "mhz": 87.8, "station": "Ö1 (Himmelhof)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Graz", "mhz": 91.2, "station": "Ö1 (Schöckl)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Linz", "mhz": 97.5, "station": "Ö1 (Lichtenberg)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Salzburg", "mhz": 90.9, "station": "Ö1 (Gaisberg)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Innsbruck", "mhz": 92.5, "station": "Ö1 (Patscherkofel)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Klagenfurt", "mhz": 92.8, "station": "Ö1 (Dobratsch)", "source": "https://oe1.orf.at/frequenzen"},
+        {"city": "Bregenz", "mhz": 93.3, "station": "Ö1 (Pfänder)", "source": "https://oe1.orf.at/frequenzen"}
+      ],
+      "finder": {"name": "Ö1 – Frequenzen", "url": "https://oe1.orf.at/frequenzen"}
+    },
+    "DE": {
+      "emergency": [
+        {"station": "ARD (BR, HR, MDR, NDR, Radio Bremen, rbb, SR, SWR, WDR)", "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/Warnmultiplikatoren/Erklaerung/erklaerung_node.html"},
+        {"station": "Deutschlandradio (Deutschlandfunk)", "source": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/Warnmultiplikatoren/Erklaerung/erklaerung_node.html"},
+        {"station": "Bayern 1 (Bayern)", "source": "https://www.nuernberg.de/internet/notfallvorsorge_katastrophenschutz_ls/radioempfang_ls.html"}
+      ],
+      "dab": [
+        {"channel": "5C", "stations": ["Deutschlandradio"], "coverage": "nationwide", "source": "https://www.nlm.de/hoerfunk/uebertragungswege-hoerfunk/antenne-digital"}
+      ],
+      "am": [],
+      "fm": [
+        {"city": "Köln", "mhz": 107.9, "station": "Radio Köln", "source": "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/landesweiter-warntag"}
+      ],
+      "finder": null
+    },
+    "NL": {
+      "emergency": [
+        {"station": "Regionale omroep – calamiteitenzender (NH, Rijnmond, Omroep West, RTV Utrecht, Omroep Brabant, RTV Noord, Omroep Flevoland, L1, Omroep Gelderland, RTV Oost, Omroep Zeeland, Omrop Fryslân, RTV Drenthe)", "source": "https://www.rijksoverheid.nl/onderwerpen/media-en-publieke-omroep/regionale-publieke-omroepen"}
+      ],
+      "dab": [
+        {"channel": "12C", "stations": ["NPO Radio 2"], "coverage": "nationwide", "source": "https://www.nporadio2.nl/frequenties"}
+      ],
+      "am": [],
+      "fm": [
+        {"city": "Amsterdam", "mhz": 88.9, "station": "NH Radio (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Amsterdam", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Rotterdam", "mhz": 93.4, "station": "Radio Rijnmond (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Rotterdam", "mhz": 98.6, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Den Haag", "mhz": 89.3, "station": "Omroep West (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Leiden", "mhz": 88.0, "station": "Omroep West (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Den Haag", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Utrecht (Lopik)", "mhz": 93.1, "station": "Radio M Utrecht (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Utrecht (Rhenen)", "mhz": 97.9, "station": "Radio M Utrecht (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Utrecht", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Groningen", "mhz": 97.5, "station": "Radio Noord (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Groningen", "mhz": 91.8, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Zuidoost-Brabant", "mhz": 87.6, "station": "Omroep Brabant (rampenzender)", "source": "https://www.omroepbrabant.nl/rampenzender"},
+        {"city": "Midden-Brabant", "mhz": 91.9, "station": "Omroep Brabant (rampenzender)", "source": "https://www.omroepbrabant.nl/rampenzender"},
+        {"city": "Eindhoven", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Tilburg", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"},
+        {"city": "Lelystad", "mhz": 89.8, "station": "Omroep Flevoland (calamiteitenzender)", "source": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"},
+        {"city": "Almere", "mhz": 98.9, "station": "NPO Radio 1", "source": "https://www.nporadio1.nl/frequenties"}
+      ],
+      "finder": {"name": "Denk vooruit – regionale radio", "url": "https://english.denkvooruit.nl/prepare-yourself/this-is-how-youll-be-alerted/radio"}
+    },
+    "GB": {
+      "emergency": [
+        {"station": "BBC Radio 4", "source": "https://www.gov.uk/government/publications/public-health-advice-from-uk-cmos-during-a-national-power-outage/keeping-warm-or-cool-in-extreme-weather-scripts-for-broadcast-media"},
+        {"station": "BBC Radio 2", "source": "https://www.gov.uk/government/publications/public-health-advice-from-uk-cmos-during-a-national-power-outage/keeping-warm-or-cool-in-extreme-weather-scripts-for-broadcast-media"},
+        {"station": "BBC Local Radio", "source": "https://www.bury.gov.uk/emergencies/what-to-do-in-an-emergency"}
+      ],
+      "dab": [],
+      "am": [],
+      "fm": [
+        {"city": "London", "mhz": 94.9, "station": "BBC Radio London", "source": "https://www.islington.gov.uk/about-the-council/emergency-planning-and-business-continuity/staying-informed-in-an-emergency"},
+        {"city": "Manchester", "mhz": 95.1, "station": "BBC Radio Manchester", "source": "https://www.bury.gov.uk/emergencies/what-to-do-in-an-emergency"},
+        {"city": "Liverpool", "mhz": 95.8, "station": "BBC Radio Merseyside", "source": "https://www.cheshirewestandchester.gov.uk/news-and-views/incidents/weather-disruptions/radio-stations"},
+        {"city": "Bristol", "mhz": 94.9, "station": "BBC Radio Bristol", "source": "https://www.bristol.gov.uk/residents/crime-and-emergencies/emergencies/emergency-information"}
+      ],
+      "finder": null
+    }
+  }
+}

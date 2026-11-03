@@ -31,6 +31,7 @@ Ein Rucksack pro Person, griffbereit an der Tür, um 3 Tage zu überstehen, fall
 - Kopien der Dokumente in einer wasserdichten Hülle
 - Bargeld in kleinen Scheinen
 - Papierkarte der Umgebung mit eingezeichneten Treffpunkten
+- Ersatzschlüssel für Haus und Auto
 
 ## Kleidung und Unterschlupf
 - Komplette Wechselkleidung, Wollsocken, Unterwäsche

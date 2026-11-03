@@ -31,6 +31,7 @@ Uno zaino per persona, pronto vicino alla porta, per sopravvivere 3 giorni se de
 - Fotocopie dei documenti in una busta impermeabile
 - Contanti in banconote piccole
 - Mappa cartacea della zona con punti di ritrovo segnati
+- Chiavi di riserva di casa e auto
 
 ## Vestiti e riparo
 - Cambio completo, calze di lana, intimo

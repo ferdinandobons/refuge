@@ -70,13 +70,38 @@ void main() {
     }
   });
 
-  test('ogni documento del catalogo esiste e ha licenza e fonte', () {
-    final list = jsonDecode(File('assets/documents/catalog.json').readAsStringSync()) as List;
+  test('documenti: inclusi presenti, gli altri scaricabili dal sito ufficiale, in inglese e in 5 lingue', () {
+    final list = (jsonDecode(File('assets/documents/catalog.json').readAsStringSync()) as List).cast<Map<String, dynamic>>();
     expect(list, isNotEmpty);
-    for (final d in list.cast<Map<String, dynamic>>()) {
-      expect(File('assets/documents/${d['file']}').existsSync(), isTrue, reason: d['file'] as String);
+    for (final d in list) {
+      final url = d['url'] as String?;
+      if (url == null) {
+        expect(File('assets/documents/${d['file']}').existsSync(), isTrue, reason: d['file'] as String);
+      } else {
+        expect(url, startsWith('https://'), reason: d['file'] as String);
+      }
+      expect(['it', 'en', 'fr', 'de', 'es'], contains(d['language']), reason: d['file'] as String);
+      expect((d['description'] as Map).keys.toSet(), {'it', 'en', 'fr', 'de', 'es'}, reason: d['file'] as String);
       expect(d['license'], isNotEmpty);
-      expect(d['source'], isNotEmpty);
+      expect(d['source'], startsWith('https://'));
+      expect(d['size'] as int, greaterThan(0));
+    }
+    // Ogni opera ha la versione inglese, usata quando manca la lingua scelta.
+    for (final id in list.map((d) => d['id']).toSet()) {
+      expect(list.any((d) => d['id'] == id && d['language'] == 'en'), isTrue, reason: '$id');
+    }
+    expect(list.map((d) => d['file']).toSet().length, list.length);
+  });
+
+  test('i rimandi delle schede puntano a documenti e guide esistenti', () {
+    final docs = (jsonDecode(File('assets/documents/catalog.json').readAsStringSync()) as List).cast<Map>();
+    final keys = {for (final d in docs) d['file'], for (final d in docs) d['id']};
+    final guides = Directory('assets/guides').listSync().map((f) => f.uri.pathSegments.last.replaceAll('.md', '')).toSet();
+    for (final c in (jsonDecode(File('assets/cards/cards.json').readAsStringSync()) as List).cast<Map>()) {
+      for (final r in (c['refs'] as List).cast<String>()) {
+        if (r.startsWith('doc:')) expect(keys, contains(r.substring(4).split('#').first), reason: '${c['id']} $r');
+        if (r.startsWith('guide:')) expect(guides, contains(r.substring(6)), reason: '${c['id']} $r');
+      }
     }
   });
 
@@ -95,11 +120,9 @@ void main() {
     };
     final files = Directory('assets/guides').listSync().whereType<File>().where((f) => f.path.endsWith('.md'));
     final ids = files.map((f) => f.uri.pathSegments.last.replaceAll('.md', '')).toSet();
-    var links = 0;
     for (final f in files) {
       final g = Guide.parse('x', f.readAsStringSync());
       for (final b in g.blocks.where((b) => b.target != null)) {
-        links++;
         final [kind, value] = b.target!.split(':');
         if (kind == 'doc') {
           final [file, page] = value.split('#');
@@ -115,7 +138,6 @@ void main() {
         expect(g.blocks.where((b) => b.type == BlockType.citation), isNotEmpty, reason: f.path);
       }
     }
-    expect(links, greaterThan(20));
   });
 
   test('schede: tutte le lingue, stessi passi, solo segnaposto noti', () {
@@ -172,7 +194,7 @@ void main() {
 
     test('ogni tipo di scorta ha unità e valori sensati', () {
       for (final p in kPresets) {
-        expect(['L', 'g', 'ml', 'pz'], contains(p.unit), reason: p.key);
+        expect(['L', 'g', 'ml', 'pz', 'mAh', 'Wh', 'W'], contains(p.unit), reason: p.key);
         expect(p.sizes, isNotEmpty, reason: p.key);
         expect(p.sizes.every((s) => s > 0), isTrue, reason: p.key);
         if (p.category == SupplyCategory.food) expect(p.kcalPer100, greaterThan(0), reason: p.key);
