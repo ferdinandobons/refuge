@@ -1,0 +1,4 @@
+/* Testi dei permessi di iOS in questa lingua. */
+"CFBundleDisplayName" = "Refuge";
+"NSLocationWhenInUseUsageDescription" = "Refuge muestra tus coordenadas GPS, tu posición en el mapa sin conexión, la distancia a los puntos guardados y los hospitales cercanos. Funciona sin internet y tu posición nunca sale del teléfono.";
+"NSCameraUsageDescription" = "El flash de la cámara solo se usa como linterna y para la luz SOS. La cámara nunca hace fotos ni vídeos.";

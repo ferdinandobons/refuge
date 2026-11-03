@@ -135,6 +135,7 @@ enciclopedie. Da lì in poi tutto funziona senza internet.
   OpenStreetMap), enciclopedie (la biblioteca di [Kiwix](https://kiwix.org)) e documenti ufficiali (dal sito
   dell'ente), o per aprire un link.
 - I promemoria sono programmati sul telefono: non c'è nessun server.
+- Testo completo: [docs/privacy.md](docs/privacy.md#italiano).
 
 ## Da dove vengono i contenuti
 
@@ -198,11 +199,12 @@ Ogni aiuto è benvenuto, soprattutto per:
 La regola per i contenuti: ogni frase deve venire da una fonte ufficiale, citata accanto. Le schede si generano con
 [tool/cards/cards.py](tool/cards/cards.py), che scrive `assets/cards/cards.json` e `docs/verifica-schede.md`; il
 catalogo delle scorte con [tool/supplies/checklist.py](tool/supplies/checklist.py). Prima di modifiche grandi apri una
-issue. Specifica del progetto: [SPEC.md](SPEC.md).
+issue; vedi [CONTRIBUTING.md](CONTRIBUTING.md). Specifica del progetto: [SPEC.md](SPEC.md).
 
 ## Licenze
 
-- Codice: [GPL-3.0](LICENSE).
+- Codice: [GPL-3.0](LICENSE), con un [permesso aggiuntivo per gli store](APP-STORE-EXCEPTION.md) che permette di
+  pubblicare l'app sull'App Store e su Google Play lasciando libero il codice.
 - Testi delle schede e traduzioni scritte per l'app: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 - I contenuti di terzi mantengono la loro licenza: guide della Protezione Civile CC BY 4.0, documenti della
   Commissione europea CC BY 4.0, dati OpenStreetMap ODbL, Wikipedia CC BY-SA 4.0. Le linee guida IFRC si possono

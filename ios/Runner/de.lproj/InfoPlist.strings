@@ -1,0 +1,4 @@
+/* Testi dei permessi di iOS in questa lingua. */
+"CFBundleDisplayName" = "Refuge";
+"NSLocationWhenInUseUsageDescription" = "Refuge zeigt Ihre GPS-Koordinaten, Ihre Position auf der Offline-Karte, die Entfernung zu gespeicherten Punkten und nahe Krankenhäuser. Das funktioniert ohne Internet und Ihre Position verlässt nie das Telefon.";
+"NSCameraUsageDescription" = "Der Kamerablitz dient nur als Taschenlampe und für das SOS-Licht. Die Kamera macht nie Fotos oder Videos.";
