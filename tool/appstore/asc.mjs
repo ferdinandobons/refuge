@@ -2,10 +2,13 @@
 // Chiave: secrets/apple/asc-api.env (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH), fuori dal repository.
 // Uso, dalla radice del repository:
 //   node tool/appstore/asc.mjs status                   app, build e gruppi di TestFlight
+//   node tool/appstore/asc.mjs users                    utenti del team (i tester interni devono esserlo)
 //   node tool/appstore/asc.mjs bundle-id                registra l'ID dell'app (se manca)
 //   node tool/appstore/asc.mjs internal <email>         aggiunge un utente del team al gruppo interno
 //   node tool/appstore/asc.mjs external <email> [nome]  aggiunge un tester esterno (revisione beta di Apple)
-//   node tool/appstore/asc.mjs beta-info                testi per i tester e contatto della revisione beta
+//   node tool/appstore/asc.mjs beta                     testi per i tester, contatto della revisione beta
+//                                                    (secrets/apple/review-contact.env), ultima build nei gruppi
+//                                                    e, per gli esterni, invio alla revisione beta di Apple
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -74,6 +77,40 @@ if (cmd === "bundle-id") {
   await api("POST", "/v1/betaTesters", { data: { type: "betaTesters", attributes: { email, firstName },
     relationships: { betaGroups: { data: [{ type: "betaGroups", id: g.id }] } } } });
   console.log(`${email} nel gruppo ${g.attributes.name}`);
+} else if (cmd === "beta") {
+  const a = await app();
+  const contact = Object.fromEntries(fs.readFileSync(path.join(ROOT, "secrets/apple/review-contact.env"), "utf8")
+    .split("\n").filter((l) => l.includes("=")).map((l) => l.split("=").map((s) => s.trim())));
+  const description = "Refuge is an offline emergency app for Europe: step-by-step first aid and danger cards, offline maps, "
+    + "emergency radio, supplies and a family plan. It works without internet and collects no data.";
+  const loc = await api("GET", `/v1/apps/${a.id}/betaAppLocalizations`);
+  const attrs = { description, feedbackEmail: contact.REVIEW_CONTACT_EMAIL };
+  if (loc.data.length) await api("PATCH", `/v1/betaAppLocalizations/${loc.data[0].id}`, { data: { type: "betaAppLocalizations", id: loc.data[0].id, attributes: attrs } });
+  else await api("POST", "/v1/betaAppLocalizations", { data: { type: "betaAppLocalizations", attributes: { locale: "en-GB", ...attrs },
+    relationships: { app: { data: { type: "apps", id: a.id } } } } });
+  const det = (await api("GET", `/v1/apps/${a.id}/betaAppReviewDetail`)).data;
+  await api("PATCH", `/v1/betaAppReviewDetails/${det.id}`, { data: { type: "betaAppReviewDetails", id: det.id, attributes: {
+    contactFirstName: contact.REVIEW_FIRST_NAME, contactLastName: contact.REVIEW_LAST_NAME, contactPhone: contact.REVIEW_PHONE,
+    contactEmail: contact.REVIEW_CONTACT_EMAIL, demoAccountRequired: false,
+    notes: "No account or sign-in. Everything works offline after the first launch; maps and encyclopedias are optional downloads." } } });
+  const b = (await api("GET", `/v1/builds?filter[app]=${a.id}&sort=-uploadedDate&limit=1`)).data[0];
+  if (!b || b.attributes.processingState !== "VALID") { console.log("build non ancora pronta:", b?.attributes.processingState); process.exit(0); }
+  const bl = await api("GET", `/v1/builds/${b.id}/betaBuildLocalizations`);
+  const whatsNew = "Try the emergency cards, the Prepare checklist, Supplies, Location and maps (download a country map) and the SOS light.";
+  if (!bl.data.length) await api("POST", "/v1/betaBuildLocalizations", { data: { type: "betaBuildLocalizations", attributes: { locale: "en-GB", whatsNew },
+    relationships: { build: { data: { type: "builds", id: b.id } } } } });
+  for (const internal of [true, false]) {
+    const g = await group(a.id, internal);
+    if (!internal) await api("POST", `/v1/betaGroups/${g.id}/relationships/builds`, { data: [{ type: "builds", id: b.id }] });
+  }
+  try {
+    await api("POST", "/v1/betaAppReviewSubmissions", { data: { type: "betaAppReviewSubmissions",
+      relationships: { build: { data: { type: "builds", id: b.id } } } } });
+    console.log(`build ${b.attributes.version} inviata alla revisione beta`);
+  } catch (e) { console.log("revisione beta:", e.message.slice(0, 300)); }
+} else if (cmd === "users") {
+  const r = await api("GET", "/v1/users?limit=50");
+  for (const u of r.data) console.log(u.attributes.username, u.attributes.roles.join(","));
 } else {
   console.log("comandi: status, bundle-id, internal <email>, external <email> [nome]");
 }
