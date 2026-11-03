@@ -45,6 +45,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>The camera flash is used only as a torch and for the SOS light. The camera never takes photos or videos.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Refuge uses your position only while the app is open, to show coordinates, the offline map and nearby hospitals. It never uses it in the background and it never leaves the phone.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Refuge shows your GPS coordinates, your position on the offline map, the distance to saved points and nearby hospitals. It works without internet and your position never leaves the phone.</string>
 	<key>UIApplicationSceneManifest</key>

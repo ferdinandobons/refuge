@@ -2,3 +2,4 @@
 "CFBundleDisplayName" = "Refuge";
 "NSLocationWhenInUseUsageDescription" = "Refuge affiche vos coordonnées GPS, votre position sur la carte hors ligne, la distance jusqu'aux points enregistrés et les hôpitaux proches. Cela fonctionne sans internet et votre position ne quitte jamais le téléphone.";
 "NSCameraUsageDescription" = "Le flash de l'appareil photo sert uniquement de lampe torche et de lumière SOS. L'appareil photo ne prend jamais de photos ni de vidéos.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Refuge utilise votre position uniquement lorsque l'app est ouverte, pour afficher les coordonnées, la carte hors ligne et les hôpitaux proches. Jamais en arrière-plan, et elle ne quitte jamais le téléphone.";
