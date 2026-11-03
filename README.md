@@ -1,4 +1,4 @@
-# Rifugio
+# Refuge
 
 App open source di sopravvivenza e conoscenza **completamente offline** per iOS, Android e desktop (Flutter).
 

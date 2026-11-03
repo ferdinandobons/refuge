@@ -26,8 +26,8 @@ class _CatalogScreenState extends State<CatalogScreen> {
   }
 
   Future<List<(String, List<CatalogEntry>)>> _recommended(AppLocalizations t) => Future.wait([
-        for (final (name, kind) in recommendedFor(AppSettings.instance.language))
-          KiwixCatalog.byName(name).then((l) => (_heading(t, kind), l)),
+        for (final (name, kind, lang) in recommendedFor(AppSettings.instance.language))
+          KiwixCatalog.byName(name).then((l) => ('${_heading(t, kind)} · ${languageName(lang)}', l)),
       ]);
 
   static String _heading(AppLocalizations t, Recommended kind) => switch (kind) {
@@ -144,7 +144,16 @@ class _EntryTile extends StatelessWidget {
     }
     return ListTile(
       title: Text('${e.title} · ${flavourLabel(t, e.flavour)}'),
-      subtitle: Text('${formatBytes(e.size)}$date · ${e.language}\n${e.summary}', maxLines: 3),
+      subtitle: Text.rich(
+        TextSpan(children: [
+          TextSpan(
+            text: languageName(e.language),
+            style: const TextStyle(color: kAccent, fontWeight: FontWeight.w600),
+          ),
+          TextSpan(text: ' · ${formatBytes(e.size)}$date\n${e.summary}'),
+        ]),
+        maxLines: 3,
+      ),
       isThreeLine: true,
       trailing: trailing,
     );

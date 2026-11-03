@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import '../features/emergency/emergency_screen.dart';
 import '../features/more/more_screen.dart';
 import '../features/prepare/prepare_screen.dart';
+import '../features/library/zim/downloads.dart';
+import '../features/maps/map_regions.dart';
 import '../features/tools/fallout_phases.dart';
 import '../features/tools/tools_screen.dart';
 import '../l10n/app_localizations.dart';
+import 'downloads_banner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,15 +26,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
     return Scaffold(
-      // Con il timer del fallout attivo, la barra della fase resta in cima a tutte le schede.
+      // In cima a tutte le schede, quando servono: prima i download in corso, poi il timer del fallout.
       body: ListenableBuilder(
-        listenable: FalloutTimer.instance,
-        builder: (context, child) => !FalloutTimer.instance.running
-            ? child!
-            : Column(children: [
-                const SafeArea(bottom: false, child: FalloutBanner()),
-                Expanded(child: MediaQuery.removePadding(context: context, removeTop: true, child: child!)),
+        listenable: Listenable.merge([FalloutTimer.instance, MapRegions.instance, ZimDownloads.instance]),
+        builder: (context, child) {
+          final downloads = DownloadsBanner.active, fallout = FalloutTimer.instance.running;
+          if (!downloads && !fallout) return child!;
+          return Column(children: [
+            SafeArea(
+              bottom: false,
+              child: Column(children: [
+                if (downloads) const DownloadsBanner(),
+                if (fallout) const FalloutBanner(),
               ]),
+            ),
+            Expanded(child: MediaQuery.removePadding(context: context, removeTop: true, child: child!)),
+          ]);
+        },
         child: IndexedStack(index: _index, children: _pages),
       ),
       // Linea chiara sul bordo superiore: separa la barra dai riquadri, che hanno lo stesso colore.

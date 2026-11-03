@@ -82,7 +82,8 @@ class ZimDownloads extends ChangeNotifier {
       directory: 'zim',
       baseDirectory: BaseDirectory.applicationDocuments,
       group: _group,
-      displayName: e.flavour.isEmpty ? e.title : '${e.title} (${e.flavour})',
+      // La lingua nel nome: si vede nella barra dei download e nelle notifiche.
+      displayName: '${e.title} · ${languageName(e.language)}${e.flavour.isEmpty ? '' : ' (${e.flavour})'}',
       updates: Updates.statusAndProgress,
       requiresWiFi: wifiOnly,
       allowPause: true,

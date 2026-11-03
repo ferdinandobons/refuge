@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Rifugio';
+  String get appTitle => 'Refuge';
 
   @override
   String get tabEmergency => 'Emergency';
@@ -487,7 +487,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get iosImportHint =>
-      'Very large files: download them on a computer from download.kiwix.org and copy them with Finder or the Files app into the Rifugio › zim folder, then tap ↻.';
+      'Very large files: download them on a computer from download.kiwix.org and copy them with Finder or the Files app into the Refuge › zim folder, then tap ↻.';
 
   @override
   String get deleteFromDevice => 'Delete from phone';
@@ -953,4 +953,115 @@ class AppLocalizationsEn extends AppLocalizations {
   String tiltDegrees(int n) {
     return 'Tilt $n°';
   }
+
+  @override
+  String get mapsTitle => 'Offline maps';
+
+  @override
+  String get onbMapTitle => 'Offline map';
+
+  @override
+  String get onbMapBody =>
+      'Choose which maps to keep on your phone. They work without internet, with your GPS position.';
+
+  @override
+  String get mapWorld => 'World';
+
+  @override
+  String get mapWorldBody => 'All countries, main cities and major roads.';
+
+  @override
+  String get mapEurope => 'Europe';
+
+  @override
+  String get mapEuropeBody => 'Cities, towns and main roads across Europe.';
+
+  @override
+  String mapCountry(String name) {
+    return '$name in detail';
+  }
+
+  @override
+  String get mapCountryBody =>
+      'Every road, street and path, down to single buildings.';
+
+  @override
+  String get mapKeepOpen => 'Keep the app open until the download finishes.';
+
+  @override
+  String get mapDownloadSelected => 'Download selected maps';
+
+  @override
+  String get mapReady => 'Downloaded';
+
+  @override
+  String get mapFailed => 'Download failed. Try again.';
+
+  @override
+  String mapDownloading(String pct, String size) {
+    return '$pct% of $size';
+  }
+
+  @override
+  String get mapPreparing => 'Preparing…';
+
+  @override
+  String get mapSizeCalc => 'Calculating size…';
+
+  @override
+  String get mapSizeUnknown => 'Size not available (internet needed)';
+
+  @override
+  String get mapNone =>
+      'No offline maps. Download one to see where you are even without internet.';
+
+  @override
+  String get mapDownloadButton => 'Download maps';
+
+  @override
+  String get mapSkip => 'Skip, I\'ll do it later';
+
+  @override
+  String get zoomIn => 'Zoom in';
+
+  @override
+  String get zoomOut => 'Zoom out';
+
+  @override
+  String get wholeWorld => 'Whole world';
+
+  @override
+  String get myPosition => 'My position';
+
+  @override
+  String downloadsActive(int n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n downloads in progress',
+      one: 'Download in progress',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mapsOnPhone => 'On this phone';
+
+  @override
+  String get mapsInProgress => 'In progress';
+
+  @override
+  String get mapsAvailable => 'Available';
+
+  @override
+  String get mapUpdate => 'Update to the latest version';
+
+  @override
+  String mapUpdatedOn(String date) {
+    return 'from $date';
+  }
+
+  @override
+  String get mapsMoreBody =>
+      'Download, update or delete maps of the world, Europe and countries';
 }

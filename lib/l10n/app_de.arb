@@ -1,6 +1,6 @@
 {
   "@@locale": "de",
-  "appTitle": "Rifugio",
+  "appTitle": "Refuge",
   "tabEmergency": "Notfall",
   "tabPrepare": "Vorsorge",
   "tabTools": "Werkzeuge",
@@ -219,7 +219,7 @@
   },
   "encyclopedias": "Offline-Lexika",
   "noEncyclopedias": "Kein Lexikon auf dem Handy. Laden Sie es herunter, solange Sie Internet haben: Danach funktioniert es auch ohne Netz.",
-  "iosImportHint": "Sehr große Dateien: Laden Sie sie am Computer von download.kiwix.org herunter und kopieren Sie sie mit dem Finder oder der Dateien-App in den Ordner Rifugio › zim. Tippen Sie dann auf ↻.",
+  "iosImportHint": "Sehr große Dateien: Laden Sie sie am Computer von download.kiwix.org herunter und kopieren Sie sie mit dem Finder oder der Dateien-App in den Ordner Refuge › zim. Tippen Sie dann auf ↻.",
   "deleteFromDevice": "Vom Handy löschen",
   "deleteQ": "„{title}“ löschen?",
   "@deleteQ": {
@@ -503,6 +503,68 @@
     "placeholders": {
       "n": {
         "type": "int"
+      }
+    }
+  },
+  "mapsTitle": "Offline-Karten",
+  "onbMapTitle": "Offline-Karte",
+  "onbMapBody": "Wählen Sie, welche Karten auf dem Telefon bleiben sollen. Sie funktionieren ohne Internet, mit Ihrer GPS-Position.",
+  "mapWorld": "Welt",
+  "mapWorldBody": "Alle Länder, große Städte und Hauptstraßen.",
+  "mapEurope": "Europa",
+  "mapEuropeBody": "Städte, Orte und Hauptstraßen in ganz Europa.",
+  "mapCountry": "{name} im Detail",
+  "@mapCountry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapCountryBody": "Alle Straßen, Gassen und Wege, bis zu einzelnen Gebäuden.",
+  "mapKeepOpen": "Lassen Sie die App geöffnet, bis der Download abgeschlossen ist.",
+  "mapDownloadSelected": "Ausgewählte Karten laden",
+  "mapReady": "Geladen",
+  "mapFailed": "Download fehlgeschlagen. Bitte erneut versuchen.",
+  "mapDownloading": "{pct} % von {size}",
+  "@mapDownloading": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "mapPreparing": "Vorbereitung…",
+  "mapSizeCalc": "Größe wird berechnet…",
+  "mapSizeUnknown": "Größe nicht verfügbar (Internet nötig)",
+  "mapNone": "Keine Offline-Karte vorhanden. Laden Sie eine, um auch ohne Internet zu sehen, wo Sie sind.",
+  "mapDownloadButton": "Karten laden",
+  "mapSkip": "Überspringen, später erledigen",
+  "zoomIn": "Vergrößern",
+  "zoomOut": "Verkleinern",
+  "wholeWorld": "Ganze Welt",
+  "myPosition": "Meine Position",
+  "downloadsActive": "{n, plural, =1{Download läuft} other{{n} Downloads laufen}}",
+  "@downloadsActive": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mapsOnPhone": "Auf dem Telefon",
+  "mapsInProgress": "Wird geladen",
+  "mapsAvailable": "Verfügbar",
+  "mapUpdate": "Auf neueste Version aktualisieren",
+  "mapUpdatedOn": "vom {date}",
+  "mapsMoreBody": "Karten der Welt, Europas und einzelner Länder laden, aktualisieren oder löschen",
+  "@mapUpdatedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
       }
     }
   }

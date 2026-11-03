@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../features/library/zim/catalog_screen.dart';
+import '../features/maps/map_download.dart';
 import '../l10n/app_localizations.dart';
 import 'countries.dart';
 import 'settings.dart';
@@ -37,7 +38,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Row(children: [
               if (_page > 0) IconButton(icon: const Icon(Icons.arrow_back), onPressed: () => _go(_page - 1)),
               const Spacer(),
-              Text('${_page + 1} / 3', style: const TextStyle(color: Colors.white54)),
+              Text('${_page + 1} / 4', style: const TextStyle(color: Colors.white54)),
             ]),
           ),
           Expanded(
@@ -81,6 +82,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           _go(2);
                         },
                       ),
+                  ],
+                ),
+                _Step(
+                  icon: Icons.map,
+                  title: t.onbMapTitle,
+                  subtitle: t.onbMapBody,
+                  children: [
+                    MapPicker(onStarted: () => _go(3)),
+                    const SizedBox(height: 4),
+                    TextButton(
+                      style: TextButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+                      onPressed: () => _go(3),
+                      child: Text(t.mapSkip, style: const TextStyle(fontSize: 16)),
+                    ),
                   ],
                 ),
                 _Step(

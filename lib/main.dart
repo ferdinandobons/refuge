@@ -4,6 +4,7 @@ import 'app/home.dart';
 import 'app/onboarding.dart';
 import 'app/settings.dart';
 import 'app/theme.dart';
+import 'features/library/zim/downloads.dart';
 import 'features/tools/fallout_phases.dart';
 import 'l10n/app_localizations.dart';
 
@@ -11,11 +12,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppSettings.instance.load();
   await FalloutTimer.instance.load();
-  runApp(const RifugioApp());
+  // Riprende a seguire i download delle enciclopedie avviati prima (anche ad app chiusa).
+  ZimDownloads.instance.init();
+  runApp(const RefugeApp());
 }
 
-class RifugioApp extends StatelessWidget {
-  const RifugioApp({super.key});
+class RefugeApp extends StatelessWidget {
+  const RefugeApp({super.key});
 
   @override
   Widget build(BuildContext context) => ListenableBuilder(

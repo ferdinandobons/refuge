@@ -1,6 +1,6 @@
 {
   "@@locale": "it",
-  "appTitle": "Rifugio",
+  "appTitle": "Refuge",
   "tabEmergency": "Emergenza",
   "tabPrepare": "Prepararsi",
   "tabTools": "Strumenti",
@@ -219,7 +219,7 @@
   },
   "encyclopedias": "Enciclopedie offline",
   "noEncyclopedias": "Nessuna enciclopedia sul telefono. Scaricala finché hai internet: poi funziona anche senza rete.",
-  "iosImportHint": "File molto grandi: scaricali sul computer da download.kiwix.org e copiali con il Finder o l'app File nella cartella Rifugio › zim, poi tocca ↻.",
+  "iosImportHint": "File molto grandi: scaricali sul computer da download.kiwix.org e copiali con il Finder o l'app File nella cartella Refuge › zim, poi tocca ↻.",
   "deleteFromDevice": "Elimina dal telefono",
   "deleteQ": "Eliminare «{title}»?",
   "@deleteQ": {
@@ -503,6 +503,68 @@
     "placeholders": {
       "n": {
         "type": "int"
+      }
+    }
+  },
+  "mapsTitle": "Mappe offline",
+  "onbMapTitle": "Mappa offline",
+  "onbMapBody": "Scegli quali mappe tenere sul telefono. Funzionano senza internet, con la tua posizione GPS.",
+  "mapWorld": "Mondo",
+  "mapWorldBody": "Tutti i paesi, le città principali e le grandi strade.",
+  "mapEurope": "Europa",
+  "mapEuropeBody": "Città, paesi e strade principali di tutta Europa.",
+  "mapCountry": "{name} dettagliata",
+  "@mapCountry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapCountryBody": "Tutte le strade, le vie e i sentieri, fino al singolo edificio.",
+  "mapKeepOpen": "Tieni l'app aperta finché il download non finisce.",
+  "mapDownloadSelected": "Scarica le mappe scelte",
+  "mapReady": "Scaricata",
+  "mapFailed": "Download non riuscito. Riprova.",
+  "mapDownloading": "{pct}% di {size}",
+  "@mapDownloading": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "mapPreparing": "Preparazione…",
+  "mapSizeCalc": "Calcolo della dimensione…",
+  "mapSizeUnknown": "Dimensione non disponibile (serve internet)",
+  "mapNone": "Nessuna mappa offline. Scaricala per vedere dove sei anche senza internet.",
+  "mapDownloadButton": "Scarica mappe",
+  "mapSkip": "Salta, lo faccio dopo",
+  "zoomIn": "Ingrandisci",
+  "zoomOut": "Rimpicciolisci",
+  "wholeWorld": "Tutto il mondo",
+  "myPosition": "La mia posizione",
+  "downloadsActive": "{n, plural, =1{Download in corso} other{{n} download in corso}}",
+  "@downloadsActive": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mapsOnPhone": "Sul telefono",
+  "mapsInProgress": "In corso",
+  "mapsAvailable": "Disponibili",
+  "mapUpdate": "Aggiorna all'ultima versione",
+  "mapUpdatedOn": "del {date}",
+  "mapsMoreBody": "Scarica, aggiorna o elimina le mappe del mondo, dell'Europa e dei paesi",
+  "@mapUpdatedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
       }
     }
   }

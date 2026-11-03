@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Rifugio",
+  "appTitle": "Refuge",
   "tabEmergency": "Emergency",
   "tabPrepare": "Prepare",
   "tabTools": "Tools",
@@ -219,7 +219,7 @@
   },
   "encyclopedias": "Offline encyclopedias",
   "noEncyclopedias": "No encyclopedias on this phone. Download one while you have internet: then it works offline too.",
-  "iosImportHint": "Very large files: download them on a computer from download.kiwix.org and copy them with Finder or the Files app into the Rifugio › zim folder, then tap ↻.",
+  "iosImportHint": "Very large files: download them on a computer from download.kiwix.org and copy them with Finder or the Files app into the Refuge › zim folder, then tap ↻.",
   "deleteFromDevice": "Delete from phone",
   "deleteQ": "Delete “{title}”?",
   "@deleteQ": {
@@ -503,6 +503,68 @@
     "placeholders": {
       "n": {
         "type": "int"
+      }
+    }
+  },
+  "mapsTitle": "Offline maps",
+  "onbMapTitle": "Offline map",
+  "onbMapBody": "Choose which maps to keep on your phone. They work without internet, with your GPS position.",
+  "mapWorld": "World",
+  "mapWorldBody": "All countries, main cities and major roads.",
+  "mapEurope": "Europe",
+  "mapEuropeBody": "Cities, towns and main roads across Europe.",
+  "mapCountry": "{name} in detail",
+  "@mapCountry": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "mapCountryBody": "Every road, street and path, down to single buildings.",
+  "mapKeepOpen": "Keep the app open until the download finishes.",
+  "mapDownloadSelected": "Download selected maps",
+  "mapReady": "Downloaded",
+  "mapFailed": "Download failed. Try again.",
+  "mapDownloading": "{pct}% of {size}",
+  "@mapDownloading": {
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "mapPreparing": "Preparing…",
+  "mapSizeCalc": "Calculating size…",
+  "mapSizeUnknown": "Size not available (internet needed)",
+  "mapNone": "No offline maps. Download one to see where you are even without internet.",
+  "mapDownloadButton": "Download maps",
+  "mapSkip": "Skip, I'll do it later",
+  "zoomIn": "Zoom in",
+  "zoomOut": "Zoom out",
+  "wholeWorld": "Whole world",
+  "myPosition": "My position",
+  "downloadsActive": "{n, plural, =1{Download in progress} other{{n} downloads in progress}}",
+  "@downloadsActive": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "mapsOnPhone": "On this phone",
+  "mapsInProgress": "In progress",
+  "mapsAvailable": "Available",
+  "mapUpdate": "Update to the latest version",
+  "mapUpdatedOn": "from {date}",
+  "mapsMoreBody": "Download, update or delete maps of the world, Europe and countries",
+  "@mapUpdatedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
       }
     }
   }

@@ -1,5 +1,5 @@
 name: rifugio
-description: "Rifugio: guide di sopravvivenza, strumenti e conoscenza offline."
+description: "Refuge: guide di sopravvivenza, strumenti e conoscenza offline."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -49,6 +49,12 @@ dependencies:
   intl: any
   url_launcher: ^6.3.3
   wakelock_plus: ^1.8.0
+  flutter_map: ^7.0.2
+  vector_map_tiles: ^8.0.0
+  vector_map_tiles_pmtiles: ^1.5.0
+  pmtiles: ^1.2.0
+  latlong2: ^0.9.1
+  vector_tile_renderer: ^5.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

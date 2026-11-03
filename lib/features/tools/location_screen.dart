@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:latlong2/latlong.dart';
 
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
+import '../maps/map_download.dart';
+import '../maps/map_regions.dart';
+import '../maps/offline_map.dart';
 import 'coords.dart';
 
 enum _LocationProblem { serviceOff, denied, unavailable }
@@ -54,11 +58,18 @@ class _LocationScreenState extends State<LocationScreen> {
             stream: Geolocator.getPositionStream(
               locationSettings: const LocationSettings(accuracy: LocationAccuracy.best, distanceFilter: 1),
             ),
-            builder: (context, pos) {
-              if (pos.hasError) return Center(child: Text(t.gpsError('${pos.error}')));
-              if (!pos.hasData) return Center(child: Text(t.searchingSats, textAlign: TextAlign.center));
-              return _PositionView(pos.data!, t);
-            },
+            builder: (context, pos) => Column(children: [
+              Expanded(flex: 6, child: _MapArea(position: pos.data)),
+              const Divider(height: 1, color: Colors.white24),
+              Expanded(
+                flex: 5,
+                child: pos.hasError
+                    ? Center(child: Text(t.gpsError('${pos.error}')))
+                    : !pos.hasData
+                        ? Center(child: Text(t.searchingSats, textAlign: TextAlign.center))
+                        : _PositionView(pos.data!, t),
+              ),
+            ]),
           );
         },
       ),
@@ -104,6 +115,55 @@ class _PositionView extends StatelessWidget {
           ),
         Text(t.locHint(AppSettings.instance.country.emergency), style: const TextStyle(color: Colors.white54)),
       ],
+    );
+  }
+}
+
+/// Mappa offline con la posizione; se non ci sono mappe, invito a scaricarle.
+class _MapArea extends StatelessWidget {
+  const _MapArea({required this.position});
+
+  final Position? position;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    final regions = MapRegions.instance;
+    return ListenableBuilder(
+      listenable: regions,
+      builder: (context, _) {
+        if (!regions.loaded) {
+          regions.refresh();
+          return const SizedBox.shrink();
+        }
+        if (regions.installed.isEmpty) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                const Icon(Icons.map, size: 48, color: kAccent),
+                const SizedBox(height: 10),
+                Text(t.mapNone, textAlign: TextAlign.center),
+                const SizedBox(height: 12),
+                FilledButton.icon(
+                  icon: const Icon(Icons.download),
+                  label: Text(t.mapDownloadButton),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MapDownloadScreen())),
+                ),
+              ]),
+            ),
+          );
+        }
+        final p = position;
+        final c = kCountryRegions[AppSettings.instance.country.code]?.bbox;
+        return OfflineMap(
+          // Ricrea la mappa quando cambia l'elenco delle zone scaricate.
+          key: ValueKey(regions.installed.map((e) => '${e.$1.id}@${e.$2.lastModifiedSync()}').join(',')),
+          position: p == null ? null : LatLng(p.latitude, p.longitude),
+          accuracy: p?.accuracy,
+          fallbackCenter: c == null ? const LatLng(48, 10) : LatLng((c.minLat + c.maxLat) / 2, (c.minLon + c.maxLon) / 2),
+        );
+      },
     );
   }
 }

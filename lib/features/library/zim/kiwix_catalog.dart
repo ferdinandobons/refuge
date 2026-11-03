@@ -32,15 +32,26 @@ class CatalogEntry {
 /// Tipo di raccolta consigliata (il titolo viene tradotto nell'interfaccia).
 enum Recommended { wikimed, wikipediaMedicine, wikipedia, wikivoyage, medicalTextbooks }
 
-/// Raccolte consigliate per la lingua scelta, in ordine di utilità per l'emergenza.
-/// Le raccolte che non esistono in quella lingua semplicemente non compaiono.
-List<(String name, Recommended kind)> recommendedFor(String language) => [
-      ('mdwiki_en_all', Recommended.wikimed),
-      ('wikipedia_${language}_medicine', Recommended.wikipediaMedicine),
-      ('wikipedia_${language}_all', Recommended.wikipedia),
-      ('wikivoyage_${language}_all', Recommended.wikivoyage),
-      ('libretexts.org_en_med', Recommended.medicalTextbooks),
-    ];
+/// Raccolte consigliate, in ordine di utilità per l'emergenza: ognuna nella lingua scelta e in inglese.
+/// Le raccolte che non esistono in una lingua semplicemente non compaiono.
+List<(String name, Recommended kind, String language)> recommendedFor(String language) {
+  final langs = {language, 'en'};
+  return [
+    ('mdwiki_en_all', Recommended.wikimed, 'en'),
+    for (final l in langs) ('wikipedia_${l}_medicine', Recommended.wikipediaMedicine, l),
+    for (final l in langs) ('wikipedia_${l}_all', Recommended.wikipedia, l),
+    for (final l in langs) ('wikivoyage_${l}_all', Recommended.wikivoyage, l),
+    ('libretexts.org_en_med', Recommended.medicalTextbooks, 'en'),
+  ];
+}
+
+/// Nome della lingua (nella lingua stessa) da un codice ISO 639-1 o 639-3 del catalogo, es. "ita" → "Italiano".
+String languageName(String code) {
+  const iso3 = {'ita': 'it', 'eng': 'en', 'fra': 'fr', 'deu': 'de', 'spa': 'es'};
+  const names = {'it': 'Italiano', 'en': 'English', 'fr': 'Français', 'de': 'Deutsch', 'es': 'Español'};
+  final parts = code.split(',').map((c) => names[iso3[c.trim()] ?? c.trim()] ?? c.trim()).toList();
+  return parts.length > 3 ? '${parts.take(3).join(', ')}…' : parts.join(', ');
+}
 
 class KiwixCatalog {
   static final _base = Uri.parse('https://opds.library.kiwix.org/catalog/v2/entries');

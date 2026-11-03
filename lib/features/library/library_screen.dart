@@ -91,7 +91,7 @@ class _BookTile extends StatelessWidget {
             ? const Icon(Icons.public, color: kAccent, size: 32)
             : Image.memory(book.icon!, width: 32, height: 32),
         title: Text(book.title, style: const TextStyle(fontWeight: FontWeight.w600)),
-        subtitle: Text('${formatBytes(book.size)} · ${book.language}\n${book.description}', maxLines: 3),
+        subtitle: Text('${languageName(book.language)} · ${formatBytes(book.size)}\n${book.description}', maxLines: 3),
         trailing: PopupMenuButton<String>(
           onSelected: (_) => _delete(context, t),
           itemBuilder: (_) => [PopupMenuItem(value: 'delete', child: Text(t.deleteFromDevice))],

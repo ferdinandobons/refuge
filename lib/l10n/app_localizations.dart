@@ -107,7 +107,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In it, this message translates to:
-  /// **'Rifugio'**
+  /// **'Refuge'**
   String get appTitle;
 
   /// No description provided for @tabEmergency.
@@ -965,7 +965,7 @@ abstract class AppLocalizations {
   /// No description provided for @iosImportHint.
   ///
   /// In it, this message translates to:
-  /// **'File molto grandi: scaricali sul computer da download.kiwix.org e copiali con il Finder o l\'app File nella cartella Rifugio › zim, poi tocca ↻.'**
+  /// **'File molto grandi: scaricali sul computer da download.kiwix.org e copiali con il Finder o l\'app File nella cartella Refuge › zim, poi tocca ↻.'**
   String get iosImportHint;
 
   /// No description provided for @deleteFromDevice.
@@ -1759,6 +1759,192 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Inclinazione {n}°'**
   String tiltDegrees(int n);
+
+  /// No description provided for @mapsTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Mappe offline'**
+  String get mapsTitle;
+
+  /// No description provided for @onbMapTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Mappa offline'**
+  String get onbMapTitle;
+
+  /// No description provided for @onbMapBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Scegli quali mappe tenere sul telefono. Funzionano senza internet, con la tua posizione GPS.'**
+  String get onbMapBody;
+
+  /// No description provided for @mapWorld.
+  ///
+  /// In it, this message translates to:
+  /// **'Mondo'**
+  String get mapWorld;
+
+  /// No description provided for @mapWorldBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Tutti i paesi, le città principali e le grandi strade.'**
+  String get mapWorldBody;
+
+  /// No description provided for @mapEurope.
+  ///
+  /// In it, this message translates to:
+  /// **'Europa'**
+  String get mapEurope;
+
+  /// No description provided for @mapEuropeBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Città, paesi e strade principali di tutta Europa.'**
+  String get mapEuropeBody;
+
+  /// No description provided for @mapCountry.
+  ///
+  /// In it, this message translates to:
+  /// **'{name} dettagliata'**
+  String mapCountry(String name);
+
+  /// No description provided for @mapCountryBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Tutte le strade, le vie e i sentieri, fino al singolo edificio.'**
+  String get mapCountryBody;
+
+  /// No description provided for @mapKeepOpen.
+  ///
+  /// In it, this message translates to:
+  /// **'Tieni l\'app aperta finché il download non finisce.'**
+  String get mapKeepOpen;
+
+  /// No description provided for @mapDownloadSelected.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica le mappe scelte'**
+  String get mapDownloadSelected;
+
+  /// No description provided for @mapReady.
+  ///
+  /// In it, this message translates to:
+  /// **'Scaricata'**
+  String get mapReady;
+
+  /// No description provided for @mapFailed.
+  ///
+  /// In it, this message translates to:
+  /// **'Download non riuscito. Riprova.'**
+  String get mapFailed;
+
+  /// No description provided for @mapDownloading.
+  ///
+  /// In it, this message translates to:
+  /// **'{pct}% di {size}'**
+  String mapDownloading(String pct, String size);
+
+  /// No description provided for @mapPreparing.
+  ///
+  /// In it, this message translates to:
+  /// **'Preparazione…'**
+  String get mapPreparing;
+
+  /// No description provided for @mapSizeCalc.
+  ///
+  /// In it, this message translates to:
+  /// **'Calcolo della dimensione…'**
+  String get mapSizeCalc;
+
+  /// No description provided for @mapSizeUnknown.
+  ///
+  /// In it, this message translates to:
+  /// **'Dimensione non disponibile (serve internet)'**
+  String get mapSizeUnknown;
+
+  /// No description provided for @mapNone.
+  ///
+  /// In it, this message translates to:
+  /// **'Nessuna mappa offline. Scaricala per vedere dove sei anche senza internet.'**
+  String get mapNone;
+
+  /// No description provided for @mapDownloadButton.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica mappe'**
+  String get mapDownloadButton;
+
+  /// No description provided for @mapSkip.
+  ///
+  /// In it, this message translates to:
+  /// **'Salta, lo faccio dopo'**
+  String get mapSkip;
+
+  /// No description provided for @zoomIn.
+  ///
+  /// In it, this message translates to:
+  /// **'Ingrandisci'**
+  String get zoomIn;
+
+  /// No description provided for @zoomOut.
+  ///
+  /// In it, this message translates to:
+  /// **'Rimpicciolisci'**
+  String get zoomOut;
+
+  /// No description provided for @wholeWorld.
+  ///
+  /// In it, this message translates to:
+  /// **'Tutto il mondo'**
+  String get wholeWorld;
+
+  /// No description provided for @myPosition.
+  ///
+  /// In it, this message translates to:
+  /// **'La mia posizione'**
+  String get myPosition;
+
+  /// No description provided for @downloadsActive.
+  ///
+  /// In it, this message translates to:
+  /// **'{n, plural, =1{Download in corso} other{{n} download in corso}}'**
+  String downloadsActive(int n);
+
+  /// No description provided for @mapsOnPhone.
+  ///
+  /// In it, this message translates to:
+  /// **'Sul telefono'**
+  String get mapsOnPhone;
+
+  /// No description provided for @mapsInProgress.
+  ///
+  /// In it, this message translates to:
+  /// **'In corso'**
+  String get mapsInProgress;
+
+  /// No description provided for @mapsAvailable.
+  ///
+  /// In it, this message translates to:
+  /// **'Disponibili'**
+  String get mapsAvailable;
+
+  /// No description provided for @mapUpdate.
+  ///
+  /// In it, this message translates to:
+  /// **'Aggiorna all\'ultima versione'**
+  String get mapUpdate;
+
+  /// No description provided for @mapUpdatedOn.
+  ///
+  /// In it, this message translates to:
+  /// **'del {date}'**
+  String mapUpdatedOn(String date);
+
+  /// No description provided for @mapsMoreBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica, aggiorna o elimina le mappe del mondo, dell\'Europa e dei paesi'**
+  String get mapsMoreBody;
 }
 
 class _AppLocalizationsDelegate

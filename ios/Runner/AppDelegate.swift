@@ -16,7 +16,7 @@ import UIKit
 
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "RifugioHeading") {
+    if let registrar = engineBridge.pluginRegistry.registrar(forPlugin: "RefugeHeading") {
       FlutterEventChannel(name: "rifugio/heading", binaryMessenger: registrar.messenger())
         .setStreamHandler(headingHandler)
       FlutterMethodChannel(name: "rifugio/files", binaryMessenger: registrar.messenger())

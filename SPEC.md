@@ -1,6 +1,6 @@
-# Rifugio — Specifica di progetto
+# Refuge — Specifica di progetto
 
-> Nome provvisorio. App open source di sopravvivenza e conoscenza **completamente offline**
+> Nome del progetto: **Refuge** (in precedenza "Rifugio"). App open source di sopravvivenza e conoscenza **completamente offline**
 > per iOS, Android e desktop (macOS, Windows, Linux).
 
 ## 1. Obiettivo
@@ -198,6 +198,18 @@ assets/
 - **Ricerca unica** su schede, strumenti, liste, testi originali, documenti ed enciclopedie scaricate, con sinonimi
   e tolleranza agli errori di battitura (`lib/features/search/`).
 - Le schede vanno riviste da un medico o soccorritore madrelingua prima della distribuzione pubblica.
+
+## 7c. Mappe offline (fase 3)
+
+- **Dati**: pianeta OpenStreetMap di Protomaps (`build.protomaps.com`, aggiornato ogni giorno, ~139 GB, formato PMTiles).
+  L'app non lo scarica tutto: `lib/features/maps/pmtiles_extract.dart` legge con richieste HTTP Range solo gli indici e
+  le tile della zona scelta (come `pmtiles extract`) e scrive un file PMTiles locale in `Documenti/maps`.
+- **Zone**: Mondo (zoom 0-7, ~190 MB), Europa (0-10, ~1,4 GB), paese dettagliato (0-14, es. Italia ~2,3 GB).
+- **Visualizzazione**: `flutter_map` + `vector_map_tiles` (Dart puro, nessuna dipendenza nativa), tema scuro Protomaps
+  con i nomi nella lingua scelta. Le zone si sovrappongono: il mondo sotto, il paese dettagliato sopra.
+- **Dove**: nello strumento Posizione (mappa con la posizione GPS, dal mondo intero allo zoom massimo), nel primo avvio
+  (passo 3 di 4) e in Prepararsi › Mappe offline.
+- Limite: il download si interrompe se l'app va in background per molto tempo (iOS sospende le app); va ripreso.
 
 ## 8. Stato della fase 2 (Biblioteca)
 

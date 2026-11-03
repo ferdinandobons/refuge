@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Importa le pagine "Cosa fare" / "Cosa sapere" del sito ufficiale "Io non rischio"
-(Dipartimento della Protezione Civile) nel formato delle guide di Rifugio.
+(Dipartimento della Protezione Civile) nel formato delle guide di Refuge.
 
 I testi sono riprodotti integralmente, senza modifiche, con licenza CC BY 4.0
 e con la dicitura di attribuzione richiesta dal sito (pagina "Note legali").
@@ -124,7 +124,7 @@ def html_to_lines(fragment):
 
 def fetch(path):
     url = f"{SITE}/page-data/it/preparati/{path}/page-data.json"
-    req = urllib.request.Request(url, headers={"User-Agent": "Rifugio-importer (open source)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Refuge-importer (open source)"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)["result"]["data"]["node"]
 
