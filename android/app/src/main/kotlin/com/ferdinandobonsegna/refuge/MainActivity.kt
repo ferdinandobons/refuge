@@ -1,4 +1,4 @@
-package org.rifugio.rifugio
+package com.ferdinandobonsegna.refuge
 
 import android.speech.tts.TextToSpeech
 import io.flutter.embedding.android.FlutterActivity

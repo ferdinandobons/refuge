@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "org.rifugio" "\0"
+            VALUE "CompanyName", "Ferdinando Bonsegna" "\0"
             VALUE "FileDescription", "rifugio" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "rifugio" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 org.rifugio. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 Ferdinando Bonsegna." "\0"
             VALUE "OriginalFilename", "rifugio.exe" "\0"
             VALUE "ProductName", "rifugio" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

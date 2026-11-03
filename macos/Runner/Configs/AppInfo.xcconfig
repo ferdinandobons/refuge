@@ -8,7 +8,7 @@
 PRODUCT_NAME = rifugio
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = org.rifugio.rifugio
+PRODUCT_BUNDLE_IDENTIFIER = com.ferdinandobonsegna.refuge
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 org.rifugio. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 Ferdinando Bonsegna.

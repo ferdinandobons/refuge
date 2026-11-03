@@ -52,3 +52,6 @@ app.*.map.json
 *.jks
 *.keystore
 *.p12
+
+# Chiavi e credenziali (mai nel repository)
+/secrets/

@@ -14,7 +14,7 @@ val keyProperties = Properties().apply {
 }
 
 android {
-    namespace = "org.rifugio.rifugio"
+    namespace = "com.ferdinandobonsegna.refuge"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -27,7 +27,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "org.rifugio.rifugio"
+        applicationId = "com.ferdinandobonsegna.refuge"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
