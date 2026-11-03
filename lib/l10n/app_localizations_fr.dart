@@ -244,7 +244,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get libraryBody =>
-      'Encyclopédies hors ligne et documents officiels européens';
+      'Documents officiels européens, guides de la Protection civile et encyclopédies hors ligne';
 
   @override
   String get originalTexts => 'Textes originaux';
@@ -371,14 +371,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get cardinals => 'N,NE,E,SE,S,SO,O,NO';
 
   @override
-  String get locationTitle => 'Position';
+  String get locationTitle => 'Position et cartes';
 
   @override
-  String get locationSubtitle => 'Coordonnées GPS à dicter aux secours';
+  String get locationSubtitle =>
+      'Coordonnées GPS pour les secours et cartes hors ligne';
 
   @override
   String get locationKeywords =>
-      'position gps coordonnées où suis-je carte utm mgrs';
+      'position gps coordonnées où suis-je carte utm mgrs cartes hors ligne télécharger';
 
   @override
   String get locServiceOff =>
@@ -423,7 +424,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String locHint(String number) {
-    return 'Au téléphone avec le $number, dictez les coordonnées décimales.';
+    return 'Au téléphone avec le $number, dictez les coordonnées décimales. Le parcours n\'est enregistré que lorsque cet écran est ouvert.';
   }
 
   @override
@@ -1319,4 +1320,81 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get planPaper =>
       'Écrivez aussi le plan sur papier et gardez-le avec vos réserves. Donnez-le à vos contacts d\'urgence.';
+
+  @override
+  String docDownloadAll(int n, String size) {
+    return 'Tout télécharger ($n · $size)';
+  }
+
+  @override
+  String docDownloadingAll(int n) {
+    return 'Téléchargement… encore $n';
+  }
+
+  @override
+  String get civilProtectionGuides => 'Guides de la Protection civile';
+
+  @override
+  String get civilProtectionGuidesBody =>
+      'Que faire avant, pendant et après : séisme, inondation, feux de forêt, accident industriel, tsunami, urgence nucléaire et barrages. Textes de la Protection civile italienne, traduits et valables dans toute l\'Europe.';
+
+  @override
+  String get libraryKeywords =>
+      'bibliothèque documents manuels pdf encyclopédie wikipedia wikimed guides protection civile lire';
+
+  @override
+  String get manageMaps => 'Cartes';
+
+  @override
+  String get addPoint => 'Ajouter un point';
+
+  @override
+  String get savedPoints => 'Points enregistrés';
+
+  @override
+  String pointsN(int n) {
+    return 'Points ($n)';
+  }
+
+  @override
+  String get recordTrack => 'Enregistrer';
+
+  @override
+  String get pointName => 'Nom';
+
+  @override
+  String get pointNameHint => 'Par ex. maison, point de rendez-vous';
+
+  @override
+  String get pointDefaultName => 'Point';
+
+  @override
+  String get coordinates => 'Coordonnées';
+
+  @override
+  String get coordinatesHelp =>
+      'Décimales (45.4642, 9.1900) ou degrés, minutes et secondes (45°27\'51\"N 9°11\'24\"E). Vous pouvez aussi appuyer longuement sur la carte.';
+
+  @override
+  String get coordsInvalid => 'Coordonnées non valides';
+
+  @override
+  String get useMyPosition => 'Utiliser ma position';
+
+  @override
+  String get pointsEmpty =>
+      'Aucun point enregistré. Ajoutez-en un avec les coordonnées ou appuyez longuement sur la carte.';
+
+  @override
+  String get clearTrack => 'Effacer';
+
+  @override
+  String trackLength(String dist) {
+    return 'Parcours enregistré : $dist';
+  }
+
+  @override
+  String distanceTo(String dist, String dir, int deg) {
+    return '$dist à vol d\'oiseau · vers $dir ($deg°)';
+  }
 }

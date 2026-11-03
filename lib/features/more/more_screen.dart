@@ -4,11 +4,8 @@ import '../../app/countries.dart';
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
-import '../guides/guides_screen.dart';
-import '../library/library_screen.dart';
-import '../maps/map_download.dart';
 
-/// Contenuti opzionali (testi originali, biblioteca) e impostazioni.
+/// Impostazioni e informazioni sull'app.
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
 
@@ -22,13 +19,6 @@ class MoreScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _Tile(Icons.local_library, t.library, t.libraryBody,
-              () => Navigator.push(context, MaterialPageRoute(builder: (_) => const LibraryScreen()))),
-          _Tile(Icons.map, t.mapsTitle, t.mapsMoreBody,
-              () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MapDownloadScreen()))),
-          _Tile(Icons.article, t.originalTexts, t.originalTextsBody,
-              () => Navigator.push(context, MaterialPageRoute(builder: (_) => const GuidesScreen()))),
-          const SizedBox(height: 20),
           _Tile(Icons.language, t.language, language, () => _pickLanguage(context)),
           _Tile(Icons.flag, t.country, s.country.name(t), () => _pickCountry(context)),
           const SizedBox(height: 20),

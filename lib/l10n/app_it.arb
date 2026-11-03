@@ -108,7 +108,7 @@
   "downloadEncyclopedias": "Scarica enciclopedie",
   "downloadEncyclopediasBody": "Wikipedia e WikiMed nella tua lingua, da leggere senza rete.",
   "library": "Biblioteca",
-  "libraryBody": "Enciclopedie offline e documenti ufficiali europei",
+  "libraryBody": "Documenti ufficiali europei, guide della Protezione Civile ed enciclopedie offline",
   "originalTexts": "Testi originali",
   "originalTextsBody": "Testi integrali della Protezione Civile italiana (in italiano)",
   "originalTextsNote": "Testi completi nella lingua originale, per approfondire.",
@@ -154,9 +154,9 @@
   "compassWaiting": "In attesa del sensore…",
   "compassHint": "Tieni il telefono in piano, lontano da metalli e magneti. Se la direzione è strana, muovi il telefono disegnando un 8.",
   "cardinals": "N,NE,E,SE,S,SO,O,NO",
-  "locationTitle": "Posizione",
-  "locationSubtitle": "Coordinate GPS da dettare ai soccorsi",
-  "locationKeywords": "posizione gps coordinate dove sono mappa utm mgrs",
+  "locationTitle": "Posizione e mappe",
+  "locationSubtitle": "Coordinate GPS per i soccorsi e mappe offline",
+  "locationKeywords": "posizione gps coordinate dove sono mappa utm mgrs mappe offline scarica",
   "locServiceOff": "La localizzazione è disattivata. Attivala nelle impostazioni del telefono: il GPS funziona anche in modalità aereo.",
   "locDenied": "Permesso di posizione negato. Puoi concederlo nelle impostazioni del telefono.",
   "locUnavailable": "Posizione non disponibile su questo dispositivo.",
@@ -176,7 +176,7 @@
   "accuracy": "Precisione",
   "copy": "Copia",
   "copied": "Copiato",
-  "locHint": "Al telefono con il {number} detta le coordinate decimali.",
+  "locHint": "Al telefono con il {number} detta le coordinate decimali. Il percorso si registra solo con questa schermata aperta.",
   "@locHint": {
     "placeholders": {
       "number": {
@@ -695,5 +695,70 @@
   "planNotes": "Altre note",
   "planCopy": "Copia il piano",
   "planCopied": "Piano copiato: incollalo in un messaggio o stampalo.",
-  "planPaper": "Scrivi il piano anche su carta e tienilo con le scorte. Dallo alle persone dei contatti di emergenza."
+  "planPaper": "Scrivi il piano anche su carta e tienilo con le scorte. Dallo alle persone dei contatti di emergenza.",
+  "docDownloadAll": "Scarica tutti ({n} · {size})",
+  "docDownloadingAll": "Download… ne mancano {n}",
+  "@docDownloadAll": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "@docDownloadingAll": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "civilProtectionGuides": "Guide della Protezione Civile",
+  "civilProtectionGuidesBody": "Cosa fare prima, durante e dopo: terremoto, alluvione, incendi boschivi, incidente industriale, maremoto, emergenza nucleare, dighe e vulcani. Testi integrali del Dipartimento della Protezione Civile.",
+  "libraryKeywords": "biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere",
+  "manageMaps": "Mappe",
+  "addPoint": "Aggiungi punto",
+  "savedPoints": "Punti salvati",
+  "pointsN": "Punti ({n})",
+  "recordTrack": "Registra",
+  "pointName": "Nome",
+  "pointNameHint": "Es. casa, punto d'incontro",
+  "pointDefaultName": "Punto",
+  "coordinates": "Coordinate",
+  "coordinatesHelp": "Decimali (45.4642, 9.1900) o gradi, primi e secondi (45°27'51\"N 9°11'24\"E). Puoi anche tenere premuto sulla mappa.",
+  "coordsInvalid": "Coordinate non valide",
+  "useMyPosition": "Usa la mia posizione",
+  "pointsEmpty": "Nessun punto salvato. Aggiungine uno con le coordinate o tieni premuto sulla mappa.",
+  "clearTrack": "Cancella",
+  "trackLength": "Percorso registrato: {dist}",
+  "distanceTo": "{dist} in linea d'aria · verso {dir} ({deg}°)",
+  "@pointsN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "@trackLength": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      }
+    }
+  },
+  "@distanceTo": {
+    "placeholders": {
+      "dist": {
+        "type": "String"
+      },
+      "dir": {
+        "type": "String"
+      },
+      "deg": {
+        "type": "int"
+      }
+    }
+  }
 }

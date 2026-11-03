@@ -15,14 +15,38 @@ import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import 'map_regions.dart';
+import 'pins.dart';
 
 /// Mappa offline con le zone scaricate, dal mondo intero fino alle singole vie, e la posizione GPS.
 class OfflineMap extends StatefulWidget {
-  const OfflineMap({super.key, this.position, this.accuracy, required this.fallbackCenter});
+  const OfflineMap({
+    super.key,
+    this.position,
+    this.accuracy,
+    required this.fallbackCenter,
+    this.pins = const [],
+    this.selected,
+    this.track = const [],
+    this.onLongPress,
+    this.onPinTap,
+    this.focus,
+  });
 
   final LatLng? position;
   final double? accuracy;
   final LatLng fallbackCenter;
+
+  /// Punti salvati; [selected] è collegato alla posizione con una linea retta.
+  final List<Pin> pins;
+  final Pin? selected;
+
+  /// Percorso registrato.
+  final List<LatLng> track;
+  final void Function(LatLng point)? onLongPress;
+  final void Function(Pin pin)? onPinTap;
+
+  /// Quando cambia, la mappa si sposta su questo punto.
+  final LatLng? focus;
 
   @override
   State<OfflineMap> createState() => _OfflineMapState();
@@ -57,7 +81,10 @@ class _OfflineMapState extends State<OfflineMap> {
   void didUpdateWidget(OfflineMap old) {
     super.didUpdateWidget(old);
     // Alla prima posizione GPS la mappa si centra su di te.
-    if (!_centered && widget.position != null && _providers != null) {
+    if (widget.focus != null && widget.focus != old.focus) {
+      _centered = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) => _controller.move(widget.focus!, 15));
+    } else if (!_centered && widget.position != null && _providers != null) {
       _centered = true;
       WidgetsBinding.instance.addPostFrameCallback((_) => _controller.move(widget.position!, 15));
     }
@@ -87,6 +114,7 @@ class _OfflineMapState extends State<OfflineMap> {
           maxZoom: 18,
           backgroundColor: const Color(0xFF1A1A1A),
           interactionOptions: const InteractionOptions(flags: InteractiveFlag.all & ~InteractiveFlag.rotate),
+          onLongPress: widget.onLongPress == null ? null : (_, point) => widget.onLongPress!(point),
         ),
         children: [
           for (final (i, (_, provider)) in providers.indexed)
@@ -96,6 +124,35 @@ class _OfflineMapState extends State<OfflineMap> {
               // Modalità vettoriale: disegna anche i nomi di città e vie.
               layerMode: VectorTileLayerMode.vector,
             ),
+          if (widget.track.length > 1)
+            PolylineLayer(polylines: [
+              Polyline(points: widget.track, strokeWidth: 4, color: Colors.lightBlueAccent),
+            ]),
+          if (pos != null && widget.selected != null)
+            PolylineLayer(polylines: [
+              Polyline(
+                points: [pos, widget.selected!.point],
+                strokeWidth: 3,
+                color: kDanger,
+                pattern: StrokePattern.dashed(segments: const [12, 8]),
+              ),
+            ]),
+          if (widget.pins.isNotEmpty)
+            MarkerLayer(markers: [
+              for (final pin in widget.pins)
+                Marker(
+                  point: pin.point,
+                  width: 44,
+                  height: 44,
+                  alignment: Alignment.topCenter,
+                  child: GestureDetector(
+                    onTap: () => widget.onPinTap?.call(pin),
+                    child: Icon(Icons.location_on,
+                        size: 44, color: pin == widget.selected ? kDanger : Colors.white,
+                        shadows: const [Shadow(blurRadius: 4)]),
+                  ),
+                ),
+            ]),
           if (pos != null && widget.accuracy != null)
             CircleLayer(circles: [
               CircleMarker(

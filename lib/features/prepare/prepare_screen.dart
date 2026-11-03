@@ -6,9 +6,9 @@ import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../emergency/emergency_screen.dart';
 import '../guides/guide.dart';
-import '../library/zim/catalog_screen.dart';
-import '../maps/map_download.dart';
+import '../library/library_screen.dart';
 import '../tools/checklist_screen.dart';
+import '../tools/location_screen.dart';
 import '../tools/radio_screen.dart';
 import '../tools/supplies_screen.dart';
 import 'checklists.dart';
@@ -86,13 +86,13 @@ class PrepareScreen extends StatelessWidget {
             icon: Icons.map,
             title: t.mapsTitle,
             subtitle: t.onbMapBody,
-            open: (_) => const MapDownloadScreen(),
+            open: (_) => const LocationScreen(),
           ),
           _Tile(
             icon: Icons.download,
             title: t.downloadEncyclopedias,
             subtitle: t.downloadEncyclopediasBody,
-            open: (_) => const CatalogScreen(),
+            open: (_) => const LibraryScreen(),
           ),
         ],
       ),

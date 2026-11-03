@@ -527,7 +527,7 @@ abstract class AppLocalizations {
   /// No description provided for @libraryBody.
   ///
   /// In it, this message translates to:
-  /// **'Enciclopedie offline e documenti ufficiali europei'**
+  /// **'Documenti ufficiali europei, guide della Protezione Civile ed enciclopedie offline'**
   String get libraryBody;
 
   /// No description provided for @originalTexts.
@@ -761,19 +761,19 @@ abstract class AppLocalizations {
   /// No description provided for @locationTitle.
   ///
   /// In it, this message translates to:
-  /// **'Posizione'**
+  /// **'Posizione e mappe'**
   String get locationTitle;
 
   /// No description provided for @locationSubtitle.
   ///
   /// In it, this message translates to:
-  /// **'Coordinate GPS da dettare ai soccorsi'**
+  /// **'Coordinate GPS per i soccorsi e mappe offline'**
   String get locationSubtitle;
 
   /// No description provided for @locationKeywords.
   ///
   /// In it, this message translates to:
-  /// **'posizione gps coordinate dove sono mappa utm mgrs'**
+  /// **'posizione gps coordinate dove sono mappa utm mgrs mappe offline scarica'**
   String get locationKeywords;
 
   /// No description provided for @locServiceOff.
@@ -851,7 +851,7 @@ abstract class AppLocalizations {
   /// No description provided for @locHint.
   ///
   /// In it, this message translates to:
-  /// **'Al telefono con il {number} detta le coordinate decimali.'**
+  /// **'Al telefono con il {number} detta le coordinate decimali. Il percorso si registra solo con questa schermata aperta.'**
   String locHint(String number);
 
   /// No description provided for @westLetter.
@@ -2341,6 +2341,132 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Scrivi il piano anche su carta e tienilo con le scorte. Dallo alle persone dei contatti di emergenza.'**
   String get planPaper;
+
+  /// No description provided for @docDownloadAll.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica tutti ({n} · {size})'**
+  String docDownloadAll(int n, String size);
+
+  /// No description provided for @docDownloadingAll.
+  ///
+  /// In it, this message translates to:
+  /// **'Download… ne mancano {n}'**
+  String docDownloadingAll(int n);
+
+  /// No description provided for @civilProtectionGuides.
+  ///
+  /// In it, this message translates to:
+  /// **'Guide della Protezione Civile'**
+  String get civilProtectionGuides;
+
+  /// No description provided for @civilProtectionGuidesBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Cosa fare prima, durante e dopo: terremoto, alluvione, incendi boschivi, incidente industriale, maremoto, emergenza nucleare, dighe e vulcani. Testi integrali del Dipartimento della Protezione Civile.'**
+  String get civilProtectionGuidesBody;
+
+  /// No description provided for @libraryKeywords.
+  ///
+  /// In it, this message translates to:
+  /// **'biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere'**
+  String get libraryKeywords;
+
+  /// No description provided for @manageMaps.
+  ///
+  /// In it, this message translates to:
+  /// **'Mappe'**
+  String get manageMaps;
+
+  /// No description provided for @addPoint.
+  ///
+  /// In it, this message translates to:
+  /// **'Aggiungi punto'**
+  String get addPoint;
+
+  /// No description provided for @savedPoints.
+  ///
+  /// In it, this message translates to:
+  /// **'Punti salvati'**
+  String get savedPoints;
+
+  /// No description provided for @pointsN.
+  ///
+  /// In it, this message translates to:
+  /// **'Punti ({n})'**
+  String pointsN(int n);
+
+  /// No description provided for @recordTrack.
+  ///
+  /// In it, this message translates to:
+  /// **'Registra'**
+  String get recordTrack;
+
+  /// No description provided for @pointName.
+  ///
+  /// In it, this message translates to:
+  /// **'Nome'**
+  String get pointName;
+
+  /// No description provided for @pointNameHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Es. casa, punto d\'incontro'**
+  String get pointNameHint;
+
+  /// No description provided for @pointDefaultName.
+  ///
+  /// In it, this message translates to:
+  /// **'Punto'**
+  String get pointDefaultName;
+
+  /// No description provided for @coordinates.
+  ///
+  /// In it, this message translates to:
+  /// **'Coordinate'**
+  String get coordinates;
+
+  /// No description provided for @coordinatesHelp.
+  ///
+  /// In it, this message translates to:
+  /// **'Decimali (45.4642, 9.1900) o gradi, primi e secondi (45°27\'51\"N 9°11\'24\"E). Puoi anche tenere premuto sulla mappa.'**
+  String get coordinatesHelp;
+
+  /// No description provided for @coordsInvalid.
+  ///
+  /// In it, this message translates to:
+  /// **'Coordinate non valide'**
+  String get coordsInvalid;
+
+  /// No description provided for @useMyPosition.
+  ///
+  /// In it, this message translates to:
+  /// **'Usa la mia posizione'**
+  String get useMyPosition;
+
+  /// No description provided for @pointsEmpty.
+  ///
+  /// In it, this message translates to:
+  /// **'Nessun punto salvato. Aggiungine uno con le coordinate o tieni premuto sulla mappa.'**
+  String get pointsEmpty;
+
+  /// No description provided for @clearTrack.
+  ///
+  /// In it, this message translates to:
+  /// **'Cancella'**
+  String get clearTrack;
+
+  /// No description provided for @trackLength.
+  ///
+  /// In it, this message translates to:
+  /// **'Percorso registrato: {dist}'**
+  String trackLength(String dist);
+
+  /// No description provided for @distanceTo.
+  ///
+  /// In it, this message translates to:
+  /// **'{dist} in linea d\'aria · verso {dir} ({deg}°)'**
+  String distanceTo(String dist, String dir, int deg);
 }
 
 class _AppLocalizationsDelegate

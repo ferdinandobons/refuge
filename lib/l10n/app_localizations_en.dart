@@ -244,7 +244,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get libraryBody =>
-      'Offline encyclopedias and official European documents';
+      'Official European documents, Civil Protection guides and offline encyclopedias';
 
   @override
   String get originalTexts => 'Original texts';
@@ -371,14 +371,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cardinals => 'N,NE,E,SE,S,SW,W,NW';
 
   @override
-  String get locationTitle => 'Location';
+  String get locationTitle => 'Location and maps';
 
   @override
-  String get locationSubtitle => 'GPS coordinates to read out to rescuers';
+  String get locationSubtitle =>
+      'GPS coordinates for rescuers and offline maps';
 
   @override
   String get locationKeywords =>
-      'location position gps coordinates where am i map utm mgrs';
+      'location position gps coordinates where am i map utm mgrs offline maps download';
 
   @override
   String get locServiceOff =>
@@ -422,7 +423,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String locHint(String number) {
-    return 'When on the phone with $number, read out the decimal coordinates.';
+    return 'On the phone with $number, read out the decimal coordinates. The track is recorded only while this screen is open.';
   }
 
   @override
@@ -1308,4 +1309,81 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get planPaper =>
       'Also write the plan on paper and keep it with your supplies. Give it to your emergency contacts.';
+
+  @override
+  String docDownloadAll(int n, String size) {
+    return 'Download all ($n · $size)';
+  }
+
+  @override
+  String docDownloadingAll(int n) {
+    return 'Downloading… $n left';
+  }
+
+  @override
+  String get civilProtectionGuides => 'Civil Protection guides';
+
+  @override
+  String get civilProtectionGuidesBody =>
+      'What to do before, during and after: earthquake, flood, wildfires, industrial accident, tsunami, nuclear emergency and dams. Texts of the Italian Civil Protection Department, translated and valid across Europe.';
+
+  @override
+  String get libraryKeywords =>
+      'library documents manuals pdf encyclopedia wikipedia wikimed guides civil protection read';
+
+  @override
+  String get manageMaps => 'Maps';
+
+  @override
+  String get addPoint => 'Add point';
+
+  @override
+  String get savedPoints => 'Saved points';
+
+  @override
+  String pointsN(int n) {
+    return 'Points ($n)';
+  }
+
+  @override
+  String get recordTrack => 'Record';
+
+  @override
+  String get pointName => 'Name';
+
+  @override
+  String get pointNameHint => 'E.g. home, meeting point';
+
+  @override
+  String get pointDefaultName => 'Point';
+
+  @override
+  String get coordinates => 'Coordinates';
+
+  @override
+  String get coordinatesHelp =>
+      'Decimal (45.4642, 9.1900) or degrees, minutes and seconds (45°27\'51\"N 9°11\'24\"E). You can also long-press on the map.';
+
+  @override
+  String get coordsInvalid => 'Invalid coordinates';
+
+  @override
+  String get useMyPosition => 'Use my location';
+
+  @override
+  String get pointsEmpty =>
+      'No saved points. Add one with coordinates or long-press on the map.';
+
+  @override
+  String get clearTrack => 'Delete';
+
+  @override
+  String trackLength(String dist) {
+    return 'Recorded track: $dist';
+  }
+
+  @override
+  String distanceTo(String dist, String dir, int deg) {
+    return '$dist as the crow flies · towards $dir ($deg°)';
+  }
 }

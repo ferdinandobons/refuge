@@ -5,11 +5,11 @@ import 'dart:math' as math;
 /// [west] è la lettera dell'Ovest nella lingua scelta (O in italiano, W in inglese/tedesco…).
 String toDms(double deg, {required bool isLat, String west = 'W'}) {
   final hemi = isLat ? (deg >= 0 ? 'N' : 'S') : (deg >= 0 ? 'E' : west);
-  var a = deg.abs();
-  final d = a.floor();
-  a = (a - d) * 60;
-  final m = a.floor();
-  final s = (a - m) * 60;
+  // Si lavora in decimi di secondo interi, così l'arrotondamento non produce mai 60,0".
+  final tenths = (deg.abs() * 36000).round();
+  final d = tenths ~/ 36000;
+  final m = (tenths % 36000) ~/ 600;
+  final s = (tenths % 600) / 10;
   return "$d° ${m.toString().padLeft(2, '0')}' ${s.toStringAsFixed(1).padLeft(4, '0')}\" $hemi";
 }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
+import '../library/library_screen.dart';
 import 'compass_screen.dart';
 import 'fallout_screen.dart';
 import 'flashlight_screen.dart';
@@ -23,8 +24,9 @@ List<ToolItem> toolItems(AppLocalizations t) => [
       ToolItem(t.radioTitle, t.radioSubtitle, t.radioKeywords, Icons.radio, (_) => const RadioScreen()),
       ToolItem(t.falloutTitle, t.falloutSubtitle, t.falloutKeywords, Icons.radar, (_) => const FalloutScreen()),
       ToolItem(t.suppliesTitle, t.suppliesSubtitle, t.suppliesKeywords, Icons.inventory_2, (_) => const SuppliesScreen()),
+      ToolItem(t.library, t.libraryBody, t.libraryKeywords, Icons.local_library, (_) => const LibraryScreen()),
       ToolItem(t.torchTitle, t.torchSubtitle, t.torchKeywords, Icons.flashlight_on, (_) => const FlashlightScreen()),
-      ToolItem(t.locationTitle, t.locationSubtitle, t.locationKeywords, Icons.my_location, (_) => const LocationScreen()),
+      ToolItem(t.locationTitle, t.locationSubtitle, t.locationKeywords, Icons.map, (_) => const LocationScreen()),
       ToolItem(t.compassTitle, t.compassSubtitle, t.compassKeywords, Icons.explore, (_) => const CompassScreen()),
       ToolItem(t.morseTitle, t.morseSubtitle, t.morseKeywords, Icons.more_horiz, (_) => const MorseScreen()),
     ];

@@ -93,6 +93,24 @@ void main() {
     expect(list.map((d) => d['file']).toSet().length, list.length);
   });
 
+  test('guide tradotte: stessa struttura dell\'italiano e fonte originale citata', () {
+    for (final lang in ['en', 'fr', 'de', 'es']) {
+      final files = Directory('assets/guides/$lang').listSync().whereType<File>().toList();
+      expect(files.length, 7, reason: lang);
+      for (final f in files) {
+        final name = f.uri.pathSegments.last;
+        final it = Guide.parse('x', File('assets/guides/$name').readAsStringSync());
+        final tr = Guide.parse('x', f.readAsStringSync());
+        int count(Guide g, BlockType t) => g.blocks.where((b) => b.type == t).length;
+        for (final t in [BlockType.heading, BlockType.bullet]) {
+          expect(count(tr, t), count(it, t), reason: '$lang/$name $t');
+        }
+        expect(tr.sources.join(' '), contains('Fonte: Io non rischio. Dipartimento della Protezione Civile'), reason: '$lang/$name');
+        expect(tr.sources.join(' '), contains('CC BY 4.0'), reason: '$lang/$name');
+      }
+    }
+  });
+
   test('i rimandi delle schede puntano a documenti e guide esistenti', () {
     final docs = (jsonDecode(File('assets/documents/catalog.json').readAsStringSync()) as List).cast<Map>();
     final keys = {for (final d in docs) d['file'], for (final d in docs) d['id']};

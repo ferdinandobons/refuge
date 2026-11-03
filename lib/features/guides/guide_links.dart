@@ -25,7 +25,7 @@ IconData guideTargetIcon(String target) => switch (target.split(':').first) {
 Future<Map<String, String>> refTitles(List<String> refs, String language) async {
   final docs = await loadAllDocuments();
   final local = await loadDocuments(language);
-  final guides = await GuideRepository.load();
+  final guides = await GuideRepository.load(language);
   final out = <String, String>{};
   for (final r in refs) {
     final i = r.indexOf(':');
@@ -62,7 +62,7 @@ Future<void> openGuideTarget(BuildContext context, String target) async {
         builder: (_) => DocumentScreen(doc: doc, initialPage: int.tryParse(page) ?? 1),
       ));
     case 'guide':
-      final guide = (await GuideRepository.load()).where((g) => g.id == value).firstOrNull;
+      final guide = (await GuideRepository.load(AppSettings.instance.language)).where((g) => g.id == value).firstOrNull;
       if (guide == null) return _missing(messenger, t.notAvailable);
       await nav.push(MaterialPageRoute(builder: (_) => GuideScreen(guide: guide)));
     case 'zim':

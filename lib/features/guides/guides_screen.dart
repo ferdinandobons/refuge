@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import 'guide.dart';
 import 'guide_repository.dart';
 import 'guide_screen.dart';
 
-/// Testi originali (Protezione Civile, estratti di Wikipedia), nella loro lingua: approfondimento opzionale.
+/// Guide della Protezione Civile nella lingua scelta (vedi [GuideRepository]).
 class GuidesScreen extends StatefulWidget {
   const GuidesScreen({super.key});
 
@@ -21,9 +22,9 @@ class _GuidesScreenState extends State<GuidesScreen> {
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(t.originalTexts)),
+      appBar: AppBar(title: Text(t.civilProtectionGuides)),
       body: FutureBuilder<List<Guide>>(
-        future: GuideRepository.load(),
+        future: GuideRepository.load(AppSettings.instance.language),
         builder: (context, snap) {
           if (!snap.hasData) return const Center(child: CircularProgressIndicator());
           final q = _query.trim().toLowerCase();
@@ -32,7 +33,7 @@ class _GuidesScreenState extends State<GuidesScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
-                child: Text(t.originalTextsNote, style: const TextStyle(color: Colors.white54)),
+                child: Text(t.civilProtectionGuidesBody, style: const TextStyle(color: Colors.white54)),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
@@ -66,7 +67,7 @@ class _GuidesScreenState extends State<GuidesScreen> {
         items.add(Padding(
           padding: const EdgeInsets.fromLTRB(16, 20, 16, 6),
           child: Row(children: [
-            Icon(categoryIcon(category), color: kAccent, size: 20),
+            Icon(guideIcon(g.id), color: kAccent, size: 20),
             const SizedBox(width: 8),
             Text(category.toUpperCase(),
                 style: const TextStyle(color: kAccent, fontWeight: FontWeight.bold, letterSpacing: 1.2)),

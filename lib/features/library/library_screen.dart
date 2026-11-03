@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
+import '../guides/guides_screen.dart';
 import 'document_screen.dart';
 import 'documents.dart';
 import 'zim/catalog_screen.dart';
@@ -69,6 +70,18 @@ class _LibraryScreenState extends State<LibraryScreen> {
               child: Text(t.documentsBody, style: const TextStyle(color: Colors.white60)),
             ),
             const _Documents(),
+            const SizedBox(height: 24),
+            _SectionTitle(t.civilProtectionGuides),
+            Card(
+              child: ListTile(
+                contentPadding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+                leading: const Icon(Icons.menu_book, color: kAccent, size: 32),
+                title: Text(t.civilProtectionGuides, style: const TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(t.civilProtectionGuidesBody),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const GuidesScreen())),
+              ),
+            ),
           ],
         ),
       ),
@@ -170,6 +183,8 @@ class _Documents extends StatefulWidget {
 }
 
 class _DocumentsState extends State<_Documents> {
+  bool _downloadingAll = false;
+
   late final Future<List<OfficialDocument>> _docs = loadDocuments(AppSettings.instance.language).then((d) async {
     await DocumentFiles.instance.refresh(d);
     return d;
@@ -179,6 +194,19 @@ class _DocumentsState extends State<_Documents> {
     final messenger = ScaffoldMessenger.of(context);
     final t = AppLocalizations.of(context);
     if (!await DocumentFiles.instance.download(d)) messenger.showSnackBar(SnackBar(content: Text(t.docDownloadFailed)));
+  }
+
+  /// Scarica uno dopo l'altro i documenti che mancano; avvisa una volta sola se qualcuno non riesce.
+  Future<void> _downloadAll(List<OfficialDocument> missing) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final t = AppLocalizations.of(context);
+    setState(() => _downloadingAll = true);
+    var failed = 0;
+    for (final d in missing) {
+      if (!await DocumentFiles.instance.download(d)) failed++;
+    }
+    if (mounted) setState(() => _downloadingAll = false);
+    if (failed > 0) messenger.showSnackBar(SnackBar(content: Text(t.docDownloadFailed)));
   }
 
   Future<void> _delete(OfficialDocument d) async {
@@ -207,6 +235,20 @@ class _DocumentsState extends State<_Documents> {
         listenable: files,
         builder: (context, _) => Column(children: [
           if (!snap.hasData) const Center(child: CircularProgressIndicator()),
+          if (snap.data?.where((d) => !files.isAvailable(d)).toList() case final missing? when missing.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(52)),
+                icon: _downloadingAll
+                    ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2.5))
+                    : const Icon(Icons.download),
+                label: Text(_downloadingAll
+                    ? t.docDownloadingAll(missing.length)
+                    : t.docDownloadAll(missing.length, formatBytes(missing.fold(0, (sum, d) => sum + d.size)))),
+                onPressed: _downloadingAll ? null : () => _downloadAll(missing),
+              ),
+            ),
           for (final d in snap.data ?? const <OfficialDocument>[])
             Card(
               margin: const EdgeInsets.only(bottom: 10),

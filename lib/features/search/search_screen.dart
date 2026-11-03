@@ -81,9 +81,9 @@ class _SearchScreenState extends State<SearchScreen> {
         priority: 2,
       ));
     }
-    for (final g in await GuideRepository.load()) {
+    for (final g in await GuideRepository.load(s.language)) {
       index.add(Indexed(
-        _Result(g.title, '${t.originalTexts} · ${g.category}', Icons.article, Colors.white70,
+        _Result(g.title, '${t.civilProtectionGuides} · ${g.category}', Icons.article, Colors.white70,
             (_) => GuideScreen(guide: g)),
         title: g.title,
         keywords: g.category,

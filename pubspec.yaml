@@ -80,6 +80,10 @@ flutter:
 
   assets:
     - assets/guides/
+    - assets/guides/en/
+    - assets/guides/fr/
+    - assets/guides/de/
+    - assets/guides/es/
     - assets/checklists/it/
     - assets/checklists/en/
     - assets/checklists/fr/
