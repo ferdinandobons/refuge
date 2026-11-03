@@ -867,6 +867,269 @@
     }
   },
   {
+    "id": "cold",
+    "group": "body",
+    "refs": [
+      "doc:ifrc-first-aid-guidelines-2025.pdf#461",
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Freddo estremo, ipotermia",
+      "keywords": "freddo ipotermia congelamento gelo neve assideramento trema",
+      "steps": [
+        "Chiama il {emergency}: l'ipotermia va sempre vista dai soccorsi.",
+        "Portala con delicatezza al riparo da freddo e vento. Togli i vestiti bagnati e mettile vestiti asciutti.",
+        "Coprila con un sacco a pelo o coperte asciutte, testa compresa.",
+        "Mettile sotto una coperta o un materassino, per isolarla dal terreno freddo.",
+        "Se è sveglia e riesce a deglutire: dalle una bevanda calda e zuccherata o un cibo energetico.",
+        "Se non trema più, scaldala: borse dell'acqua calda o termofori avvolti in un panno.",
+        "Se smette di respirare normalmente: rianimazione, senza fermarti."
+      ],
+      "never": [
+        "Non strofinare la pelle.",
+        "Non appoggiare oggetti caldi direttamente sulla pelle: può ustionarsi.",
+        "Niente alcol."
+      ]
+    },
+    "en": {
+      "title": "Extreme cold, hypothermia",
+      "keywords": "cold hypothermia frostbite freezing snow shivering",
+      "steps": [
+        "Call {emergency}: hypothermia always needs emergency services.",
+        "Move them gently out of the cold and wind. Remove wet clothes and put on dry ones.",
+        "Cover them with a sleeping bag or dry blankets, including the head.",
+        "Put a blanket or mat underneath them to insulate them from the cold ground.",
+        "If they are awake and can swallow: give a warm sugary drink or high-energy food.",
+        "If they have stopped shivering, warm them: hot water bottles or heat pads wrapped in a cloth.",
+        "If they stop breathing normally: CPR, without stopping."
+      ],
+      "never": [
+        "Do not rub the skin.",
+        "Do not put hot objects directly on the skin: it can burn.",
+        "No alcohol."
+      ]
+    },
+    "fr": {
+      "title": "Grand froid, hypothermie",
+      "keywords": "froid hypothermie gelure gel neige grelotte",
+      "steps": [
+        "Appelez le {emergency} : une hypothermie nécessite toujours les secours.",
+        "Mettez-la doucement à l'abri du froid et du vent. Retirez les vêtements mouillés et mettez-lui des vêtements secs.",
+        "Couvrez-la avec un sac de couchage ou des couvertures sèches, tête comprise.",
+        "Placez une couverture ou un tapis sous elle pour l'isoler du sol froid.",
+        "Si elle est éveillée et peut avaler : donnez-lui une boisson chaude et sucrée ou un aliment énergétique.",
+        "Si elle ne frissonne plus, réchauffez-la : bouillottes ou coussins chauffants enveloppés dans un linge.",
+        "Si elle ne respire plus normalement : réanimation, sans vous arrêter."
+      ],
+      "never": [
+        "Ne frottez pas la peau.",
+        "Ne posez pas d'objets chauds directement sur la peau : elle peut brûler.",
+        "Pas d'alcool."
+      ]
+    },
+    "de": {
+      "title": "Extreme Kälte, Unterkühlung",
+      "keywords": "kälte unterkühlung erfrierung frost schnee zittern hypothermie",
+      "steps": [
+        "Rufen Sie {emergency} an: Unterkühlung braucht immer den Rettungsdienst.",
+        "Die Person vorsichtig vor Kälte und Wind schützen. Nasse Kleidung ausziehen und trockene anziehen.",
+        "Mit einem Schlafsack oder trockenen Decken zudecken, auch den Kopf.",
+        "Eine Decke oder Matte unter sie legen, gegen die Bodenkälte.",
+        "Wenn sie wach ist und schlucken kann: ein warmes, gesüßtes Getränk oder etwas Energiereiches zu essen geben.",
+        "Wenn sie nicht mehr zittert, aktiv wärmen: Wärmflaschen oder Wärmekissen, in ein Tuch gewickelt.",
+        "Wenn sie nicht mehr normal atmet: Wiederbelebung, ohne Pause."
+      ],
+      "never": [
+        "Die Haut nicht reiben.",
+        "Keine heißen Gegenstände direkt auf die Haut legen: Verbrennungsgefahr.",
+        "Kein Alkohol."
+      ]
+    },
+    "es": {
+      "title": "Frío extremo, hipotermia",
+      "keywords": "frío hipotermia congelación helada nieve tiritar",
+      "steps": [
+        "Llama al {emergency}: la hipotermia siempre necesita a los servicios de emergencia.",
+        "Llévala con cuidado a un lugar protegido del frío y del viento. Quítale la ropa mojada y ponle ropa seca.",
+        "Cúbrela con un saco de dormir o mantas secas, incluida la cabeza.",
+        "Pon una manta o una esterilla debajo para aislarla del suelo frío.",
+        "Si está despierta y puede tragar: dale una bebida caliente y azucarada o un alimento energético.",
+        "Si ya no tiembla, caliéntala: bolsas de agua caliente o almohadillas térmicas envueltas en un paño.",
+        "Si deja de respirar normalmente: reanimación, sin parar."
+      ],
+      "never": [
+        "No frotes la piel.",
+        "No pongas objetos calientes directamente sobre la piel: puede quemarse.",
+        "Nada de alcohol."
+      ]
+    }
+  },
+  {
+    "id": "heat",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)",
+      "doc:ifrc-first-aid-guidelines-2025.pdf#448"
+    ],
+    "it": {
+      "title": "Colpo di calore",
+      "keywords": "colpo di calore caldo ipertermia insolazione febbre sole disidratazione",
+      "steps": [
+        "Se con il caldo la persona è confusa, agitata o sviene: è un colpo di calore. Chiama il {emergency}.",
+        "Portala all'ombra o in un luogo fresco e togli i vestiti in più.",
+        "Raffreddala subito: se puoi, immergila in acqua fredda fino al collo.",
+        "Altrimenti: doccia fredda, ghiaccio o panni bagnati su tutto il corpo, e falle aria.",
+        "Continua a raffreddarla per almeno 15 minuti o finché torna lucida. Prima raffredda, poi trasporta.",
+        "Se è sveglia e non vomita: falle bere acqua fresca."
+      ],
+      "never": [
+        "Non aspettare i soccorsi per iniziare a raffreddarla.",
+        "Se non è lucida, non darle da bere: potrebbe soffocare."
+      ]
+    },
+    "en": {
+      "title": "Heatstroke",
+      "keywords": "heatstroke heat stroke hyperthermia sunstroke hot overheating sun dehydration fever",
+      "steps": [
+        "If in the heat the person is confused, agitated or collapses: it is heatstroke. Call {emergency}.",
+        "Move them to the shade or somewhere cool and remove excess clothing.",
+        "Cool them at once: if you can, immerse them in cold water up to the neck.",
+        "Otherwise: cold shower, ice or wet cloths all over the body, and fan them.",
+        "Keep cooling for at least 15 minutes or until they are clear-headed again. Cool first, transport second.",
+        "If they are awake and not vomiting: give them cool water to drink."
+      ],
+      "never": [
+        "Do not wait for emergency services to start cooling.",
+        "If they are not clear-headed, do not give them anything to drink: they could choke."
+      ]
+    },
+    "fr": {
+      "title": "Coup de chaleur",
+      "keywords": "coup de chaleur chaleur hyperthermie insolation canicule soleil fièvre déshydratation",
+      "steps": [
+        "Si par la chaleur la personne est confuse, agitée ou perd connaissance : c'est un coup de chaleur. Appelez le {emergency}.",
+        "Mettez-la à l'ombre ou au frais et retirez les vêtements en trop.",
+        "Refroidissez-la tout de suite : si possible, plongez-la dans l'eau froide jusqu'au cou.",
+        "Sinon : douche froide, glace ou linges mouillés sur tout le corps, et éventez-la.",
+        "Continuez à la refroidir au moins 15 minutes ou jusqu'à ce qu'elle soit de nouveau lucide. D'abord refroidir, ensuite transporter.",
+        "Si elle est éveillée et ne vomit pas : faites-lui boire de l'eau fraîche."
+      ],
+      "never": [
+        "N'attendez pas les secours pour commencer à la refroidir.",
+        "Si elle n'est pas lucide, ne lui donnez pas à boire : elle pourrait s'étouffer."
+      ]
+    },
+    "de": {
+      "title": "Hitzschlag",
+      "keywords": "hitzschlag hitze überhitzung sonnenstich hyperthermie fieber sonne dehydrierung",
+      "steps": [
+        "Wenn die Person bei Hitze verwirrt oder unruhig ist oder zusammenbricht: Hitzschlag. Rufen Sie {emergency} an.",
+        "In den Schatten oder an einen kühlen Ort bringen und überflüssige Kleidung ausziehen.",
+        "Sofort kühlen: wenn möglich bis zum Hals in kaltes Wasser legen.",
+        "Sonst: kalte Dusche, Eis oder nasse Tücher am ganzen Körper, und Luft zufächeln.",
+        "Mindestens 15 Minuten weiterkühlen oder bis sie wieder klar ist. Erst kühlen, dann transportieren.",
+        "Wenn sie wach ist und nicht erbricht: kühles Wasser zu trinken geben."
+      ],
+      "never": [
+        "Nicht auf den Rettungsdienst warten, um mit dem Kühlen zu beginnen.",
+        "Wenn sie nicht klar ist, nichts zu trinken geben: sie könnte ersticken."
+      ]
+    },
+    "es": {
+      "title": "Golpe de calor",
+      "keywords": "golpe de calor calor hipertermia insolación ola de calor fiebre sol deshidratación",
+      "steps": [
+        "Si con el calor la persona está confusa, agitada o se desmaya: es un golpe de calor. Llama al {emergency}.",
+        "Llévala a la sombra o a un lugar fresco y quítale la ropa que sobra.",
+        "Enfríala enseguida: si puedes, sumérgela en agua fría hasta el cuello.",
+        "Si no: ducha fría, hielo o paños mojados por todo el cuerpo, y abanícala.",
+        "Sigue enfriándola al menos 15 minutos o hasta que vuelva a estar lúcida. Primero enfriar, después trasladar.",
+        "Si está despierta y no vomita: dale a beber agua fresca."
+      ],
+      "never": [
+        "No esperes a los servicios de emergencia para empezar a enfriarla.",
+        "Si no está lúcida, no le des de beber: podría atragantarse."
+      ]
+    }
+  },
+  {
+    "id": "snakebite",
+    "group": "body",
+    "refs": [
+      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
+    ],
+    "it": {
+      "title": "Morso di vipera",
+      "keywords": "morso vipera serpente veleno",
+      "steps": [
+        "Chiama il {emergency}.",
+        "Tieni la persona calma e ferma, a riposo.",
+        "Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.",
+        "Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare."
+      ],
+      "never": [
+        "Niente laccio, fasciatura stretta, ghiaccio o calore.",
+        "Non incidere la ferita e non succhiare il veleno."
+      ]
+    },
+    "en": {
+      "title": "Snake bite",
+      "keywords": "snake bite viper adder venom",
+      "steps": [
+        "Call {emergency}.",
+        "Keep the person calm and at rest.",
+        "Keep the bitten part still. If it is an arm or a leg, immobilise it.",
+        "Remove rings, watches and tight clothing from that limb: it may swell."
+      ],
+      "never": [
+        "No tourniquet, tight bandage, ice or heat.",
+        "Do not cut the wound or suck out the venom."
+      ]
+    },
+    "fr": {
+      "title": "Morsure de vipère",
+      "keywords": "morsure vipère serpent venin",
+      "steps": [
+        "Appelez le {emergency}.",
+        "Gardez la personne calme et au repos.",
+        "Gardez la partie mordue immobile. Si c'est un bras ou une jambe, immobilisez-le.",
+        "Retirez bagues, montres et vêtements serrés de ce côté : il peut gonfler."
+      ],
+      "never": [
+        "Pas de garrot, de bandage serré, de glace ni de chaleur.",
+        "N'incisez pas la plaie et n'aspirez pas le venin."
+      ]
+    },
+    "de": {
+      "title": "Schlangenbiss",
+      "keywords": "schlangenbiss kreuzotter viper schlange gift",
+      "steps": [
+        "Rufen Sie {emergency} an.",
+        "Die Person beruhigen und ruhig halten.",
+        "Die gebissene Stelle ruhig halten. Ist es ein Arm oder Bein: ruhigstellen.",
+        "Ringe, Uhren und enge Kleidung an dieser Stelle entfernen: sie kann anschwellen."
+      ],
+      "never": [
+        "Kein Abbinden, kein Druckverband, kein Eis, keine Wärme.",
+        "Die Wunde nicht einschneiden und das Gift nicht aussaugen."
+      ]
+    },
+    "es": {
+      "title": "Mordedura de víbora",
+      "keywords": "mordedura víbora serpiente veneno",
+      "steps": [
+        "Llama al {emergency}.",
+        "Mantén a la persona tranquila y en reposo.",
+        "Mantén quieta la parte mordida. Si es un brazo o una pierna, inmovilízalo.",
+        "Quita anillos, relojes y ropa ajustada de esa zona: se puede hinchar."
+      ],
+      "never": [
+        "Nada de torniquete, vendaje apretado, hielo ni calor.",
+        "No cortes la herida ni chupes el veneno."
+      ]
+    }
+  },
+  {
     "id": "distress",
     "group": "body",
     "refs": [
@@ -1489,269 +1752,6 @@
       "never": [
         "No uses el ascensor: se puede bloquear.",
         "No conduzcas ni camines por calles inundadas."
-      ]
-    }
-  },
-  {
-    "id": "cold",
-    "group": "body",
-    "refs": [
-      "doc:ifrc-first-aid-guidelines-2025.pdf#461",
-      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
-    ],
-    "it": {
-      "title": "Freddo estremo, ipotermia",
-      "keywords": "freddo ipotermia congelamento gelo neve assideramento trema",
-      "steps": [
-        "Chiama il {emergency}: l'ipotermia va sempre vista dai soccorsi.",
-        "Portala con delicatezza al riparo da freddo e vento. Togli i vestiti bagnati e mettile vestiti asciutti.",
-        "Coprila con un sacco a pelo o coperte asciutte, testa compresa.",
-        "Mettile sotto una coperta o un materassino, per isolarla dal terreno freddo.",
-        "Se è sveglia e riesce a deglutire: dalle una bevanda calda e zuccherata o un cibo energetico.",
-        "Se non trema più, scaldala: borse dell'acqua calda o termofori avvolti in un panno.",
-        "Se smette di respirare normalmente: rianimazione, senza fermarti."
-      ],
-      "never": [
-        "Non strofinare la pelle.",
-        "Non appoggiare oggetti caldi direttamente sulla pelle: può ustionarsi.",
-        "Niente alcol."
-      ]
-    },
-    "en": {
-      "title": "Extreme cold, hypothermia",
-      "keywords": "cold hypothermia frostbite freezing snow shivering",
-      "steps": [
-        "Call {emergency}: hypothermia always needs emergency services.",
-        "Move them gently out of the cold and wind. Remove wet clothes and put on dry ones.",
-        "Cover them with a sleeping bag or dry blankets, including the head.",
-        "Put a blanket or mat underneath them to insulate them from the cold ground.",
-        "If they are awake and can swallow: give a warm sugary drink or high-energy food.",
-        "If they have stopped shivering, warm them: hot water bottles or heat pads wrapped in a cloth.",
-        "If they stop breathing normally: CPR, without stopping."
-      ],
-      "never": [
-        "Do not rub the skin.",
-        "Do not put hot objects directly on the skin: it can burn.",
-        "No alcohol."
-      ]
-    },
-    "fr": {
-      "title": "Grand froid, hypothermie",
-      "keywords": "froid hypothermie gelure gel neige grelotte",
-      "steps": [
-        "Appelez le {emergency} : une hypothermie nécessite toujours les secours.",
-        "Mettez-la doucement à l'abri du froid et du vent. Retirez les vêtements mouillés et mettez-lui des vêtements secs.",
-        "Couvrez-la avec un sac de couchage ou des couvertures sèches, tête comprise.",
-        "Placez une couverture ou un tapis sous elle pour l'isoler du sol froid.",
-        "Si elle est éveillée et peut avaler : donnez-lui une boisson chaude et sucrée ou un aliment énergétique.",
-        "Si elle ne frissonne plus, réchauffez-la : bouillottes ou coussins chauffants enveloppés dans un linge.",
-        "Si elle ne respire plus normalement : réanimation, sans vous arrêter."
-      ],
-      "never": [
-        "Ne frottez pas la peau.",
-        "Ne posez pas d'objets chauds directement sur la peau : elle peut brûler.",
-        "Pas d'alcool."
-      ]
-    },
-    "de": {
-      "title": "Extreme Kälte, Unterkühlung",
-      "keywords": "kälte unterkühlung erfrierung frost schnee zittern hypothermie",
-      "steps": [
-        "Rufen Sie {emergency} an: Unterkühlung braucht immer den Rettungsdienst.",
-        "Die Person vorsichtig vor Kälte und Wind schützen. Nasse Kleidung ausziehen und trockene anziehen.",
-        "Mit einem Schlafsack oder trockenen Decken zudecken, auch den Kopf.",
-        "Eine Decke oder Matte unter sie legen, gegen die Bodenkälte.",
-        "Wenn sie wach ist und schlucken kann: ein warmes, gesüßtes Getränk oder etwas Energiereiches zu essen geben.",
-        "Wenn sie nicht mehr zittert, aktiv wärmen: Wärmflaschen oder Wärmekissen, in ein Tuch gewickelt.",
-        "Wenn sie nicht mehr normal atmet: Wiederbelebung, ohne Pause."
-      ],
-      "never": [
-        "Die Haut nicht reiben.",
-        "Keine heißen Gegenstände direkt auf die Haut legen: Verbrennungsgefahr.",
-        "Kein Alkohol."
-      ]
-    },
-    "es": {
-      "title": "Frío extremo, hipotermia",
-      "keywords": "frío hipotermia congelación helada nieve tiritar",
-      "steps": [
-        "Llama al {emergency}: la hipotermia siempre necesita a los servicios de emergencia.",
-        "Llévala con cuidado a un lugar protegido del frío y del viento. Quítale la ropa mojada y ponle ropa seca.",
-        "Cúbrela con un saco de dormir o mantas secas, incluida la cabeza.",
-        "Pon una manta o una esterilla debajo para aislarla del suelo frío.",
-        "Si está despierta y puede tragar: dale una bebida caliente y azucarada o un alimento energético.",
-        "Si ya no tiembla, caliéntala: bolsas de agua caliente o almohadillas térmicas envueltas en un paño.",
-        "Si deja de respirar normalmente: reanimación, sin parar."
-      ],
-      "never": [
-        "No frotes la piel.",
-        "No pongas objetos calientes directamente sobre la piel: puede quemarse.",
-        "Nada de alcohol."
-      ]
-    }
-  },
-  {
-    "id": "heat",
-    "group": "body",
-    "refs": [
-      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)",
-      "doc:ifrc-first-aid-guidelines-2025.pdf#448"
-    ],
-    "it": {
-      "title": "Colpo di calore",
-      "keywords": "colpo di calore caldo ipertermia insolazione febbre sole disidratazione",
-      "steps": [
-        "Se con il caldo la persona è confusa, agitata o sviene: è un colpo di calore. Chiama il {emergency}.",
-        "Portala all'ombra o in un luogo fresco e togli i vestiti in più.",
-        "Raffreddala subito: se puoi, immergila in acqua fredda fino al collo.",
-        "Altrimenti: doccia fredda, ghiaccio o panni bagnati su tutto il corpo, e falle aria.",
-        "Continua a raffreddarla per almeno 15 minuti o finché torna lucida. Prima raffredda, poi trasporta.",
-        "Se è sveglia e non vomita: falle bere acqua fresca."
-      ],
-      "never": [
-        "Non aspettare i soccorsi per iniziare a raffreddarla.",
-        "Se non è lucida, non darle da bere: potrebbe soffocare."
-      ]
-    },
-    "en": {
-      "title": "Heatstroke",
-      "keywords": "heatstroke heat stroke hyperthermia sunstroke hot overheating sun dehydration fever",
-      "steps": [
-        "If in the heat the person is confused, agitated or collapses: it is heatstroke. Call {emergency}.",
-        "Move them to the shade or somewhere cool and remove excess clothing.",
-        "Cool them at once: if you can, immerse them in cold water up to the neck.",
-        "Otherwise: cold shower, ice or wet cloths all over the body, and fan them.",
-        "Keep cooling for at least 15 minutes or until they are clear-headed again. Cool first, transport second.",
-        "If they are awake and not vomiting: give them cool water to drink."
-      ],
-      "never": [
-        "Do not wait for emergency services to start cooling.",
-        "If they are not clear-headed, do not give them anything to drink: they could choke."
-      ]
-    },
-    "fr": {
-      "title": "Coup de chaleur",
-      "keywords": "coup de chaleur chaleur hyperthermie insolation canicule soleil fièvre déshydratation",
-      "steps": [
-        "Si par la chaleur la personne est confuse, agitée ou perd connaissance : c'est un coup de chaleur. Appelez le {emergency}.",
-        "Mettez-la à l'ombre ou au frais et retirez les vêtements en trop.",
-        "Refroidissez-la tout de suite : si possible, plongez-la dans l'eau froide jusqu'au cou.",
-        "Sinon : douche froide, glace ou linges mouillés sur tout le corps, et éventez-la.",
-        "Continuez à la refroidir au moins 15 minutes ou jusqu'à ce qu'elle soit de nouveau lucide. D'abord refroidir, ensuite transporter.",
-        "Si elle est éveillée et ne vomit pas : faites-lui boire de l'eau fraîche."
-      ],
-      "never": [
-        "N'attendez pas les secours pour commencer à la refroidir.",
-        "Si elle n'est pas lucide, ne lui donnez pas à boire : elle pourrait s'étouffer."
-      ]
-    },
-    "de": {
-      "title": "Hitzschlag",
-      "keywords": "hitzschlag hitze überhitzung sonnenstich hyperthermie fieber sonne dehydrierung",
-      "steps": [
-        "Wenn die Person bei Hitze verwirrt oder unruhig ist oder zusammenbricht: Hitzschlag. Rufen Sie {emergency} an.",
-        "In den Schatten oder an einen kühlen Ort bringen und überflüssige Kleidung ausziehen.",
-        "Sofort kühlen: wenn möglich bis zum Hals in kaltes Wasser legen.",
-        "Sonst: kalte Dusche, Eis oder nasse Tücher am ganzen Körper, und Luft zufächeln.",
-        "Mindestens 15 Minuten weiterkühlen oder bis sie wieder klar ist. Erst kühlen, dann transportieren.",
-        "Wenn sie wach ist und nicht erbricht: kühles Wasser zu trinken geben."
-      ],
-      "never": [
-        "Nicht auf den Rettungsdienst warten, um mit dem Kühlen zu beginnen.",
-        "Wenn sie nicht klar ist, nichts zu trinken geben: sie könnte ersticken."
-      ]
-    },
-    "es": {
-      "title": "Golpe de calor",
-      "keywords": "golpe de calor calor hipertermia insolación ola de calor fiebre sol deshidratación",
-      "steps": [
-        "Si con el calor la persona está confusa, agitada o se desmaya: es un golpe de calor. Llama al {emergency}.",
-        "Llévala a la sombra o a un lugar fresco y quítale la ropa que sobra.",
-        "Enfríala enseguida: si puedes, sumérgela en agua fría hasta el cuello.",
-        "Si no: ducha fría, hielo o paños mojados por todo el cuerpo, y abanícala.",
-        "Sigue enfriándola al menos 15 minutos o hasta que vuelva a estar lúcida. Primero enfriar, después trasladar.",
-        "Si está despierta y no vomita: dale a beber agua fresca."
-      ],
-      "never": [
-        "No esperes a los servicios de emergencia para empezar a enfriarla.",
-        "Si no está lúcida, no le des de beber: podría atragantarse."
-      ]
-    }
-  },
-  {
-    "id": "snakebite",
-    "group": "body",
-    "refs": [
-      "ERC Guidelines 2025 – First Aid (European Resuscitation Council)"
-    ],
-    "it": {
-      "title": "Morso di vipera",
-      "keywords": "morso vipera serpente veleno",
-      "steps": [
-        "Chiama il {emergency}.",
-        "Tieni la persona calma e ferma, a riposo.",
-        "Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.",
-        "Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare."
-      ],
-      "never": [
-        "Niente laccio, fasciatura stretta, ghiaccio o calore.",
-        "Non incidere la ferita e non succhiare il veleno."
-      ]
-    },
-    "en": {
-      "title": "Snake bite",
-      "keywords": "snake bite viper adder venom",
-      "steps": [
-        "Call {emergency}.",
-        "Keep the person calm and at rest.",
-        "Keep the bitten part still. If it is an arm or a leg, immobilise it.",
-        "Remove rings, watches and tight clothing from that limb: it may swell."
-      ],
-      "never": [
-        "No tourniquet, tight bandage, ice or heat.",
-        "Do not cut the wound or suck out the venom."
-      ]
-    },
-    "fr": {
-      "title": "Morsure de vipère",
-      "keywords": "morsure vipère serpent venin",
-      "steps": [
-        "Appelez le {emergency}.",
-        "Gardez la personne calme et au repos.",
-        "Gardez la partie mordue immobile. Si c'est un bras ou une jambe, immobilisez-le.",
-        "Retirez bagues, montres et vêtements serrés de ce côté : il peut gonfler."
-      ],
-      "never": [
-        "Pas de garrot, de bandage serré, de glace ni de chaleur.",
-        "N'incisez pas la plaie et n'aspirez pas le venin."
-      ]
-    },
-    "de": {
-      "title": "Schlangenbiss",
-      "keywords": "schlangenbiss kreuzotter viper schlange gift",
-      "steps": [
-        "Rufen Sie {emergency} an.",
-        "Die Person beruhigen und ruhig halten.",
-        "Die gebissene Stelle ruhig halten. Ist es ein Arm oder Bein: ruhigstellen.",
-        "Ringe, Uhren und enge Kleidung an dieser Stelle entfernen: sie kann anschwellen."
-      ],
-      "never": [
-        "Kein Abbinden, kein Druckverband, kein Eis, keine Wärme.",
-        "Die Wunde nicht einschneiden und das Gift nicht aussaugen."
-      ]
-    },
-    "es": {
-      "title": "Mordedura de víbora",
-      "keywords": "mordedura víbora serpiente veneno",
-      "steps": [
-        "Llama al {emergency}.",
-        "Mantén a la persona tranquila y en reposo.",
-        "Mantén quieta la parte mordida. Si es un brazo o una pierna, inmovilízalo.",
-        "Quita anillos, relojes y ropa ajustada de esa zona: se puede hinchar."
-      ],
-      "never": [
-        "Nada de torniquete, vendaje apretado, hielo ni calor.",
-        "No cortes la herida ni chupes el veneno."
       ]
     }
   },

@@ -1,7 +1,7 @@
 # Verifica delle schede di emergenza
 
 Ogni frase delle schede, in italiano, con la fonte ufficiale su cui si basa (documento, sezione o pagina).
-Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modificare a mano.
+Le altre lingue traducono la stessa frase. Generato da `tool/cards/cards.py`; non modificare a mano.
 
 ## Sangue che esce forte
 
@@ -219,6 +219,72 @@ Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modifi
 - Se non risponde, non dargli niente in bocca: potrebbe soffocare.
   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia ("For unresponsive persons, do not give oral sugar due to the risk of aspiration")
 
+## Freddo estremo, ipotermia
+
+1. Chiama il {emergency}: l'ipotermia va sempre vista dai soccorsi.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Hypothermia, p. 461 ("For all cases of hypothermia, emergency medical services … should be accessed")
+2. Portala con delicatezza al riparo da freddo e vento. Togli i vestiti bagnati e mettile vestiti asciutti.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (treat with care, remove from the cold, remove wet clothes); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Prevention of hypothermia (wind protection, wet clothing removal)
+3. Coprila con un sacco a pelo o coperte asciutte, testa compresa.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (sleeping bag, fleece or blanket; head and body covered); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752) (insulation with dry blankets)
+4. Mettile sotto una coperta o un materassino, per isolarla dal terreno freddo.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (barrier between the person and the ground); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752) (ground isolation)
+5. Se è sveglia e riesce a deglutire: dalle una bevanda calda e zuccherata o un cibo energetico.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("If the person is responsive and able to swallow … give them a warm sugary drink … or some high-energy food")
+6. Se non trema più, scaldala: borse dell'acqua calda o termofori avvolti in un panno.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("If the person has stopped shivering, the first aid provider should actively warm them … Hot water bottles, heating pads")
+7. Se smette di respirare normalmente: rianimazione, senza fermarti.
+   - Fonte: ERC Guidelines 2025 on Resuscitation for Everyone – First Aid, pp. 53–59, Hypothermia (continuous CPR in cardiac arrest)
+
+**Non fare**
+
+- Non strofinare la pelle.
+  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("Do NOT rub the person's skin")
+- Non appoggiare oggetti caldi direttamente sulla pelle: può ustionarsi.
+  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("Do NOT apply warm stones directly to the skin to avoid burning the person")
+- Niente alcol.
+  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Hypothermia, p. 462 (prevention: "Avoid alcohol")
+
+## Colpo di calore
+
+1. Se con il caldo la persona è confusa, agitata o sviene: è un colpo di calore. Chiama il {emergency}.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke (confusion, agitation, disorientation, seizures or unresponsiveness with high ambient temperature); IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 448 ("Access EMS immediately. Heatstroke is life-threatening")
+2. Portala all'ombra o in un luogo fresco e togli i vestiti in più.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("remove the person from the heat source … removing excess clothing … cooler/shaded location")
+3. Raffreddala subito: se puoi, immergila in acqua fredda fino al collo.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("whole body (neck down) cold water … immersion")
+4. Altrimenti: doccia fredda, ghiaccio o panni bagnati su tutto il corpo, e falle aria.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke (alternatives: ice sheets, ice packs, fan, cold shower, mist and fan)
+5. Continua a raffreddarla per almeno 15 minuti o finché torna lucida. Prima raffredda, poi trasporta.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("continue cooling for 15 min or until neurological symptoms resolve"; "cool first, transfer second")
+6. Se è sveglia e non vomita: falle bere acqua fresca.
+   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Heat-related illness, p. 448 ("If the person is not vomiting, give them some water …"; responsive enough: something cool to drink)
+
+**Non fare**
+
+- Non aspettare i soccorsi per iniziare a raffreddarla.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("Remember: cool first, transfer second"; continue cooling during transport)
+- Se non è lucida, non darle da bere: potrebbe soffocare.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia (no oral intake for unresponsive persons: risk of aspiration)
+
+## Morso di vipera
+
+1. Chiama il {emergency}.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Call your local emergency number (112)"; the European viper is the only highly venomous native snake in Europe)
+2. Tieni la persona calma e ferma, a riposo.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the person calm and at rest")
+3. Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the bitten body part still and immobilise the affected limb")
+4. Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare.
+   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Remove tight clothes, rings or watches from the affected limb")
+
+**Non fare**
+
+- Niente laccio, fasciatura stretta, ghiaccio o calore.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not apply a pressure dressing, ice, heat, or use tourniquets")
+- Non incidere la ferita e non succhiare il veleno.
+  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not cut the wound and never try to suck out the venom")
+
 ## Persona sotto shock
 
 1. Prima guarda se è sicuro avvicinarti, e se ha ferite o bisogni urgenti: quelli vengono prima.
@@ -374,72 +440,6 @@ Le altre lingue traducono la stessa frase. Generato da `cards_v3.py`; non modifi
   - Fonte: Protezione Civile – Io non rischio, Alluvione: cosa fare (evita l'ascensore: si può bloccare)
 - Non guidare né camminare su strade allagate.
   - Fonte: Protezione Civile – Io non rischio, Alluvione: cosa fare (evita di utilizzare l'automobile; non transitare lungo strade allagate)
-
-## Freddo estremo, ipotermia
-
-1. Chiama il {emergency}: l'ipotermia va sempre vista dai soccorsi.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Hypothermia, p. 461 ("For all cases of hypothermia, emergency medical services … should be accessed")
-2. Portala con delicatezza al riparo da freddo e vento. Togli i vestiti bagnati e mettile vestiti asciutti.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (treat with care, remove from the cold, remove wet clothes); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Prevention of hypothermia (wind protection, wet clothing removal)
-3. Coprila con un sacco a pelo o coperte asciutte, testa compresa.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (sleeping bag, fleece or blanket; head and body covered); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752) (insulation with dry blankets)
-4. Mettile sotto una coperta o un materassino, per isolarla dal terreno freddo.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 (barrier between the person and the ground); ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752) (ground isolation)
-5. Se è sveglia e riesce a deglutire: dalle una bevanda calda e zuccherata o un cibo energetico.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("If the person is responsive and able to swallow … give them a warm sugary drink … or some high-energy food")
-6. Se non trema più, scaldala: borse dell'acqua calda o termofori avvolti in un panno.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("If the person has stopped shivering, the first aid provider should actively warm them … Hot water bottles, heating pads")
-7. Se smette di respirare normalmente: rianimazione, senza fermarti.
-   - Fonte: ERC Guidelines 2025 on Resuscitation for Everyone – First Aid, pp. 53–59, Hypothermia (continuous CPR in cardiac arrest)
-
-**Non fare**
-
-- Non strofinare la pelle.
-  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("Do NOT rub the person's skin")
-- Non appoggiare oggetti caldi direttamente sulla pelle: può ustionarsi.
-  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 461 ("Do NOT apply warm stones directly to the skin to avoid burning the person")
-- Niente alcol.
-  - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Hypothermia, p. 462 (prevention: "Avoid alcohol")
-
-## Colpo di calore
-
-1. Se con il caldo la persona è confusa, agitata o sviene: è un colpo di calore. Chiama il {emergency}.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke (confusion, agitation, disorientation, seizures or unresponsiveness with high ambient temperature); IFRC International First Aid, Resuscitation and Education Guidelines 2025, p. 448 ("Access EMS immediately. Heatstroke is life-threatening")
-2. Portala all'ombra o in un luogo fresco e togli i vestiti in più.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("remove the person from the heat source … removing excess clothing … cooler/shaded location")
-3. Raffreddala subito: se puoi, immergila in acqua fredda fino al collo.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("whole body (neck down) cold water … immersion")
-4. Altrimenti: doccia fredda, ghiaccio o panni bagnati su tutto il corpo, e falle aria.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke (alternatives: ice sheets, ice packs, fan, cold shower, mist and fan)
-5. Continua a raffreddarla per almeno 15 minuti o finché torna lucida. Prima raffredda, poi trasporta.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("continue cooling for 15 min or until neurological symptoms resolve"; "cool first, transfer second")
-6. Se è sveglia e non vomita: falle bere acqua fresca.
-   - Fonte: IFRC International First Aid, Resuscitation and Education Guidelines 2025, Heat-related illness, p. 448 ("If the person is not vomiting, give them some water …"; responsive enough: something cool to drink)
-
-**Non fare**
-
-- Non aspettare i soccorsi per iniziare a raffreddarla.
-  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Heat stroke ("Remember: cool first, transfer second"; continue cooling during transport)
-- Se non è lucida, non darle da bere: potrebbe soffocare.
-  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Hypoglycaemia (no oral intake for unresponsive persons: risk of aspiration)
-
-## Morso di vipera
-
-1. Chiama il {emergency}.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Call your local emergency number (112)"; the European viper is the only highly venomous native snake in Europe)
-2. Tieni la persona calma e ferma, a riposo.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the person calm and at rest")
-3. Tieni ferma la parte morsa. Se è un braccio o una gamba, immobilizzalo.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Keep the bitten body part still and immobilise the affected limb")
-4. Togli anelli, orologi e vestiti stretti da quella parte: si può gonfiare.
-   - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Remove tight clothes, rings or watches from the affected limb")
-
-**Non fare**
-
-- Niente laccio, fasciatura stretta, ghiaccio o calore.
-  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not apply a pressure dressing, ice, heat, or use tourniquets")
-- Non incidere la ferita e non succhiare il veleno.
-  - Fonte: ERC Guidelines 2025 – First Aid, "Concise guidelines for clinical practice" (Resuscitation 215 S1, 110752), Snake bite ("Do not cut the wound and never try to suck out the venom")
 
 ## Acqua da bere
 

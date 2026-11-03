@@ -257,7 +257,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get about => 'About';
 
   @override
-  String get aboutBody => 'Sources, licenses and disclaimers';
+  String get aboutBody => 'Sources, licences and disclaimers';
 
   @override
   String get aboutText =>
@@ -594,7 +594,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get license => 'License';
+  String get license => 'Licence';
 
   @override
   String get reproducedInFull => 'Document reproduced in full, unchanged.';

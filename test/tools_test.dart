@@ -112,6 +112,15 @@ void main() {
     }
   });
 
+  test('schede in ordine: prima le rosse, poi le gialle, poi le blu', () {
+    final groups = [
+      for (final c in (jsonDecode(File('assets/cards/cards.json').readAsStringSync()) as List).cast<Map>()) c['group'] as String,
+    ];
+    const rank = {'body': 0, 'danger': 1, 'survive': 2};
+    final ranks = [for (final g in groups) rank[g]!];
+    expect(ranks, [...ranks]..sort());
+  });
+
   test('i rimandi delle schede puntano a documenti e guide esistenti', () {
     final docs = (jsonDecode(File('assets/documents/catalog.json').readAsStringSync()) as List).cast<Map>();
     final keys = {for (final d in docs) d['file'], for (final d in docs) d['id']};

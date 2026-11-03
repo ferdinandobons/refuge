@@ -344,33 +344,36 @@ class _Toolbar extends StatelessWidget {
   final bool recording, canRecord;
   final double trackMeters;
 
+  /// Due righe da due pulsanti: con quattro in fila le parole lunghe (Hospitals, hinzufügen) andavano a capo a metà.
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        child: Row(children: [
-          Expanded(
-            child: TextButton.icon(icon: const Icon(Icons.add_location_alt), label: Text(t.addPoint), onPressed: onAdd),
+  Widget build(BuildContext context) {
+    Widget button(IconData icon, String label, VoidCallback? onPressed, {Color? color}) => Expanded(
+          child: TextButton.icon(
+            style: TextButton.styleFrom(foregroundColor: color, alignment: Alignment.centerLeft),
+            icon: Icon(icon),
+            label: Text(label),
+            onPressed: onPressed,
           ),
-          Expanded(
-            child: TextButton.icon(icon: const Icon(Icons.list), label: Text(t.pointsAndTrack), onPressed: onList),
-          ),
-          Expanded(
-            child: TextButton.icon(
-              icon: const Icon(Icons.local_hospital),
-              label: Text(t.hospitalsButton),
-              onPressed: onHospitals,
-            ),
-          ),
-          Expanded(
-            child: TextButton.icon(
-              style: TextButton.styleFrom(foregroundColor: recording ? kDanger : null),
-              icon: Icon(recording ? Icons.stop_circle : Icons.fiber_manual_record),
-              label: Text(recording ? formatDistance(trackMeters) : t.recordTrack, maxLines: 1),
-              onPressed: canRecord ? onRecord : null,
-            ),
+        );
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      child: Column(children: [
+        Row(children: [
+          button(Icons.add_location_alt, t.addPoint, onAdd),
+          button(Icons.list, t.pointsAndTrack, onList),
+        ]),
+        Row(children: [
+          button(Icons.local_hospital, t.hospitalsButton, onHospitals),
+          button(
+            recording ? Icons.stop_circle : Icons.fiber_manual_record,
+            recording ? formatDistance(trackMeters) : t.recordTrack,
+            canRecord ? onRecord : null,
+            color: recording ? kDanger : null,
           ),
         ]),
-      );
+      ]),
+    );
+  }
 }
 
 /// Nuovo punto: nome e coordinate (decimali o gradi, primi e secondi).

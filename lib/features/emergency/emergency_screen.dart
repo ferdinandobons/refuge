@@ -190,18 +190,27 @@ class FalloutBanner extends StatelessWidget {
                         const SizedBox(width: 12),
                         Expanded(
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                            Text(phase.title(t),
-                                style: TextStyle(color: phase.color, fontSize: 16, fontWeight: FontWeight.bold)),
-                            Text(phase.canGoOut ? t.falloutBannerOut : t.doNotGoOut,
-                                style: const TextStyle(fontSize: 14)),
+                            // Prima riga: fase a sinistra, tempo trascorso a destra (icona e ore sempre insieme).
+                            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                              Expanded(
+                                child: Text(phase.title(t),
+                                    style: TextStyle(color: phase.color, fontSize: 16, fontWeight: FontWeight.bold)),
+                              ),
+                              const SizedBox(width: 8),
+                              Row(mainAxisSize: MainAxisSize.min, children: [
+                                const Icon(Icons.timer, size: 18, color: Colors.white70),
+                                const SizedBox(width: 4),
+                                Text(formatDuration(t, elapsed),
+                                    maxLines: 1,
+                                    softWrap: false,
+                                    style: const TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold, fontFeatures: [FontFeature.tabularFigures()])),
+                              ]),
+                            ]),
+                            const SizedBox(height: 2),
+                            Text(phase.canGoOut ? t.falloutBannerOut : t.doNotGoOut, style: const TextStyle(fontSize: 14)),
                           ]),
                         ),
-                        const SizedBox(width: 8),
-                        Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                          const Icon(Icons.timer, size: 16, color: Colors.white70),
-                          Text(formatDuration(t, elapsed),
-                              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold, fontFeatures: [FontFeature.tabularFigures()])),
-                        ]),
                       ]),
                     ),
                   ),

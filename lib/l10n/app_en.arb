@@ -112,7 +112,7 @@
   "language": "Language",
   "country": "Country",
   "about": "About",
-  "aboutBody": "Sources, licenses and disclaimers",
+  "aboutBody": "Sources, licences and disclaimers",
   "aboutText": "Open source app that works without internet.\n\nThe emergency cards follow European guidelines: first aid from the European Resuscitation Council (ERC 2025) and the Red Cross (IFRC), preparedness from the European Union 72-hour guidelines, and advice from national civil protection agencies. Original documents and encyclopedias are in Manuals & guides, with sources and licences.\n\nThis app does not replace a first aid course or instructions from the authorities.",
   "documents": "Documents",
   "documentsBody": "Official European and international documents, in your language when available, otherwise in English. Some are already in the app, the others are downloaded from the official website.",
@@ -291,7 +291,7 @@
       }
     }
   },
-  "license": "License",
+  "license": "Licence",
   "reproducedInFull": "Document reproduced in full, unchanged.",
   "notAvailable": "Not available in this version.",
   "entryMissing": "Article “{title}” not found: download WikiMed from Manuals & guides to read it offline.",
