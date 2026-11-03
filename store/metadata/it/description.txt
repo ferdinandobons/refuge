@@ -1,0 +1,32 @@
+Quando succede qualcosa di grave, internet e la rete telefonica sono spesso le prime cose a non funzionare. Refuge mette sul telefono quello che serve prima di quel momento, e funziona senza connessione.
+
+COSA FARE, PASSO PER PASSO
+• 22 schede brevi, un passo alla volta a caratteri grandi: sangue che esce forte, rianimazione, soffocamento, posizione laterale, infarto, ictus, reazione allergica, ustioni, freddo estremo, colpo di calore e altre.
+• Pericoli: allarme aereo, allarme nucleare, nube tossica, terremoto, incendio, alluvione. Sopravvivenza: acqua da bere, blackout.
+• Ogni scheda dice anche cosa non fare. Il numero di emergenza è a un tocco.
+• SOS luce: lampeggia subito con la torcia e con lo schermo.
+
+PREPARATI ADESSO, NON DURANTE UNA CRISI
+• Guarda quanto sei pronto: piano della famiglia, acqua e cibo, cose da avere in casa, zaino, mappa, copia su carta.
+• Scorte: quanta acqua, cibo, gas ed energia servono alla tua famiglia per i giorni che scegli, e cosa manca.
+• Piano di emergenza della famiglia: contatti, punti d'incontro, rifugio più vicino, chi aiuta chi.
+• Copia su carta: un PDF da stampare, per quando il telefono è scarico.
+
+STRUMENTI CHE FUNZIONANO OFFLINE
+• Posizione: coordinate GPS nei formati dei soccorsi, mappe offline, punti salvati, percorso, ospedali vicini.
+• Radio in emergenza: quali emittenti danno gli annunci ufficiali nel tuo paese.
+• Timer del fallout con promemoria, bussola, Morse, torcia.
+• Documenti ufficiali ed enciclopedie offline da scaricare finché c'è internet.
+
+FONTI AFFIDABILI
+Le schede riassumono linee guida ufficiali: primo soccorso dell'European Resuscitation Council e dell'IFRC (2025), linee guida UE sulla preparazione per 72 ore, protezioni civili nazionali e OMS. Ogni frase ha la sua fonte nel repository pubblico del progetto.
+
+ESSENZIALE, PER SCELTA
+Lo stile semplice e scuro è voluto: caratteri grandi, contrasto forte e niente che distragga, per andare dritti al punto anche sotto stress o al buio. Su molti telefoni lo schermo scuro consuma anche meno batteria.
+
+PRIVATA E GRATUITA
+Nessun account, nessuna pubblicità, nessun tracciamento. I tuoi dati restano sul telefono. Open source.
+
+5 lingue: italiano, inglese, francese, tedesco, spagnolo. Numeri, allerte e radio per 12 paesi europei.
+
+Refuge non sostituisce un corso di primo soccorso né le indicazioni delle autorità. In emergenza chiama il 112.

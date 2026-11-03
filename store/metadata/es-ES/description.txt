@@ -1,0 +1,32 @@
+Cuando ocurre algo grave, internet y la red telefónica suelen ser lo primero que falla. Refuge pone en tu teléfono lo que necesitas antes de ese momento, y funciona sin conexión.
+
+QUÉ HACER, PASO A PASO
+• 22 fichas breves, un paso cada vez en letra grande: hemorragia grave, reanimación, atragantamiento, posición lateral, infarto, ictus, reacción alérgica, quemaduras, hipotermia, golpe de calor y más.
+• Peligros: alarma aérea, alerta nuclear, nube tóxica, terremoto, incendio, inundación. Supervivencia: agua potable, apagón.
+• Cada ficha dice también lo que nunca hay que hacer. El número de emergencias está a un toque.
+• Luz SOS: parpadea al instante con la linterna y la pantalla.
+
+PREPÁRATE AHORA, NO DURANTE UNA CRISIS
+• Mira cuánto estás preparado: plan familiar, agua y comida, cosas para tener en casa, mochila, mapa, copia en papel.
+• Provisiones: cuánta agua, comida, gas y energía necesita tu hogar para los días que elijas, y qué falta.
+• Plan de emergencia familiar: contactos, puntos de encuentro, refugio más cercano, quién ayuda a quién.
+• Copia en papel: un PDF para imprimir, para cuando el teléfono no tenga batería.
+
+HERRAMIENTAS SIN CONEXIÓN
+• Posición: coordenadas GPS en los formatos de los servicios de rescate, mapas sin conexión, puntos guardados, recorrido, hospitales cercanos.
+• Radio de emergencia: qué emisoras dan los avisos oficiales en tu país.
+• Temporizador de la lluvia radiactiva con avisos, brújula, morse, linterna.
+• Documentos oficiales y enciclopedias sin conexión para descargar mientras haya internet.
+
+FUENTES FIABLES
+Las fichas resumen guías oficiales: primeros auxilios del European Resuscitation Council y de la IFRC (2025), directrices de la UE sobre la preparación para 72 horas, protecciones civiles nacionales y OMS. Cada frase está enlazada a su fuente en el repositorio público del proyecto.
+
+SENCILLA, A PROPÓSITO
+El estilo simple y oscuro es intencionado: letra grande, mucho contraste y nada que distraiga, para ir directo al grano incluso bajo estrés o a oscuras. En muchos teléfonos una pantalla oscura también gasta menos batería.
+
+PRIVADA Y GRATUITA
+Sin cuenta, sin publicidad, sin seguimiento. Tus datos se quedan en tu teléfono. Código abierto.
+
+5 idiomas: español, inglés, italiano, francés, alemán. Números, alertas y radio para 12 países europeos.
+
+Refuge no sustituye un curso de primeros auxilios ni las indicaciones de las autoridades. En caso de emergencia, llama al 112.

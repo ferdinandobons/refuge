@@ -1,0 +1,32 @@
+Lors d'un événement grave, internet et le réseau téléphonique sont souvent les premiers à tomber. Refuge met sur votre téléphone ce dont vous avez besoin avant ce moment, et fonctionne sans connexion.
+
+QUE FAIRE, ÉTAPE PAR ÉTAPE
+• 22 fiches courtes, une étape à la fois en grands caractères : hémorragie, réanimation, étouffement, position latérale, crise cardiaque, AVC, réaction allergique, brûlures, hypothermie, coup de chaleur et plus.
+• Dangers : alerte aérienne, alerte nucléaire, nuage toxique, séisme, incendie, inondation. Survie : eau potable, panne de courant.
+• Chaque fiche dit aussi ce qu'il ne faut jamais faire. Le numéro d'urgence est à portée de doigt.
+• Lumière SOS : clignote tout de suite avec la lampe et l'écran.
+
+SE PRÉPARER MAINTENANT, PAS PENDANT UNE CRISE
+• Voyez où vous en êtes : plan familial, eau et nourriture, choses à avoir à la maison, sac, carte, copie papier.
+• Provisions : combien d'eau, de nourriture, de gaz et d'énergie il faut à votre foyer pour les jours choisis, et ce qui manque.
+• Plan d'urgence familial : contacts, points de rendez-vous, abri le plus proche, qui aide qui.
+• Copie papier : un PDF à imprimer, pour quand le téléphone est déchargé.
+
+DES OUTILS HORS LIGNE
+• Position : coordonnées GPS dans les formats des secours, cartes hors ligne, points enregistrés, parcours, hôpitaux proches.
+• Radio d'urgence : quelles stations diffusent les annonces officielles dans votre pays.
+• Minuteur des retombées avec rappels, boussole, morse, lampe.
+• Documents officiels et encyclopédies hors ligne à télécharger tant qu'il y a internet.
+
+DES SOURCES FIABLES
+Les fiches résument des recommandations officielles : premiers secours de l'European Resuscitation Council et de l'IFRC (2025), lignes directrices de l'UE sur la préparation de 72 heures, protections civiles nationales et OMS. Chaque phrase renvoie à sa source dans le dépôt public du projet.
+
+SOBRE, PAR CHOIX
+Le style simple et sombre est voulu : grands caractères, fort contraste et rien pour distraire, afin d'aller droit au but, même sous le stress ou dans le noir. Sur beaucoup de téléphones, un écran sombre consomme aussi moins de batterie.
+
+PRIVÉE ET GRATUITE
+Pas de compte, pas de publicité, pas de suivi. Vos données restent sur votre téléphone. Open source.
+
+5 langues : français, anglais, italien, allemand, espagnol. Numéros, alertes et radio pour 12 pays européens.
+
+Refuge ne remplace pas une formation aux premiers secours ni les consignes des autorités. En cas d'urgence, appelez le 112.

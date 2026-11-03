@@ -73,6 +73,11 @@ offline; quale radio ascoltare; il piano della famiglia; quanta acqua e quanto c
 | Bussola | Direzione e punti cardinali |
 | Morse | Manda un messaggio con la luce |
 
+## Essenziale, per scelta
+
+Lo stile semplice e scuro è voluto: caratteri grandi, contrasto forte e niente che distragga, per andare dritti al
+punto anche sotto stress o al buio. Su molti telefoni lo schermo scuro consuma anche meno batteria.
+
 ## Cosa ti evita
 
 - Cercare sul web in preda al panico, su una rete che non va.

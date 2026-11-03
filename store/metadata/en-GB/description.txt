@@ -1,0 +1,32 @@
+When something serious happens, the internet and the phone network are often the first things to fail. Refuge puts what you need on your phone before that moment, and works without a connection.
+
+WHAT TO DO, STEP BY STEP
+• 22 short cards, one step at a time in large text: heavy bleeding, CPR, choking, recovery position, heart attack, stroke, allergic reaction, burns, hypothermia, heatstroke and more.
+• Dangers: air-raid alarm, nuclear alert, toxic cloud, earthquake, fire, flood. Survival: drinking water, power cut.
+• Every card also says what never to do. The emergency number is one tap away.
+• SOS light: flashes straight away with the torch and the screen.
+
+PREPARE NOW, NOT DURING A CRISIS
+• See how prepared you are: family plan, water and food, things to have at home, backpack, map, paper copy.
+• Supplies: how much water, food, cooking gas and power your household needs for the days you choose, and what is missing.
+• Family emergency plan: contacts, meeting points, nearest shelter, who helps whom.
+• Paper copy: a PDF to print, for when the phone is flat.
+
+TOOLS THAT WORK OFFLINE
+• Location: GPS coordinates in the formats rescuers use, offline maps, saved points, track recording, nearest hospitals.
+• Emergency radio: which stations carry official announcements in your country.
+• Fallout timer with reminders, compass, Morse, torch.
+• Official documents and offline encyclopedias to download while you have internet.
+
+RELIABLE SOURCES
+The cards summarise official guidelines: European Resuscitation Council and IFRC first aid guidelines 2025, EU guidelines on 72-hour preparedness, national civil protection agencies and the WHO. Every sentence is linked to its source in the project's public repository.
+
+SIMPLE ON PURPOSE
+The plain, dark look is a deliberate choice: large text, strong contrast and nothing to distract you, so you go straight to the point, even under stress or in the dark. On many phones a dark screen also uses less battery.
+
+PRIVATE AND FREE
+No account, no ads, no tracking. Your data stays on your phone. Open source.
+
+5 languages: English, Italian, French, German, Spanish. Numbers, alerts and radio for 12 European countries.
+
+Refuge does not replace a first aid course or the instructions of the authorities. In an emergency, call 112.

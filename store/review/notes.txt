@@ -1,0 +1,7 @@
+Thank you for reviewing Refuge.
+
+- No account or sign-in: the app opens directly after choosing language and country.
+- Everything works offline. Maps, official documents and encyclopedias are optional downloads chosen by the user.
+- The emergency cards summarise official guidelines (ERC and IFRC first aid guidelines 2025, EU preparedness guidelines, national civil protection agencies, WHO). Every sentence is listed with its source at https://github.com/ferdinandobons/refuge/blob/main/docs/verifica-schede.md. The app states it does not replace a first aid course or the authorities, and shows the emergency number on every first-aid step.
+- Location is used only while the app is open (coordinates, offline map, nearby hospitals). The camera flash is used only as a torch and SOS light.
+- No data is collected; reminders are local notifications. The app uses only HTTPS (exempt encryption).

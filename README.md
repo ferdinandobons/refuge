@@ -72,6 +72,11 @@ listen to; your family plan; and how much water and food you have.
 | Compass | Direction and cardinal points |
 | Morse | Send a message with light |
 
+## Simple on purpose
+
+The plain, dark look is a deliberate choice: large text, strong contrast and nothing to distract you, so you go
+straight to the point, even under stress or in the dark. On many phones a dark screen also uses less battery.
+
 ## What it saves you from
 
 - Searching the web in a panic, on a network that doesn't work.

@@ -2,6 +2,9 @@
 // Chiave: secrets/apple/asc-api.env (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH), fuori dal repository.
 // Uso, dalla radice del repository:
 //   node tool/appstore/asc.mjs status                   app, build e gruppi di TestFlight
+//   node tool/appstore/asc.mjs listing                  versione, categorie, diritti, testi (store/metadata), revisione
+//   node tool/appstore/asc.mjs screenshots              immagini iPhone 6,9" da store/screenshots/<lingua>
+//   node tool/appstore/asc.mjs attach-build N           la build N nella versione da inviare
 //   node tool/appstore/asc.mjs users                    utenti del team (i tester interni devono esserlo)
 //   node tool/appstore/asc.mjs bundle-id                registra l'ID dell'app (se manca)
 //   node tool/appstore/asc.mjs internal <email>         aggiunge un utente del team al gruppo interno
@@ -52,6 +55,15 @@ async function group(appId, internal) {
   return (await api("POST", "/v1/betaGroups", { data: { type: "betaGroups",
     attributes: { name, isInternalGroup: internal, ...(internal ? { hasAccessToAllBuilds: true } : {}) },
     relationships: { app: { data: { type: "apps", id: appId } } } } })).data;
+}
+
+/** La versione dell'App Store ancora modificabile. */
+async function version(appId) {
+  const v = await api("GET", `/v1/apps/${appId}/appStoreVersions?filter[platform]=IOS&limit=5`);
+  const ok = v.data.find((x) => ["PREPARE_FOR_SUBMISSION", "DEVELOPER_REJECTED", "REJECTED", "METADATA_REJECTED",
+    "INVALID_BINARY"].includes(x.attributes.appStoreState));
+  if (!ok) throw new Error("nessuna versione modificabile");
+  return ok;
 }
 
 const [cmd, ...args] = process.argv.slice(2);
@@ -108,6 +120,91 @@ if (cmd === "bundle-id") {
       relationships: { build: { data: { type: "builds", id: b.id } } } } });
     console.log(`build ${b.attributes.version} inviata alla revisione beta`);
   } catch (e) { console.log("revisione beta:", e.message.slice(0, 300)); }
+} else if (cmd === "listing") {
+  const a = await app();
+  const META = path.join(ROOT, "store/metadata");
+  const field = (loc, f) => { const p = path.join(META, loc, `${f}.txt`); return fs.existsSync(p) ? fs.readFileSync(p, "utf8").trim() : undefined; };
+  const locales = fs.readdirSync(META).filter((d) => !d.startsWith("."));
+  await api("PATCH", `/v1/apps/${a.id}`, { data: { type: "apps", id: a.id, attributes: { contentRightsDeclaration: "USES_THIRD_PARTY_CONTENT" } } });
+  const v = await version(a.id);
+  await api("PATCH", `/v1/appStoreVersions/${v.id}`, { data: { type: "appStoreVersions", id: v.id,
+    attributes: { versionString: "1.0.0", copyright: `${new Date().getFullYear()} Ferdinando Bonsegna`, releaseType: "MANUAL" } } });
+  const info = (await api("GET", `/v1/apps/${a.id}/appInfos`)).data.find((x) => x.attributes.appStoreState !== "READY_FOR_SALE");
+  await api("PATCH", `/v1/appInfos/${info.id}`, { data: { type: "appInfos", id: info.id, relationships: {
+    primaryCategory: { data: { type: "appCategories", id: "REFERENCE" } },
+    secondaryCategory: { data: { type: "appCategories", id: "UTILITIES" } } } } });
+  const infoLocs = (await api("GET", `/v1/appInfos/${info.id}/appInfoLocalizations`)).data;
+  for (const loc of locales) {
+    const ia = { name: field(loc, "name"), subtitle: field(loc, "subtitle"), privacyPolicyUrl: field(loc, "privacy_url") };
+    const il = infoLocs.find((x) => x.attributes.locale === loc);
+    if (il) await api("PATCH", `/v1/appInfoLocalizations/${il.id}`, { data: { type: "appInfoLocalizations", id: il.id, attributes: ia } });
+    else await api("POST", "/v1/appInfoLocalizations", { data: { type: "appInfoLocalizations", attributes: { locale: loc, ...ia },
+      relationships: { appInfo: { data: { type: "appInfos", id: info.id } } } } });
+    const va = { description: field(loc, "description"), keywords: field(loc, "keywords"),
+      promotionalText: field(loc, "promotional_text"), supportUrl: field(loc, "support_url"), marketingUrl: field(loc, "marketing_url") };
+    const vl = (await api("GET", `/v1/appStoreVersions/${v.id}/appStoreVersionLocalizations`)).data.find((x) => x.attributes.locale === loc);
+    if (vl) await api("PATCH", `/v1/appStoreVersionLocalizations/${vl.id}`, { data: { type: "appStoreVersionLocalizations", id: vl.id, attributes: va } });
+    else await api("POST", "/v1/appStoreVersionLocalizations", { data: { type: "appStoreVersionLocalizations", attributes: { locale: loc, ...va },
+      relationships: { appStoreVersion: { data: { type: "appStoreVersions", id: v.id } } } } });
+    console.log("testi", loc, "ok");
+  }
+  const c = Object.fromEntries(fs.readFileSync(path.join(ROOT, "secrets/apple/review-contact.env"), "utf8")
+    .split("\n").filter((l) => l.includes("=")).map((l) => l.split("=").map((x) => x.trim())));
+  const ra = { contactFirstName: c.REVIEW_FIRST_NAME, contactLastName: c.REVIEW_LAST_NAME, contactPhone: c.REVIEW_PHONE,
+    contactEmail: c.REVIEW_CONTACT_EMAIL, demoAccountRequired: false,
+    notes: fs.readFileSync(path.join(ROOT, "store/review/notes.txt"), "utf8").trim() };
+  let d = null;
+  try { d = (await api("GET", `/v1/appStoreVersions/${v.id}/appStoreReviewDetail`)).data; } catch { d = null; }
+  if (d) await api("PATCH", `/v1/appStoreReviewDetails/${d.id}`, { data: { type: "appStoreReviewDetails", id: d.id, attributes: ra } });
+  else await api("POST", "/v1/appStoreReviewDetails", { data: { type: "appStoreReviewDetails", attributes: ra,
+    relationships: { appStoreVersion: { data: { type: "appStoreVersions", id: v.id } } } } });
+  console.log("versione 1.0.0, categorie Consultazione e Utility, contenuti di terzi, note per la revisione: ok");
+} else if (cmd === "screenshots") {
+  const a = await app();
+  const v = await version(a.id);
+  const DISPLAY = "APP_IPHONE_67";
+  const verLocs = (await api("GET", `/v1/appStoreVersions/${v.id}/appStoreVersionLocalizations`)).data;
+  for (const loc of fs.readdirSync(path.join(ROOT, "store/screenshots")).filter((d) => !d.startsWith("raw") && !d.startsWith("."))) {
+    const vl = verLocs.find((x) => x.attributes.locale === loc);
+    if (!vl) { console.log("salto", loc); continue; }
+    let set = (await api("GET", `/v1/appStoreVersionLocalizations/${vl.id}/appScreenshotSets`)).data.find((x) => x.attributes.screenshotDisplayType === DISPLAY);
+    if (set) for (const x of (await api("GET", `/v1/appScreenshotSets/${set.id}/appScreenshots`)).data) await api("DELETE", `/v1/appScreenshots/${x.id}`);
+    else set = (await api("POST", "/v1/appScreenshotSets", { data: { type: "appScreenshotSets", attributes: { screenshotDisplayType: DISPLAY },
+      relationships: { appStoreVersionLocalization: { data: { type: "appStoreVersionLocalizations", id: vl.id } } } } })).data;
+    const dir = path.join(ROOT, "store/screenshots", loc);
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".png")).sort();
+    for (const f of files) {
+      const buf = fs.readFileSync(path.join(dir, f));
+      const r = await api("POST", "/v1/appScreenshots", { data: { type: "appScreenshots", attributes: { fileName: f, fileSize: buf.length },
+        relationships: { appScreenshotSet: { data: { type: "appScreenshotSets", id: set.id } } } } });
+      for (const op of r.data.attributes.uploadOperations) {
+        const u = await fetch(op.url, { method: op.method, headers: Object.fromEntries(op.requestHeaders.map((h) => [h.name, h.value])),
+          body: buf.subarray(op.offset, op.offset + op.length) });
+        if (!u.ok) throw new Error(`upload ${f} ${u.status}`);
+      }
+      await api("PATCH", `/v1/appScreenshots/${r.data.id}`, { data: { type: "appScreenshots", id: r.data.id,
+        attributes: { uploaded: true, sourceFileChecksum: crypto.createHash("md5").update(buf).digest("hex") } } });
+    }
+    console.log("screenshot", loc, files.length);
+  }
+} else if (cmd === "attach-build") {
+  const a = await app();
+  const v = await version(a.id);
+  const b = (await api("GET", `/v1/builds?filter[app]=${a.id}&filter[version]=${args[0]}`)).data[0];
+  if (!b || b.attributes.processingState !== "VALID") throw new Error(`build ${args[0]} non pronta: ${b?.attributes.processingState ?? "assente"}`);
+  await api("PATCH", `/v1/appStoreVersions/${v.id}/relationships/build`, { data: { type: "builds", id: b.id } });
+  console.log("versione", v.attributes.versionString, "→ build", args[0]);
+} else if (cmd === "age") {
+  // Età: risposte in store/age-rating.json (le domande di oggi si vedono con "age show").
+  const a = await app();
+  const info = (await api("GET", `/v1/apps/${a.id}/appInfos`)).data.find((x) => x.attributes.appStoreState !== "READY_FOR_SALE");
+  const ar = (await api("GET", `/v1/appInfos/${info.id}/ageRatingDeclaration`)).data;
+  if (args[0] === "show") console.log(JSON.stringify(ar.attributes, null, 1));
+  else {
+    const attributes = JSON.parse(fs.readFileSync(path.join(ROOT, "store/age-rating.json"), "utf8"));
+    await api("PATCH", `/v1/ageRatingDeclarations/${ar.id}`, { data: { type: "ageRatingDeclarations", id: ar.id, attributes } });
+    console.log("età consigliata salvata");
+  }
 } else if (cmd === "users") {
   const r = await api("GET", "/v1/users?limit=50");
   for (const u of r.data) console.log(u.attributes.username, u.attributes.roles.join(","));

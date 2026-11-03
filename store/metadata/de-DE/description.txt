@@ -1,0 +1,32 @@
+Wenn etwas Ernstes passiert, fallen Internet und Mobilfunknetz oft als Erstes aus. Refuge bringt vorher auf Ihr Telefon, was Sie brauchen, und funktioniert ohne Verbindung.
+
+WAS ZU TUN IST, SCHRITT FÜR SCHRITT
+• 22 kurze Karten, ein Schritt nach dem anderen in großer Schrift: starke Blutung, Wiederbelebung, Ersticken, stabile Seitenlage, Herzinfarkt, Schlaganfall, allergische Reaktion, Verbrennungen, Unterkühlung, Hitzschlag und mehr.
+• Gefahren: Luftalarm, Atomalarm, Giftwolke, Erdbeben, Brand, Hochwasser. Überleben: Trinkwasser, Stromausfall.
+• Jede Karte sagt auch, was man nie tun sollte. Die Notrufnummer ist einen Fingertipp entfernt.
+• SOS-Licht: blinkt sofort mit Taschenlampe und Bildschirm.
+
+JETZT VORSORGEN, NICHT IN DER KRISE
+• Sehen Sie, wie gut Sie vorbereitet sind: Familienplan, Wasser und Lebensmittel, Vorräte zu Hause, Notgepäck, Karte, Papierkopie.
+• Vorräte: wie viel Wasser, Essen, Gas und Strom Ihr Haushalt für die gewählten Tage braucht und was fehlt.
+• Notfallplan der Familie: Kontakte, Treffpunkte, nächster Schutzraum, wer wem hilft.
+• Papierkopie: ein PDF zum Ausdrucken, für den Fall, dass der Akku leer ist.
+
+WERKZEUGE, DIE OFFLINE FUNKTIONIEREN
+• Standort: GPS-Koordinaten in den Formaten der Rettungsdienste, Offline-Karten, gespeicherte Punkte, Strecke, nahe Krankenhäuser.
+• Notfallradio: welche Sender in Ihrem Land die amtlichen Durchsagen bringen.
+• Fallout-Timer mit Erinnerungen, Kompass, Morse, Taschenlampe.
+• Amtliche Dokumente und Offline-Enzyklopädien zum Herunterladen, solange es Internet gibt.
+
+VERLÄSSLICHE QUELLEN
+Die Karten fassen amtliche Leitlinien zusammen: Erste Hilfe des European Resuscitation Council und der IFRC (2025), EU-Leitlinien zur 72-Stunden-Vorsorge, nationale Katastrophenschutzbehörden und WHO. Jeder Satz ist im öffentlichen Repository des Projekts mit seiner Quelle verknüpft.
+
+BEWUSST SCHLICHT
+Das einfache, dunkle Design ist Absicht: große Schrift, starker Kontrast und nichts, was ablenkt, damit Sie direkt zur Sache kommen, auch unter Stress oder im Dunkeln. Auf vielen Telefonen spart ein dunkler Bildschirm zudem Akku.
+
+PRIVAT UND KOSTENLOS
+Kein Konto, keine Werbung, kein Tracking. Ihre Daten bleiben auf dem Telefon. Open Source.
+
+5 Sprachen: Deutsch, Englisch, Italienisch, Französisch, Spanisch. Nummern, Warnungen und Radio für 12 europäische Länder.
+
+Refuge ersetzt keinen Erste-Hilfe-Kurs und keine Anweisungen der Behörden. Im Notfall rufen Sie die 112 an.
