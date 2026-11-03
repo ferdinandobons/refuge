@@ -30,6 +30,7 @@ class OfflineMap extends StatefulWidget {
     this.onLongPress,
     this.onPinTap,
     this.focus,
+    this.fitTo,
   });
 
   final LatLng? position;
@@ -47,6 +48,9 @@ class OfflineMap extends StatefulWidget {
 
   /// Quando cambia, la mappa si sposta su questo punto.
   final LatLng? focus;
+
+  /// Quando cambia, la mappa inquadra tutti questi punti (es. il percorso registrato).
+  final List<LatLng>? fitTo;
 
   @override
   State<OfflineMap> createState() => _OfflineMapState();
@@ -81,7 +85,12 @@ class _OfflineMapState extends State<OfflineMap> {
   void didUpdateWidget(OfflineMap old) {
     super.didUpdateWidget(old);
     // Alla prima posizione GPS la mappa si centra su di te.
-    if (widget.focus != null && widget.focus != old.focus) {
+    final fit = widget.fitTo;
+    if (fit != null && fit.length > 1 && fit != old.fitTo) {
+      _centered = true;
+      WidgetsBinding.instance.addPostFrameCallback(
+          (_) => _controller.fitCamera(CameraFit.coordinates(coordinates: fit, padding: const EdgeInsets.all(40))));
+    } else if (widget.focus != null && widget.focus != old.focus) {
       _centered = true;
       WidgetsBinding.instance.addPostFrameCallback((_) => _controller.move(widget.focus!, 15));
     } else if (!_centered && widget.position != null && _providers != null) {

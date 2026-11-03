@@ -46,39 +46,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbStart => 'Start';
 
   @override
-  String get onbDownload => 'Download encyclopedias (optional)';
-
-  @override
-  String get onbOptionalTitle => 'Optional: offline encyclopedias';
-
-  @override
-  String get onbOptionalBody =>
-      'The emergency cards are already included. While you have internet, you can also add:';
-
-  @override
   String get onbPackWikimed => 'WikiMed (English)';
 
   @override
   String get onbPackWikimedBody =>
-      'Medical encyclopedia: diseases, symptoms, medicines, injuries, first aid. About 2 GB.';
+      'Medical encyclopedia: diseases, symptoms, medicines, wounds, first aid.';
 
   @override
   String get onbPackWikipedia => 'Wikipedia in your language';
 
   @override
   String get onbPackWikipediaBody =>
-      'General knowledge of every kind: history, places, science, technology, how things work. From a few GB (reduced version) to tens of GB (complete).';
+      'All general knowledge: history, places, science, technology. Very large.';
 
   @override
   String get onbPackWikivoyage => 'Wikivoyage';
 
   @override
   String get onbPackWikivoyageBody =>
-      'Countries and cities: getting around, borders, hospitals, practical information. A few hundred MB.';
+      'Countries and cities: getting around, borders, hospitals, practical information.';
 
   @override
   String get onbDownloadNote =>
-      'You need Wi-Fi and free space. You can also do this later from Prepare.';
+      'Downloads continue while you use the app and appear at the top of the Emergency screen. You can add or remove content at any time from Tools › Manuals & guides.';
 
   @override
   String callNumber(String number) {
@@ -240,7 +230,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Wikipedia and WikiMed in your language, to read offline.';
 
   @override
-  String get library => 'Library';
+  String get library => 'Manuals & guides';
 
   @override
   String get libraryBody =>
@@ -271,7 +261,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutText =>
-      'Open source app that works without internet.\n\nThe emergency cards follow European guidelines: first aid from the European Resuscitation Council (ERC 2025) and the Red Cross (IFRC), preparedness from the European Union 72-hour guidelines, and advice from national civil protection agencies. Original documents and encyclopedias are in the Library, with sources and licences.\n\nThis app does not replace a first aid course or instructions from the authorities.';
+      'Open source app that works without internet.\n\nThe emergency cards follow European guidelines: first aid from the European Resuscitation Council (ERC 2025) and the Red Cross (IFRC), preparedness from the European Union 72-hour guidelines, and advice from national civil protection agencies. Original documents and encyclopedias are in Manuals & guides, with sources and licences.\n\nThis app does not replace a first aid course or instructions from the authorities.';
 
   @override
   String get documents => 'Documents';
@@ -613,7 +603,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String entryMissing(String title) {
-    return 'Article “$title” not found: download WikiMed from the Library to read it offline.';
+    return 'Article “$title” not found: download WikiMed from Manuals & guides to read it offline.';
   }
 
   @override
@@ -1240,7 +1230,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get docNotDownloaded =>
-      'Download the document from the Library first.';
+      'Download the document from Manuals & guides first.';
 
   @override
   String get planTitle => 'Family emergency plan';
@@ -1329,7 +1319,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get libraryKeywords =>
-      'library documents manuals pdf encyclopedia wikipedia wikimed guides civil protection read';
+      'library documents manuals pdf encyclopedia wikipedia wikimed guides civil protection read manuals guides reference';
 
   @override
   String get manageMaps => 'Maps';
@@ -1341,12 +1331,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get savedPoints => 'Saved points';
 
   @override
-  String pointsN(int n) {
-    return 'Points ($n)';
-  }
-
-  @override
-  String get recordTrack => 'Record';
+  String get recordTrack => 'Track';
 
   @override
   String get pointName => 'Name';
@@ -1386,4 +1371,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String distanceTo(String dist, String dir, int deg) {
     return '$dist as the crow flies · towards $dir ($deg°)';
   }
+
+  @override
+  String get onbContentTitle => 'Manuals and encyclopedias';
+
+  @override
+  String get onbContentBody =>
+      'Choose what to keep on your phone to look up without internet. The emergency cards and the Civil Protection guides are already included.';
+
+  @override
+  String get onbPackDocs => 'Official European documents';
+
+  @override
+  String get onbPackDocsBody =>
+      'First aid (ERC, WHO) and preparedness guides from European governments. In your language when available.';
+
+  @override
+  String get onbPackMedicine => 'Wikipedia: medicine';
+
+  @override
+  String get onbPackMedicineBody =>
+      'Wikipedia\'s medical articles: diseases, symptoms, medicines, anatomy.';
+
+  @override
+  String onbDownloadSelected(String size) {
+    return 'Download selected ($size)';
+  }
+
+  @override
+  String get trackTitle => 'Track';
+
+  @override
+  String get trackHelp =>
+      'Tap “Track” to record the way you walk: it appears as a blue line on the map. Use it to find your way back (home, to the car, to a shelter) or to show rescuers where you have been. It records only while this screen is open; tap again to stop.';
+
+  @override
+  String get trackShow => 'Tap to see it on the map';
+
+  @override
+  String get pointsAndTrack => 'Points and track';
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../features/library/zim/catalog_screen.dart';
+import '../features/library/content_picker.dart';
 import '../features/maps/map_download.dart';
 import '../l10n/app_localizations.dart';
 import 'countries.dart';
@@ -38,7 +38,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Row(children: [
               if (_page > 0) IconButton(icon: const Icon(Icons.arrow_back), onPressed: () => _go(_page - 1)),
               const Spacer(),
-              Text('${_page + 1} / 4', style: const TextStyle(color: Colors.white54)),
+              Text('${_page + 1} / 5', style: const TextStyle(color: Colors.white54)),
             ]),
           ),
           Expanded(
@@ -99,37 +99,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ],
                 ),
                 _Step(
+                  icon: Icons.local_library,
+                  title: t.onbContentTitle,
+                  subtitle: t.onbContentBody,
+                  children: [
+                    ContentPicker(onStarted: () => _go(4)),
+                    const SizedBox(height: 4),
+                    TextButton(
+                      style: TextButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+                      onPressed: () => _go(4),
+                      child: Text(t.mapSkip, style: const TextStyle(fontSize: 16)),
+                    ),
+                  ],
+                ),
+                _Step(
                   icon: Icons.check_circle,
                   title: t.onbReadyTitle,
                   subtitle: t.onbReadyBody(s.country.emergency),
                   children: [
-                    Text(t.onbOptionalTitle,
-                        style: const TextStyle(color: kAccent, fontWeight: FontWeight.bold, fontSize: 18)),
-                    const SizedBox(height: 6),
-                    Text(t.onbOptionalBody, style: const TextStyle(color: Colors.white70, fontSize: 16)),
-                    const SizedBox(height: 8),
-                    _Pack(Icons.medical_information, t.onbPackWikimed, t.onbPackWikimedBody),
-                    _Pack(Icons.public, t.onbPackWikipedia, t.onbPackWikipediaBody),
-                    _Pack(Icons.map, t.onbPackWikivoyage, t.onbPackWikivoyageBody),
-                    Text(t.onbDownloadNote, style: const TextStyle(color: Colors.white54, fontSize: 14)),
+                    Text(t.onbDownloadNote, style: const TextStyle(color: Colors.white54, fontSize: 16)),
                     const SizedBox(height: 20),
                     FilledButton.icon(
                       style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(64)),
                       icon: const Icon(Icons.arrow_forward),
                       label: Text(t.onbStart, style: const TextStyle(fontSize: 20)),
                       onPressed: s.finishOnboarding,
-                    ),
-                    const SizedBox(height: 12),
-                    OutlinedButton.icon(
-                      style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(56)),
-                      icon: const Icon(Icons.download),
-                      label: Text(t.onbDownload),
-                      onPressed: () async {
-                        await s.finishOnboarding();
-                        if (context.mounted) {
-                          await Navigator.push(context, MaterialPageRoute(builder: (_) => const CatalogScreen()));
-                        }
-                      },
                     ),
                   ],
                 ),
@@ -164,30 +158,6 @@ class _Step extends StatelessWidget {
           const SizedBox(height: 24),
           ...children,
         ],
-      );
-}
-
-/// Una raccolta scaricabile, con quello che contiene.
-class _Pack extends StatelessWidget {
-  const _Pack(this.icon, this.title, this.body);
-
-  final IconData icon;
-  final String title, body;
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Icon(icon, color: kAccent, size: 28),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
-              const SizedBox(height: 2),
-              Text(body, style: const TextStyle(fontSize: 15, color: Colors.white70, height: 1.35)),
-            ]),
-          ),
-        ]),
       );
 }
 

@@ -46,39 +46,29 @@ class AppLocalizationsIt extends AppLocalizations {
   String get onbStart => 'Inizia';
 
   @override
-  String get onbDownload => 'Scarica enciclopedie (facoltativo)';
-
-  @override
-  String get onbOptionalTitle => 'Facoltativo: enciclopedie offline';
-
-  @override
-  String get onbOptionalBody =>
-      'Le schede d\'emergenza sono già incluse. Se vuoi, finché hai internet puoi aggiungere:';
-
-  @override
   String get onbPackWikimed => 'WikiMed (inglese)';
 
   @override
   String get onbPackWikimedBody =>
-      'Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso. Circa 2 GB.';
+      'Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso.';
 
   @override
   String get onbPackWikipedia => 'Wikipedia nella tua lingua';
 
   @override
   String get onbPackWikipediaBody =>
-      'Tutta la conoscenza generale: storia, luoghi, scienza, tecnica, come funzionano le cose. Da pochi GB (versione ridotta) a decine di GB (completa).';
+      'Tutta la conoscenza generale: storia, luoghi, scienza, tecnica. Molto grande.';
 
   @override
   String get onbPackWikivoyage => 'Wikivoyage';
 
   @override
   String get onbPackWikivoyageBody =>
-      'Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche. Poche centinaia di MB.';
+      'Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche.';
 
   @override
   String get onbDownloadNote =>
-      'Servono Wi-Fi e spazio libero. Puoi farlo anche dopo, da Prepararsi.';
+      'I download continuano mentre usi l\'app e li vedi in cima alla schermata Emergenza. Puoi aggiungere o togliere contenuti quando vuoi da Strumenti › Manuali e guide.';
 
   @override
   String callNumber(String number) {
@@ -240,7 +230,7 @@ class AppLocalizationsIt extends AppLocalizations {
       'Wikipedia e WikiMed nella tua lingua, da leggere senza rete.';
 
   @override
-  String get library => 'Biblioteca';
+  String get library => 'Manuali e guide';
 
   @override
   String get libraryBody =>
@@ -271,7 +261,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get aboutText =>
-      'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell\'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.';
+      'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell\'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono in Manuali e guide, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.';
 
   @override
   String get documents => 'Documenti';
@@ -616,7 +606,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String entryMissing(String title) {
-    return 'Voce «$title» non trovata: scarica WikiMed dalla Biblioteca per leggerla offline.';
+    return 'Voce «$title» non trovata: scarica WikiMed da Manuali e guide per leggerla offline.';
   }
 
   @override
@@ -1247,7 +1237,8 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get docNotDownloaded => 'Scarica prima il documento dalla Biblioteca.';
+  String get docNotDownloaded =>
+      'Scarica prima il documento da Manuali e guide.';
 
   @override
   String get planTitle => 'Piano di emergenza della famiglia';
@@ -1337,7 +1328,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get libraryKeywords =>
-      'biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere';
+      'biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere manuali guide consultare';
 
   @override
   String get manageMaps => 'Mappe';
@@ -1349,12 +1340,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get savedPoints => 'Punti salvati';
 
   @override
-  String pointsN(int n) {
-    return 'Punti ($n)';
-  }
-
-  @override
-  String get recordTrack => 'Registra';
+  String get recordTrack => 'Percorso';
 
   @override
   String get pointName => 'Nome';
@@ -1394,4 +1380,43 @@ class AppLocalizationsIt extends AppLocalizations {
   String distanceTo(String dist, String dir, int deg) {
     return '$dist in linea d\'aria · verso $dir ($deg°)';
   }
+
+  @override
+  String get onbContentTitle => 'Manuali ed enciclopedie';
+
+  @override
+  String get onbContentBody =>
+      'Scegli cosa tenere sul telefono per consultarlo senza internet. Le schede di emergenza e le guide della Protezione Civile sono già incluse.';
+
+  @override
+  String get onbPackDocs => 'Documenti ufficiali europei';
+
+  @override
+  String get onbPackDocsBody =>
+      'Primo soccorso (ERC, OMS), guide alla preparazione dei governi europei. Nella tua lingua quando esistono.';
+
+  @override
+  String get onbPackMedicine => 'Wikipedia: medicina';
+
+  @override
+  String get onbPackMedicineBody =>
+      'Le voci di medicina di Wikipedia: malattie, sintomi, farmaci, anatomia.';
+
+  @override
+  String onbDownloadSelected(String size) {
+    return 'Scarica i selezionati ($size)';
+  }
+
+  @override
+  String get trackTitle => 'Percorso';
+
+  @override
+  String get trackHelp =>
+      'Tocca «Percorso» per registrare la strada che fai: compare come linea blu sulla mappa. Serve a ritrovare la via del ritorno (verso casa, l\'auto, un rifugio) o a mostrare ai soccorritori da dove sei passato. Si registra solo con questa schermata aperta; tocca di nuovo per fermare.';
+
+  @override
+  String get trackShow => 'Tocca per vederlo sulla mappa';
+
+  @override
+  String get pointsAndTrack => 'Punti e percorso';
 }

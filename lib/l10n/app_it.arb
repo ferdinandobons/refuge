@@ -18,16 +18,13 @@
     }
   },
   "onbStart": "Inizia",
-  "onbDownload": "Scarica enciclopedie (facoltativo)",
-  "onbOptionalTitle": "Facoltativo: enciclopedie offline",
-  "onbOptionalBody": "Le schede d'emergenza sono già incluse. Se vuoi, finché hai internet puoi aggiungere:",
   "onbPackWikimed": "WikiMed (inglese)",
-  "onbPackWikimedBody": "Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso. Circa 2 GB.",
+  "onbPackWikimedBody": "Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso.",
   "onbPackWikipedia": "Wikipedia nella tua lingua",
-  "onbPackWikipediaBody": "Tutta la conoscenza generale: storia, luoghi, scienza, tecnica, come funzionano le cose. Da pochi GB (versione ridotta) a decine di GB (completa).",
+  "onbPackWikipediaBody": "Tutta la conoscenza generale: storia, luoghi, scienza, tecnica. Molto grande.",
   "onbPackWikivoyage": "Wikivoyage",
-  "onbPackWikivoyageBody": "Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche. Poche centinaia di MB.",
-  "onbDownloadNote": "Servono Wi-Fi e spazio libero. Puoi farlo anche dopo, da Prepararsi.",
+  "onbPackWikivoyageBody": "Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche.",
+  "onbDownloadNote": "I download continuano mentre usi l'app e li vedi in cima alla schermata Emergenza. Puoi aggiungere o togliere contenuti quando vuoi da Strumenti › Manuali e guide.",
   "callNumber": "Chiama {number}",
   "@callNumber": {
     "placeholders": {
@@ -107,7 +104,7 @@
   "offlineContent": "Da scaricare finché c'è internet",
   "downloadEncyclopedias": "Scarica enciclopedie",
   "downloadEncyclopediasBody": "Wikipedia e WikiMed nella tua lingua, da leggere senza rete.",
-  "library": "Biblioteca",
+  "library": "Manuali e guide",
   "libraryBody": "Documenti ufficiali europei, guide della Protezione Civile ed enciclopedie offline",
   "originalTexts": "Testi originali",
   "originalTextsBody": "Testi integrali della Protezione Civile italiana (in italiano)",
@@ -116,7 +113,7 @@
   "country": "Paese",
   "about": "Informazioni",
   "aboutBody": "Fonti, licenze e avvertenze",
-  "aboutText": "App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.",
+  "aboutText": "App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono in Manuali e guide, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.",
   "documents": "Documenti",
   "documentsBody": "Documenti ufficiali europei e internazionali, nella tua lingua quando esistono, altrimenti in inglese. Alcuni sono già nell'app, gli altri si scaricano dal sito ufficiale.",
   "torchTitle": "Torcia e SOS",
@@ -297,7 +294,7 @@
   "license": "Licenza",
   "reproducedInFull": "Documento riprodotto integralmente, senza modifiche.",
   "notAvailable": "Non disponibile in questa versione.",
-  "entryMissing": "Voce «{title}» non trovata: scarica WikiMed dalla Biblioteca per leggerla offline.",
+  "entryMissing": "Voce «{title}» non trovata: scarica WikiMed da Manuali e guide per leggerla offline.",
   "@entryMissing": {
     "placeholders": {
       "title": {
@@ -674,7 +671,7 @@
       }
     }
   },
-  "docNotDownloaded": "Scarica prima il documento dalla Biblioteca.",
+  "docNotDownloaded": "Scarica prima il documento da Manuali e guide.",
   "planTitle": "Piano di emergenza della famiglia",
   "planSubtitle": "Contatti, punti d'incontro, chi aiuta chi",
   "planIntro": "Mettetevi d'accordo prima, tutti insieme: in un'emergenza il telefono e internet possono non funzionare.",
@@ -717,12 +714,11 @@
   },
   "civilProtectionGuides": "Guide della Protezione Civile",
   "civilProtectionGuidesBody": "Cosa fare prima, durante e dopo: terremoto, alluvione, incendi boschivi, incidente industriale, maremoto, emergenza nucleare, dighe e vulcani. Testi integrali del Dipartimento della Protezione Civile.",
-  "libraryKeywords": "biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere",
+  "libraryKeywords": "biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere manuali guide consultare",
   "manageMaps": "Mappe",
   "addPoint": "Aggiungi punto",
   "savedPoints": "Punti salvati",
-  "pointsN": "Punti ({n})",
-  "recordTrack": "Registra",
+  "recordTrack": "Percorso",
   "pointName": "Nome",
   "pointNameHint": "Es. casa, punto d'incontro",
   "pointDefaultName": "Punto",
@@ -734,13 +730,6 @@
   "clearTrack": "Cancella",
   "trackLength": "Percorso registrato: {dist}",
   "distanceTo": "{dist} in linea d'aria · verso {dir} ({deg}°)",
-  "@pointsN": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "@trackLength": {
     "placeholders": {
       "dist": {
@@ -760,5 +749,23 @@
         "type": "int"
       }
     }
-  }
+  },
+  "onbContentTitle": "Manuali ed enciclopedie",
+  "onbContentBody": "Scegli cosa tenere sul telefono per consultarlo senza internet. Le schede di emergenza e le guide della Protezione Civile sono già incluse.",
+  "onbPackDocs": "Documenti ufficiali europei",
+  "onbPackDocsBody": "Primo soccorso (ERC, OMS), guide alla preparazione dei governi europei. Nella tua lingua quando esistono.",
+  "onbPackMedicine": "Wikipedia: medicina",
+  "onbPackMedicineBody": "Le voci di medicina di Wikipedia: malattie, sintomi, farmaci, anatomia.",
+  "onbDownloadSelected": "Scarica i selezionati ({size})",
+  "@onbDownloadSelected": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "trackTitle": "Percorso",
+  "trackHelp": "Tocca «Percorso» per registrare la strada che fai: compare come linea blu sulla mappa. Serve a ritrovare la via del ritorno (verso casa, l'auto, un rifugio) o a mostrare ai soccorritori da dove sei passato. Si registra solo con questa schermata aperta; tocca di nuovo per fermare.",
+  "trackShow": "Tocca per vederlo sulla mappa",
+  "pointsAndTrack": "Punti e percorso"
 }

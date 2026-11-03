@@ -46,39 +46,29 @@ class AppLocalizationsDe extends AppLocalizations {
   String get onbStart => 'Los geht\'s';
 
   @override
-  String get onbDownload => 'Lexika herunterladen (optional)';
-
-  @override
-  String get onbOptionalTitle => 'Optional: Offline-Lexika';
-
-  @override
-  String get onbOptionalBody =>
-      'Die Notfallkarten sind bereits enthalten. Solange Sie Internet haben, können Sie zusätzlich laden:';
-
-  @override
   String get onbPackWikimed => 'WikiMed (Englisch)';
 
   @override
   String get onbPackWikimedBody =>
-      'Medizinisches Lexikon: Krankheiten, Symptome, Medikamente, Verletzungen, Erste Hilfe. Etwa 2 GB.';
+      'Medizinisches Lexikon: Krankheiten, Symptome, Medikamente, Wunden, Erste Hilfe.';
 
   @override
   String get onbPackWikipedia => 'Wikipedia in Ihrer Sprache';
 
   @override
   String get onbPackWikipediaBody =>
-      'Das gesamte Allgemeinwissen: Geschichte, Orte, Wissenschaft, Technik, wie Dinge funktionieren. Von wenigen GB (Kurzfassung) bis zu mehreren Dutzend GB (vollständig).';
+      'Das gesamte Allgemeinwissen: Geschichte, Orte, Wissenschaft, Technik. Sehr groß.';
 
   @override
   String get onbPackWikivoyage => 'Wikivoyage';
 
   @override
   String get onbPackWikivoyageBody =>
-      'Länder und Städte: Fortbewegung, Grenzen, Krankenhäuser, praktische Informationen. Einige hundert MB.';
+      'Länder und Städte: unterwegs sein, Grenzen, Krankenhäuser, praktische Informationen.';
 
   @override
   String get onbDownloadNote =>
-      'Sie brauchen WLAN und freien Speicher. Das geht auch später unter Vorsorge.';
+      'Die Downloads laufen weiter, während Sie die App benutzen, und erscheinen oben im Notfall-Bildschirm. Inhalte können Sie jederzeit unter Werkzeuge › Handbücher & Ratgeber hinzufügen oder entfernen.';
 
   @override
   String callNumber(String number) {
@@ -240,7 +230,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Wikipedia und WikiMed in Ihrer Sprache, ohne Netz lesbar.';
 
   @override
-  String get library => 'Bibliothek';
+  String get library => 'Handbücher & Ratgeber';
 
   @override
   String get libraryBody =>
@@ -271,7 +261,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get aboutText =>
-      'Open-Source-App, die ohne Internet funktioniert.\n\nDie Notfallkarten folgen europäischen Leitlinien: Erste Hilfe des Europäischen Rats für Wiederbelebung (ERC 2025) und des Roten Kreuzes (IFRC), Vorsorge nach den Leitlinien der Europäischen Union zu 72 Stunden, und Empfehlungen der nationalen Katastrophenschutzbehörden. Originaldokumente und Lexika finden Sie in der Bibliothek, mit Quellen und Lizenzen.\n\nDiese App ersetzt keinen Erste-Hilfe-Kurs und keine Anweisungen der Behörden.';
+      'Open-Source-App, die ohne Internet funktioniert.\n\nDie Notfallkarten folgen europäischen Leitlinien: Erste Hilfe des Europäischen Rats für Wiederbelebung (ERC 2025) und des Roten Kreuzes (IFRC), Vorsorge nach den Leitlinien der Europäischen Union zu 72 Stunden, und Empfehlungen der nationalen Katastrophenschutzbehörden. Originaldokumente und Lexika finden Sie unter „Handbücher & Ratgeber“, mit Quellen und Lizenzen.\n\nDiese App ersetzt keinen Erste-Hilfe-Kurs und keine Anweisungen der Behörden.';
 
   @override
   String get documents => 'Dokumente';
@@ -617,7 +607,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String entryMissing(String title) {
-    return 'Artikel „$title“ nicht gefunden: Laden Sie WikiMed in der Bibliothek herunter, um ihn offline zu lesen.';
+    return 'Artikel „$title“ nicht gefunden: Laden Sie WikiMed unter „Handbücher & Ratgeber“ herunter, um ihn offline zu lesen.';
   }
 
   @override
@@ -1247,7 +1237,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get docNotDownloaded =>
-      'Laden Sie das Dokument zuerst in der Bibliothek herunter.';
+      'Laden Sie das Dokument zuerst unter „Handbücher & Ratgeber“ herunter.';
 
   @override
   String get planTitle => 'Notfallplan der Familie';
@@ -1337,7 +1327,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get libraryKeywords =>
-      'bibliothek dokumente handbücher pdf lexikon wikipedia wikimed ratgeber zivilschutz lesen';
+      'bibliothek dokumente handbücher pdf lexikon wikipedia wikimed ratgeber zivilschutz lesen handbücher ratgeber nachschlagen';
 
   @override
   String get manageMaps => 'Karten';
@@ -1349,12 +1339,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get savedPoints => 'Gespeicherte Punkte';
 
   @override
-  String pointsN(int n) {
-    return 'Punkte ($n)';
-  }
-
-  @override
-  String get recordTrack => 'Aufzeichnen';
+  String get recordTrack => 'Strecke';
 
   @override
   String get pointName => 'Name';
@@ -1394,4 +1379,43 @@ class AppLocalizationsDe extends AppLocalizations {
   String distanceTo(String dist, String dir, int deg) {
     return '$dist Luftlinie · Richtung $dir ($deg°)';
   }
+
+  @override
+  String get onbContentTitle => 'Handbücher und Lexika';
+
+  @override
+  String get onbContentBody =>
+      'Wählen Sie, was Sie auf dem Handy behalten, um es ohne Internet nachzuschlagen. Die Notfallkarten und die Ratgeber des Zivilschutzes sind schon enthalten.';
+
+  @override
+  String get onbPackDocs => 'Offizielle europäische Dokumente';
+
+  @override
+  String get onbPackDocsBody =>
+      'Erste Hilfe (ERC, WHO) und Vorsorge-Ratgeber europäischer Regierungen. In Ihrer Sprache, wenn vorhanden.';
+
+  @override
+  String get onbPackMedicine => 'Wikipedia: Medizin';
+
+  @override
+  String get onbPackMedicineBody =>
+      'Die Medizinartikel der Wikipedia: Krankheiten, Symptome, Medikamente, Anatomie.';
+
+  @override
+  String onbDownloadSelected(String size) {
+    return 'Auswahl herunterladen ($size)';
+  }
+
+  @override
+  String get trackTitle => 'Strecke';
+
+  @override
+  String get trackHelp =>
+      'Tippen Sie auf „Strecke“, um Ihren Weg aufzuzeichnen: er erscheint als blaue Linie auf der Karte. So finden Sie den Rückweg (nach Hause, zum Auto, zu einem Schutzraum) oder zeigen den Rettungskräften, wo Sie waren. Aufgezeichnet wird nur, solange dieser Bildschirm offen ist; erneut tippen zum Beenden.';
+
+  @override
+  String get trackShow => 'Tippen, um sie auf der Karte zu sehen';
+
+  @override
+  String get pointsAndTrack => 'Punkte und Strecke';
 }

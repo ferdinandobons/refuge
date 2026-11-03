@@ -30,6 +30,7 @@ class _LocationScreenState extends State<LocationScreen> {
   StreamSubscription<Position>? _sub;
   Position? _last;
   LatLng? _focus;
+  List<LatLng>? _fit;
 
   @override
   void initState() {
@@ -109,11 +110,25 @@ class _LocationScreenState extends State<LocationScreen> {
                       Navigator.pop(c);
                     },
                   ),
-                if (m.track.isNotEmpty)
+                const Divider(),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
+                  child: Text(t.trackTitle, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                  child: Text(t.trackHelp, style: const TextStyle(color: Colors.white70)),
+                ),
+                if (m.track.length > 1)
                   ListTile(
                     leading: const Icon(Icons.timeline, color: Colors.lightBlueAccent),
                     title: Text(t.trackLength(formatDistance(m.trackMeters))),
+                    subtitle: Text(t.trackShow),
                     trailing: TextButton(onPressed: m.clearTrack, child: Text(t.clearTrack)),
+                    onTap: () {
+                      setState(() => _fit = List.of(m.track));
+                      Navigator.pop(c);
+                    },
                   ),
               ]),
             );
@@ -158,6 +173,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       selected: m.selected,
                       track: m.track,
                       focus: _focus,
+                      fitTo: _fit,
                       onLongPress: (point) => _addPin(t, at: point),
                       onPinTap: (pin) => m.select(pin == m.selected ? null : pin),
                     ),
@@ -167,7 +183,6 @@ class _LocationScreenState extends State<LocationScreen> {
                     t: t,
                     onAdd: () => _addPin(t),
                     onList: () => _showPins(t),
-                    pins: m.pins.length,
                     recording: m.recording,
                     canRecord: problem == null,
                     trackMeters: m.trackMeters,
@@ -246,7 +261,6 @@ class _Toolbar extends StatelessWidget {
     required this.t,
     required this.onAdd,
     required this.onList,
-    required this.pins,
     required this.recording,
     required this.canRecord,
     required this.trackMeters,
@@ -255,7 +269,6 @@ class _Toolbar extends StatelessWidget {
 
   final AppLocalizations t;
   final VoidCallback onAdd, onList, onRecord;
-  final int pins;
   final bool recording, canRecord;
   final double trackMeters;
 
@@ -267,7 +280,7 @@ class _Toolbar extends StatelessWidget {
             child: TextButton.icon(icon: const Icon(Icons.add_location_alt), label: Text(t.addPoint), onPressed: onAdd),
           ),
           Expanded(
-            child: TextButton.icon(icon: const Icon(Icons.list), label: Text(t.pointsN(pins)), onPressed: onList),
+            child: TextButton.icon(icon: const Icon(Icons.list), label: Text(t.pointsAndTrack), onPressed: onList),
           ),
           Expanded(
             child: TextButton.icon(
@@ -424,6 +437,7 @@ class _MapArea extends StatelessWidget {
     required this.selected,
     required this.track,
     required this.focus,
+    required this.fitTo,
     required this.onLongPress,
     required this.onPinTap,
   });
@@ -433,6 +447,7 @@ class _MapArea extends StatelessWidget {
   final Pin? selected;
   final List<LatLng> track;
   final LatLng? focus;
+  final List<LatLng>? fitTo;
   final void Function(LatLng) onLongPress;
   final void Function(Pin) onPinTap;
 
@@ -477,6 +492,7 @@ class _MapArea extends StatelessWidget {
           selected: selected,
           track: track,
           focus: focus,
+          fitTo: fitTo,
           onLongPress: onLongPress,
           onPinTap: onPinTap,
         );

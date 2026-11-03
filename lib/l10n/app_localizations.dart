@@ -170,24 +170,6 @@ abstract class AppLocalizations {
   /// **'Inizia'**
   String get onbStart;
 
-  /// No description provided for @onbDownload.
-  ///
-  /// In it, this message translates to:
-  /// **'Scarica enciclopedie (facoltativo)'**
-  String get onbDownload;
-
-  /// No description provided for @onbOptionalTitle.
-  ///
-  /// In it, this message translates to:
-  /// **'Facoltativo: enciclopedie offline'**
-  String get onbOptionalTitle;
-
-  /// No description provided for @onbOptionalBody.
-  ///
-  /// In it, this message translates to:
-  /// **'Le schede d\'emergenza sono già incluse. Se vuoi, finché hai internet puoi aggiungere:'**
-  String get onbOptionalBody;
-
   /// No description provided for @onbPackWikimed.
   ///
   /// In it, this message translates to:
@@ -197,7 +179,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbPackWikimedBody.
   ///
   /// In it, this message translates to:
-  /// **'Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso. Circa 2 GB.'**
+  /// **'Enciclopedia medica: malattie, sintomi, farmaci, ferite, primo soccorso.'**
   String get onbPackWikimedBody;
 
   /// No description provided for @onbPackWikipedia.
@@ -209,7 +191,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbPackWikipediaBody.
   ///
   /// In it, this message translates to:
-  /// **'Tutta la conoscenza generale: storia, luoghi, scienza, tecnica, come funzionano le cose. Da pochi GB (versione ridotta) a decine di GB (completa).'**
+  /// **'Tutta la conoscenza generale: storia, luoghi, scienza, tecnica. Molto grande.'**
   String get onbPackWikipediaBody;
 
   /// No description provided for @onbPackWikivoyage.
@@ -221,13 +203,13 @@ abstract class AppLocalizations {
   /// No description provided for @onbPackWikivoyageBody.
   ///
   /// In it, this message translates to:
-  /// **'Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche. Poche centinaia di MB.'**
+  /// **'Paesi e città: come spostarsi, confini, ospedali, informazioni pratiche.'**
   String get onbPackWikivoyageBody;
 
   /// No description provided for @onbDownloadNote.
   ///
   /// In it, this message translates to:
-  /// **'Servono Wi-Fi e spazio libero. Puoi farlo anche dopo, da Prepararsi.'**
+  /// **'I download continuano mentre usi l\'app e li vedi in cima alla schermata Emergenza. Puoi aggiungere o togliere contenuti quando vuoi da Strumenti › Manuali e guide.'**
   String get onbDownloadNote;
 
   /// No description provided for @callNumber.
@@ -521,7 +503,7 @@ abstract class AppLocalizations {
   /// No description provided for @library.
   ///
   /// In it, this message translates to:
-  /// **'Biblioteca'**
+  /// **'Manuali e guide'**
   String get library;
 
   /// No description provided for @libraryBody.
@@ -575,7 +557,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutText.
   ///
   /// In it, this message translates to:
-  /// **'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell\'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono nella Biblioteca, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.'**
+  /// **'App open source che funziona senza internet.\n\nLe schede di emergenza seguono le linee guida europee: primo soccorso del Consiglio Europeo di Rianimazione (ERC 2025) e della Croce Rossa (IFRC), preparazione secondo le linee guida dell\'Unione Europea sulle 72 ore, e le indicazioni delle protezioni civili nazionali. I documenti originali e le enciclopedie sono in Manuali e guide, con fonti e licenze.\n\nQuesta app non sostituisce un corso di primo soccorso né le indicazioni delle autorità.'**
   String get aboutText;
 
   /// No description provided for @documents.
@@ -1181,7 +1163,7 @@ abstract class AppLocalizations {
   /// No description provided for @entryMissing.
   ///
   /// In it, this message translates to:
-  /// **'Voce «{title}» non trovata: scarica WikiMed dalla Biblioteca per leggerla offline.'**
+  /// **'Voce «{title}» non trovata: scarica WikiMed da Manuali e guide per leggerla offline.'**
   String entryMissing(String title);
 
   /// No description provided for @needsTitle.
@@ -2213,7 +2195,7 @@ abstract class AppLocalizations {
   /// No description provided for @docNotDownloaded.
   ///
   /// In it, this message translates to:
-  /// **'Scarica prima il documento dalla Biblioteca.'**
+  /// **'Scarica prima il documento da Manuali e guide.'**
   String get docNotDownloaded;
 
   /// No description provided for @planTitle.
@@ -2369,7 +2351,7 @@ abstract class AppLocalizations {
   /// No description provided for @libraryKeywords.
   ///
   /// In it, this message translates to:
-  /// **'biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere'**
+  /// **'biblioteca documenti manuali pdf enciclopedia wikipedia wikimed guide protezione civile leggere manuali guide consultare'**
   String get libraryKeywords;
 
   /// No description provided for @manageMaps.
@@ -2390,16 +2372,10 @@ abstract class AppLocalizations {
   /// **'Punti salvati'**
   String get savedPoints;
 
-  /// No description provided for @pointsN.
-  ///
-  /// In it, this message translates to:
-  /// **'Punti ({n})'**
-  String pointsN(int n);
-
   /// No description provided for @recordTrack.
   ///
   /// In it, this message translates to:
-  /// **'Registra'**
+  /// **'Percorso'**
   String get recordTrack;
 
   /// No description provided for @pointName.
@@ -2467,6 +2443,72 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'{dist} in linea d\'aria · verso {dir} ({deg}°)'**
   String distanceTo(String dist, String dir, int deg);
+
+  /// No description provided for @onbContentTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Manuali ed enciclopedie'**
+  String get onbContentTitle;
+
+  /// No description provided for @onbContentBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Scegli cosa tenere sul telefono per consultarlo senza internet. Le schede di emergenza e le guide della Protezione Civile sono già incluse.'**
+  String get onbContentBody;
+
+  /// No description provided for @onbPackDocs.
+  ///
+  /// In it, this message translates to:
+  /// **'Documenti ufficiali europei'**
+  String get onbPackDocs;
+
+  /// No description provided for @onbPackDocsBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Primo soccorso (ERC, OMS), guide alla preparazione dei governi europei. Nella tua lingua quando esistono.'**
+  String get onbPackDocsBody;
+
+  /// No description provided for @onbPackMedicine.
+  ///
+  /// In it, this message translates to:
+  /// **'Wikipedia: medicina'**
+  String get onbPackMedicine;
+
+  /// No description provided for @onbPackMedicineBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Le voci di medicina di Wikipedia: malattie, sintomi, farmaci, anatomia.'**
+  String get onbPackMedicineBody;
+
+  /// No description provided for @onbDownloadSelected.
+  ///
+  /// In it, this message translates to:
+  /// **'Scarica i selezionati ({size})'**
+  String onbDownloadSelected(String size);
+
+  /// No description provided for @trackTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Percorso'**
+  String get trackTitle;
+
+  /// No description provided for @trackHelp.
+  ///
+  /// In it, this message translates to:
+  /// **'Tocca «Percorso» per registrare la strada che fai: compare come linea blu sulla mappa. Serve a ritrovare la via del ritorno (verso casa, l\'auto, un rifugio) o a mostrare ai soccorritori da dove sei passato. Si registra solo con questa schermata aperta; tocca di nuovo per fermare.'**
+  String get trackHelp;
+
+  /// No description provided for @trackShow.
+  ///
+  /// In it, this message translates to:
+  /// **'Tocca per vederlo sulla mappa'**
+  String get trackShow;
+
+  /// No description provided for @pointsAndTrack.
+  ///
+  /// In it, this message translates to:
+  /// **'Punti e percorso'**
+  String get pointsAndTrack;
 }
 
 class _AppLocalizationsDelegate
