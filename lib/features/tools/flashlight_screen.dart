@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import 'morse.dart';
 
 class FlashlightScreen extends StatefulWidget {
-  const FlashlightScreen({super.key});
+  const FlashlightScreen({super.key, this.startSos = false});
+
+  /// Avvia subito l'SOS lampeggiante (schermo e torcia), come dal pulsante "SOS luce" della pagina Emergenza.
+  final bool startSos;
 
   @override
   State<FlashlightScreen> createState() => _FlashlightScreenState();
@@ -19,6 +23,12 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
   late final _player = MorsePlayer((on) {
     if (mounted) setState(() => _flash = on);
   });
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.startSos) WidgetsBinding.instance.addPostFrameCallback((_) => _toggleSos());
+  }
 
   Future<void> _toggleTorch() async {
     await _player.stop();
@@ -34,8 +44,11 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
     if (_sos) {
       setState(() => _sos = false);
       await _player.stop();
+      WakelockPlus.disable();
       return;
     }
+    // Mentre lampeggia lo schermo non deve spegnersi.
+    WakelockPlus.enable();
     await setTorch(false);
     setState(() {
       _sos = true;
@@ -48,6 +61,7 @@ class _FlashlightScreenState extends State<FlashlightScreen> {
   void dispose() {
     _player.stop();
     setTorch(false);
+    WakelockPlus.disable();
     super.dispose();
   }
 

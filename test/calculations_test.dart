@@ -25,9 +25,6 @@ void main() {
         SupplyItem(id: 'g2', preset: 'cartridge', size: 450, qty: 1), // 450/220 × 9 = 18,409 pasti
         SupplyItem(id: 'e1', preset: 'powerBank', size: 10000, qty: 1), // 37 Wh × 0,65 = 24,05 Wh
         SupplyItem(id: 'e2', preset: 'powerStation', size: 500, qty: 1), // 500 × 0,85 = 425 Wh
-        SupplyItem(id: 'e3', preset: 'solarPanel', size: 60, qty: 2),
-        SupplyItem(id: 'e4', preset: 'batteriesAA', size: 1, qty: 12),
-        SupplyItem(id: 'o1', preset: 'customOther', size: 1, qty: 4, name: 'Candele'),
       ];
   });
 
@@ -61,14 +58,20 @@ void main() {
       expect(inv.usableWh, closeTo(24.05 + 425, 1e-9));
       expect(inv.phoneCharges, closeTo(449.05 / 15, 1e-9));
       expect(inv.chargeDays(), closeTo(449.05 / 15 / 3, 1e-9));
-      expect(inv.solarPanels, 2); // contati a parte, non nel totale
       expect(Inventory.chargesPer10k, closeTo(24.05 / 15, 1e-9));
     });
 
-    test('batterie e oggetti liberi non alterano i conti', () {
-      final inv = Inventory.instance;
+    test('le cose da avere (sì/no) e lo zaino non alterano i conti', () {
+      final inv = Inventory.instance
+        ..have = {}
+        ..bag = {}
+        ..ownHome = []
+        ..ownBag = [];
       final before = (inv.waterLiters, inv.kcal, inv.gasMeals, inv.usableWh);
-      inv.items.add(SupplyItem(id: 'x', preset: 'customHealth', size: 1, qty: 99, name: 'Sapone'));
+      inv
+        ..have['radio'] = true
+        ..bag['bagFood'] = BagState.packed
+        ..ownHome.add(OwnItem(id: 'x', group: 'health', name: 'Sapone', have: true));
       expect((inv.waterLiters, inv.kcal, inv.gasMeals, inv.usableWh), before);
     });
 
@@ -91,11 +94,11 @@ void main() {
         ..add('water', 1.5, 6)
         ..add('water', 1.5, 4)
         ..add('water', 5, 1)
-        ..add('customOther', 1, 2, name: 'Corda')
-        ..add('customOther', 1, 1, name: 'Corda');
+        ..add('customFood', 100, 2, name: 'Gallette')
+        ..add('customFood', 100, 1, name: 'Gallette');
       expect(inv.items.length, 3);
       expect(inv.items.firstWhere((i) => i.size == 1.5).qty, 10);
-      expect(inv.items.firstWhere((i) => i.name == 'Corda').qty, 3);
+      expect(inv.items.firstWhere((i) => i.name == 'Gallette').qty, 3);
       expect(inv.waterLiters, closeTo(20, 1e-9));
     });
 
@@ -116,6 +119,38 @@ void main() {
       expect(inv.items.map((i) => i.id), ['d1', 'u1']);
       expect(inv.items.first.preset, 'water'); // vecchio tipo convertito
       expect(inv.waterLiters, 15);
+    });
+
+    test('le voci contate a pezzi delle versioni precedenti diventano cose da avere', () async {
+      SharedPreferences.setMockInitialValues({
+        'inventory:v1': jsonEncode({
+          'people': 2,
+          'days': 7,
+          'items': [
+            {'id': 'u1', 'preset': 'water', 'size': 2, 'qty': 3},
+            {'id': 'u2', 'preset': 'batteriesAA', 'size': 1, 'qty': 8},
+            {'id': 'u3', 'preset': 'customHealth', 'size': 1, 'qty': 2, 'name': 'Sapone'},
+            {'id': 'u4', 'preset': 'customOther', 'size': 1, 'qty': 0, 'name': 'Corda'},
+            {'id': 'u5', 'preset': 'solarPanel', 'size': 60, 'qty': 1},
+          ],
+        }),
+      });
+      final inv = Inventory.instance..loaded = false;
+      await inv.load();
+      expect(inv.items.map((i) => i.id), ['u1']);
+      expect(inv.waterLiters, 6);
+      expect(inv.have['spareBatteries'], isTrue);
+      expect([for (final o in inv.ownHome) (o.name ?? o.preset, o.group, o.have)], [
+        ('Sapone', 'health', true),
+        ('Corda', 'safety', false),
+        ('solarPanel', 'light', true),
+      ]);
+      // Si salvano nel nuovo formato e si rileggono uguali.
+      inv.markBagChecked(DateTime(2026, 11, 3));
+      inv.loaded = false;
+      await inv.load();
+      expect(inv.ownHome.length, 3);
+      expect(inv.bagChecked, DateTime(2026, 11, 3));
     });
   });
 

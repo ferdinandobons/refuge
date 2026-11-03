@@ -21,8 +21,9 @@ const kPowerBankEfficiency = 0.65;
 /// Quota dell'energia dichiarata di una power station utilizzabile dalle prese (inverter).
 const kPowerStationEfficiency = 0.85;
 
-/// Sezioni dell'inventario. Acqua, cibo e gas entrano nel riepilogo; il resto si conta a pezzi.
-enum SupplyCategory { water, food, energy, health, other }
+/// Sezioni delle quantità: acqua, cibo ed energia (gas per cucinare, power bank, power station).
+/// Le cose che si hanno o non si hanno sono nella lista "Da avere" ([have], [ownHome]).
+enum SupplyCategory { water, food, energy }
 
 /// Prodotto con i formati più comuni in commercio.
 /// [sizes] sono i contenuti di una confezione: litri per l'acqua, grammi (o ml) per cibo e gas, pezzi per il resto.
@@ -59,13 +60,6 @@ const kPresets = <SupplyPreset>[
   SupplyPreset('cartridge', SupplyCategory.energy, [190, 220, 230, 450], 'g'),
   SupplyPreset('powerBank', SupplyCategory.energy, [5000, 10000, 20000, 26800], 'mAh'),
   SupplyPreset('powerStation', SupplyCategory.energy, [300, 500, 1000, 2000], 'Wh'),
-  SupplyPreset('solarPanel', SupplyCategory.energy, [10, 20, 60, 100], 'W'),
-  SupplyPreset('batteriesAA', SupplyCategory.energy, [1], 'pz'),
-  SupplyPreset('batteriesAAA', SupplyCategory.energy, [1], 'pz'),
-  SupplyPreset('customEnergy', SupplyCategory.energy, [1], 'pz'),
-  SupplyPreset('customHealth', SupplyCategory.health, [1], 'pz'),
-  // "Altro": oggetti liberi scritti dall'utente o scelti tra i suggerimenti, contati a pezzi.
-  SupplyPreset('customOther', SupplyCategory.other, [1], 'pz'),
 ];
 
 /// Chiavi della prima versione (un tipo per formato), convertite al prodotto unico.
@@ -76,7 +70,41 @@ String _migrate(String key) => switch (key) {
       _ => key,
     };
 
-SupplyPreset presetByKey(String key) => kPresets.firstWhere((p) => p.key == key, orElse: () => kPresets.last);
+SupplyPreset presetByKey(String key) => kPresets.firstWhere((p) => p.key == key);
+
+bool isPreset(String key) => kPresets.any((p) => p.key == key);
+
+/// Stato di una voce dello zaino: già dentro, oppure da prendere da casa al momento di uscire.
+/// Se non c'è nessuno dei due, manca.
+enum BagState { packed, fromHome }
+
+/// Voce scritta dall'utente nella lista "Da avere" (casa) o in quella dello zaino.
+class OwnItem {
+  OwnItem({required this.id, required this.group, this.name, this.preset, this.have = false, this.bag});
+
+  factory OwnItem.fromJson(Map<String, dynamic> j) => OwnItem(
+        id: j['id'] as String,
+        group: j['group'] as String,
+        name: j['name'] as String?,
+        preset: j['preset'] as String?,
+        have: j['have'] as bool? ?? false,
+        bag: switch (j['bag']) { 'packed' => BagState.packed, 'fromHome' => BagState.fromHome, _ => null },
+      );
+
+  final String id, group;
+
+  /// Nome scritto dall'utente; per le voci convertite dalle versioni precedenti, il tipo di prodotto.
+  final String? name, preset;
+
+  /// Casa: c'è o non c'è.
+  bool have;
+
+  /// Zaino: dentro, da prendere da casa o (null) manca.
+  BagState? bag;
+
+  Map<String, dynamic> toJson() =>
+      {'id': id, 'group': group, 'name': name, 'preset': preset, 'have': have, 'bag': bag?.name};
+}
 
 class SupplyItem {
   SupplyItem({required this.id, required this.preset, required this.size, this.qty = 0, this.name, this.kcalPer100});
@@ -109,7 +137,8 @@ class SupplyItem {
       {'id': id, 'preset': preset, 'size': size, 'qty': qty, 'name': name, 'kcal': kcalPer100};
 }
 
-/// Inventario delle scorte di casa, salvato sul dispositivo.
+/// Scorte di casa e zaino, salvate sul dispositivo: quantità ([items]), cose che ci sono o no ([have]),
+/// stato dello zaino ([bag]) e voci scritte dall'utente.
 class Inventory extends ChangeNotifier {
   Inventory._();
 
@@ -123,6 +152,18 @@ class Inventory extends ChangeNotifier {
   int days = 14;
   List<SupplyItem> items = [];
 
+  /// Lista "Da avere" di casa: voci del catalogo (`assets/supplies/checklist.json`) che ci sono.
+  Map<String, bool> have = {};
+
+  /// Zaino: stato delle voci del catalogo (quelle assenti mancano).
+  Map<String, BagState> bag = {};
+
+  /// Voci scritte dall'utente, in casa e nello zaino.
+  List<OwnItem> ownHome = [], ownBag = [];
+
+  /// Ultimo controllo dello zaino (cibo, farmaci e batterie scadono).
+  DateTime? bagChecked;
+
   Future<void> load() async {
     if (loaded) return;
     _prefs = await SharedPreferences.getInstance();
@@ -134,20 +175,112 @@ class Inventory extends ChangeNotifier {
       final j = jsonDecode(raw) as Map<String, dynamic>;
       people = j['people'] as int;
       days = j['days'] as int;
+      have = {for (final e in ((j['have'] as Map?) ?? {}).entries) e.key as String: e.value as bool};
+      bag = {
+        for (final e in ((j['bag'] as Map?) ?? {}).entries)
+          e.key as String: e.value == 'fromHome' ? BagState.fromHome : BagState.packed,
+      };
+      ownHome = [for (final o in (j['ownHome'] as List?) ?? []) OwnItem.fromJson(o as Map<String, dynamic>)];
+      ownBag = [for (final o in (j['ownBag'] as List?) ?? []) OwnItem.fromJson(o as Map<String, dynamic>)];
+      bagChecked = DateTime.tryParse(j['bagChecked'] as String? ?? '');
       items = [
         for (final e in (j['items'] as List).cast<Map<String, dynamic>>()) SupplyItem.fromJson(e),
       ]
         // Le voci precaricate a zero delle prime versioni confondevano: si tolgono.
         ..removeWhere((i) => i.id.startsWith('d') && i.qty == 0);
+      _migrateCountedItems();
     }
     loaded = true;
     notifyListeners();
   }
 
+  /// Le versioni precedenti contavano a pezzi anche batterie, pannelli solari e oggetti liberi:
+  /// ora sono voci della lista "Da avere" (c'è / non c'è).
+  void _migrateCountedItems() {
+    for (final i in items.where((i) => !isPreset(i.preset)).toList()) {
+      items.remove(i);
+      if (i.preset == 'batteriesAA' || i.preset == 'batteriesAAA') {
+        if (i.qty > 0) have['spareBatteries'] = true;
+        continue;
+      }
+      final group = switch (i.preset) {
+        'customHealth' => 'health',
+        'customEnergy' || 'solarPanel' => 'light',
+        _ => 'safety',
+      };
+      ownHome.add(OwnItem(
+        id: i.id,
+        group: group,
+        name: i.name,
+        preset: i.name == null ? i.preset : null,
+        have: i.qty > 0,
+      ));
+    }
+  }
+
   void _save() {
     notifyListeners();
-    _prefs?.setString(_key, jsonEncode({'people': people, 'days': days, 'items': [for (final i in items) i.toJson()]}));
+    _prefs?.setString(
+        _key,
+        jsonEncode({
+          'people': people,
+          'days': days,
+          'items': [for (final i in items) i.toJson()],
+          'have': have,
+          'bag': {for (final e in bag.entries) e.key: e.value.name},
+          'ownHome': [for (final o in ownHome) o.toJson()],
+          'ownBag': [for (final o in ownBag) o.toJson()],
+          'bagChecked': bagChecked?.toIso8601String(),
+        }));
   }
+
+  // ---- Lista "Da avere" e zaino ----
+
+  /// Segna una voce di casa. Se manca, non si può nemmeno "prendere da casa" per lo zaino:
+  /// le voci dello zaino che la usano ([bagRefs]) tornano a mancare.
+  void setHave(String id, bool value, {Iterable<String> bagRefs = const []}) {
+    have[id] = value;
+    if (!value) {
+      for (final b in bagRefs) {
+        if (bag[b] == BagState.fromHome) bag.remove(b);
+      }
+    }
+    _save();
+  }
+
+  /// Stato di una voce dello zaino. "Da casa" vuol dire che in casa c'è: la voce di casa [homeRef] si segna.
+  void setBag(String id, BagState? state, {String? homeRef}) {
+    state == null ? bag.remove(id) : bag[id] = state;
+    if (state == BagState.fromHome && homeRef != null) have[homeRef] = true;
+    _save();
+  }
+
+  void addOwn({required bool inBag, required String group, required String name}) {
+    // Una voce nuova parte come "manca": si spunta quando c'è.
+    final o = OwnItem(id: newId(), group: group, name: name);
+    (inBag ? ownBag : ownHome).add(o);
+    _save();
+  }
+
+  void updateOwn(OwnItem o, {bool? have, BagState? bag, bool clearBag = false}) {
+    if (have != null) o.have = have;
+    if (bag != null || clearBag) o.bag = bag;
+    _save();
+  }
+
+  void removeOwn(OwnItem o) {
+    ownHome.remove(o);
+    ownBag.remove(o);
+    _save();
+  }
+
+  void markBagChecked([DateTime? when]) {
+    bagChecked = when ?? DateTime.now();
+    _save();
+  }
+
+  /// Quantità (somma delle confezioni) di un prodotto, es. quanti power bank ci sono in casa.
+  int countOf(String preset) => items.where((i) => i.preset == preset).fold(0, (s, i) => s + i.qty);
 
   void setNeeds({int? people, int? days}) {
     if (people != null) this.people = people;
@@ -183,7 +316,7 @@ class Inventory extends ChangeNotifier {
     _save();
   }
 
-  Iterable<SupplyItem> inCategory(SupplyCategory c) => items.where((i) => i.type.category == c);
+  Iterable<SupplyItem> inCategory(SupplyCategory c) => items.where((i) => isPreset(i.preset) && i.type.category == c);
 
   // ---- Totali e fabbisogno ----
 
@@ -207,9 +340,6 @@ class Inventory extends ChangeNotifier {
   double get chargesNeeded => people * days * kChargesPerDay;
 
   double chargeDays() => phoneCharges / (people * kChargesPerDay);
-
-  /// Pannelli solari: ricaricano, ma quanto dipende dal sole, quindi restano fuori dal conto.
-  int get solarPanels => items.where((i) => i.preset == 'solarPanel').fold(0, (s, i) => s + i.qty);
 
   /// Ricariche date da un power bank da 10.000 mAh, per suggerire quanti ne mancano.
   static double get chargesPer10k => 10000 * kPowerBankVolts / 1000 * kPowerBankEfficiency / kPhoneChargeWh;

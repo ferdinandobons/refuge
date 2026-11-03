@@ -100,7 +100,7 @@
     }
   },
   "sirens": "Sirens",
-  "checklists": "Checklists",
+  "checklists": "Supplies and plan",
   "offlineContent": "Download while you have internet",
   "downloadEncyclopedias": "Download encyclopedias",
   "downloadEncyclopediasBody": "Wikipedia and WikiMed in your language, to read offline.",
@@ -183,8 +183,8 @@
   },
   "westLetter": "W",
   "suppliesTitle": "Supplies",
-  "suppliesSubtitle": "Water and food by number of people and days",
-  "suppliesKeywords": "supplies water food rations how much calculate provisions stockpile",
+  "suppliesSubtitle": "What you have, what is missing and how much: home and backpack",
+  "suppliesKeywords": "supplies water food rations how much calculate provisions stockpile backpack home inventory",
   "people": "People",
   "days": "Days",
   "suppliesNote": "The EU recommends at least 72 hours of self-sufficiency; longer is better. The calculation uses 4 litres of water per person per day (3 for drinking, 1 for cooking and washing) and 2000 kcal. These are rough values for adults: heat, exertion, children and older people change needs. Use the oldest supplies first.",
@@ -302,14 +302,9 @@
       }
     }
   },
-  "needsTitle": "Needs",
-  "summaryTitle": "Summary",
-  "inventoryTitle": "Inventory",
-  "inventoryHint": "Add what you have at home, section by section. Then tap + when you buy and − when you use something.",
   "catWater": "Water",
   "catFood": "Food",
   "catGas": "Cooking gas",
-  "catOther": "Other",
   "coversDays": "Enough for {days} days",
   "@coversDays": {
     "placeholders": {
@@ -371,9 +366,6 @@
   "chooseSize": "Size",
   "otherSize": "Other size",
   "addToInventory": "Add to inventory",
-  "otherItemHint": "Type an item, e.g. flashlight",
-  "suggestions": "Suggestions",
-  "otherSuggestions": "Cash,Copies of documents,Important numbers on paper,Spare keys,Blankets,Sleeping bags,Warm clothes,Foil blanket,Whistle,Rubbish bags,Duct tape,Plastic sheeting,Rope,Multi-tool,Fire extinguisher,Pet food",
   "pWaterBottle": "Water bottle",
   "pWaterTank": "Water jerrycan",
   "pPasta": "Pasta",
@@ -565,10 +557,6 @@
       }
     }
   },
-  "energySuggestions": "Headlamp,Candles,Matches,Lighter,Battery radio,Wind-up radio",
-  "healthSuggestions": "Regular medicines,Painkillers,First aid kit,Oral rehydration salts,Water purification tablets,FFP2 masks,Disposable gloves,Spare glasses,Toilet paper,Soap,Hand sanitiser,Wet wipes,Sanitary pads,Nappies,Bucket with lid,Cat litter or sawdust",
-  "catEnergy": "Energy and light",
-  "catHealth": "Health and hygiene",
   "emptySection": "Nothing yet. Tap “Add”.",
   "catElectricity": "Electricity",
   "chargesHave": "{have} / {need} charges",
@@ -594,14 +582,6 @@
     }
   },
   "electricityBasis": "Basis: 1 full phone charge per person per day. Power banks at 65% and power stations at 85% of their rated capacity.",
-  "solarExtra": "Plus {n, plural, =1{1 solar panel} other{{n} solar panels}} to recharge with sunlight",
-  "@solarExtra": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "pPowerBank": "Power bank",
   "pPowerStation": "Power station",
   "pSolarPanel": "Solar panel",
@@ -709,5 +689,34 @@
   "trackTitle": "Track",
   "trackHelp": "Tap “Track” to record the way you walk: it appears as a blue line on the map. Use it to find your way back (home, to the car, to a shelter) or to show rescuers where you have been. It records only while this screen is open; tap again to stop.",
   "trackShow": "Tap to see it on the map",
-  "pointsAndTrack": "Points and track"
+  "pointsAndTrack": "Points and track",
+  "suppliesHome": "Home",
+  "suppliesBackpack": "Backpack",
+  "shopFor": "For {people} people and {days} days",
+  "shopAllDone": "Nothing missing.",
+  "shopCopied": "List copied: paste it into a message or your notes.",
+  "copyShopping": "Copy the shopping list",
+  "shoppingList": "Shopping list",
+  "filterAll": "Everything",
+  "filterMissing": "What's missing",
+  "suppliesQuantities": "Quantities",
+  "suppliesQuantitiesHint": "How much you have compared with what you need. Tap one to see and update what you have.",
+  "quantitiesEnough": "The quantities are enough.",
+  "suppliesHaveTitle": "To have",
+  "suppliesHaveHint": "Things you either have or not: tick the ones you have. The items follow EU and European civil protection guidelines.",
+  "inBag": "in the backpack",
+  "inBagChange": "It is in the backpack: change it in the Backpack tab.",
+  "addOwnItem": "Add an item",
+  "bagLegend": "For each item choose whether it is already in the backpack, whether you take it from home when you leave, or whether it is missing. The backpack is for when you have to leave home quickly.",
+  "beforeLeaving": "Before leaving, take",
+  "beforeLeavingAlways": "Keys, phone and wallet",
+  "bagReady": "{done} of {total} ready",
+  "bagCheckTitle": "Check the backpack every 6 months",
+  "bagCheckBody": "Food, medicines and batteries expire. Last check: {date}",
+  "bagCheckNever": "never",
+  "bagCheckDone": "Done today",
+  "bagNoPowerBank": "There is none at home: add it in Home › Electricity.",
+  "bagPacked": "In the backpack",
+  "bagFromHome": "From home, when leaving",
+  "bagMissing": "Missing"
 }

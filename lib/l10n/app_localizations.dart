@@ -479,7 +479,7 @@ abstract class AppLocalizations {
   /// No description provided for @checklists.
   ///
   /// In it, this message translates to:
-  /// **'Liste'**
+  /// **'Provviste e piano'**
   String get checklists;
 
   /// No description provided for @offlineContent.
@@ -851,13 +851,13 @@ abstract class AppLocalizations {
   /// No description provided for @suppliesSubtitle.
   ///
   /// In it, this message translates to:
-  /// **'Acqua e cibo per persone e giorni'**
+  /// **'Cosa hai, cosa manca e quanto: casa e zaino'**
   String get suppliesSubtitle;
 
   /// No description provided for @suppliesKeywords.
   ///
   /// In it, this message translates to:
-  /// **'scorte acqua cibo razioni quanto calcolo provviste'**
+  /// **'scorte acqua cibo razioni quanto calcolo provviste zaino casa inventario'**
   String get suppliesKeywords;
 
   /// No description provided for @people.
@@ -1166,30 +1166,6 @@ abstract class AppLocalizations {
   /// **'Voce «{title}» non trovata: scarica WikiMed da Manuali e guide per leggerla offline.'**
   String entryMissing(String title);
 
-  /// No description provided for @needsTitle.
-  ///
-  /// In it, this message translates to:
-  /// **'Fabbisogno'**
-  String get needsTitle;
-
-  /// No description provided for @summaryTitle.
-  ///
-  /// In it, this message translates to:
-  /// **'Riepilogo'**
-  String get summaryTitle;
-
-  /// No description provided for @inventoryTitle.
-  ///
-  /// In it, this message translates to:
-  /// **'Inventario'**
-  String get inventoryTitle;
-
-  /// No description provided for @inventoryHint.
-  ///
-  /// In it, this message translates to:
-  /// **'Aggiungi quello che hai in casa, sezione per sezione. Poi tocca + quando compri e − quando consumi.'**
-  String get inventoryHint;
-
   /// No description provided for @catWater.
   ///
   /// In it, this message translates to:
@@ -1207,12 +1183,6 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Gas per cucinare'**
   String get catGas;
-
-  /// No description provided for @catOther.
-  ///
-  /// In it, this message translates to:
-  /// **'Altro'**
-  String get catOther;
 
   /// No description provided for @coversDays.
   ///
@@ -1315,24 +1285,6 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Aggiungi all\'inventario'**
   String get addToInventory;
-
-  /// No description provided for @otherItemHint.
-  ///
-  /// In it, this message translates to:
-  /// **'Scrivi cosa, es. torcia'**
-  String get otherItemHint;
-
-  /// No description provided for @suggestions.
-  ///
-  /// In it, this message translates to:
-  /// **'Suggerimenti'**
-  String get suggestions;
-
-  /// No description provided for @otherSuggestions.
-  ///
-  /// In it, this message translates to:
-  /// **'Contanti,Fotocopie dei documenti,Numeri importanti su carta,Chiavi di riserva,Coperte,Sacchi a pelo,Vestiti caldi,Telo termico,Fischietto,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Estintore,Cibo per animali'**
-  String get otherSuggestions;
 
   /// No description provided for @pWaterBottle.
   ///
@@ -1928,30 +1880,6 @@ abstract class AppLocalizations {
   /// **'Scarica, aggiorna o elimina le mappe del mondo, dell\'Europa e dei paesi'**
   String get mapsMoreBody;
 
-  /// No description provided for @energySuggestions.
-  ///
-  /// In it, this message translates to:
-  /// **'Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Radio a manovella'**
-  String get energySuggestions;
-
-  /// No description provided for @healthSuggestions.
-  ///
-  /// In it, this message translates to:
-  /// **'Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Mascherine FFP2,Guanti monouso,Occhiali di ricambio,Carta igienica,Sapone,Gel disinfettante,Salviette,Assorbenti,Pannolini,Secchio con coperchio,Lettiera o segatura'**
-  String get healthSuggestions;
-
-  /// No description provided for @catEnergy.
-  ///
-  /// In it, this message translates to:
-  /// **'Energia e luce'**
-  String get catEnergy;
-
-  /// No description provided for @catHealth.
-  ///
-  /// In it, this message translates to:
-  /// **'Salute e igiene'**
-  String get catHealth;
-
   /// No description provided for @emptySection.
   ///
   /// In it, this message translates to:
@@ -1981,12 +1909,6 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Conto: 1 ricarica completa del telefono a persona al giorno. Power bank al 65% e power station all\'85% della capacità dichiarata.'**
   String get electricityBasis;
-
-  /// No description provided for @solarExtra.
-  ///
-  /// In it, this message translates to:
-  /// **'In più: {n, plural, =1{1 pannello solare} other{{n} pannelli solari}} per ricaricare con il sole'**
-  String solarExtra(int n);
 
   /// No description provided for @pPowerBank.
   ///
@@ -2509,6 +2431,180 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Punti e percorso'**
   String get pointsAndTrack;
+
+  /// No description provided for @suppliesHome.
+  ///
+  /// In it, this message translates to:
+  /// **'Casa'**
+  String get suppliesHome;
+
+  /// No description provided for @suppliesBackpack.
+  ///
+  /// In it, this message translates to:
+  /// **'Zaino'**
+  String get suppliesBackpack;
+
+  /// No description provided for @shopFor.
+  ///
+  /// In it, this message translates to:
+  /// **'Per {people} persone e {days} giorni'**
+  String shopFor(int people, int days);
+
+  /// No description provided for @shopAllDone.
+  ///
+  /// In it, this message translates to:
+  /// **'Non manca niente.'**
+  String get shopAllDone;
+
+  /// No description provided for @shopCopied.
+  ///
+  /// In it, this message translates to:
+  /// **'Lista copiata: incollala in un messaggio o nelle note.'**
+  String get shopCopied;
+
+  /// No description provided for @copyShopping.
+  ///
+  /// In it, this message translates to:
+  /// **'Copia la lista della spesa'**
+  String get copyShopping;
+
+  /// No description provided for @shoppingList.
+  ///
+  /// In it, this message translates to:
+  /// **'Lista della spesa'**
+  String get shoppingList;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In it, this message translates to:
+  /// **'Tutto'**
+  String get filterAll;
+
+  /// No description provided for @filterMissing.
+  ///
+  /// In it, this message translates to:
+  /// **'Cosa manca'**
+  String get filterMissing;
+
+  /// No description provided for @suppliesQuantities.
+  ///
+  /// In it, this message translates to:
+  /// **'Le quantità'**
+  String get suppliesQuantities;
+
+  /// No description provided for @suppliesQuantitiesHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Quanto hai rispetto a quanto serve. Tocca una voce per vedere e aggiornare quello che hai.'**
+  String get suppliesQuantitiesHint;
+
+  /// No description provided for @quantitiesEnough.
+  ///
+  /// In it, this message translates to:
+  /// **'Le quantità bastano.'**
+  String get quantitiesEnough;
+
+  /// No description provided for @suppliesHaveTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Da avere'**
+  String get suppliesHaveTitle;
+
+  /// No description provided for @suppliesHaveHint.
+  ///
+  /// In it, this message translates to:
+  /// **'Cose che ci sono o non ci sono: spunta quelle che hai. Le voci seguono le linee guida UE e delle protezioni civili europee.'**
+  String get suppliesHaveHint;
+
+  /// No description provided for @inBag.
+  ///
+  /// In it, this message translates to:
+  /// **'nello zaino'**
+  String get inBag;
+
+  /// No description provided for @inBagChange.
+  ///
+  /// In it, this message translates to:
+  /// **'È nello zaino: cambialo nella scheda Zaino.'**
+  String get inBagChange;
+
+  /// No description provided for @addOwnItem.
+  ///
+  /// In it, this message translates to:
+  /// **'Aggiungi una voce'**
+  String get addOwnItem;
+
+  /// No description provided for @bagLegend.
+  ///
+  /// In it, this message translates to:
+  /// **'Per ogni cosa scegli se è già nello zaino, se la prendi da casa quando esci, o se manca. Lo zaino serve se devi lasciare la casa in fretta.'**
+  String get bagLegend;
+
+  /// No description provided for @beforeLeaving.
+  ///
+  /// In it, this message translates to:
+  /// **'Prima di uscire prendi'**
+  String get beforeLeaving;
+
+  /// No description provided for @beforeLeavingAlways.
+  ///
+  /// In it, this message translates to:
+  /// **'Chiavi, telefono e portafoglio'**
+  String get beforeLeavingAlways;
+
+  /// No description provided for @bagReady.
+  ///
+  /// In it, this message translates to:
+  /// **'{done} di {total} pronte'**
+  String bagReady(int done, int total);
+
+  /// No description provided for @bagCheckTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Controlla lo zaino ogni 6 mesi'**
+  String get bagCheckTitle;
+
+  /// No description provided for @bagCheckBody.
+  ///
+  /// In it, this message translates to:
+  /// **'Cibo, farmaci e batterie scadono. Ultimo controllo: {date}'**
+  String bagCheckBody(String date);
+
+  /// No description provided for @bagCheckNever.
+  ///
+  /// In it, this message translates to:
+  /// **'mai'**
+  String get bagCheckNever;
+
+  /// No description provided for @bagCheckDone.
+  ///
+  /// In it, this message translates to:
+  /// **'Fatto oggi'**
+  String get bagCheckDone;
+
+  /// No description provided for @bagNoPowerBank.
+  ///
+  /// In it, this message translates to:
+  /// **'In casa non c\'è: aggiungilo in Casa › Elettricità.'**
+  String get bagNoPowerBank;
+
+  /// No description provided for @bagPacked.
+  ///
+  /// In it, this message translates to:
+  /// **'Nello zaino'**
+  String get bagPacked;
+
+  /// No description provided for @bagFromHome.
+  ///
+  /// In it, this message translates to:
+  /// **'Da casa, al momento'**
+  String get bagFromHome;
+
+  /// No description provided for @bagMissing.
+  ///
+  /// In it, this message translates to:
+  /// **'Manca'**
+  String get bagMissing;
 }
 
 class _AppLocalizationsDelegate

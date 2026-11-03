@@ -14,8 +14,6 @@ import '../library/documents.dart';
 import '../library/library_screen.dart';
 import '../library/zim/reader_screen.dart';
 import '../library/zim/zim_library.dart';
-import '../prepare/checklists.dart';
-import '../tools/checklist_screen.dart';
 import '../tools/tools_screen.dart';
 import 'search_index.dart';
 
@@ -71,14 +69,6 @@ class _SearchScreenState extends State<SearchScreen> {
         keywords: tool.keywords,
         body: tool.subtitle,
         priority: 1,
-      ));
-    }
-    for (final list in await loadChecklists(s.language)) {
-      index.add(Indexed(
-        _Result(list.title, t.tabPrepare, Icons.checklist, Colors.lightBlueAccent, (_) => ChecklistScreen(list: list)),
-        title: list.title,
-        body: list.searchText,
-        priority: 2,
       ));
     }
     for (final g in await GuideRepository.load(s.language)) {

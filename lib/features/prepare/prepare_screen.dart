@@ -5,13 +5,10 @@ import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../emergency/emergency_screen.dart';
-import '../guides/guide.dart';
 import '../library/library_screen.dart';
-import '../tools/checklist_screen.dart';
 import '../tools/location_screen.dart';
 import '../tools/radio_screen.dart';
 import '../tools/supplies_screen.dart';
-import 'checklists.dart';
 import 'family_plan_screen.dart';
 
 /// Prepararsi prima che serva: numeri e allerte del paese, liste, scorte, contenuti da scaricare.
@@ -56,18 +53,6 @@ class PrepareScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           _Section(t.checklists),
-          FutureBuilder<List<Guide>>(
-            future: loadChecklists(s.language),
-            builder: (context, snap) => Column(children: [
-              for (final c in snap.data ?? const <Guide>[])
-                _Tile(
-                  icon: Icons.checklist,
-                  title: c.title,
-                  subtitle: c.summary,
-                  open: (_) => ChecklistScreen(list: c),
-                ),
-            ]),
-          ),
           _Tile(
             icon: Icons.family_restroom,
             title: t.planTitle,
@@ -75,7 +60,7 @@ class PrepareScreen extends StatelessWidget {
             open: (_) => const FamilyPlanScreen(),
           ),
           _Tile(
-            icon: Icons.calculate,
+            icon: Icons.inventory_2,
             title: t.suppliesTitle,
             subtitle: t.suppliesSubtitle,
             open: (_) => const SuppliesScreen(),

@@ -100,7 +100,7 @@
     }
   },
   "sirens": "Sirene",
-  "checklists": "Liste",
+  "checklists": "Provviste e piano",
   "offlineContent": "Da scaricare finché c'è internet",
   "downloadEncyclopedias": "Scarica enciclopedie",
   "downloadEncyclopediasBody": "Wikipedia e WikiMed nella tua lingua, da leggere senza rete.",
@@ -183,8 +183,8 @@
   },
   "westLetter": "O",
   "suppliesTitle": "Scorte",
-  "suppliesSubtitle": "Acqua e cibo per persone e giorni",
-  "suppliesKeywords": "scorte acqua cibo razioni quanto calcolo provviste",
+  "suppliesSubtitle": "Cosa hai, cosa manca e quanto: casa e zaino",
+  "suppliesKeywords": "scorte acqua cibo razioni quanto calcolo provviste zaino casa inventario",
   "people": "Persone",
   "days": "Giorni",
   "suppliesNote": "L'UE raccomanda almeno 72 ore di autonomia; meglio di più. Il calcolo usa 4 litri d'acqua a persona al giorno (3 da bere, 1 per cucinare e lavarsi) e 2000 kcal. Sono valori indicativi per adulti: caldo, fatica, bambini e anziani cambiano il fabbisogno. Consuma prima le scorte più vecchie.",
@@ -302,14 +302,9 @@
       }
     }
   },
-  "needsTitle": "Fabbisogno",
-  "summaryTitle": "Riepilogo",
-  "inventoryTitle": "Inventario",
-  "inventoryHint": "Aggiungi quello che hai in casa, sezione per sezione. Poi tocca + quando compri e − quando consumi.",
   "catWater": "Acqua",
   "catFood": "Cibo",
   "catGas": "Gas per cucinare",
-  "catOther": "Altro",
   "coversDays": "Basta per {days} giorni",
   "@coversDays": {
     "placeholders": {
@@ -371,9 +366,6 @@
   "chooseSize": "Formato",
   "otherSize": "Altro formato",
   "addToInventory": "Aggiungi all'inventario",
-  "otherItemHint": "Scrivi cosa, es. torcia",
-  "suggestions": "Suggerimenti",
-  "otherSuggestions": "Contanti,Fotocopie dei documenti,Numeri importanti su carta,Chiavi di riserva,Coperte,Sacchi a pelo,Vestiti caldi,Telo termico,Fischietto,Sacchi della spazzatura,Nastro adesivo,Teli di plastica,Corda,Coltellino multiuso,Estintore,Cibo per animali",
   "pWaterBottle": "Bottiglia d'acqua",
   "pWaterTank": "Tanica d'acqua",
   "pPasta": "Pasta",
@@ -565,10 +557,6 @@
       }
     }
   },
-  "energySuggestions": "Torcia frontale,Candele,Fiammiferi,Accendino,Radio a batterie,Radio a manovella",
-  "healthSuggestions": "Medicinali abituali,Antidolorifici,Kit di primo soccorso,Sali reidratanti,Pastiglie potabilizzanti,Mascherine FFP2,Guanti monouso,Occhiali di ricambio,Carta igienica,Sapone,Gel disinfettante,Salviette,Assorbenti,Pannolini,Secchio con coperchio,Lettiera o segatura",
-  "catEnergy": "Energia e luce",
-  "catHealth": "Salute e igiene",
   "emptySection": "Niente ancora. Tocca «Aggiungi».",
   "catElectricity": "Elettricità",
   "chargesHave": "{have} / {need} ricariche",
@@ -594,14 +582,6 @@
     }
   },
   "electricityBasis": "Conto: 1 ricarica completa del telefono a persona al giorno. Power bank al 65% e power station all'85% della capacità dichiarata.",
-  "solarExtra": "In più: {n, plural, =1{1 pannello solare} other{{n} pannelli solari}} per ricaricare con il sole",
-  "@solarExtra": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "pPowerBank": "Power bank",
   "pPowerStation": "Power station",
   "pSolarPanel": "Pannello solare",
@@ -767,5 +747,61 @@
   "trackTitle": "Percorso",
   "trackHelp": "Tocca «Percorso» per registrare la strada che fai: compare come linea blu sulla mappa. Serve a ritrovare la via del ritorno (verso casa, l'auto, un rifugio) o a mostrare ai soccorritori da dove sei passato. Si registra solo con questa schermata aperta; tocca di nuovo per fermare.",
   "trackShow": "Tocca per vederlo sulla mappa",
-  "pointsAndTrack": "Punti e percorso"
+  "pointsAndTrack": "Punti e percorso",
+  "suppliesHome": "Casa",
+  "suppliesBackpack": "Zaino",
+  "shopFor": "Per {people} persone e {days} giorni",
+  "shopAllDone": "Non manca niente.",
+  "shopCopied": "Lista copiata: incollala in un messaggio o nelle note.",
+  "@shopFor": {
+    "placeholders": {
+      "people": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "copyShopping": "Copia la lista della spesa",
+  "shoppingList": "Lista della spesa",
+  "filterAll": "Tutto",
+  "filterMissing": "Cosa manca",
+  "suppliesQuantities": "Le quantità",
+  "suppliesQuantitiesHint": "Quanto hai rispetto a quanto serve. Tocca una voce per vedere e aggiornare quello che hai.",
+  "quantitiesEnough": "Le quantità bastano.",
+  "suppliesHaveTitle": "Da avere",
+  "suppliesHaveHint": "Cose che ci sono o non ci sono: spunta quelle che hai. Le voci seguono le linee guida UE e delle protezioni civili europee.",
+  "inBag": "nello zaino",
+  "inBagChange": "È nello zaino: cambialo nella scheda Zaino.",
+  "addOwnItem": "Aggiungi una voce",
+  "bagLegend": "Per ogni cosa scegli se è già nello zaino, se la prendi da casa quando esci, o se manca. Lo zaino serve se devi lasciare la casa in fretta.",
+  "beforeLeaving": "Prima di uscire prendi",
+  "beforeLeavingAlways": "Chiavi, telefono e portafoglio",
+  "bagReady": "{done} di {total} pronte",
+  "bagCheckTitle": "Controlla lo zaino ogni 6 mesi",
+  "bagCheckBody": "Cibo, farmaci e batterie scadono. Ultimo controllo: {date}",
+  "bagCheckNever": "mai",
+  "bagCheckDone": "Fatto oggi",
+  "bagNoPowerBank": "In casa non c'è: aggiungilo in Casa › Elettricità.",
+  "bagPacked": "Nello zaino",
+  "bagFromHome": "Da casa, al momento",
+  "bagMissing": "Manca",
+  "@bagReady": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@bagCheckBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rifugio/features/guides/guide.dart';
 import 'package:rifugio/features/tools/coords.dart';
 import 'package:rifugio/features/prepare/inventory.dart';
+import 'package:rifugio/features/prepare/supply_checklist.dart';
 import 'package:rifugio/features/tools/fallout.dart';
 import 'package:rifugio/features/tools/fallout_phases.dart';
 import 'package:rifugio/features/tools/morse.dart';
@@ -60,7 +61,7 @@ void main() {
   });
 
   test('tutte le guide e checklist si leggono correttamente', () {
-    for (final dir in ['assets/guides', 'assets/checklists']) {
+    for (final dir in ['assets/guides']) {
       for (final f in Directory(dir).listSync(recursive: true).whereType<File>().where((f) => f.path.endsWith('.md'))) {
         final g = Guide.parse('x', f.readAsStringSync());
         expect(g.title, isNot('x'), reason: f.path);
@@ -177,15 +178,23 @@ void main() {
     }
   });
 
-  test('liste: stessa struttura in tutte le lingue', () {
-    for (final name in ['zaino-72-ore.md', 'scorte-casa.md']) {
-      final it = Guide.parse('x', File('assets/checklists/it/$name').readAsStringSync());
-      for (final lang in ['en', 'fr', 'de', 'es']) {
-        final l = Guide.parse('x', File('assets/checklists/$lang/$name').readAsStringSync());
-        int count(Guide g, BlockType t) => g.blocks.where((b) => b.type == t).length;
-        expect(count(l, BlockType.bullet), count(it, BlockType.bullet), reason: '$lang/$name');
-        expect(count(l, BlockType.heading), count(it, BlockType.heading), reason: '$lang/$name');
+  test('catalogo delle cose da avere e dello zaino: 5 lingue, fonti, rimandi validi', () {
+    final j = jsonDecode(File('assets/supplies/checklist.json').readAsStringSync()) as Map<String, dynamic>;
+    final c = SupplyChecklist.fromJson(j);
+    final homeIds = [for (final i in c.homeItems) i.id];
+    final bagIds = [for (final i in c.bagItems) i.id];
+    expect(homeIds.toSet().length, homeIds.length);
+    expect(bagIds.toSet().length, bagIds.length);
+    for (final g in [...c.home, ...c.bag]) {
+      expect(g.names.keys.toSet(), {'it', 'en', 'fr', 'de', 'es'}, reason: g.id);
+      for (final i in g.items) {
+        expect(i.labels.values.every((l) => l.trim().isNotEmpty), isTrue, reason: i.id);
+        expect(i.source, isNotEmpty, reason: i.id);
       }
+    }
+    for (final b in c.bagItems) {
+      if (b.home != null) expect(homeIds, contains(b.home), reason: b.id);
+      if (b.homePreset != null) expect(isPreset(b.homePreset!), isTrue, reason: b.id);
     }
   });
 
@@ -200,7 +209,6 @@ void main() {
           SupplyItem(id: 'c', preset: 'pasta', size: 500, qty: 4),
           SupplyItem(id: 'd', preset: 'customFood', size: 100, qty: 1, kcalPer100: 250),
           SupplyItem(id: 'e', preset: 'cartridge', size: 220, qty: 2),
-          SupplyItem(id: 'f', preset: 'batteries', size: 1, qty: 8),
         ];
       expect(inv.waterLiters, 25);
       expect(inv.waterNeeded, 80);
@@ -212,7 +220,7 @@ void main() {
 
     test('ogni tipo di scorta ha unità e valori sensati', () {
       for (final p in kPresets) {
-        expect(['L', 'g', 'ml', 'pz', 'mAh', 'Wh', 'W'], contains(p.unit), reason: p.key);
+        expect(['L', 'g', 'ml', 'mAh', 'Wh'], contains(p.unit), reason: p.key);
         expect(p.sizes, isNotEmpty, reason: p.key);
         expect(p.sizes.every((s) => s > 0), isTrue, reason: p.key);
         if (p.category == SupplyCategory.food) expect(p.kcalPer100, greaterThan(0), reason: p.key);

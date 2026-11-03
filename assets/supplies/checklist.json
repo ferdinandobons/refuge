@@ -1,0 +1,780 @@
+{
+ "sources": {
+  "beforeLeaving": "BBK (DE) 2025, p. 26 (keys, mobile phone and wallet to hand)",
+  "bagCheck": "Denk vooruit (NL) 2025, p. 10 (check your emergency kit every six months)"
+ },
+ "home": [
+  {
+   "group": "health",
+   "name": {
+    "it": "Salute e igiene",
+    "en": "Health and hygiene",
+    "fr": "Santé et hygiène",
+    "de": "Gesundheit und Hygiene",
+    "es": "Salud e higiene"
+   },
+   "items": [
+    {
+     "id": "firstAidKit",
+     "src": "EU SWD(2026) 826, 72-hour self-sufficiency; Denk vooruit (NL) 2025, p. 11; BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Kit di primo soccorso con istruzioni",
+     "en": "First aid kit with instructions",
+     "fr": "Trousse de premiers secours avec mode d'emploi",
+     "de": "Erste-Hilfe-Set mit Anleitung",
+     "es": "Botiquín de primeros auxilios con instrucciones"
+    },
+    {
+     "id": "medicines",
+     "src": "EU SWD(2026) 826, 72-hour self-sufficiency; BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Farmaci che prendi abitualmente",
+     "en": "Medicines you take regularly",
+     "fr": "Médicaments que vous prenez habituellement",
+     "de": "Medikamente, die Sie regelmäßig nehmen",
+     "es": "Medicamentos que tomas habitualmente"
+    },
+    {
+     "id": "painkillers",
+     "src": "BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Antidolorifici e antifebbrili",
+     "en": "Painkillers and fever reducers",
+     "fr": "Antidouleurs et antipyrétiques",
+     "de": "Schmerz- und fiebersenkende Mittel",
+     "es": "Analgésicos y antitérmicos"
+    },
+    {
+     "id": "thermometer",
+     "src": "BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Termometro",
+     "en": "Thermometer",
+     "fr": "Thermomètre",
+     "de": "Fieberthermometer",
+     "es": "Termómetro"
+    },
+    {
+     "id": "electrolytes",
+     "src": "BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Sali reidratanti e farmaci per diarrea e nausea",
+     "en": "Oral rehydration salts and remedies for diarrhoea and nausea",
+     "fr": "Sels de réhydratation et médicaments contre la diarrhée et les nausées",
+     "de": "Elektrolyte und Mittel gegen Durchfall und Übelkeit",
+     "es": "Sales de rehidratación y medicamentos para la diarrea y las náuseas"
+    },
+    {
+     "id": "dressings",
+     "src": "BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Disinfettante, cerotti, garze e bende",
+     "en": "Disinfectant, plasters, gauze and bandages",
+     "fr": "Désinfectant, pansements, compresses et bandes",
+     "de": "Desinfektionsmittel, Pflaster, Kompressen und Binden",
+     "es": "Desinfectante, tiritas, gasas y vendas"
+    },
+    {
+     "id": "tourniquet",
+     "src": "IFRC Guidelines 2025 (trauma first aid equipment)",
+     "it": "Laccio emostatico",
+     "en": "Tourniquet",
+     "fr": "Garrot",
+     "de": "Tourniquet",
+     "es": "Torniquete"
+    },
+    {
+     "id": "gloves",
+     "src": "BBK (DE) 2025, medicine cabinet p. 33",
+     "it": "Guanti monouso",
+     "en": "Disposable gloves",
+     "fr": "Gants jetables",
+     "de": "Einmalhandschuhe",
+     "es": "Guantes desechables"
+    },
+    {
+     "id": "spareGlasses",
+     "src": "BBK (DE) 2025, emergency bags p. 34; EU SWD(2026) 828, disability-inclusive preparedness",
+     "it": "Occhiali di ricambio e ausili che usi ogni giorno",
+     "en": "Spare glasses and aids you use every day",
+     "fr": "Lunettes de rechange et aides utilisées chaque jour",
+     "de": "Ersatzbrille und Hilfsmittel, die Sie täglich brauchen",
+     "es": "Gafas de repuesto y ayudas que usas cada día"
+    },
+    {
+     "id": "masks",
+     "src": "BBK (DE) 2025, checklist p. 35",
+     "it": "Mascherine FFP2",
+     "en": "FFP2 masks",
+     "fr": "Masques FFP2",
+     "de": "FFP2-Masken",
+     "es": "Mascarillas FFP2"
+    },
+    {
+     "id": "purification",
+     "src": "WHO Boil water 2015 (chemical disinfection)",
+     "it": "Pastiglie potabilizzanti",
+     "en": "Water purification tablets",
+     "fr": "Pastilles de purification de l'eau",
+     "de": "Wasserentkeimungstabletten",
+     "es": "Pastillas potabilizadoras"
+    },
+    {
+     "id": "soap",
+     "src": "BBK (DE) 2025, checklist p. 35; Denk vooruit (NL) 2025, p. 11",
+     "it": "Sapone e disinfettante",
+     "en": "Soap and disinfectant",
+     "fr": "Savon et désinfectant",
+     "de": "Seife und Desinfektionsmittel",
+     "es": "Jabón y desinfectante"
+    },
+    {
+     "id": "toothpaste",
+     "src": "BBK (DE) 2025, checklist p. 35; Denk vooruit (NL) 2025, p. 11",
+     "it": "Spazzolini e dentifricio",
+     "en": "Toothbrushes and toothpaste",
+     "fr": "Brosses à dents et dentifrice",
+     "de": "Zahnbürsten und Zahnpasta",
+     "es": "Cepillos de dientes y pasta de dientes"
+    },
+    {
+     "id": "toiletPaper",
+     "src": "BBK (DE) 2025, checklist p. 35; Denk vooruit (NL) 2025, p. 11",
+     "it": "Carta igienica e salviette umidificate",
+     "en": "Toilet paper and wet wipes",
+     "fr": "Papier toilette et lingettes",
+     "de": "Toilettenpapier und Feuchttücher",
+     "es": "Papel higiénico y toallitas húmedas"
+    },
+    {
+     "id": "sanitary",
+     "src": "BBK (DE) 2025, checklist p. 35; Denk vooruit (NL) 2025, p. 11",
+     "it": "Assorbenti e pannolini, se servono",
+     "en": "Sanitary pads and nappies, if needed",
+     "fr": "Protections hygiéniques et couches, si besoin",
+     "de": "Binden und Windeln, falls nötig",
+     "es": "Compresas y pañales, si hacen falta"
+    }
+   ]
+  },
+  {
+   "group": "toilet",
+   "name": {
+    "it": "Bagno senz'acqua",
+    "en": "Toilet without water",
+    "fr": "Toilettes sans eau",
+    "de": "Toilette ohne Wasser",
+    "es": "Váter sin agua"
+   },
+   "items": [
+    {
+     "id": "binBags",
+     "src": "MCF (SE) 2026, p. 18; BBK (DE) 2025, checklist p. 35",
+     "it": "Sacchi della spazzatura robusti",
+     "en": "Strong rubbish bags",
+     "fr": "Sacs-poubelle résistants",
+     "de": "Reißfeste Müllbeutel",
+     "es": "Bolsas de basura resistentes"
+    },
+    {
+     "id": "bucket",
+     "src": "MCF (SE) 2026, p. 18",
+     "it": "Secchio con coperchio",
+     "en": "Bucket with a lid",
+     "fr": "Seau avec couvercle",
+     "de": "Eimer mit Deckel",
+     "es": "Cubo con tapa"
+    },
+    {
+     "id": "litter",
+     "src": "MCF (SE) 2026, p. 18",
+     "it": "Lettiera o segatura",
+     "en": "Cat litter or sawdust",
+     "fr": "Litière ou sciure",
+     "de": "Katzenstreu oder Sägemehl",
+     "es": "Arena para gatos o serrín"
+    }
+   ]
+  },
+  {
+   "group": "light",
+   "name": {
+    "it": "Luce, radio e telefono",
+    "en": "Light, radio and phone",
+    "fr": "Éclairage, radio et téléphone",
+    "de": "Licht, Radio und Telefon",
+    "es": "Luz, radio y teléfono"
+   },
+   "items": [
+    {
+     "id": "torch",
+     "src": "BBK (DE) 2025, checklist p. 32; Denk vooruit (NL) 2025, p. 11",
+     "it": "Torcia o lampada frontale",
+     "en": "Torch or headlamp",
+     "fr": "Lampe torche ou frontale",
+     "de": "Taschen- oder Stirnlampe",
+     "es": "Linterna o frontal"
+    },
+    {
+     "id": "spareBatteries",
+     "src": "BBK (DE) 2025, checklist p. 32; MCF (SE) In case of crisis or war 2026, p. 16",
+     "it": "Batterie di ricambio",
+     "en": "Spare batteries",
+     "fr": "Piles de rechange",
+     "de": "Ersatzbatterien",
+     "es": "Pilas de repuesto"
+    },
+    {
+     "id": "radio",
+     "src": "EU SWD(2026) 826, 72-hour self-sufficiency; BBK (DE) 2025, checklist p. 32; MCF (SE) In case of crisis or war 2026, p. 16",
+     "it": "Radio a pile, a manovella o solare",
+     "en": "Battery, wind-up or solar radio",
+     "fr": "Radio à piles, à manivelle ou solaire",
+     "de": "Batterie-, Kurbel- oder Solarradio",
+     "es": "Radio de pilas, de manivela o solar"
+    },
+    {
+     "id": "candles",
+     "src": "BBK (DE) 2025, checklist p. 32; Denk vooruit (NL) 2025, p. 11",
+     "it": "Candele e accendino o fiammiferi",
+     "en": "Candles and a lighter or matches",
+     "fr": "Bougies et briquet ou allumettes",
+     "de": "Kerzen und Feuerzeug oder Streichhölzer",
+     "es": "Velas y mechero o cerillas"
+    },
+    {
+     "id": "carCharger",
+     "src": "MCF (SE) In case of crisis or war 2026, p. 16",
+     "it": "Caricatore da auto per il telefono",
+     "en": "Car charger for the phone",
+     "fr": "Chargeur de voiture pour le téléphone",
+     "de": "Kfz-Ladekabel für das Handy",
+     "es": "Cargador de coche para el móvil"
+    },
+    {
+     "id": "warningApp",
+     "src": "BBK (DE) 2025, checklist p. 32",
+     "it": "Allerte di emergenza attive sul telefono",
+     "en": "Emergency alerts switched on on the phone",
+     "fr": "Alertes d'urgence activées sur le téléphone",
+     "de": "Warnungen auf dem Handy eingeschaltet",
+     "es": "Alertas de emergencia activadas en el móvil"
+    }
+   ]
+  },
+  {
+   "group": "heat",
+   "name": {
+    "it": "Caldo e freddo",
+    "en": "Heat and cold",
+    "fr": "Chaud et froid",
+    "de": "Wärme und Kälte",
+    "es": "Calor y frío"
+   },
+   "items": [
+    {
+     "id": "blankets",
+     "src": "BBK (DE) 2025, checklist p. 32; Denk vooruit (NL) 2025, p. 11",
+     "it": "Coperte o sacco a pelo per ogni persona",
+     "en": "Blankets or a sleeping bag for each person",
+     "fr": "Couvertures ou sac de couchage pour chaque personne",
+     "de": "Decken oder Schlafsack für jede Person",
+     "es": "Mantas o saco de dormir para cada persona"
+    },
+    {
+     "id": "warmClothes",
+     "src": "MCF (SE) In case of crisis or war 2026, p. 16; BBK (DE) 2025, checklist p. 32",
+     "it": "Vestiti caldi per ogni persona: lana, calze pesanti, cappello, guanti",
+     "en": "Warm clothes for each person: wool, thick socks, hat, gloves",
+     "fr": "Vêtements chauds pour chaque personne : laine, chaussettes épaisses, bonnet, gants",
+     "de": "Warme Kleidung für jede Person: Wolle, dicke Socken, Mütze, Handschuhe",
+     "es": "Ropa de abrigo para cada persona: lana, calcetines gruesos, gorro, guantes"
+    },
+    {
+     "id": "heater",
+     "src": "BBK (DE) 2025, p. 23; BBK (DE) 2025, checklist p. 32",
+     "it": "Stufa per l'interno che funziona senza corrente, con il combustibile",
+     "en": "Indoor heater that works without power, with its fuel",
+     "fr": "Chauffage d'intérieur qui fonctionne sans courant, avec son combustible",
+     "de": "Netzunabhängiges Heizgerät für Innenräume, mit Brennstoff",
+     "es": "Estufa para interior que funciona sin luz, con su combustible"
+    },
+    {
+     "id": "foilBlanket",
+     "src": "IFRC Guidelines 2025, hypothermia p. 461 (reflective material)",
+     "it": "Telo termico",
+     "en": "Foil blanket",
+     "fr": "Couverture de survie",
+     "de": "Rettungsdecke",
+     "es": "Manta térmica"
+    }
+   ]
+  },
+  {
+   "group": "kitchen",
+   "name": {
+    "it": "Cucina e acqua",
+    "en": "Kitchen and water",
+    "fr": "Cuisine et eau",
+    "de": "Küche und Wasser",
+    "es": "Cocina y agua"
+   },
+   "items": [
+    {
+     "id": "stove",
+     "src": "BBK (DE) 2025, p. 22; BBK (DE) 2025, checklist p. 32",
+     "it": "Fornello da campeggio o barbecue a gas, da usare solo all'aperto",
+     "en": "Camping stove or gas barbecue, for outdoor use only",
+     "fr": "Réchaud de camping ou barbecue à gaz, à utiliser uniquement dehors",
+     "de": "Campingkocher oder Gasgrill, nur im Freien benutzen",
+     "es": "Hornillo de camping o barbacoa de gas, solo para usar al aire libre"
+    },
+    {
+     "id": "tinOpener",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Apriscatole",
+     "en": "Tin opener",
+     "fr": "Ouvre-boîte",
+     "de": "Dosenöffner",
+     "es": "Abrelatas"
+    },
+    {
+     "id": "waterContainers",
+     "src": "MCF (SE) 2026, p. 15; BBK (DE) 2025, checklist p. 35",
+     "it": "Taniche o secchi con coperchio per l'acqua",
+     "en": "Water containers or buckets with lids",
+     "fr": "Jerricans ou seaux avec couvercle pour l'eau",
+     "de": "Wasserkanister oder Eimer mit Deckel",
+     "es": "Garrafas o cubos con tapa para el agua"
+    },
+    {
+     "id": "petFood",
+     "src": "BBK (DE) 2025, checklist p. 32; Denk vooruit (NL) 2025, p. 11",
+     "it": "Cibo per gli animali, se ne hai",
+     "en": "Pet food, if you have pets",
+     "fr": "Nourriture pour les animaux, si vous en avez",
+     "de": "Tierfutter, falls Sie Haustiere haben",
+     "es": "Comida para mascotas, si tienes"
+    }
+   ]
+  },
+  {
+   "group": "docs",
+   "name": {
+    "it": "Soldi e documenti",
+    "en": "Money and documents",
+    "fr": "Argent et papiers",
+    "de": "Geld und Dokumente",
+    "es": "Dinero y documentos"
+   },
+   "items": [
+    {
+     "id": "cash",
+     "src": "EU SWD(2026) 826, 72-hour self-sufficiency; Denk vooruit (NL) 2025, p. 11; MCF (SE) 2026, p. 17",
+     "it": "Contanti in banconote piccole e monete",
+     "en": "Cash in small notes and coins",
+     "fr": "Espèces en petites coupures et pièces",
+     "de": "Bargeld in kleinen Scheinen und Münzen",
+     "es": "Efectivo en billetes pequeños y monedas"
+    },
+    {
+     "id": "docCopies",
+     "src": "Denk vooruit (NL) 2025, p. 11",
+     "it": "Copie dei documenti d'identità",
+     "en": "Copies of identity documents",
+     "fr": "Copies des pièces d'identité",
+     "de": "Kopien der Ausweisdokumente",
+     "es": "Copias de los documentos de identidad"
+    },
+    {
+     "id": "phoneList",
+     "src": "BBK (DE) 2025, checklist p. 32; Denk vooruit (NL) 2025, p. 11",
+     "it": "Numeri importanti scritti su carta",
+     "en": "Important phone numbers written on paper",
+     "fr": "Numéros importants notés sur papier",
+     "de": "Wichtige Telefonnummern auf Papier",
+     "es": "Números importantes escritos en papel"
+    },
+    {
+     "id": "paperMap",
+     "src": "Denk vooruit (NL) 2025, p. 11",
+     "it": "Mappa cartacea della zona",
+     "en": "Paper map of your area",
+     "fr": "Carte papier de votre secteur",
+     "de": "Papierkarte Ihrer Umgebung",
+     "es": "Mapa en papel de tu zona"
+    },
+    {
+     "id": "spareKeys",
+     "src": "Denk vooruit (NL) 2025, p. 11",
+     "it": "Chiavi di riserva di casa e auto",
+     "en": "Spare house and car keys",
+     "fr": "Clés de rechange de la maison et de la voiture",
+     "de": "Ersatzschlüssel für Haus und Auto",
+     "es": "Llaves de repuesto de casa y coche"
+    },
+    {
+     "id": "familyPlan",
+     "src": "EU SWD(2026) 826, 72-hour self-sufficiency; Denk vooruit (NL) 2025, p. 12",
+     "it": "Piano di emergenza della famiglia, anche su carta",
+     "en": "Family emergency plan, also on paper",
+     "fr": "Plan d'urgence familial, aussi sur papier",
+     "de": "Notfallplan der Familie, auch auf Papier",
+     "es": "Plan de emergencia familiar, también en papel"
+    }
+   ]
+  },
+  {
+   "group": "safety",
+   "name": {
+    "it": "Casa e sicurezza",
+    "en": "Home and safety",
+    "fr": "Maison et sécurité",
+    "de": "Haus und Sicherheit",
+    "es": "Casa y seguridad"
+   },
+   "items": [
+    {
+     "id": "extinguisher",
+     "src": "BBK (DE) 2025, checklist p. 35; MCF (SE) In case of crisis or war 2026, p. 16",
+     "it": "Estintore",
+     "en": "Fire extinguisher",
+     "fr": "Extincteur",
+     "de": "Feuerlöscher",
+     "es": "Extintor"
+    },
+    {
+     "id": "smokeDetector",
+     "src": "BBK (DE) 2025, checklist p. 35",
+     "it": "Rilevatori di fumo",
+     "en": "Smoke alarms",
+     "fr": "Détecteurs de fumée",
+     "de": "Rauchmelder",
+     "es": "Detectores de humo"
+    },
+    {
+     "id": "coDetector",
+     "src": "BBK (DE) 2025, p. 22",
+     "it": "Rilevatore di monossido di carbonio",
+     "en": "Carbon monoxide detector",
+     "fr": "Détecteur de monoxyde de carbone",
+     "de": "Kohlenmonoxid-Melder",
+     "es": "Detector de monóxido de carbono"
+    },
+    {
+     "id": "whistle",
+     "src": "Denk vooruit (NL) 2025, p. 11",
+     "it": "Fischietto per farti trovare",
+     "en": "Whistle to help rescuers find you",
+     "fr": "Sifflet pour vous faire repérer",
+     "de": "Trillerpfeife, damit man Sie findet",
+     "es": "Silbato para que te encuentren"
+    },
+    {
+     "id": "tools",
+     "src": "Denk vooruit (NL) 2025, p. 11",
+     "it": "Attrezzi: martello, sega, tronchesi",
+     "en": "Tools: hammer, saw, wire cutters",
+     "fr": "Outils : marteau, scie, pince coupante",
+     "de": "Werkzeug: Hammer, Säge, Seitenschneider",
+     "es": "Herramientas: martillo, sierra, alicates de corte"
+    },
+    {
+     "id": "tape",
+     "src": "Protezione Civile, rischio industriale: cosa fare",
+     "it": "Nastro adesivo e teli di plastica, per sigillare una stanza",
+     "en": "Tape and plastic sheeting, to seal a room",
+     "fr": "Ruban adhésif et bâches en plastique, pour calfeutrer une pièce",
+     "de": "Klebeband und Plastikfolie, um einen Raum abzudichten",
+     "es": "Cinta adhesiva y láminas de plástico, para sellar una habitación"
+    },
+    {
+     "id": "helmet",
+     "src": "BBK (DE) 2025, checklist p. 35",
+     "it": "Casco di protezione",
+     "en": "Safety helmet",
+     "fr": "Casque de protection",
+     "de": "Schutzhelm",
+     "es": "Casco de protección"
+    }
+   ]
+  }
+ ],
+ "bag": [
+  {
+   "group": "clothes",
+   "name": {
+    "it": "Vestiti e riparo",
+    "en": "Clothes and shelter",
+    "fr": "Vêtements et abri",
+    "de": "Kleidung und Schutz",
+    "es": "Ropa y abrigo"
+   },
+   "items": [
+    {
+     "id": "bagClothes",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Vestiti caldi, impermeabile e scarpe robuste, per ogni persona",
+     "en": "Warm clothes, rain gear and sturdy shoes, for each person",
+     "fr": "Vêtements chauds, imperméable et chaussures solides, pour chaque personne",
+     "de": "Warme Kleidung, Regenschutz und feste Schuhe, für jede Person",
+     "es": "Ropa de abrigo, impermeable y calzado resistente, para cada persona",
+     "home": "warmClothes"
+    },
+    {
+     "id": "bagChange",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Un cambio di vestiti per ogni persona",
+     "en": "A change of clothes for each person",
+     "fr": "Des vêtements de rechange pour chaque personne",
+     "de": "Wechselkleidung für jede Person",
+     "es": "Una muda de ropa para cada persona"
+    },
+    {
+     "id": "bagSleeping",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Sacco a pelo o coperta per ogni persona",
+     "en": "Sleeping bag or blanket for each person",
+     "fr": "Sac de couchage ou couverture pour chaque personne",
+     "de": "Schlafsack oder Decke für jede Person",
+     "es": "Saco de dormir o manta para cada persona",
+     "home": "blankets"
+    },
+    {
+     "id": "bagSun",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Crema solare e cappello",
+     "en": "Sun cream and a hat",
+     "fr": "Crème solaire et chapeau",
+     "de": "Sonnencreme und Kopfbedeckung",
+     "es": "Crema solar y gorra"
+    },
+    {
+     "id": "bagGloves",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Guanti da lavoro",
+     "en": "Work gloves",
+     "fr": "Gants de travail",
+     "de": "Arbeitshandschuhe",
+     "es": "Guantes de trabajo"
+    }
+   ]
+  },
+  {
+   "group": "health",
+   "name": {
+    "it": "Salute e igiene",
+    "en": "Health and hygiene",
+    "fr": "Santé et hygiène",
+    "de": "Gesundheit und Hygiene",
+    "es": "Salud e higiene"
+   },
+   "items": [
+    {
+     "id": "bagFirstAid",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Materiale di primo soccorso",
+     "en": "First aid supplies",
+     "fr": "Matériel de premiers secours",
+     "de": "Erste-Hilfe-Material",
+     "es": "Material de primeros auxilios",
+     "home": "firstAidKit"
+    },
+    {
+     "id": "bagMedicines",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Farmaci personali",
+     "en": "Personal medicines",
+     "fr": "Médicaments personnels",
+     "de": "Persönliche Medikamente",
+     "es": "Medicamentos personales",
+     "home": "medicines"
+    },
+    {
+     "id": "bagToiletries",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Prodotti per l'igiene personale",
+     "en": "Toiletries",
+     "fr": "Produits d'hygiène personnelle",
+     "de": "Hygieneartikel",
+     "es": "Productos de higiene personal"
+    },
+    {
+     "id": "bagGlasses",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Occhiali o apparecchi acustici di ricambio",
+     "en": "Spare glasses or hearing aids",
+     "fr": "Lunettes ou appareils auditifs de rechange",
+     "de": "Ersatzbrille oder Ersatz-Hörgeräte",
+     "es": "Gafas o audífonos de repuesto",
+     "home": "spareGlasses"
+    }
+   ]
+  },
+  {
+   "group": "food",
+   "name": {
+    "it": "Cibo e acqua",
+    "en": "Food and water",
+    "fr": "Nourriture et eau",
+    "de": "Essen und Wasser",
+    "es": "Comida y agua"
+   },
+   "items": [
+    {
+     "id": "bagFood",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Cibo a lunga conservazione per qualche giorno",
+     "en": "Long-life food for a few days",
+     "fr": "Nourriture de longue conservation pour quelques jours",
+     "de": "Haltbare Lebensmittel für einige Tage",
+     "es": "Comida de larga duración para unos días"
+    },
+    {
+     "id": "bagBottle",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Borraccia riempibile per ogni persona",
+     "en": "Refillable water bottle for each person",
+     "fr": "Gourde réutilisable pour chaque personne",
+     "de": "Nachfüllbare Trinkflasche für jede Person",
+     "es": "Botella rellenable para cada persona"
+    },
+    {
+     "id": "bagTableware",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Posate e stoviglie",
+     "en": "Cutlery and tableware",
+     "fr": "Couverts et vaisselle",
+     "de": "Besteck und Geschirr",
+     "es": "Cubiertos y vajilla"
+    },
+    {
+     "id": "bagKnife",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Coltellino e apriscatole",
+     "en": "Pocket knife and tin opener",
+     "fr": "Couteau de poche et ouvre-boîte",
+     "de": "Taschenmesser und Dosenöffner",
+     "es": "Navaja y abrelatas",
+     "home": "tinOpener"
+    }
+   ]
+  },
+  {
+   "group": "light",
+   "name": {
+    "it": "Luce, radio e telefono",
+    "en": "Light, radio and phone",
+    "fr": "Éclairage, radio et téléphone",
+    "de": "Licht, Radio und Telefon",
+    "es": "Luz, radio y teléfono"
+   },
+   "items": [
+    {
+     "id": "bagTorch",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Torcia",
+     "en": "Torch",
+     "fr": "Lampe torche",
+     "de": "Taschenlampe",
+     "es": "Linterna",
+     "home": "torch"
+    },
+    {
+     "id": "bagRadio",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Radio a pile, solare o a manovella",
+     "en": "Battery, solar or wind-up radio",
+     "fr": "Radio à piles, solaire ou à manivelle",
+     "de": "Batterie-, Solar- oder Kurbelradio",
+     "es": "Radio de pilas, solar o de manivela",
+     "home": "radio"
+    },
+    {
+     "id": "bagPowerBank",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Power bank carico",
+     "en": "Charged power bank",
+     "fr": "Batterie externe chargée",
+     "de": "Geladene Powerbank",
+     "es": "Batería externa cargada",
+     "homePreset": "powerBank"
+    },
+    {
+     "id": "bagPhone",
+     "src": "MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Telefono e caricatore",
+     "en": "Phone and charger",
+     "fr": "Téléphone et chargeur",
+     "de": "Handy und Ladegerät",
+     "es": "Móvil y cargador"
+    },
+    {
+     "id": "bagLighter",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Accendino o fiammiferi",
+     "en": "Lighter or matches",
+     "fr": "Briquet ou allumettes",
+     "de": "Feuerzeug oder Streichhölzer",
+     "es": "Mechero o cerillas",
+     "home": "candles"
+    }
+   ]
+  },
+  {
+   "group": "docs",
+   "name": {
+    "it": "Documenti e soldi",
+    "en": "Documents and money",
+    "fr": "Papiers et argent",
+    "de": "Dokumente und Geld",
+    "es": "Documentos y dinero"
+   },
+   "items": [
+    {
+     "id": "bagDocs",
+     "src": "BBK (DE) 2025, emergency bags p. 34; BBK (DE) 2025, p. 25; MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Cartellina con i documenti importanti",
+     "en": "Folder with important documents",
+     "fr": "Pochette avec les papiers importants",
+     "de": "Mappe mit wichtigen Dokumenten",
+     "es": "Carpeta con los documentos importantes",
+     "home": "docCopies"
+    },
+    {
+     "id": "bagCash",
+     "src": "BBK (DE) 2025, emergency bags p. 34; MCF (SE) 2026, p. 19 (evacuation); EU SWD(2026) 826, 72-hour self-sufficiency",
+     "it": "Contanti",
+     "en": "Cash",
+     "fr": "Espèces",
+     "de": "Bargeld",
+     "es": "Efectivo",
+     "home": "cash"
+    },
+    {
+     "id": "bagPhoneList",
+     "src": "MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Numeri e informazioni importanti scritti su carta",
+     "en": "Important numbers and information written on paper",
+     "fr": "Numéros et informations importants notés sur papier",
+     "de": "Wichtige Nummern und Informationen auf Papier",
+     "es": "Números e información importantes escritos en papel",
+     "home": "phoneList"
+    },
+    {
+     "id": "bagMap",
+     "src": "MCF (SE) 2026, p. 19 (evacuation)",
+     "it": "Mappa e bussola",
+     "en": "Map and compass",
+     "fr": "Carte et boussole",
+     "de": "Karte und Kompass",
+     "es": "Mapa y brújula",
+     "home": "paperMap"
+    },
+    {
+     "id": "bagNotepad",
+     "src": "BBK (DE) 2025, emergency bags p. 34",
+     "it": "Blocco e penna",
+     "en": "Notepad and pen",
+     "fr": "Bloc-notes et stylo",
+     "de": "Notizblock und Stift",
+     "es": "Libreta y bolígrafo"
+    }
+   ]
+  }
+ ]
+}

@@ -84,13 +84,9 @@ flutter:
     - assets/guides/fr/
     - assets/guides/de/
     - assets/guides/es/
-    - assets/checklists/it/
-    - assets/checklists/en/
-    - assets/checklists/fr/
-    - assets/checklists/de/
-    - assets/checklists/es/
     - assets/cards/
     - assets/radio/
+    - assets/supplies/
     - assets/documents/
 
   # To add assets to your application, add an assets section, like this:

@@ -100,7 +100,7 @@
     }
   },
   "sirens": "Sirenas",
-  "checklists": "Listas",
+  "checklists": "Provisiones y plan",
   "offlineContent": "Descárgalo mientras haya internet",
   "downloadEncyclopedias": "Descargar enciclopedias",
   "downloadEncyclopediasBody": "Wikipedia y WikiMed en tu idioma, para leer sin conexión.",
@@ -183,8 +183,8 @@
   },
   "westLetter": "O",
   "suppliesTitle": "Provisiones",
-  "suppliesSubtitle": "Agua y comida según personas y días",
-  "suppliesKeywords": "reservas agua comida raciones cuánto cálculo provisiones",
+  "suppliesSubtitle": "Lo que tienes, lo que falta y cuánto: casa y mochila",
+  "suppliesKeywords": "reservas agua comida raciones cuánto cálculo provisiones mochila casa inventario",
   "people": "Personas",
   "days": "Días",
   "suppliesNote": "La UE recomienda al menos 72 horas de autonomía; mejor si es más. El cálculo usa 4 litros de agua por persona y día (3 para beber, 1 para cocinar y lavarse) y 2000 kcal. Son valores orientativos para adultos: el calor, el esfuerzo, los niños y las personas mayores cambian las necesidades. Consume primero las provisiones más antiguas.",
@@ -302,14 +302,9 @@
       }
     }
   },
-  "needsTitle": "Necesidades",
-  "summaryTitle": "Resumen",
-  "inventoryTitle": "Inventario",
-  "inventoryHint": "Añade lo que tienes en casa, sección por sección. Luego toca + cuando compres y − cuando consumas.",
   "catWater": "Agua",
   "catFood": "Comida",
   "catGas": "Gas para cocinar",
-  "catOther": "Otros",
   "coversDays": "Alcanza para {days} días",
   "@coversDays": {
     "placeholders": {
@@ -371,9 +366,6 @@
   "chooseSize": "Formato",
   "otherSize": "Otro formato",
   "addToInventory": "Añadir al inventario",
-  "otherItemHint": "Escribe un objeto, p. ej. linterna",
-  "suggestions": "Sugerencias",
-  "otherSuggestions": "Dinero en efectivo,Fotocopias de documentos,Números importantes en papel,Llaves de repuesto,Mantas,Sacos de dormir,Ropa de abrigo,Manta térmica,Silbato,Bolsas de basura,Cinta americana,Lonas de plástico,Cuerda,Navaja multiusos,Extintor,Comida para mascotas",
   "pWaterBottle": "Botella de agua",
   "pWaterTank": "Garrafa de agua",
   "pPasta": "Pasta",
@@ -565,10 +557,6 @@
       }
     }
   },
-  "energySuggestions": "Linterna frontal,Velas,Cerillas,Mechero,Radio a pilas,Radio de manivela",
-  "healthSuggestions": "Medicamentos habituales,Analgésicos,Botiquín,Sales de rehidratación,Pastillas potabilizadoras,Mascarillas FFP2,Guantes desechables,Gafas de repuesto,Papel higiénico,Jabón,Gel desinfectante,Toallitas,Compresas,Pañales,Cubo con tapa,Arena para gatos o serrín",
-  "catEnergy": "Energía y luz",
-  "catHealth": "Salud e higiene",
   "emptySection": "Nada todavía. Toca «Añadir».",
   "catElectricity": "Electricidad",
   "chargesHave": "{have} / {need} cargas",
@@ -594,14 +582,6 @@
     }
   },
   "electricityBasis": "Cálculo: 1 carga completa del móvil por persona y día. Baterías externas al 65 % y estaciones de energía al 85 % de la capacidad indicada.",
-  "solarExtra": "Además: {n, plural, =1{1 panel solar} other{{n} paneles solares}} para cargar con el sol",
-  "@solarExtra": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "pPowerBank": "Batería externa",
   "pPowerStation": "Estación de energía",
   "pSolarPanel": "Panel solar",
@@ -709,5 +689,34 @@
   "trackTitle": "Recorrido",
   "trackHelp": "Toca «Recorrido» para grabar el camino que haces: aparece como una línea azul en el mapa. Sirve para encontrar el camino de vuelta (a casa, al coche, a un refugio) o para mostrar a los servicios de emergencia por dónde has pasado. Solo se graba con esta pantalla abierta; toca otra vez para parar.",
   "trackShow": "Toca para verlo en el mapa",
-  "pointsAndTrack": "Puntos y recorrido"
+  "pointsAndTrack": "Puntos y recorrido",
+  "suppliesHome": "Casa",
+  "suppliesBackpack": "Mochila",
+  "shopFor": "Para {people} personas y {days} días",
+  "shopAllDone": "No falta nada.",
+  "shopCopied": "Lista copiada: pégala en un mensaje o en tus notas.",
+  "copyShopping": "Copiar la lista de la compra",
+  "shoppingList": "Lista de la compra",
+  "filterAll": "Todo",
+  "filterMissing": "Lo que falta",
+  "suppliesQuantities": "Las cantidades",
+  "suppliesQuantitiesHint": "Cuánto tienes en comparación con lo que hace falta. Toca una línea para ver y actualizar lo que tienes.",
+  "quantitiesEnough": "Las cantidades bastan.",
+  "suppliesHaveTitle": "Para tener",
+  "suppliesHaveHint": "Cosas que tienes o no tienes: marca las que tienes. Los elementos siguen las directrices de la UE y de las protecciones civiles europeas.",
+  "inBag": "en la mochila",
+  "inBagChange": "Está en la mochila: cámbialo en la pestaña Mochila.",
+  "addOwnItem": "Añadir un elemento",
+  "bagLegend": "Para cada cosa elige si ya está en la mochila, si la coges de casa al salir o si falta. La mochila sirve si tienes que salir de casa deprisa.",
+  "beforeLeaving": "Antes de salir, coge",
+  "beforeLeavingAlways": "Llaves, móvil y cartera",
+  "bagReady": "{done} de {total} listas",
+  "bagCheckTitle": "Revisa la mochila cada 6 meses",
+  "bagCheckBody": "La comida, las medicinas y las pilas caducan. Última revisión: {date}",
+  "bagCheckNever": "nunca",
+  "bagCheckDone": "Hecho hoy",
+  "bagNoPowerBank": "En casa no hay: añádela en Casa › Electricidad.",
+  "bagPacked": "En la mochila",
+  "bagFromHome": "De casa, al salir",
+  "bagMissing": "Falta"
 }

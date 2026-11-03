@@ -100,7 +100,7 @@
     }
   },
   "sirens": "Sirenen",
-  "checklists": "Listen",
+  "checklists": "Vorräte und Plan",
   "offlineContent": "Herunterladen, solange es Internet gibt",
   "downloadEncyclopedias": "Lexika herunterladen",
   "downloadEncyclopediasBody": "Wikipedia und WikiMed in Ihrer Sprache, ohne Netz lesbar.",
@@ -183,8 +183,8 @@
   },
   "westLetter": "W",
   "suppliesTitle": "Vorräte",
-  "suppliesSubtitle": "Wasser und Essen für Personen und Tage",
-  "suppliesKeywords": "vorrat vorräte wasser essen lebensmittel rationen wie viel berechnen",
+  "suppliesSubtitle": "Was Sie haben, was fehlt und wie viel: Zuhause und Notgepäck",
+  "suppliesKeywords": "vorrat vorräte wasser essen lebensmittel rationen wie viel berechnen notgepäck zuhause inventar",
   "people": "Personen",
   "days": "Tage",
   "suppliesNote": "Die EU empfiehlt mindestens 72 Stunden Selbstversorgung; länger ist besser. Die Berechnung nimmt 4 Liter Wasser pro Person und Tag (3 zum Trinken, 1 zum Kochen und Waschen) und 2000 kcal an. Das sind Richtwerte für Erwachsene: Hitze, Anstrengung, Kinder und ältere Menschen verändern den Bedarf. Verbrauchen Sie zuerst die ältesten Vorräte.",
@@ -302,14 +302,9 @@
       }
     }
   },
-  "needsTitle": "Bedarf",
-  "summaryTitle": "Übersicht",
-  "inventoryTitle": "Bestand",
-  "inventoryHint": "Fügen Sie Bereich für Bereich hinzu, was Sie zu Hause haben. Tippen Sie dann auf +, wenn Sie etwas kaufen, und auf −, wenn Sie etwas verbrauchen.",
   "catWater": "Wasser",
   "catFood": "Essen",
   "catGas": "Gas zum Kochen",
-  "catOther": "Sonstiges",
   "coversDays": "Reicht für {days} Tage",
   "@coversDays": {
     "placeholders": {
@@ -371,9 +366,6 @@
   "chooseSize": "Größe",
   "otherSize": "Andere Größe",
   "addToInventory": "Zum Bestand hinzufügen",
-  "otherItemHint": "Gegenstand eingeben, z. B. Taschenlampe",
-  "suggestions": "Vorschläge",
-  "otherSuggestions": "Bargeld,Kopien der Dokumente,Wichtige Nummern auf Papier,Ersatzschlüssel,Decken,Schlafsäcke,Warme Kleidung,Rettungsdecke,Trillerpfeife,Müllbeutel,Gewebeband,Plastikplanen,Seil,Taschenmesser,Feuerlöscher,Tierfutter",
   "pWaterBottle": "Wasserflasche",
   "pWaterTank": "Wasserkanister",
   "pPasta": "Nudeln",
@@ -565,10 +557,6 @@
       }
     }
   },
-  "energySuggestions": "Stirnlampe,Kerzen,Streichhölzer,Feuerzeug,Batterieradio,Kurbelradio",
-  "healthSuggestions": "Eigene Medikamente,Schmerzmittel,Erste-Hilfe-Set,Elektrolytpulver,Wasserentkeimungstabletten,FFP2-Masken,Einweghandschuhe,Ersatzbrille,Toilettenpapier,Seife,Handdesinfektion,Feuchttücher,Binden,Windeln,Eimer mit Deckel,Katzenstreu oder Sägemehl",
-  "catEnergy": "Energie und Licht",
-  "catHealth": "Gesundheit und Hygiene",
   "emptySection": "Noch nichts. Tippen Sie auf „Hinzufügen“.",
   "catElectricity": "Strom",
   "chargesHave": "{have} / {need} Ladungen",
@@ -594,14 +582,6 @@
     }
   },
   "electricityBasis": "Berechnung: 1 volle Handyladung pro Person und Tag. Powerbanks mit 65 % und Powerstations mit 85 % der angegebenen Kapazität.",
-  "solarExtra": "Zusätzlich {n, plural, =1{1 Solarpanel} other{{n} Solarpanels}} zum Laden mit Sonnenlicht",
-  "@solarExtra": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "pPowerBank": "Powerbank",
   "pPowerStation": "Powerstation",
   "pSolarPanel": "Solarpanel",
@@ -709,5 +689,34 @@
   "trackTitle": "Strecke",
   "trackHelp": "Tippen Sie auf „Strecke“, um Ihren Weg aufzuzeichnen: er erscheint als blaue Linie auf der Karte. So finden Sie den Rückweg (nach Hause, zum Auto, zu einem Schutzraum) oder zeigen den Rettungskräften, wo Sie waren. Aufgezeichnet wird nur, solange dieser Bildschirm offen ist; erneut tippen zum Beenden.",
   "trackShow": "Tippen, um sie auf der Karte zu sehen",
-  "pointsAndTrack": "Punkte und Strecke"
+  "pointsAndTrack": "Punkte und Strecke",
+  "suppliesHome": "Zuhause",
+  "suppliesBackpack": "Notgepäck",
+  "shopFor": "Für {people} Personen und {days} Tage",
+  "shopAllDone": "Es fehlt nichts.",
+  "shopCopied": "Liste kopiert: in eine Nachricht oder Notiz einfügen.",
+  "copyShopping": "Einkaufsliste kopieren",
+  "shoppingList": "Einkaufsliste",
+  "filterAll": "Alles",
+  "filterMissing": "Was fehlt",
+  "suppliesQuantities": "Mengen",
+  "suppliesQuantitiesHint": "Wie viel Sie haben im Vergleich zum Bedarf. Tippen Sie auf eine Zeile, um Ihre Vorräte zu sehen und zu ändern.",
+  "quantitiesEnough": "Die Mengen reichen.",
+  "suppliesHaveTitle": "Zu haben",
+  "suppliesHaveHint": "Dinge, die man hat oder nicht hat: haken Sie ab, was vorhanden ist. Die Einträge folgen den Leitlinien der EU und europäischer Katastrophenschutzbehörden.",
+  "inBag": "im Notgepäck",
+  "inBagChange": "Es ist im Notgepäck: im Reiter Notgepäck ändern.",
+  "addOwnItem": "Eintrag hinzufügen",
+  "bagLegend": "Wählen Sie für jeden Eintrag, ob er schon im Notgepäck ist, ob Sie ihn beim Gehen von zu Hause mitnehmen oder ob er fehlt. Das Notgepäck brauchen Sie, wenn Sie Ihre Wohnung schnell verlassen müssen.",
+  "beforeLeaving": "Vor dem Gehen mitnehmen",
+  "beforeLeavingAlways": "Schlüssel, Handy und Geldbörse",
+  "bagReady": "{done} von {total} bereit",
+  "bagCheckTitle": "Notgepäck alle 6 Monate prüfen",
+  "bagCheckBody": "Lebensmittel, Medikamente und Batterien laufen ab. Letzte Prüfung: {date}",
+  "bagCheckNever": "nie",
+  "bagCheckDone": "Heute erledigt",
+  "bagNoPowerBank": "Zu Hause ist keine: unter Zuhause › Strom hinzufügen.",
+  "bagPacked": "Im Notgepäck",
+  "bagFromHome": "Beim Gehen mitnehmen",
+  "bagMissing": "Fehlt"
 }

@@ -217,7 +217,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get sirens => 'Sirenas';
 
   @override
-  String get checklists => 'Listas';
+  String get checklists => 'Provisiones y plan';
 
   @override
   String get offlineContent => 'Descárgalo mientras haya internet';
@@ -424,11 +424,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get suppliesTitle => 'Provisiones';
 
   @override
-  String get suppliesSubtitle => 'Agua y comida según personas y días';
+  String get suppliesSubtitle =>
+      'Lo que tienes, lo que falta y cuánto: casa y mochila';
 
   @override
   String get suppliesKeywords =>
-      'reservas agua comida raciones cuánto cálculo provisiones';
+      'reservas agua comida raciones cuánto cálculo provisiones mochila casa inventario';
 
   @override
   String get people => 'Personas';
@@ -612,19 +613,6 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get needsTitle => 'Necesidades';
-
-  @override
-  String get summaryTitle => 'Resumen';
-
-  @override
-  String get inventoryTitle => 'Inventario';
-
-  @override
-  String get inventoryHint =>
-      'Añade lo que tienes en casa, sección por sección. Luego toca + cuando compres y − cuando consumas.';
-
-  @override
   String get catWater => 'Agua';
 
   @override
@@ -632,9 +620,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get catGas => 'Gas para cocinar';
-
-  @override
-  String get catOther => 'Otros';
 
   @override
   String coversDays(String days) {
@@ -702,16 +687,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get addToInventory => 'Añadir al inventario';
-
-  @override
-  String get otherItemHint => 'Escribe un objeto, p. ej. linterna';
-
-  @override
-  String get suggestions => 'Sugerencias';
-
-  @override
-  String get otherSuggestions =>
-      'Dinero en efectivo,Fotocopias de documentos,Números importantes en papel,Llaves de repuesto,Mantas,Sacos de dormir,Ropa de abrigo,Manta térmica,Silbato,Bolsas de basura,Cinta americana,Lonas de plástico,Cuerda,Navaja multiusos,Extintor,Comida para mascotas';
 
   @override
   String get pWaterBottle => 'Botella de agua';
@@ -1067,20 +1042,6 @@ class AppLocalizationsEs extends AppLocalizations {
       'Descarga, actualiza o elimina mapas del mundo, de Europa y de los países';
 
   @override
-  String get energySuggestions =>
-      'Linterna frontal,Velas,Cerillas,Mechero,Radio a pilas,Radio de manivela';
-
-  @override
-  String get healthSuggestions =>
-      'Medicamentos habituales,Analgésicos,Botiquín,Sales de rehidratación,Pastillas potabilizadoras,Mascarillas FFP2,Guantes desechables,Gafas de repuesto,Papel higiénico,Jabón,Gel desinfectante,Toallitas,Compresas,Pañales,Cubo con tapa,Arena para gatos o serrín';
-
-  @override
-  String get catEnergy => 'Energía y luz';
-
-  @override
-  String get catHealth => 'Salud e higiene';
-
-  @override
   String get emptySection => 'Nada todavía. Toca «Añadir».';
 
   @override
@@ -1099,17 +1060,6 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get electricityBasis =>
       'Cálculo: 1 carga completa del móvil por persona y día. Baterías externas al 65 % y estaciones de energía al 85 % de la capacidad indicada.';
-
-  @override
-  String solarExtra(int n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      n,
-      locale: localeName,
-      other: '$n paneles solares',
-      one: '1 panel solar',
-    );
-    return 'Además: $_temp0 para cargar con el sol';
-  }
 
   @override
   String get pPowerBank => 'Batería externa';
@@ -1419,4 +1369,103 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get pointsAndTrack => 'Puntos y recorrido';
+
+  @override
+  String get suppliesHome => 'Casa';
+
+  @override
+  String get suppliesBackpack => 'Mochila';
+
+  @override
+  String shopFor(int people, int days) {
+    return 'Para $people personas y $days días';
+  }
+
+  @override
+  String get shopAllDone => 'No falta nada.';
+
+  @override
+  String get shopCopied =>
+      'Lista copiada: pégala en un mensaje o en tus notas.';
+
+  @override
+  String get copyShopping => 'Copiar la lista de la compra';
+
+  @override
+  String get shoppingList => 'Lista de la compra';
+
+  @override
+  String get filterAll => 'Todo';
+
+  @override
+  String get filterMissing => 'Lo que falta';
+
+  @override
+  String get suppliesQuantities => 'Las cantidades';
+
+  @override
+  String get suppliesQuantitiesHint =>
+      'Cuánto tienes en comparación con lo que hace falta. Toca una línea para ver y actualizar lo que tienes.';
+
+  @override
+  String get quantitiesEnough => 'Las cantidades bastan.';
+
+  @override
+  String get suppliesHaveTitle => 'Para tener';
+
+  @override
+  String get suppliesHaveHint =>
+      'Cosas que tienes o no tienes: marca las que tienes. Los elementos siguen las directrices de la UE y de las protecciones civiles europeas.';
+
+  @override
+  String get inBag => 'en la mochila';
+
+  @override
+  String get inBagChange =>
+      'Está en la mochila: cámbialo en la pestaña Mochila.';
+
+  @override
+  String get addOwnItem => 'Añadir un elemento';
+
+  @override
+  String get bagLegend =>
+      'Para cada cosa elige si ya está en la mochila, si la coges de casa al salir o si falta. La mochila sirve si tienes que salir de casa deprisa.';
+
+  @override
+  String get beforeLeaving => 'Antes de salir, coge';
+
+  @override
+  String get beforeLeavingAlways => 'Llaves, móvil y cartera';
+
+  @override
+  String bagReady(int done, int total) {
+    return '$done de $total listas';
+  }
+
+  @override
+  String get bagCheckTitle => 'Revisa la mochila cada 6 meses';
+
+  @override
+  String bagCheckBody(String date) {
+    return 'La comida, las medicinas y las pilas caducan. Última revisión: $date';
+  }
+
+  @override
+  String get bagCheckNever => 'nunca';
+
+  @override
+  String get bagCheckDone => 'Hecho hoy';
+
+  @override
+  String get bagNoPowerBank =>
+      'En casa no hay: añádela en Casa › Electricidad.';
+
+  @override
+  String get bagPacked => 'En la mochila';
+
+  @override
+  String get bagFromHome => 'De casa, al salir';
+
+  @override
+  String get bagMissing => 'Falta';
 }

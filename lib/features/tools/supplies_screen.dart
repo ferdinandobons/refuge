@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import '../../app/settings.dart';
 import '../../app/theme.dart';
 import '../../l10n/app_localizations.dart';
 import '../prepare/inventory.dart';
+import '../prepare/supply_checklist.dart';
 
-/// Scorte: fabbisogno (persone × giorni), riepilogo di cosa manca e inventario da aggiornare
-/// man mano che si compra o si consuma.
+/// Scorte: una sola pagina con tutto quello che serve sapere.
+/// - Casa: fabbisogno (persone × giorni), le quattro quantità che decidono quanti giorni si resiste
+///   (ognuna con le sue voci, da aggiornare con + e −) e la lista sì/no delle cose da avere.
+/// - Zaino: per ogni cosa, se è già dentro, se si prende da casa al momento di uscire o se manca.
+/// Cosa manca si vede con il filtro "Cosa manca" e si copia come lista della spesa.
 class SuppliesScreen extends StatefulWidget {
-  const SuppliesScreen({super.key});
+  const SuppliesScreen({super.key, this.backpack = false});
+
+  /// Apre direttamente la scheda Zaino.
+  final bool backpack;
 
   @override
   State<SuppliesScreen> createState() => _SuppliesScreenState();
@@ -17,6 +25,9 @@ class SuppliesScreen extends StatefulWidget {
 
 class _SuppliesScreenState extends State<SuppliesScreen> {
   final inv = Inventory.instance;
+  late final Future<SupplyChecklist> _checklist = SupplyChecklist.load();
+  bool _onlyMissing = false;
+  final _open = <Need>{};
 
   @override
   void initState() {
@@ -24,121 +35,374 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
     inv.load();
   }
 
+  String get _lang => AppSettings.instance.language;
+
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context);
-    final nf = NumberFormat.decimalPattern(AppSettings.instance.language);
-    // Con un decimale quando serve: 0,5 L non deve diventare "1 L".
-    final nf1 = NumberFormat('#,##0.#', AppSettings.instance.language);
-    return Scaffold(
-      appBar: AppBar(title: Text(t.suppliesTitle)),
-      body: ListenableBuilder(
-        listenable: inv,
-        builder: (context, _) {
-          if (!inv.loaded) return const Center(child: CircularProgressIndicator());
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
-            children: [
-              _Section(t.needsTitle),
-              _Stepper(label: t.people, value: inv.people, min: 1, max: 30, onChanged: (v) => inv.setNeeds(people: v)),
-              _Stepper(label: t.days, value: inv.days, min: 1, max: 365, onChanged: (v) => inv.setNeeds(days: v)),
-              const SizedBox(height: 16),
-              _Section(t.summaryTitle),
-              _Summary(
-                icon: Icons.water_drop,
-                title: t.catWater,
-                have: '${nf1.format(inv.waterLiters)} / ${nf1.format(inv.waterNeeded)} L',
-                ratio: inv.waterLiters / inv.waterNeeded,
-                days: inv.waterDays(),
-                missing: inv.waterLiters >= inv.waterNeeded
-                    ? null
-                    : t.missingWater(nf1.format(inv.waterNeeded - inv.waterLiters),
-                        ((inv.waterNeeded - inv.waterLiters) / 1.5).ceil()),
-                nf: nf,
+    return DefaultTabController(
+      length: 2,
+      initialIndex: widget.backpack ? 1 : 0,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(t.suppliesTitle),
+          actions: [
+            FutureBuilder<SupplyChecklist>(
+              future: _checklist,
+              builder: (context, snap) => IconButton(
+                icon: const Icon(Icons.shopping_cart),
+                tooltip: t.copyShopping,
+                onPressed: snap.data == null ? null : () => _copyShopping(t, snap.data!),
               ),
-              _Summary(
-                icon: Icons.restaurant,
-                title: t.catFood,
-                have: '${nf.format(inv.kcal.round())} / ${nf.format(inv.kcalNeeded.round())} kcal',
-                ratio: inv.kcal / inv.kcalNeeded,
-                days: inv.foodDays(),
-                missing: inv.kcal >= inv.kcalNeeded
-                    ? null
-                    : t.missingFood(nf.format((inv.kcalNeeded - inv.kcal).ceil()),
-                        nf.format(((inv.kcalNeeded - inv.kcal) / 3600 * 2).ceil() / 2)),
-                nf: nf,
-              ),
-              _Summary(
-                icon: Icons.local_fire_department,
-                title: t.catGas,
-                have: t.mealsHave(inv.gasMeals.floor(), inv.mealsNeeded.round()),
-                ratio: inv.gasMeals / inv.mealsNeeded,
-                days: inv.gasDays(),
-                missing: inv.gasMeals >= inv.mealsNeeded
-                    ? null
-                    : t.missingGas(((inv.mealsNeeded - inv.gasMeals) / kMealsPerCartridge).ceil()),
-                nf: nf,
-              ),
-              _Summary(
-                icon: Icons.battery_charging_full,
-                title: t.catElectricity,
-                have: t.chargesHave(inv.phoneCharges.floor(), inv.chargesNeeded.round()),
-                ratio: inv.phoneCharges / inv.chargesNeeded,
-                days: inv.chargeDays(),
-                missing: inv.phoneCharges >= inv.chargesNeeded
-                    ? null
-                    : t.missingCharges((inv.chargesNeeded - inv.phoneCharges).ceil(),
-                        ((inv.chargesNeeded - inv.phoneCharges) / Inventory.chargesPer10k).ceil()),
-                note: [t.electricityBasis, if (inv.solarPanels > 0) t.solarExtra(inv.solarPanels)].join('\n'),
-                nf: nf,
-              ),
-              const SizedBox(height: 16),
-              _Section(t.inventoryTitle),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(t.inventoryHint, style: const TextStyle(color: Colors.white60)),
-              ),
-              // Ogni sezione sempre visibile, con il suo pulsante: si aggiunge esattamente dove serve.
-              for (final cat in SupplyCategory.values) ...[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(4, 14, 0, 4),
-                  child: Row(children: [
-                    Icon(categoryIcon(cat), color: kAccent, size: 22),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(categoryName(t, cat), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
-                    ),
-                    TextButton.icon(
-                      icon: const Icon(Icons.add),
-                      label: Text(t.addItem),
-                      onPressed: () => _addItem(context, t, cat),
-                    ),
-                  ]),
-                ),
-                if (inv.inCategory(cat).isEmpty)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(34, 0, 4, 6),
-                    child: Text(t.emptySection, style: const TextStyle(color: Colors.white38)),
-                  ),
-                for (final item in inv.inCategory(cat))
-                  _ItemRow(item: item, nf: nf, onEdit: () => _editItem(context, t, item)),
-              ],
-              const SizedBox(height: 12),
-              Text(t.suppliesNote, style: const TextStyle(color: Colors.white54)),
-            ],
-          );
-        },
+            ),
+          ],
+          bottom: TabBar(tabs: [
+            Tab(icon: const Icon(Icons.home), text: t.suppliesHome),
+            Tab(icon: const Icon(Icons.backpack), text: t.suppliesBackpack),
+          ]),
+        ),
+        body: FutureBuilder<SupplyChecklist>(
+          future: _checklist,
+          builder: (context, snap) => ListenableBuilder(
+            listenable: inv,
+            builder: (context, _) {
+              final c = snap.data;
+              if (!inv.loaded || c == null) return const Center(child: CircularProgressIndicator());
+              return TabBarView(children: [_home(context, t, c), _bag(context, t, c)]);
+            },
+          ),
+        ),
       ),
     );
   }
 
-  Future<void> _addItem(BuildContext context, AppLocalizations t, SupplyCategory category) =>
-      showModalBottomSheet<void>(
+  Widget _filter(AppLocalizations t) => Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: SegmentedButton<bool>(
+          segments: [
+            ButtonSegment(value: false, label: Text(t.filterAll), icon: const Icon(Icons.list)),
+            ButtonSegment(value: true, label: Text(t.filterMissing), icon: const Icon(Icons.shopping_cart)),
+          ],
+          selected: {_onlyMissing},
+          onSelectionChanged: (v) => setState(() => _onlyMissing = v.first),
+        ),
+      );
+
+  // ---- Casa ----
+
+  Widget _home(BuildContext context, AppLocalizations t, SupplyChecklist c) {
+    final nf = NumberFormat.decimalPattern(_lang);
+    final needs = [for (final n in Need.values) _needInfo(t, n, nf)];
+    final shown = _onlyMissing ? needs.where((n) => n.missing != null).toList() : needs;
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
+      children: [
+        Card(
+          margin: const EdgeInsets.only(bottom: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Column(children: [
+              _Stepper(label: t.people, value: inv.people, min: 1, max: 30, onChanged: (v) => inv.setNeeds(people: v)),
+              _Stepper(label: t.days, value: inv.days, min: 1, max: 365, onChanged: (v) => inv.setNeeds(days: v)),
+            ]),
+          ),
+        ),
+        _filter(t),
+        _Section(t.suppliesQuantities),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: Text(t.suppliesQuantitiesHint, style: const TextStyle(color: Colors.white60)),
+        ),
+        if (shown.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Text(t.quantitiesEnough, style: const TextStyle(color: Colors.lightGreen)),
+          ),
+        for (final n in shown)
+          _NeedCard(
+            info: n,
+            nf: nf,
+            open: _open.contains(n.need),
+            onToggle: () => setState(() => _open.contains(n.need) ? _open.remove(n.need) : _open.add(n.need)),
+            items: inv.items.where((i) => needPresets(n.need).contains(i.preset)).toList(),
+            onAdd: () => _addItem(context, t, n.need),
+            onEdit: (item) => _editItem(context, t, item),
+          ),
+        const SizedBox(height: 16),
+        _Section('${t.suppliesHaveTitle} · ${t.doneOf(c.homeDone(inv), c.homeTotal(inv))}'),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: Text(t.suppliesHaveHint, style: const TextStyle(color: Colors.white60)),
+        ),
+        for (final g in c.home) _homeGroup(context, t, c, g),
+        const SizedBox(height: 12),
+        Text(t.suppliesNote, style: const TextStyle(color: Colors.white54)),
+      ],
+    );
+  }
+
+  Widget _homeGroup(BuildContext context, AppLocalizations t, SupplyChecklist c, CheckGroup g) {
+    final own = inv.ownHome.where((o) => o.group == g.id).toList();
+    final done = g.items.where((i) => c.atHome(inv, i)).length + own.where((o) => o.have).length;
+    final total = g.items.length + own.length;
+    final items = _onlyMissing ? g.items.where((i) => !c.atHome(inv, i)).toList() : g.items;
+    final owns = _onlyMissing ? own.where((o) => !o.have).toList() : own;
+    if (_onlyMissing && items.isEmpty && owns.isEmpty) return const SizedBox.shrink();
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: ExpansionTile(
+        key: PageStorageKey('home-${g.id}-$_onlyMissing'),
+        initiallyExpanded: _onlyMissing,
+        shape: const Border(),
+        title: Text(g.name(_lang), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+        trailing: _GroupCount(done: done, total: total, t: t),
+        children: [
+          for (final i in items)
+            CheckboxListTile(
+              dense: true,
+              controlAffinity: ListTileControlAffinity.leading,
+              value: c.atHome(inv, i),
+              title: Text(i.label(_lang), style: const TextStyle(fontSize: 16)),
+              subtitle: c.onlyInBag(inv, i) ? Text(t.inBag, style: const TextStyle(color: kAccent)) : null,
+              onChanged: (v) {
+                if (c.onlyInBag(inv, i) && v == false) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(t.inBagChange)));
+                  return;
+                }
+                inv.setHave(i.id, v ?? false, bagRefs: c.bagRefs(i.id));
+              },
+            ),
+          for (final o in owns)
+            CheckboxListTile(
+              dense: true,
+              controlAffinity: ListTileControlAffinity.leading,
+              value: o.have,
+              title: Text(_ownName(t, o), style: const TextStyle(fontSize: 16)),
+              secondary: IconButton(
+                icon: const Icon(Icons.delete_outline, size: 20),
+                tooltip: t.delete,
+                onPressed: () => inv.removeOwn(o),
+              ),
+              onChanged: (v) => inv.updateOwn(o, have: v ?? false),
+            ),
+          if (!_onlyMissing)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                icon: const Icon(Icons.add),
+                label: Text(t.addOwnItem),
+                onPressed: () => _addOwn(context, t, inBag: false, group: g.id),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  // ---- Zaino ----
+
+  Widget _bag(BuildContext context, AppLocalizations t, SupplyChecklist c) {
+    final grab = c.beforeLeaving(inv, _lang);
+    final checked = inv.bagChecked;
+    final due = checked == null || DateTime.now().difference(checked).inDays > 182;
+    final df = DateFormat.yMd(_lang);
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
+      children: [
+        _filter(t),
+        Text(t.bagLegend, style: const TextStyle(color: Colors.white70)),
+        const SizedBox(height: 10),
+        Card(
+          color: kAccent.withValues(alpha: 0.12),
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                const Icon(Icons.directions_run, color: kAccent),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(t.beforeLeaving, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
+                ),
+              ]),
+              const SizedBox(height: 6),
+              for (final g in [...grab, t.beforeLeavingAlways])
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text('• $g', style: const TextStyle(fontSize: 16)),
+                ),
+            ]),
+          ),
+        ),
+        const SizedBox(height: 8),
+        _Section('${t.suppliesBackpack} · ${t.bagReady(c.bagDone(inv), c.bagTotal(inv))}'),
+        for (final g in c.bag) _bagGroup(context, t, c, g),
+        const SizedBox(height: 8),
+        Card(
+          child: ListTile(
+            leading: Icon(Icons.event_repeat, color: due ? kAccent : Colors.lightGreen),
+            title: Text(t.bagCheckTitle),
+            subtitle: Text(t.bagCheckBody(checked == null ? t.bagCheckNever : df.format(checked))),
+            trailing: TextButton(onPressed: inv.markBagChecked, child: Text(t.bagCheckDone)),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _bagGroup(BuildContext context, AppLocalizations t, SupplyChecklist c, CheckGroup g) {
+    final own = inv.ownBag.where((o) => o.group == g.id).toList();
+    final done = g.items.where((i) => c.bagState(inv, i) != null).length + own.where((o) => o.bag != null).length;
+    final total = g.items.length + own.length;
+    final items = _onlyMissing ? g.items.where((i) => c.bagState(inv, i) == null).toList() : g.items;
+    final owns = _onlyMissing ? own.where((o) => o.bag == null).toList() : own;
+    if (_onlyMissing && items.isEmpty && owns.isEmpty) return const SizedBox.shrink();
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: ExpansionTile(
+        key: PageStorageKey('bag-${g.id}-$_onlyMissing'),
+        initiallyExpanded: _onlyMissing,
+        shape: const Border(),
+        title: Text(g.name(_lang), style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17)),
+        trailing: _GroupCount(done: done, total: total, t: t),
+        children: [
+          for (final i in items)
+            _BagRow(
+              label: i.label(_lang),
+              state: c.bagState(inv, i),
+              canTakeFromHome: c.canTakeFromHome(inv, i),
+              note: c.canTakeFromHome(inv, i) ? null : t.bagNoPowerBank,
+              t: t,
+              onChanged: (s) => inv.setBag(i.id, s, homeRef: i.home),
+            ),
+          for (final o in owns)
+            _BagRow(
+              label: _ownName(t, o),
+              state: o.bag,
+              canTakeFromHome: true,
+              t: t,
+              onChanged: (s) => inv.updateOwn(o, bag: s, clearBag: s == null),
+              onDelete: () => inv.removeOwn(o),
+            ),
+          if (!_onlyMissing)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                icon: const Icon(Icons.add),
+                label: Text(t.addOwnItem),
+                onPressed: () => _addOwn(context, t, inBag: true, group: g.id),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  String _ownName(AppLocalizations t, OwnItem o) => o.name ?? presetName(t, o.preset ?? '');
+
+  Future<void> _addOwn(BuildContext context, AppLocalizations t, {required bool inBag, required String group}) async {
+    final name = TextEditingController();
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text(t.addOwnItem),
+        content: TextField(
+          controller: name,
+          autofocus: true,
+          textCapitalization: TextCapitalization.sentences,
+          decoration: InputDecoration(labelText: t.itemName),
+          onSubmitted: (_) => Navigator.pop(c, true),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, false), child: Text(t.cancel)),
+          FilledButton(onPressed: () => Navigator.pop(c, true), child: Text(t.save)),
+        ],
+      ),
+    );
+    if (ok == true && name.text.trim().isNotEmpty) inv.addOwn(inBag: inBag, group: group, name: name.text.trim());
+    name.dispose();
+  }
+
+  // ---- Quantità ----
+
+  _NeedInfo _needInfo(AppLocalizations t, Need n, NumberFormat nf) {
+    // Con un decimale quando serve: 0,5 L non deve diventare "1 L".
+    final nf1 = NumberFormat('#,##0.#', _lang);
+    return switch (n) {
+      Need.water => _NeedInfo(
+          n,
+          '${nf1.format(inv.waterLiters)} / ${nf1.format(inv.waterNeeded)} L',
+          inv.waterLiters / inv.waterNeeded,
+          inv.waterDays(),
+          inv.waterLiters >= inv.waterNeeded
+              ? null
+              : t.missingWater(nf1.format(inv.waterNeeded - inv.waterLiters), ((inv.waterNeeded - inv.waterLiters) / 1.5).ceil()),
+        ),
+      Need.food => _NeedInfo(
+          n,
+          '${nf.format(inv.kcal.round())} / ${nf.format(inv.kcalNeeded.round())} kcal',
+          inv.kcal / inv.kcalNeeded,
+          inv.foodDays(),
+          inv.kcal >= inv.kcalNeeded
+              ? null
+              : t.missingFood(
+                  nf.format((inv.kcalNeeded - inv.kcal).ceil()), nf.format(((inv.kcalNeeded - inv.kcal) / 3600 * 2).ceil() / 2)),
+        ),
+      Need.cooking => _NeedInfo(
+          n,
+          t.mealsHave(inv.gasMeals.floor(), inv.mealsNeeded.round()),
+          inv.gasMeals / inv.mealsNeeded,
+          inv.gasDays(),
+          inv.gasMeals >= inv.mealsNeeded ? null : t.missingGas(((inv.mealsNeeded - inv.gasMeals) / kMealsPerCartridge).ceil()),
+        ),
+      Need.electricity => _NeedInfo(
+          n,
+          t.chargesHave(inv.phoneCharges.floor(), inv.chargesNeeded.round()),
+          inv.phoneCharges / inv.chargesNeeded,
+          inv.chargeDays(),
+          inv.phoneCharges >= inv.chargesNeeded
+              ? null
+              : t.missingCharges((inv.chargesNeeded - inv.phoneCharges).ceil(),
+                  ((inv.chargesNeeded - inv.phoneCharges) / Inventory.chargesPer10k).ceil()),
+          note: t.electricityBasis,
+        ),
+    };
+  }
+
+  /// Lista della spesa: quantità che mancano, cose da avere in casa e nello zaino. Ogni cosa una volta sola.
+  void _copyShopping(AppLocalizations t, SupplyChecklist c) {
+    final nf = NumberFormat.decimalPattern(_lang);
+    final lines = <String>[
+      '${t.shoppingList.toUpperCase()} · ${t.shopFor(inv.people, inv.days)}',
+      '',
+      t.suppliesHome.toUpperCase(),
+    ];
+    for (final n in Need.values) {
+      final info = _needInfo(t, n, nf);
+      if (info.missing != null) lines.add('• ${needName(t, n)}: ${info.missing}');
+    }
+    for (final e in c.missingHome(inv, _lang).entries) {
+      lines.add('• ${e.key}: ${e.value.join(', ')}');
+    }
+    final bag = c.missingBag(inv, _lang);
+    if (bag.isNotEmpty) {
+      lines
+        ..add('')
+        ..add(t.suppliesBackpack.toUpperCase());
+      for (final e in bag.entries) {
+        lines.add('• ${e.key}: ${e.value.join(', ')}');
+      }
+    }
+    if (lines.length == 3) lines.add(t.shopAllDone);
+    Clipboard.setData(ClipboardData(text: lines.join('\n')));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(t.shopCopied)));
+  }
+
+  Future<void> _addItem(BuildContext context, AppLocalizations t, Need need) => showModalBottomSheet<void>(
         context: context,
         isScrollControlled: true,
         builder: (c) => Padding(
           padding: EdgeInsets.only(bottom: MediaQuery.of(c).viewInsets.bottom),
-          child: _AddSheet(inv: inv, t: t, category: category),
+          child: _AddSheet(inv: inv, t: t, need: need),
         ),
       );
 
@@ -153,38 +417,186 @@ class _SuppliesScreenState extends State<SuppliesScreen> {
       );
 }
 
-String categoryName(AppLocalizations t, SupplyCategory c) => switch (c) {
-      SupplyCategory.water => t.catWater,
-      SupplyCategory.food => t.catFood,
-      SupplyCategory.energy => t.catEnergy,
-      SupplyCategory.health => t.catHealth,
-      SupplyCategory.other => t.catOther,
+/// Conteggio di un gruppo (es. "3 di 15") con la freccia che indica che si apre.
+class _GroupCount extends StatelessWidget {
+  const _GroupCount({required this.done, required this.total, required this.t});
+
+  final int done, total;
+  final AppLocalizations t;
+
+  @override
+  Widget build(BuildContext context) => Row(mainAxisSize: MainAxisSize.min, children: [
+        Text(t.doneOf(done, total),
+            style: TextStyle(color: done == total ? Colors.lightGreen : Colors.white60, fontWeight: FontWeight.w600)),
+        const Icon(Icons.expand_more, color: Colors.white54),
+      ]);
+}
+
+/// Le quattro quantità che decidono quanti giorni si resiste in casa.
+enum Need { water, food, cooking, electricity }
+
+/// Prodotti dell'inventario che contano per ogni quantità.
+List<String> needPresets(Need n) => switch (n) {
+      Need.water => const ['water'],
+      Need.food => [for (final p in kPresets) if (p.category == SupplyCategory.food) p.key],
+      Need.cooking => const ['cartridge'],
+      Need.electricity => const ['powerBank', 'powerStation'],
     };
 
-IconData categoryIcon(SupplyCategory c) => switch (c) {
-      SupplyCategory.water => Icons.water_drop,
-      SupplyCategory.food => Icons.restaurant,
-      SupplyCategory.energy => Icons.bolt,
-      SupplyCategory.health => Icons.medical_services,
-      SupplyCategory.other => Icons.category,
+String needName(AppLocalizations t, Need n) => switch (n) {
+      Need.water => t.catWater,
+      Need.food => t.catFood,
+      Need.cooking => t.catGas,
+      Need.electricity => t.catElectricity,
     };
 
-/// Suggerimenti di oggetti da aggiungere, per sezione.
-List<String> suggestionsFor(AppLocalizations t, SupplyCategory c) => switch (c) {
-      SupplyCategory.energy => t.energySuggestions.split(','),
-      SupplyCategory.health => t.healthSuggestions.split(','),
-      SupplyCategory.other => t.otherSuggestions.split(','),
-      _ => const [],
+IconData needIcon(Need n) => switch (n) {
+      Need.water => Icons.water_drop,
+      Need.food => Icons.restaurant,
+      Need.cooking => Icons.local_fire_department,
+      Need.electricity => Icons.battery_charging_full,
     };
 
-/// Tipo "libero" (nome scritto dall'utente) per ogni sezione; l'acqua non ne ha.
-String? customPresetFor(SupplyCategory c) => switch (c) {
-      SupplyCategory.food => 'customFood',
-      SupplyCategory.energy => 'customEnergy',
-      SupplyCategory.health => 'customHealth',
-      SupplyCategory.other => 'customOther',
-      SupplyCategory.water => null,
+class _NeedInfo {
+  const _NeedInfo(this.need, this.have, this.ratio, this.days, this.missing, {this.note});
+
+  final Need need;
+  final String have;
+  final double ratio, days;
+  final String? missing, note;
+}
+
+/// Una quantità: quanto c'è su quanto serve, giorni coperti, cosa manca. Toccandola si aprono le sue voci.
+class _NeedCard extends StatelessWidget {
+  const _NeedCard({
+    required this.info,
+    required this.nf,
+    required this.open,
+    required this.onToggle,
+    required this.items,
+    required this.onAdd,
+    required this.onEdit,
+  });
+
+  final _NeedInfo info;
+  final NumberFormat nf;
+  final bool open;
+  final VoidCallback onToggle, onAdd;
+  final List<SupplyItem> items;
+  final void Function(SupplyItem) onEdit;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context);
+    final ok = info.missing == null;
+    final color = ok ? Colors.lightGreen : (info.ratio >= 0.5 ? kAccent : kDanger);
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: Column(children: [
+        InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: onToggle,
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                Icon(needIcon(info.need), color: color),
+                const SizedBox(width: 10),
+                Text(needName(t, info.need), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const Spacer(),
+                Flexible(child: Text(info.have, textAlign: TextAlign.end, style: const TextStyle(color: Colors.white70))),
+                Icon(open ? Icons.expand_less : Icons.expand_more, color: Colors.white54),
+              ]),
+              const SizedBox(height: 10),
+              LinearProgressIndicator(
+                  value: info.ratio.clamp(0, 1), color: color, minHeight: 8, borderRadius: BorderRadius.circular(4)),
+              const SizedBox(height: 8),
+              Text(t.coversDays(nf.format((info.days * 10).floor() / 10)),
+                  style: TextStyle(color: color, fontWeight: FontWeight.w600)),
+              if (info.missing != null) Text(info.missing!, style: const TextStyle(color: Colors.white70)),
+            ]),
+          ),
+        ),
+        if (open)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+              if (items.isEmpty)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(6, 0, 6, 6),
+                  child: Text(t.emptySection, style: const TextStyle(color: Colors.white38)),
+                ),
+              for (final item in items) _ItemRow(item: item, nf: nf, onEdit: () => onEdit(item)),
+              OutlinedButton.icon(icon: const Icon(Icons.add), label: Text(t.addItem), onPressed: onAdd),
+              if (info.note != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: Text(info.note!, style: const TextStyle(color: Colors.white38, fontSize: 13)),
+                ),
+            ]),
+          ),
+      ]),
+    );
+  }
+}
+
+/// Voce dello zaino con i tre stati: nello zaino, da prendere da casa, manca.
+class _BagRow extends StatelessWidget {
+  const _BagRow({
+    required this.label,
+    required this.state,
+    required this.canTakeFromHome,
+    required this.t,
+    required this.onChanged,
+    this.note,
+    this.onDelete,
+  });
+
+  final String label;
+  final BagState? state;
+  final bool canTakeFromHome;
+  final String? note;
+  final AppLocalizations t;
+  final void Function(BagState? s) onChanged;
+  final VoidCallback? onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final status = switch (state) {
+      BagState.packed => (t.bagPacked, Colors.lightGreen),
+      BagState.fromHome => (t.bagFromHome, kAccent),
+      null => (t.bagMissing, Colors.white38),
     };
+    return ListTile(
+      dense: true,
+      contentPadding: const EdgeInsets.only(left: 16, right: 8),
+      title: Text(label, style: const TextStyle(fontSize: 16)),
+      subtitle: Text(note ?? status.$1, style: TextStyle(color: note == null ? status.$2 : Colors.white38)),
+      onLongPress: onDelete,
+      trailing: SegmentedButton<int>(
+        showSelectedIcon: false,
+        style: const ButtonStyle(visualDensity: VisualDensity.compact, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+        segments: [
+          ButtonSegment(value: 0, icon: const Icon(Icons.backpack, size: 18), tooltip: t.bagPacked),
+          ButtonSegment(value: 1, icon: const Icon(Icons.home, size: 18), tooltip: t.bagFromHome, enabled: canTakeFromHome),
+          ButtonSegment(value: 2, icon: const Icon(Icons.close, size: 18), tooltip: t.bagMissing),
+        ],
+        selected: {
+          switch (state) {
+            BagState.packed => 0,
+            BagState.fromHome => 1,
+            null => 2,
+          }
+        },
+        onSelectionChanged: (v) => onChanged(switch (v.first) {
+          0 => BagState.packed,
+          1 => BagState.fromHome,
+          _ => null,
+        }),
+      ),
+    );
+  }
+}
 
 /// Nome del prodotto; per l'acqua dipende dal formato (bottiglia o tanica).
 String presetName(AppLocalizations t, String key, {double size = 1}) => switch (key) {
@@ -258,56 +670,6 @@ class _Stepper extends StatelessWidget {
           ]),
         ),
       );
-}
-
-class _Summary extends StatelessWidget {
-  const _Summary({
-    required this.icon,
-    required this.title,
-    required this.have,
-    required this.ratio,
-    required this.days,
-    required this.missing,
-    required this.nf,
-    this.note,
-  });
-
-  final IconData icon;
-  final String title, have;
-  final double ratio, days;
-  final String? missing;
-
-  /// Come è fatto il conto (es. per l'elettricità).
-  final String? note;
-  final NumberFormat nf;
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppLocalizations.of(context);
-    final ok = missing == null;
-    final color = ok ? Colors.lightGreen : (ratio >= 0.5 ? kAccent : kDanger);
-    return Card(
-      margin: const EdgeInsets.only(bottom: 8),
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Row(children: [
-            Icon(icon, color: color),
-            const SizedBox(width: 10),
-            Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            const Spacer(),
-            Text(have, style: const TextStyle(color: Colors.white70)),
-          ]),
-          const SizedBox(height: 10),
-          LinearProgressIndicator(value: ratio.clamp(0, 1), color: color, minHeight: 8, borderRadius: BorderRadius.circular(4)),
-          const SizedBox(height: 8),
-          Text(t.coversDays(nf.format((days * 10).floor() / 10)), style: TextStyle(color: color, fontWeight: FontWeight.w600)),
-          if (missing != null) Text(missing!, style: const TextStyle(color: Colors.white70)),
-          if (note != null) Text(note!, style: const TextStyle(color: Colors.white38, fontSize: 13)),
-        ]),
-      ),
-    );
-  }
 }
 
 class _ItemRow extends StatelessWidget {
@@ -482,18 +844,17 @@ class _ItemEditorState extends State<_ItemEditor> {
 IconData presetIcon(SupplyPreset p) => switch (p.key) {
       'cartridge' => Icons.local_fire_department,
       'powerBank' || 'powerStation' => Icons.battery_charging_full,
-      'solarPanel' => Icons.solar_power,
-      'batteriesAA' || 'batteriesAAA' => Icons.battery_full,
-      _ => categoryIcon(p.category),
+      'water' => Icons.water_drop,
+      _ => Icons.restaurant,
     };
 
 /// Aggiunta in tre tocchi: prodotto, formato (quelli in commercio o uno a scelta), quantità.
 class _AddSheet extends StatefulWidget {
-  const _AddSheet({required this.inv, required this.t, required this.category});
+  const _AddSheet({required this.inv, required this.t, required this.need});
 
   final Inventory inv;
   final AppLocalizations t;
-  final SupplyCategory category;
+  final Need need;
 
   @override
   State<_AddSheet> createState() => _AddSheetState();
@@ -565,18 +926,20 @@ class _AddSheetState extends State<_AddSheet> {
 
   /// Passo 1: che cosa, solo dentro la sezione toccata.
   Widget _products() {
-    final cat = widget.category;
-    final custom = customPresetFor(cat);
-    final products = kPresets.where((p) => p.category == cat && !p.key.startsWith('custom')).toList();
+    final need = widget.need;
+    final keys = needPresets(need);
+    // Solo il cibo ha una voce libera (con le sue kcal): il resto si sceglie tra i prodotti in commercio.
+    final custom = keys.contains('customFood') ? 'customFood' : null;
+    final products = kPresets.where((p) => keys.contains(p.key) && !p.key.startsWith('custom')).toList();
     void pickCustom(String name) {
       if (custom != null && name.trim().isNotEmpty) _choose(presetByKey(custom), name: name.trim());
     }
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(children: [
-        Icon(categoryIcon(cat), color: kAccent),
+        Icon(needIcon(need), color: kAccent),
         const SizedBox(width: 8),
-        Text(categoryName(t, cat), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+        Text(needName(t, need), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
       ]),
       if (products.isNotEmpty) ...[
         const SizedBox(height: 14),
@@ -595,20 +958,12 @@ class _AddSheetState extends State<_AddSheet> {
           controller: _name,
           textCapitalization: TextCapitalization.sentences,
           decoration: InputDecoration(
-            hintText: t.otherItemHint,
+            hintText: t.itemName,
             border: const OutlineInputBorder(),
             suffixIcon: IconButton(icon: const Icon(Icons.arrow_forward), onPressed: () => pickCustom(_name.text)),
           ),
           onSubmitted: pickCustom,
         ),
-      ],
-      if (suggestionsFor(t, cat).isNotEmpty) ...[
-        const SizedBox(height: 12),
-        Text(t.suggestions, style: const TextStyle(color: Colors.white60)),
-        const SizedBox(height: 6),
-        Wrap(spacing: 8, runSpacing: 8, children: [
-          for (final s in suggestionsFor(t, cat)) ActionChip(label: Text(s.trim()), onPressed: () => pickCustom(s)),
-        ]),
       ],
     ]);
   }

@@ -46,7 +46,9 @@ class EmergencyScreen extends StatelessWidget {
                       icon: Icons.flashlight_on,
                       label: t.sosLight,
                       color: Colors.white,
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FlashlightScreen())),
+                      // Parte subito l'SOS lampeggiante, su schermo e torcia.
+                      onTap: () => Navigator.push(
+                          context, MaterialPageRoute(builder: (_) => const FlashlightScreen(startSos: true))),
                     ),
                   ),
                 ]),

@@ -217,7 +217,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sirens => 'Sirenen';
 
   @override
-  String get checklists => 'Listen';
+  String get checklists => 'Vorräte und Plan';
 
   @override
   String get offlineContent => 'Herunterladen, solange es Internet gibt';
@@ -423,11 +423,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get suppliesTitle => 'Vorräte';
 
   @override
-  String get suppliesSubtitle => 'Wasser und Essen für Personen und Tage';
+  String get suppliesSubtitle =>
+      'Was Sie haben, was fehlt und wie viel: Zuhause und Notgepäck';
 
   @override
   String get suppliesKeywords =>
-      'vorrat vorräte wasser essen lebensmittel rationen wie viel berechnen';
+      'vorrat vorräte wasser essen lebensmittel rationen wie viel berechnen notgepäck zuhause inventar';
 
   @override
   String get people => 'Personen';
@@ -611,19 +612,6 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get needsTitle => 'Bedarf';
-
-  @override
-  String get summaryTitle => 'Übersicht';
-
-  @override
-  String get inventoryTitle => 'Bestand';
-
-  @override
-  String get inventoryHint =>
-      'Fügen Sie Bereich für Bereich hinzu, was Sie zu Hause haben. Tippen Sie dann auf +, wenn Sie etwas kaufen, und auf −, wenn Sie etwas verbrauchen.';
-
-  @override
   String get catWater => 'Wasser';
 
   @override
@@ -631,9 +619,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get catGas => 'Gas zum Kochen';
-
-  @override
-  String get catOther => 'Sonstiges';
 
   @override
   String coversDays(String days) {
@@ -701,16 +686,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get addToInventory => 'Zum Bestand hinzufügen';
-
-  @override
-  String get otherItemHint => 'Gegenstand eingeben, z. B. Taschenlampe';
-
-  @override
-  String get suggestions => 'Vorschläge';
-
-  @override
-  String get otherSuggestions =>
-      'Bargeld,Kopien der Dokumente,Wichtige Nummern auf Papier,Ersatzschlüssel,Decken,Schlafsäcke,Warme Kleidung,Rettungsdecke,Trillerpfeife,Müllbeutel,Gewebeband,Plastikplanen,Seil,Taschenmesser,Feuerlöscher,Tierfutter';
 
   @override
   String get pWaterBottle => 'Wasserflasche';
@@ -1066,20 +1041,6 @@ class AppLocalizationsDe extends AppLocalizations {
       'Karten der Welt, Europas und einzelner Länder laden, aktualisieren oder löschen';
 
   @override
-  String get energySuggestions =>
-      'Stirnlampe,Kerzen,Streichhölzer,Feuerzeug,Batterieradio,Kurbelradio';
-
-  @override
-  String get healthSuggestions =>
-      'Eigene Medikamente,Schmerzmittel,Erste-Hilfe-Set,Elektrolytpulver,Wasserentkeimungstabletten,FFP2-Masken,Einweghandschuhe,Ersatzbrille,Toilettenpapier,Seife,Handdesinfektion,Feuchttücher,Binden,Windeln,Eimer mit Deckel,Katzenstreu oder Sägemehl';
-
-  @override
-  String get catEnergy => 'Energie und Licht';
-
-  @override
-  String get catHealth => 'Gesundheit und Hygiene';
-
-  @override
   String get emptySection => 'Noch nichts. Tippen Sie auf „Hinzufügen“.';
 
   @override
@@ -1098,17 +1059,6 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get electricityBasis =>
       'Berechnung: 1 volle Handyladung pro Person und Tag. Powerbanks mit 65 % und Powerstations mit 85 % der angegebenen Kapazität.';
-
-  @override
-  String solarExtra(int n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      n,
-      locale: localeName,
-      other: '$n Solarpanels',
-      one: '1 Solarpanel',
-    );
-    return 'Zusätzlich $_temp0 zum Laden mit Sonnenlicht';
-  }
 
   @override
   String get pPowerBank => 'Powerbank';
@@ -1418,4 +1368,102 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get pointsAndTrack => 'Punkte und Strecke';
+
+  @override
+  String get suppliesHome => 'Zuhause';
+
+  @override
+  String get suppliesBackpack => 'Notgepäck';
+
+  @override
+  String shopFor(int people, int days) {
+    return 'Für $people Personen und $days Tage';
+  }
+
+  @override
+  String get shopAllDone => 'Es fehlt nichts.';
+
+  @override
+  String get shopCopied =>
+      'Liste kopiert: in eine Nachricht oder Notiz einfügen.';
+
+  @override
+  String get copyShopping => 'Einkaufsliste kopieren';
+
+  @override
+  String get shoppingList => 'Einkaufsliste';
+
+  @override
+  String get filterAll => 'Alles';
+
+  @override
+  String get filterMissing => 'Was fehlt';
+
+  @override
+  String get suppliesQuantities => 'Mengen';
+
+  @override
+  String get suppliesQuantitiesHint =>
+      'Wie viel Sie haben im Vergleich zum Bedarf. Tippen Sie auf eine Zeile, um Ihre Vorräte zu sehen und zu ändern.';
+
+  @override
+  String get quantitiesEnough => 'Die Mengen reichen.';
+
+  @override
+  String get suppliesHaveTitle => 'Zu haben';
+
+  @override
+  String get suppliesHaveHint =>
+      'Dinge, die man hat oder nicht hat: haken Sie ab, was vorhanden ist. Die Einträge folgen den Leitlinien der EU und europäischer Katastrophenschutzbehörden.';
+
+  @override
+  String get inBag => 'im Notgepäck';
+
+  @override
+  String get inBagChange => 'Es ist im Notgepäck: im Reiter Notgepäck ändern.';
+
+  @override
+  String get addOwnItem => 'Eintrag hinzufügen';
+
+  @override
+  String get bagLegend =>
+      'Wählen Sie für jeden Eintrag, ob er schon im Notgepäck ist, ob Sie ihn beim Gehen von zu Hause mitnehmen oder ob er fehlt. Das Notgepäck brauchen Sie, wenn Sie Ihre Wohnung schnell verlassen müssen.';
+
+  @override
+  String get beforeLeaving => 'Vor dem Gehen mitnehmen';
+
+  @override
+  String get beforeLeavingAlways => 'Schlüssel, Handy und Geldbörse';
+
+  @override
+  String bagReady(int done, int total) {
+    return '$done von $total bereit';
+  }
+
+  @override
+  String get bagCheckTitle => 'Notgepäck alle 6 Monate prüfen';
+
+  @override
+  String bagCheckBody(String date) {
+    return 'Lebensmittel, Medikamente und Batterien laufen ab. Letzte Prüfung: $date';
+  }
+
+  @override
+  String get bagCheckNever => 'nie';
+
+  @override
+  String get bagCheckDone => 'Heute erledigt';
+
+  @override
+  String get bagNoPowerBank =>
+      'Zu Hause ist keine: unter Zuhause › Strom hinzufügen.';
+
+  @override
+  String get bagPacked => 'Im Notgepäck';
+
+  @override
+  String get bagFromHome => 'Beim Gehen mitnehmen';
+
+  @override
+  String get bagMissing => 'Fehlt';
 }

@@ -100,7 +100,7 @@
     }
   },
   "sirens": "Sirènes",
-  "checklists": "Listes",
+  "checklists": "Provisions et plan",
   "offlineContent": "À télécharger tant qu'il y a internet",
   "downloadEncyclopedias": "Télécharger des encyclopédies",
   "downloadEncyclopediasBody": "Wikipédia et WikiMed dans votre langue, à lire sans réseau.",
@@ -183,8 +183,8 @@
   },
   "westLetter": "O",
   "suppliesTitle": "Réserves",
-  "suppliesSubtitle": "Eau et nourriture selon personnes et jours",
-  "suppliesKeywords": "réserves provisions eau nourriture rations combien calcul stock",
+  "suppliesSubtitle": "Ce que vous avez, ce qui manque et combien : maison et sac",
+  "suppliesKeywords": "réserves provisions eau nourriture rations combien calcul stock sac maison inventaire",
   "people": "Personnes",
   "days": "Jours",
   "suppliesNote": "L'UE recommande au moins 72 heures d'autonomie ; plus, c'est mieux. Le calcul utilise 4 litres d'eau par personne et par jour (3 pour boire, 1 pour cuisiner et se laver) et 2000 kcal. Ce sont des valeurs indicatives pour adultes : la chaleur, l'effort, les enfants et les personnes âgées changent les besoins. Consommez d'abord les réserves les plus anciennes.",
@@ -302,14 +302,9 @@
       }
     }
   },
-  "needsTitle": "Besoins",
-  "summaryTitle": "Résumé",
-  "inventoryTitle": "Inventaire",
-  "inventoryHint": "Ajoutez ce que vous avez chez vous, section par section. Touchez ensuite + quand vous achetez et − quand vous consommez.",
   "catWater": "Eau",
   "catFood": "Nourriture",
   "catGas": "Gaz pour cuisiner",
-  "catOther": "Autre",
   "coversDays": "Suffit pour {days} jours",
   "@coversDays": {
     "placeholders": {
@@ -371,9 +366,6 @@
   "chooseSize": "Format",
   "otherSize": "Autre format",
   "addToInventory": "Ajouter à l'inventaire",
-  "otherItemHint": "Écrivez un objet, p. ex. lampe torche",
-  "suggestions": "Suggestions",
-  "otherSuggestions": "Espèces,Copies des papiers d'identité,Numéros importants sur papier,Clés de rechange,Couvertures,Sacs de couchage,Vêtements chauds,Couverture de survie,Sifflet,Sacs-poubelle,Ruban adhésif,Bâches en plastique,Corde,Couteau multifonction,Extincteur,Nourriture pour animaux",
   "pWaterBottle": "Bouteille d'eau",
   "pWaterTank": "Bidon d'eau",
   "pPasta": "Pâtes",
@@ -565,10 +557,6 @@
       }
     }
   },
-  "energySuggestions": "Lampe frontale,Bougies,Allumettes,Briquet,Radio à piles,Radio à manivelle",
-  "healthSuggestions": "Médicaments habituels,Antidouleurs,Trousse de secours,Sels de réhydratation,Pastilles de purification d'eau,Masques FFP2,Gants jetables,Lunettes de rechange,Papier toilette,Savon,Gel hydroalcoolique,Lingettes,Serviettes hygiéniques,Couches,Seau avec couvercle,Litière ou sciure",
-  "catEnergy": "Énergie et éclairage",
-  "catHealth": "Santé et hygiène",
   "emptySection": "Rien pour l'instant. Touchez « Ajouter ».",
   "catElectricity": "Électricité",
   "chargesHave": "{have} / {need} recharges",
@@ -594,14 +582,6 @@
     }
   },
   "electricityBasis": "Calcul : 1 recharge complète du téléphone par personne et par jour. Batteries externes à 65 % et stations d'énergie à 85 % de la capacité annoncée.",
-  "solarExtra": "En plus : {n, plural, =1{1 panneau solaire} other{{n} panneaux solaires}} pour recharger au soleil",
-  "@solarExtra": {
-    "placeholders": {
-      "n": {
-        "type": "int"
-      }
-    }
-  },
   "pPowerBank": "Batterie externe",
   "pPowerStation": "Station d'énergie",
   "pSolarPanel": "Panneau solaire",
@@ -709,5 +689,34 @@
   "trackTitle": "Parcours",
   "trackHelp": "Touchez « Parcours » pour enregistrer le chemin que vous faites : il apparaît en bleu sur la carte. Il sert à retrouver le chemin du retour (maison, voiture, abri) ou à montrer aux secours par où vous êtes passé. L'enregistrement ne fonctionne que lorsque cet écran est ouvert ; touchez à nouveau pour arrêter.",
   "trackShow": "Touchez pour le voir sur la carte",
-  "pointsAndTrack": "Points et parcours"
+  "pointsAndTrack": "Points et parcours",
+  "suppliesHome": "Maison",
+  "suppliesBackpack": "Sac",
+  "shopFor": "Pour {people} personnes et {days} jours",
+  "shopAllDone": "Rien ne manque.",
+  "shopCopied": "Liste copiée : collez-la dans un message ou vos notes.",
+  "copyShopping": "Copier la liste de courses",
+  "shoppingList": "Liste de courses",
+  "filterAll": "Tout",
+  "filterMissing": "Ce qui manque",
+  "suppliesQuantities": "Les quantités",
+  "suppliesQuantitiesHint": "Ce que vous avez par rapport à ce qu'il faut. Touchez une ligne pour voir et mettre à jour ce que vous avez.",
+  "quantitiesEnough": "Les quantités suffisent.",
+  "suppliesHaveTitle": "À avoir",
+  "suppliesHaveHint": "Ce que vous avez ou non : cochez ce que vous avez. Les éléments suivent les recommandations de l'UE et des protections civiles européennes.",
+  "inBag": "dans le sac",
+  "inBagChange": "C'est dans le sac : modifiez-le dans l'onglet Sac.",
+  "addOwnItem": "Ajouter un élément",
+  "bagLegend": "Pour chaque élément, indiquez s'il est déjà dans le sac, si vous le prenez à la maison en partant, ou s'il manque. Le sac sert si vous devez quitter la maison rapidement.",
+  "beforeLeaving": "Avant de partir, prenez",
+  "beforeLeavingAlways": "Clés, téléphone et portefeuille",
+  "bagReady": "{done} sur {total} prêts",
+  "bagCheckTitle": "Vérifiez le sac tous les 6 mois",
+  "bagCheckBody": "La nourriture, les médicaments et les piles se périment. Dernier contrôle : {date}",
+  "bagCheckNever": "jamais",
+  "bagCheckDone": "Fait aujourd'hui",
+  "bagNoPowerBank": "Il n'y en a pas à la maison : ajoutez-la dans Maison › Électricité.",
+  "bagPacked": "Dans le sac",
+  "bagFromHome": "À prendre en partant",
+  "bagMissing": "Manque"
 }
