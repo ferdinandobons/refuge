@@ -21,7 +21,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from import_iononrischio import _Converter  # noqa: E402
 
 API = "https://it.wikipedia.org/w/api.php"
-UA = {"User-Agent": "Refuge/0.1 (app open source di sopravvivenza offline; 1bonsegnaferdinando@gmail.com)"}
+UA = {"User-Agent": "Refuge/0.1 (app open source di sopravvivenza offline; https://github.com/ferdinandobons/refuge)"}
 OUT = pathlib.Path(__file__).resolve().parent.parent / "assets" / "guides"
 
 ATP = "us-army-atp-4-02-11-first-aid-2026.pdf"
