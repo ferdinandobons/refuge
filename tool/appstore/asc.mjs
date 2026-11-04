@@ -5,6 +5,7 @@
 //   node tool/appstore/asc.mjs listing                  versione, categorie, diritti, testi (store/metadata), revisione
 //   node tool/appstore/asc.mjs screenshots              immagini iPhone 6,9" da store/screenshots/<lingua>
 //   node tool/appstore/asc.mjs attach-build N           la build N nella versione da inviare
+//   node tool/appstore/asc.mjs submit                   invia la versione alla revisione di Apple
 //   node tool/appstore/asc.mjs users                    utenti del team (i tester interni devono esserlo)
 //   node tool/appstore/asc.mjs bundle-id                registra l'ID dell'app (se manca)
 //   node tool/appstore/asc.mjs internal <email>         aggiunge un utente del team al gruppo interno
@@ -205,6 +206,34 @@ if (cmd === "bundle-id") {
     await api("PATCH", `/v1/ageRatingDeclarations/${ar.id}`, { data: { type: "ageRatingDeclarations", id: ar.id, attributes } });
     console.log("età consigliata salvata");
   }
+} else if (cmd === "submit") {
+  const a = await app();
+  const v = await version(a.id);
+  const sub = (await api("POST", "/v1/reviewSubmissions", { data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
+    relationships: { app: { data: { type: "apps", id: a.id } } } } })).data;
+  await api("POST", "/v1/reviewSubmissionItems", { data: { type: "reviewSubmissionItems",
+    relationships: { reviewSubmission: { data: { type: "reviewSubmissions", id: sub.id } },
+      appStoreVersion: { data: { type: "appStoreVersions", id: v.id } } } } });
+  const done = (await api("PATCH", `/v1/reviewSubmissions/${sub.id}`, { data: { type: "reviewSubmissions", id: sub.id,
+    attributes: { submitted: true } } })).data;
+  console.log("versione", v.attributes.versionString, "inviata alla revisione:", done.attributes.state);
+} else if (cmd === "beta-status") {
+  const a = await app();
+  const b = await api("GET", `/v1/builds?filter[app]=${a.id}&sort=-uploadedDate&limit=5&include=buildBetaDetail,betaAppReviewSubmission`);
+  for (const x of b.data) {
+    const det = b.included?.find((i) => i.type === "buildBetaDetails" && i.id === x.relationships.buildBetaDetail.data?.id);
+    const rev = b.included?.find((i) => i.type === "betaAppReviewSubmissions" && i.id === x.relationships.betaAppReviewSubmission.data?.id);
+    console.log("build", x.attributes.version, "esterni:", det?.attributes.externalBuildState, "revisione beta:", rev?.attributes.betaReviewState ?? "-");
+  }
+  const g = (await api("GET", `/v1/apps/${a.id}/betaGroups?limit=50`)).data.find((x) => x.attributes.name === "Esterni");
+  const t = await api("GET", `/v1/betaGroups/${g.id}/betaTesters`);
+  for (const x of t.data) console.log("tester", x.attributes.email, x.attributes.state);
+} else if (cmd === "store-status") {
+  const a = await app();
+  const v = await api("GET", `/v1/apps/${a.id}/appStoreVersions?filter[platform]=IOS&limit=5`);
+  for (const x of v.data) console.log("versione", x.attributes.versionString, x.attributes.appStoreState, x.attributes.appVersionState ?? "");
+  const r = await api("GET", `/v1/reviewSubmissions?filter[app]=${a.id}&limit=5`);
+  for (const x of r.data) console.log("invio", x.attributes.state, x.attributes.submittedDate ?? "");
 } else if (cmd === "users") {
   const r = await api("GET", "/v1/users?limit=50");
   for (const u of r.data) console.log(u.attributes.username, u.attributes.roles.join(","));
